@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route, Link } from "react-router-dom";
+import './stylesheets/App.css';
+import history from './history';
+
+// import Dashboard from './components/Dashboard'
+import LogIn from './Components/LogIn'
+import Register from './Components/Register'
+import Home from './Components/Home'
+import Recipes from './Components/Recipes'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router history={history}>
+        <React.Fragment>
+          <nav>
+            <li className="navigation-links"> <Link to="/login">Login</Link> </li>
+            <li className="navigation-links"><Link to="/register">Register</Link> </li>
+            <li className="navigation-links"><Link to="/recipes">Recipes</Link> </li>
+          </nav>
+          
+          {/* //TODO: implement login and register in the api.  */}
+          <Route exact path="/login" component={LogIn} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/recipes" component={Recipes} />
+
+
+        </React.Fragment>
+      </Router>
+
     );
   }
 }
