@@ -1,6 +1,4 @@
 const passport = require('passport');
-
-
 const router = require('express').Router();
 
 router.get('/test', (req,res)=>{
@@ -35,6 +33,8 @@ router.get('/logout', (req, res) => {
     // redirecting to root
     res.redirect('/auth/logout/message');
 });
+
+
 
 router.get('/login', passport.authenticate('google', {
     scope: ['https://www.googleapis.com/auth/userinfo.profile']
