@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.6",
     "passport": "^0.4.0",
-    "passport-google-auth": "^1.0.2"
+    "passport-google-auth": "^1.0.2",
+    "passport-google-oauth": "^1.0.0"
   }
 }
