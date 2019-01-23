@@ -32,7 +32,7 @@ app.use(cookieParser());
 // MIDDLEWARE (CONTROLLERS): Routes for authentication, public and private endpoints
 app.use(require('./controllers'));
 
-// SERVER PORT
+// EXPRESS SERVER PORT
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log('Server is running on port', port);
