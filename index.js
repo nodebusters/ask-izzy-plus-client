@@ -9,14 +9,14 @@ const configPassport = require('./configPassport');
 // MONGOOSE: Connection configuration to MongoDB database via Mongoose library
 require ('./configMongoose');
 
-// MIDDLEWARE (PASSPORT): Google OAuth configuration settings
+// MIDDLEWARE (PASSPORT): Google OAuth configuration settings from configPassport.js file
 configPassport(passport); 
 app.use(passport.initialize());
 
 // DOTENV: Reads environmental variables from .env file
 require('dotenv').load();
 
-// MIDDLEWARE (COOKIE SESSION): Client-side user session
+// MIDDLEWARE (COOKIE-SESSION): Middleware creates a new client-side user session
 // The credentials used to authenticate a user will only be transmitted during the login request. 
 // If authentication succeeds, a session will be established and maintained via a cookie set in the user's browser.
 app.use(cookieSession({
@@ -34,7 +34,7 @@ app.use(cookieParser());
 // MIDDLEWARE (CONTROLLERS): Routes for authentication, public and private endpoints
 app.use(require('./controllers'));
 
-// EXPRESS SERVER PORT
+// EXPRESS SERVER/PORT
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log('Server is running on port', port);
