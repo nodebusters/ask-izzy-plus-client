@@ -4,6 +4,7 @@ require('dotenv').load();
 // PASSPORT: Using Google authentication strategy for OAuth
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
+// PASSPORT: Once authneticated, each subsequent request will not contain credentials, but rather the unique cookie that identifies the session. In order to support login sessions, Passport will serialize and deserialize user instances to and from the session.
 function configPassport(passport) {
   passport.serializeUser((user, done) => {
     done(null, user);

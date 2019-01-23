@@ -6,8 +6,8 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const configPassport = require('./configPassport');
 
-// MONGOOSE: Connection to MongoDB via Mongoose
-require ('./configMongoose'); // Connecting to MongoDB
+// MONGOOSE: Connection configuration to MongoDB database via Mongoose library
+require ('./configMongoose');
 
 // MIDDLEWARE (PASSPORT): Google OAuth configuration settings
 configPassport(passport); 
@@ -17,6 +17,8 @@ app.use(passport.initialize());
 require('dotenv').load();
 
 // MIDDLEWARE (COOKIE SESSION): Client-side user session
+// The credentials used to authenticate a user will only be transmitted during the login request. 
+// If authentication succeeds, a session will be established and maintained via a cookie set in the user's browser.
 app.use(cookieSession({
   name: 'session',
   keys: [`${process.env.SESSION_SECRET_KEY}`],
