@@ -1,24 +1,27 @@
+// PASSPORT: Delegated Gmail authentication using OAuth
 const passport = require('passport');
+
+// EXPRESS ROUTER: http://localhost:5000/auth/
 const router = require('express').Router();
 
-router.get('/test', (req,res)=>{
+router.get('/test', (req, res) => {
   return res.send("auth route working")
 })
 
-//Token info:
+// Token info:
 router.get('/token', (req, res) => {
-    console.log('req.session.token',': ', req.session.token);
-    if (req.session.token) {
-        res.cookie('token', req.session.token);
-        res.json({
-            status: 'session cookie set'
-        });
-    } else {
-        res.cookie('token', '')
-        res.json({
-            status: 'session cookie not set'
-        });
-    }
+console.log('req.session.token',': ', req.session.token);
+if (req.session.token) {
+    res.cookie('token', req.session.token);
+    res.json({
+        status: 'session cookie set'
+    });
+} else {
+    res.cookie('token', '')
+    res.json({
+        status: 'session cookie not set'
+    });
+}
 });
 
 router.get('/logout/message', (req,res)=>{
