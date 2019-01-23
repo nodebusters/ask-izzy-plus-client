@@ -1,4 +1,4 @@
-// MONGOOSE CONFIGURATION: Connects to MongoDB database via Mongoose
+// MONGOOSE CONFIGURATION: Connects to MongoDB database via Mongoose library
 const mongoose = require('mongoose');
 
 // DOTENV: Reads MONGO_DRIVER url from .env file
