@@ -3,9 +3,9 @@ const mongoose = require('mongoose');
 
 // DOTENV: Reads MONGO_DRIVER url from .env file
 require('dotenv').load();
-const driver = process.env.MONGO_DRIVER;
 
 // MONGOOSE: Connects to the MongoDB database on localhost:27017
+const driver = process.env.MONGO_DRIVER;
 mongoose.connect(driver, { useNewUrlParser: true });
 
 // MONGOOSE: Connection event - when successfully connected
