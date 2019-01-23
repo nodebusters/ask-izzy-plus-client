@@ -31,7 +31,7 @@ app.use(express.json());
 // MIDDLEWARE (COOKIE-PARSER): Populates req.cookies with the header parsed cookie, or populates req.secret if a secret string is used.
 app.use(cookieParser()); 
 
-// MIDDLEWARE (CONTROLLERS): Routes for authentication, public and private endpoints
+// MIDDLEWARE (CONTROLLERS): Middleware routes for authentication, public and private endpoints from controllers/index.js
 app.use(require('./controllers'));
 
 // EXPRESS SERVER/PORT
