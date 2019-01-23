@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const driver = process.env.MONGO_DRIVER;
 
-mongoose.connect(driver);
+mongoose.connect(driver, { useNewUrlParser: true });
 mongoose.connection.on('connected', () => {
     console.log('connected to mongod');
     console.log('-------------------------------');
