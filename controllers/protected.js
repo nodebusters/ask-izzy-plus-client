@@ -52,8 +52,15 @@ router.get('/getUserData', (req, res) => {
     }]
   }
 
+  const user = { 
+    email:"user1@gmail.com",
+    firstName: "john", 
+    lastName: "citizen",
+    organisation: 1
+  };
+  
   const data = {
-    user: { name: "user1", email: "user1@gmail.com" },
+    user: user ,
     organisation: organisation
   };
 
