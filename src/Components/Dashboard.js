@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-// import 'react-tabs/style/react-tabs.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -58,32 +58,51 @@ class Dashboard extends Component {
     
     render() {
         const { organisation, user } = this.state;
-        // console.log(this.state);
         console.log(organisation);
         console.log(user);
+        
+        const organisationDetails = (
+            <React.Fragment>
+                <p>Name: {organisation.name}</p>
+            </React.Fragment>
+        );
+
+        const sitesDetails = (
+            <React.Fragment>
+                <p>Name: {organisation.sitesInOrganisation[0].name}</p>
+            </React.Fragment>
+        );
+
+        const servicesDetails = (
+            <React.Fragment>
+                <p>Name: {organisation.sitesInOrganisation[0].servicesInSite[0].name}</p>
+            </React.Fragment>
+        );
+       
+        const userDetails = Object.entries(user).map(([key, value]) => {
+            return <p key={key}>{key}: {value}</p>
+        });
+
+        const displayTabs = (
+            <Tabs defaultIndex={2} onSelect={index => console.log(index + 1)}>
+                <TabList>
+                    <Tab>Organisation</Tab>
+                    <Tab>Sites</Tab>
+                    <Tab>Services</Tab>
+                    <Tab>User Profile</Tab>
+                </TabList>
+                <TabPanel>{organisationDetails}</TabPanel>
+                <TabPanel>{sitesDetails}</TabPanel>
+                <TabPanel>{servicesDetails}</TabPanel>
+                <TabPanel>{userDetails}</TabPanel>
+            </Tabs>
+        );
+
         return (
             <React.Fragment>
-                <strong>User Profile</strong>
-                <p>email: {user.email}</p>
-                <p>First name: {user.firstName}</p>
-                <p>Last name: {user.lastName}</p>
-
-
-                <h1>Welcome {user.firstName}</h1>
-                <strong>Organisation</strong>
-                <p>Name: {organisation.name}</p>
-
-                <strong>Sites</strong>
-                <p>Name: {organisation.sitesInOrganisation[0].name}</p>
-
-                <strong>Services</strong>
-                <p>Name: {organisation.sitesInOrganisation[0].servicesInSite[0].name}</p>
+                {displayTabs}
             </React.Fragment>
         );
     }
 }
 export default Dashboard;
-
-//<React.Fragment>
-//{user && <h1> Welcome {user.firstName}</h1>}
-//</React.Fragment>
