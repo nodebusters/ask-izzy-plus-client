@@ -22,29 +22,7 @@ class Dashboard extends Component {
                 .then(res => {
                     console.log('res.data', ': ', res.data);
                 })
-                // .catch(error => {
-                //     //this error handling code is from the axios docs:
-                //     if (error.response) {
-                //         // The request was made and the server responded with a status code
-                //         // that falls out of the range of 2xx
-                //         console.log("error.response: ", error.response);
-                //         // console.log(error.response.status);
-                //         // console.log(error.response.headers);
-
-                //         const { message } = error.response.data;
-                //         this.setState({ message })
-                //         //note that errorMessage comes from the api.
-                //     } else if (error.request) {
-                //         // The request was made but no response was received
-                //         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-                //         // http.ClientRequest in node.js
-                //         console.log(error.request);
-                //     } else {
-                //         // Something happened in setting up the request that triggered an Error
-                //         console.log('Error', error.message);
-                //     }
-                //     console.log(error.config);
-                // })
+    
         } else {
             console.log("doesnt exists");
             
@@ -55,6 +33,7 @@ class Dashboard extends Component {
     componentDidMount(){
         this.handleProtectedRequest();
     }
+    
     render() {
         const {message} = this.state;
         return (
