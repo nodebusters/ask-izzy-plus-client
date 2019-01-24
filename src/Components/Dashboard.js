@@ -62,7 +62,7 @@ class Dashboard extends Component {
         console.log(organisation);
         console.log(user);
         return (
-            <div>
+            <React.Fragment>
                 <strong>User Profile</strong>
                 <p>email: {user.email}</p>
                 <p>First name: {user.firstName}</p>
@@ -78,7 +78,7 @@ class Dashboard extends Component {
 
                 <strong>Services</strong>
                 <p>Name: {organisation.sitesInOrganisation[0].servicesInSite[0].name}</p>
-            </div>
+            </React.Fragment>
         );
     }
 }
