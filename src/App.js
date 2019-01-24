@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Router, Route, Link } from "react-router-dom";
+import { Router, Route, Link } from 'react-router-dom';
 import './stylesheets/App.css';
 import history from './history';
-
-import LogIn from './Components/LogIn'
-import Dashboard from './Components/Dashboard'
+import LogIn from './Components/LogIn';
+import Dashboard from './Components/Dashboard';
 
 class App extends Component {
   render() {
@@ -21,7 +20,6 @@ class App extends Component {
 
         </React.Fragment>
       </Router>
-
     );
   }
 }
