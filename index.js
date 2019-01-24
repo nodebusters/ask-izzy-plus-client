@@ -1,10 +1,11 @@
 // DEPENDENCIES: Node.js dependencies from node_modules folder
 const express = require('express');
-const app = express();
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const configPassport = require('./configPassport');
+const cors = require('cors');
+const app = express();
 
 // MONGOOSE: Connection configuration to MongoDB database via Mongoose library
 require ('./configMongoose');
@@ -13,6 +14,7 @@ require ('./configMongoose');
 configPassport(passport); 
 app.use(passport.initialize());
 
+app.use(cors());
 // DOTENV: Reads environmental variables from .env file
 require('dotenv').load();
 
