@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleLogin from 'react-google-login';
-import axios from 'axios';
+// import axios from 'axios';
 import history from '../history'
 
 class LogIn extends Component {
@@ -17,7 +17,6 @@ class LogIn extends Component {
     render() {
         const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;        
         return (
-
             <React.Fragment>
                 <GoogleLogin
                     clientId={googleClient}
