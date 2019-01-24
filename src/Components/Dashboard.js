@@ -61,11 +61,11 @@ class Dashboard extends Component {
         console.log(organisation);
         console.log(user);
         
-        const organisationDetails = (
-            <React.Fragment>
-                <p>Name: {organisation.name}</p>
-            </React.Fragment>
-        );
+        const organisationDetails = Object.entries(organisation).map(([key, value]) => {
+            if  (key!=='sitesInOrganisation'){
+                return <p key={key}>{key}: {value}</p>
+            }
+        });
 
         const sitesDetails = (
             <React.Fragment>
