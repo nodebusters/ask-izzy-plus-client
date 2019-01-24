@@ -8,6 +8,8 @@ import LogIn from './Components/LogIn'
 import Register from './Components/Register'
 import Home from './Components/Home'
 import Recipes from './Components/Recipes'
+//TODO:
+import Dashboard from './Components/Dashboard'
 
 class App extends Component {
   render() {
@@ -25,6 +27,9 @@ class App extends Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/" component={Home} />
           <Route exact path="/recipes" component={Recipes} />
+        
+        
+          <Route exact path="/dashboard" component={Dashboard} />
 
 
         </React.Fragment>
