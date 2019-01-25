@@ -38,33 +38,52 @@ router.get('/dashboard', (req, res) => {
 //localhost:5000/protected/getUserData
 router.get('/getUserData', (req, res) => {
   const { token } = req.headers;
-  console.log('token', ': ', token);
+  // console.log('token', ': ', token);
 
   const decoded = jwtDecode(token);
-  console.log(decoded);
-  
-  // const data = decoded;
-  const organisation = {
-    name: "organisation 1",
-    sitesInOrganisation: [{
-      name: "site 1",
-      servicesInSite: [{ name: "service 1" }]
-    }]
-  }
+  const { email } = decoded;
+  const firstName = decoded.given_name;
+  const lastName = decoded.family_name;
+  console.log('email', ': ', email);
+  console.log('firstName', ': ', firstName);
+  console.log('lastName', ': ', lastName);
 
-  const user = { 
-    email:"user1@gmail.com",
-    firstName: "john", 
-    lastName: "citizen",
-    organisation: 1
-  };
-  
-  const data = {
-    user: user ,
-    organisation: organisation
-  };
+  //Accessing the data from organisation based on the email.
+  const Organisation = require('../models/Organisation');
+  const User = require('../models/User');
 
-  return res.send(data);
+
+  User.findOne({ email })
+    .then((doc) => {
+      console.log('doc',': ', doc);
+      if (doc){
+        const user = doc;
+        console.log('user.organisation',': ', user.organisation);
+        Organisation.find({_id: user.organisation})
+        .then((doc)=>{
+          const organisation = doc;
+          const data = {
+            user,
+            organisation
+          };
+    
+          return res.send(data);
+        })
+  
+      }else{
+        const data = {
+          message:"Sorry this email is not authorised to use the platform. Please contact Infoexchange to register."
+        }
+
+        return res.send(data);
+      }
+
+
+    })
+    .catch((error)=>{
+      return res.send(error)
+    })
+
 })
 
 module.exports = router;
