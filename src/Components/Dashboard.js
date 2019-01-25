@@ -17,23 +17,23 @@ class Dashboard extends Component {
             const options = {
                 headers: { token }
             }
-            
+
             // const token = localStorage.getItem('token')
             axios.get(url, options)
-            .then(res => {
-                // console.log('res.data', ': ', res.data);   
-                const {organisation} = res.data                    
-                const {user} = res.data                    
-                
-                // console.log('organisation',': ', organisation);
-                
-                this.setState({
-                    organisation,
-                    user
-                })
-                
-                console.log('this.state',': ', this.state);
-                    
+                .then(res => {
+                    // console.log('res.data', ': ', res.data);   
+                    const { organisation } = res.data
+                    const { user } = res.data
+
+                    // console.log('organisation',': ', organisation);
+
+                    this.setState({
+                        organisation,
+                        user
+                    })
+
+                    console.log('this.state', ': ', this.state);
+
                 })
         } else {
             console.log("doesnt exists");
@@ -43,13 +43,13 @@ class Dashboard extends Component {
 
     componentDidMount() {
         console.log("did mount");
-        
+
         this.handleProtectedRequest();
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         // console.log('this.state',': ', this.state);
-        
+
     }
 
     // sitesDetails = () => {
@@ -68,65 +68,31 @@ class Dashboard extends Component {
 
     render() {
         const { organisation, user } = this.state;
-        
-        
+
+
         if (organisation) {
+
+            const { sitesInOrganisation } = organisation[0];
+            console.log('sitesInOrganisation',': ', sitesInOrganisation);
             
-            const { sitesInOrganisation } = organisation;
-    
-            
-            // console.log(organisation);
-            // console.log(user);
-            // console.log('sitesInOrganisation',': ', sitesInOrganisation);
-            
-            // const sitesDetails = this.sitesDetails();
-            // console.log(sitesDetails)
 
-            // const sitesDetails = Object.entries(sitesInOrganisation[0]).map(([key, value]) => {
-            //     console.log('key', ': ', key);
-
-            //     // if  (key!=='servicesInSite'){
-            //     //     return <p key={key}>{key}: {value}</p>
-            //     // }
-            //     // return <p key={key}>{key}: {value}</p>
-            //     // console.log(key, value)
-            // })
-
-            // const sitesDetails = ()=>{
-            //     return <p>hi</p>
-            // }
-
-
-            // const organisationDetails = () => {
-            //     return <React.Fragment>
-            //         {Object.entries(organisation[0]).map(([key, value]) => {
-            //             if (key !== 'sitesInOrganisation') {
-            //                 return <p key={key}>{key}: {value}</p>
-                            
-            //             }
-            //         })}
-            //     </React.Fragment>
-            // }
-
-            
-            // const servicesDetails = Object.entries(organisation.sitesInOrganisation[0].servicesInSite[0]).map(([key, value]) => {
-            //     return <p key={key}>{key}: {value}</p>
-            // });
-
-
-            // const sitesDetails = Object.entries(organisation[0]).map(([key, value]) => {
-            //     if (key !== 'sitesInOrganisation') {
-            //         return <p key={key}>{key}: {value}</p>
-                    
-            //     }
-
-            // });
-
+            const sitesDetails = () => {
+                const sites = sitesInOrganisation[0];
+                console.log('sites',': ', sites);
+                
+                return <React.Fragment>
+                    {Object.entries(sites).map(([key, value]) => {
+                        if (key !== 'servicesInSite' && key!=='openingHours') {
+                            return <p key={key}>{key}: {value} </p>
+                        }
+                    })}
+                </React.Fragment>
+            }
 
             const organisationDetails = Object.entries(organisation[0]).map(([key, value]) => {
                 if (key !== 'sitesInOrganisation') {
                     return <p key={key}>{key}: {value}</p>
-                    
+
                 }
 
             });
@@ -141,13 +107,13 @@ class Dashboard extends Component {
                 <Tabs defaultIndex={2} onSelect={index => console.log(index + 1)}>
                     <TabList>
                         <Tab>Organisation</Tab>
-                        {/* <Tab>Sites</Tab>
-                        <Tab>Services</Tab> */}
+                        <Tab>Sites</Tab>
+                        {/* <Tab>Services</Tab> */}
                         <Tab>User Profile</Tab>
                     </TabList>
                     <TabPanel>{organisationDetails}</TabPanel>
-                    {/* <TabPanel>{sitesDetails}</TabPanel>
-                    <TabPanel>{servicesDetails}</TabPanel> */}
+                    <TabPanel>{sitesDetails()}</TabPanel>
+                    {/* <TabPanel>{servicesDetails}</TabPanel> */}
                     <TabPanel> {userDetails} </TabPanel>
                 </Tabs>
             );
