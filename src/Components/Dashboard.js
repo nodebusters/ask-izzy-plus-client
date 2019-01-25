@@ -4,27 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          organisation: {
-            name: '',
-            sitesInOrganisation: [{
-                name: "",
-                servicesInSite: [{ 
-                    name: ""
-                }]
-            }]
-          },
-          user: {
-            email: '',
-            firstName: '',
-            lastName: '',
-            organisation: 0
-          }
-        };
-      }
+    state = {}
 
     handleProtectedRequest = (e) => {
         const token = localStorage.getItem('token');
@@ -37,15 +17,23 @@ class Dashboard extends Component {
             const options = {
                 headers: { token }
             }
-
-        // const token = localStorage.getItem('token')
-            axios.get(url,options)
-                .then(res => {
-                    console.log(res.data);
-                    this.setState({
-                            organisation: res.data.organisation, 
-                            user: res.data.user
-                        })
+            
+            // const token = localStorage.getItem('token')
+            axios.get(url, options)
+            .then(res => {
+                // console.log('res.data', ': ', res.data);   
+                const {organisation} = res.data                    
+                const {user} = res.data                    
+                
+                // console.log('organisation',': ', organisation);
+                
+                this.setState({
+                    organisation,
+                    user
+                })
+                
+                console.log('this.state',': ', this.state);
+                    
                 })
         } else {
             console.log("doesnt exists");
@@ -53,68 +41,128 @@ class Dashboard extends Component {
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
+        console.log("did mount");
+        
         this.handleProtectedRequest();
     }
 
-    sitesDetails = () => {
-        const { organisation } = this.state;
-        console.log(organisation.sitesInOrganisation)
-        let i = 0
-        for (i; i < organisation.sitesInOrganisation.length; i++) {
-            // console.log(organisation.sitesInOrganisation)
-                Object.entries(organisation.sitesInOrganisation[i]).map(([key, value]) => {
-                // if  (key!=='servicesInSite'){
-                //     return <p key={key}>{key}: {value}</p>
-                // }
-                return <p key={key}>{key}: {value}</p>
-                // console.log(key, value)
-            })};
-        }
-    };
-    
+    componentDidUpdate(){
+        // console.log('this.state',': ', this.state);
+        
+    }
+
+    // sitesDetails = () => {
+    //     const { organisation } = this.state;
+    //     // console.log(organisation.sitesInOrganisation)
+    //     // organisation.sitesInOrganisation 
+    //     const sites = organisation.sitesInOrganisation;
+    //     console.log('sites',': ', sites);
+    //     console.log('sites.length',': ', sites.length);
+
+    //     // for (let i=0; i < sites.length; i++) {
+    //     //     // console.log(organisation.sitesInOrganisation)
+    //     //     
+    //     }
+
+
     render() {
         const { organisation, user } = this.state;
-        console.log(organisation);
-        console.log(user);
-
-        const sitesDetails = this.sitesDetails();
-        console.log(sitesDetails)
         
-        const organisationDetails = Object.entries(organisation).map(([key, value]) => {
-            if  (key!=='sitesInOrganisation'){
-                return <p key={key}>{key}: {value}</p>
-            }
-        });
+        
+        if (organisation) {
             
-        const servicesDetails = Object.entries(organisation.sitesInOrganisation[0].servicesInSite[0]).map(([key, value]) => {
+            const { sitesInOrganisation } = organisation;
+    
+            
+            // console.log(organisation);
+            // console.log(user);
+            // console.log('sitesInOrganisation',': ', sitesInOrganisation);
+            
+            // const sitesDetails = this.sitesDetails();
+            // console.log(sitesDetails)
+
+            // const sitesDetails = Object.entries(sitesInOrganisation[0]).map(([key, value]) => {
+            //     console.log('key', ': ', key);
+
+            //     // if  (key!=='servicesInSite'){
+            //     //     return <p key={key}>{key}: {value}</p>
+            //     // }
+            //     // return <p key={key}>{key}: {value}</p>
+            //     // console.log(key, value)
+            // })
+
+            // const sitesDetails = ()=>{
+            //     return <p>hi</p>
+            // }
+
+
+            // const organisationDetails = () => {
+            //     return <React.Fragment>
+            //         {Object.entries(organisation[0]).map(([key, value]) => {
+            //             if (key !== 'sitesInOrganisation') {
+            //                 return <p key={key}>{key}: {value}</p>
+                            
+            //             }
+            //         })}
+            //     </React.Fragment>
+            // }
+
+            
+            // const servicesDetails = Object.entries(organisation.sitesInOrganisation[0].servicesInSite[0]).map(([key, value]) => {
+            //     return <p key={key}>{key}: {value}</p>
+            // });
+
+
+            // const sitesDetails = Object.entries(organisation[0]).map(([key, value]) => {
+            //     if (key !== 'sitesInOrganisation') {
+            //         return <p key={key}>{key}: {value}</p>
+                    
+            //     }
+
+            // });
+
+
+            const organisationDetails = Object.entries(organisation[0]).map(([key, value]) => {
+                if (key !== 'sitesInOrganisation') {
+                    return <p key={key}>{key}: {value}</p>
+                    
+                }
+
+            });
+
+
+
+            const userDetails = Object.entries(user).map(([key, value]) => {
                 return <p key={key}>{key}: {value}</p>
-        });
-       
-        const userDetails = Object.entries(user).map(([key, value]) => {
-            return <p key={key}>{key}: {value}</p>
-        });
+            });
 
-        const displayTabs = (
-            <Tabs defaultIndex={2} onSelect={index => console.log(index + 1)}>
-                <TabList>
-                    <Tab>Organisation</Tab>
-                    <Tab>Sites</Tab>
-                    <Tab>Services</Tab>
-                    <Tab>User Profile</Tab>
-                </TabList>
-                <TabPanel>{organisationDetails}</TabPanel>
-                <TabPanel>{sitesDetails}</TabPanel>
-                <TabPanel>{servicesDetails}</TabPanel>
-                <TabPanel>{userDetails}</TabPanel>
-            </Tabs>
-        );
+            const displayTabs = (
+                <Tabs defaultIndex={2} onSelect={index => console.log(index + 1)}>
+                    <TabList>
+                        <Tab>Organisation</Tab>
+                        {/* <Tab>Sites</Tab>
+                        <Tab>Services</Tab> */}
+                        <Tab>User Profile</Tab>
+                    </TabList>
+                    <TabPanel>{organisationDetails}</TabPanel>
+                    {/* <TabPanel>{sitesDetails}</TabPanel>
+                    <TabPanel>{servicesDetails}</TabPanel> */}
+                    <TabPanel> {userDetails} </TabPanel>
+                </Tabs>
+            );
 
-        return (
-            <React.Fragment>
-                {displayTabs}
-            </React.Fragment>
-        );
+            return (
+                <React.Fragment>
+                    {displayTabs}
+                    <p>loading</p>
+                </React.Fragment>
+            );
+
+        } else {
+            return null;
+        }
+
     }
 }
 export default Dashboard;
