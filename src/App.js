@@ -13,6 +13,7 @@ class App extends Component {
           <nav>
               <LogIn/>
             <li className="navigation-links"><Link to="/">Home</Link> </li>
+            <li className="navigation-links"><Link to="/logout">Logout</Link></li>
           </nav>
           
           <Route exact path="/login" component={LogIn} />
