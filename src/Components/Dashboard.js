@@ -11,7 +11,9 @@ class Dashboard extends Component {
         if (token) {
             // console.log(token);
             // const baseURL =  process.env.REACT_APP_URL;
-            const url = `http://localhost:5000/protected/getUserData`
+
+            const baseURL = process.env.REACT_APP_BASE_URL;
+            const url = `${baseURL}/protected/getUserData`;
 
             //here we are sending the token to the server.
             const options = {
