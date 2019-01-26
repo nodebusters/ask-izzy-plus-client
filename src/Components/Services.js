@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 class Services extends Component {
   render() {
     const { organisation } = this.props;
@@ -13,9 +13,12 @@ class Services extends Component {
       <React.Fragment>
         <h3>Site:{site.name} </h3>
         {Object.entries(service).map(([key, value]) => {
-          return <p key={key}>{key}: {value} </p>
+          return (
+            <p key={key}>
+              {key}: {value}{" "}
+            </p>
+          );
         })}
-
       </React.Fragment>
     );
   }
