@@ -5,7 +5,10 @@ import ServicesInSite from './ServicesInSite'
 
 class Services extends Component {
   render() {
+    // Services component inherits props from Organisation models, iterates through the array values contained in sitesInOrganisation key
+    // Within site object contained in sitesInOrganisation array, iterates through the array values contained in servicesInSite key, renders to Dashboard
     const { organisation } = this.props;
+    // sites = [ {site1}, {site2}, {site3} ]
     const sites = organisation.sitesInOrganisation;
     return (
       <React.Fragment>
@@ -14,10 +17,14 @@ class Services extends Component {
             const services = site.servicesInSite;
             return (
               <React.Fragment>
+                {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
                 <TabList> <Tab>{site.name}</Tab> </TabList>
+
+                {/* REACT-TABS: Nested TabPanel to show multiple ServicesInSite information as content */}
                 <TabPanel>
                   <ServicesInSite services = {services} />
                 </TabPanel>
+
               </React.Fragment>
             )
           })}
