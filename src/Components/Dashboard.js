@@ -20,7 +20,6 @@ class Dashboard extends Component {
     if (token) {
       // console.log(token);
       const baseURL = process.env.REACT_APP_BASE_URL;
-      // FIXME: Change getUserData camelCase to /protected/users??
       const url = `${baseURL}/protected/getUserData`;
       // Sending the token in the headers to the server:
       const options = {
@@ -50,7 +49,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    // Whenever component is rendered, update state
+    // Whenever component is rendered, get state data and store it in consts.
     const { organisation, user } = this.state;
 
     // If organisation object exists in state, render information from { user } and { organisation } objects into tabs
@@ -93,7 +92,7 @@ class Dashboard extends Component {
             <LogOut />
           </nav>
 
-          <h3> Error: {this.state.message} </h3>
+          <h3> {this.state.message} </h3>
         </React.Fragment>
       );
     }
