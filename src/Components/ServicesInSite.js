@@ -5,14 +5,20 @@ import Service from './Service'
 
 class ServicesInSite extends Component {
    render() {
-    const {services} = this.props;
+    // Services component inherits props from Organisation models, iterates through the array values contained in sitesInOrganisation key
+    // Within site object contained in sitesInOrganisation array, iterates through the array values contained in servicesInSite key, renders to Dashboard
+    // services = [ { services1 }, { services2 }, {services3} ]
+    const { services } = this.props;
     return (
       <React.Fragment>
         <Tabs defaultIndex={2} >
           {services.map(service => {
             return (
               <React.Fragment>
+                {/* REACT-TABS: Nested TabList to show multiple Service names as header */}
                 <TabList> <Tab>{service.name}</Tab> </TabList>
+
+                {/* REACT-TABS: Nested TabPanel to show multiple Service information as content */}
                 <TabPanel> <Service service={service} /> </TabPanel>
               </React.Fragment>
             )

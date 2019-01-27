@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class Service extends Component {
   //TODO: implement site form below.
   render() {
+    // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
+    // service2 = { serviceName: 'Melbourne Medical X-Rays', siteAddress: '123 Example Street'}
     const { service } = this.props;
     return (
       <React.Fragment>
