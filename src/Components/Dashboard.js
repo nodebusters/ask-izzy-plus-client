@@ -7,7 +7,7 @@ import User from './User';
 import Organisation from './Organisation';
 import Sites from './Sites';
 import Services from './Services';
-
+import LogOut from './LogOut';
 
 class Dashboard extends Component {
   state = {}
@@ -25,11 +25,11 @@ class Dashboard extends Component {
       axios.get(url, options)
         .then(res => {
           // console.log('res.data', ': ', res.data);   
-          const { organisation } = res.data
-          const { user } = res.data
+          const { organisation, user, message } = res.data
           this.setState({
             organisation,
-            user
+            user,
+            message
           })
           console.log('this.state', ': ', this.state);
         })
@@ -44,14 +44,16 @@ class Dashboard extends Component {
     this.getUserData();
   }
 
-
-
   render() {
     const { organisation, user } = this.state;
 
     if (organisation) {
       return (
         <React.Fragment>
+          <nav>
+            <LogOut />
+          </nav>
+
           <Tabs defaultIndex={2} onSelect={index => {
             // console.log(index + 1)
           }}>
@@ -74,9 +76,16 @@ class Dashboard extends Component {
 
         </React.Fragment>
       );
-
     } else {
-      return null;
+      return (
+        <React.Fragment>
+          <nav>
+            <LogOut />
+          </nav>
+
+          <h3> Error: {this.state.message} </h3>
+        </React.Fragment>
+      );
     }
 
   }
