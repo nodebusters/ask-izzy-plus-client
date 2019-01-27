@@ -8,6 +8,7 @@ import User from './User';
 import Organisation from './Organisation';
 import Sites from './Sites';
 import Services from './Services';
+import LogOut from './LogOut';
 
 class Dashboard extends Component {
   // State is initially empty object, will contain { user } and { organisation } objects when component mounts
@@ -19,7 +20,6 @@ class Dashboard extends Component {
     if (token) {
       // console.log(token);
       const baseURL = process.env.REACT_APP_BASE_URL;
-      // FIXME: Change getUserData camelCase to /protected/users??
       const url = `${baseURL}/protected/getUserData`;
       // Sending the token in the headers to the server:
       const options = {
@@ -29,11 +29,11 @@ class Dashboard extends Component {
       axios.get(url, options)
         .then(res => {
           // console.log('res.data', ': ', res.data);   
-          const { user, organisation } = res.data
-          // const { user } = res.data
+          const { organisation, user, message } = res.data
           this.setState({
             organisation,
-            user
+            user,
+            message
           })
           console.log('this.state', ': ', this.state);
         })
@@ -49,7 +49,7 @@ class Dashboard extends Component {
   }
 
   render() {
-    // Whenever component is rendered, update state
+    // Whenever component is rendered, get state data and store it in consts.
     const { organisation, user } = this.state;
 
     // If organisation object exists in state, render information from { user } and { organisation } objects into tabs
@@ -59,6 +59,10 @@ class Dashboard extends Component {
         {/* REACT-TABS: Tabs (Container) */}
         {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
         {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
+          <nav>
+            <LogOut />
+          </nav>
+
           <Tabs defaultIndex={2} onSelect={index => {
             // console.log(index + 1)
           }}>
@@ -81,9 +85,16 @@ class Dashboard extends Component {
           </Tabs>
         </React.Fragment>
       );
-
     } else {
-      return null;
+      return (
+        <React.Fragment>
+          <nav>
+            <LogOut />
+          </nav>
+
+          <h3> {this.state.message} </h3>
+        </React.Fragment>
+      );
     }
 
   }
