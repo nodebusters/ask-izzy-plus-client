@@ -19,6 +19,7 @@ class Dashboard extends Component {
     if (token) {
       // console.log(token);
       const baseURL = process.env.REACT_APP_BASE_URL;
+      // FIXME: Change getUserData camelCase to /protected/users??
       const url = `${baseURL}/protected/getUserData`;
       // Sending the token in the headers to the server:
       const options = {
