@@ -1,24 +1,28 @@
-import React, { Component } from 'react';
-class Sites extends Component {
-    render() {
-        const {organisation} = this.props;
-        
-        const { sitesInOrganisation } = organisation;
-        //  console.log('sitesInOrganisation', ': ', sitesInOrganisation);
-        const sites = sitesInOrganisation[0];
-        //  console.log('sites', ': ', sites);
-    
-        return (
-            <React.Fragment>
-                {Object.entries(sites).map(([key, value]) => {
-                    if (key !== 'servicesInSite' && key !== 'openingHours') {
-                        return <p key={key}>{key}: {value} </p>
-                    }
-                })}
+//Component Description: Sites component iterates the sitesInOrganisation array and returns a Tabs component with each of the sites information in a separated tab. 
 
-            </React.Fragment>
-        );
-    }
+import React, { Component } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Site from './Site'
+
+class Sites extends Component {
+  render() {
+    const { organisation } = this.props;
+    const sites = organisation.sitesInOrganisation;
+    return (
+      <React.Fragment>
+        <Tabs defaultIndex={2} >
+          {sites.map(site => {
+            return (
+              <React.Fragment>
+                <TabList> <Tab>{site.name}</Tab> </TabList>
+                <TabPanel> <Site site={site} /> </TabPanel>
+              </React.Fragment>
+            )
+          })}
+        </Tabs>
+      </React.Fragment>
+    );
+  }
 }
 export default Sites;
 

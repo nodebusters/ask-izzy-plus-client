@@ -9,7 +9,6 @@ class Organisation extends Component {
                         return <p key={key}>{key}: {value}</p>
                     }
                 })}
-
             </React.Fragment>
         );
     }
