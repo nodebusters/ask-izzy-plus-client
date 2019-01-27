@@ -3,9 +3,8 @@ import GoogleLogin from "react-google-login";
 // import axios from 'axios';
 import history from "../history";
 
-// REACT-GOOGLE-LOGIN: A Google oAUth Sign-in/Login Component for React
-// Required: clientId, onSuccess and onFailure callback
-// FIXME: Rename LogIn component and filename to Login???
+// REACT-GOOGLE-LOGIN: Google oAUth Login Component (required: clientId, onSuccess and onFailure callback)
+// FIXME: Rename LogIn component and filename to Login ???
 class LogIn extends Component {
   responseGoogle = response => {
     // console.log(response.tokenId);
