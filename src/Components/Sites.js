@@ -8,6 +8,7 @@ class Sites extends Component {
   render() {
     // Sites component inherits props from Organisation models, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     const { organisation } = this.props;
+    // sites = [ {site1}, {site2}, {site3} ]
     const sites = organisation.sitesInOrganisation;
     return (
       <React.Fragment>
@@ -15,6 +16,7 @@ class Sites extends Component {
           {sites.map(site => {
             return (
               <React.Fragment>
+              {/* TODO: Seed the database with multiple Sites for an Organisation to show in tabs */}
                 {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
                 <TabList>
                   <Tab>{site.name}</Tab>
