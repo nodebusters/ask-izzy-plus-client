@@ -6,6 +6,7 @@ import Site from './Site'
 
 class Sites extends Component {
   render() {
+    // Sites component inherits props from Organisation models, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     const { organisation } = this.props;
     const sites = organisation.sitesInOrganisation;
     return (
@@ -14,8 +15,15 @@ class Sites extends Component {
           {sites.map(site => {
             return (
               <React.Fragment>
-                <TabList> <Tab>{site.name}</Tab> </TabList>
-                <TabPanel> <Site site={site} /> </TabPanel>
+                {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
+                <TabList>
+                  <Tab>{site.name}</Tab>
+                </TabList>
+
+                {/* REACT-TABS: Nested TabPanel to show multiple Site information as content */}
+                <TabPanel>
+                  <Site site={site} />
+                </TabPanel>
               </React.Fragment>
             )
           })}

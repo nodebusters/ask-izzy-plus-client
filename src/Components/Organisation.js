@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class Organisation extends Component {
   render() {
-    // Organisation component inherits props from Dashboard, renders
+    // Organisation component inherits props from Organisation model, renders object's key/values as an array to Dashboard
     const { organisation } = this.props;
     return (
       <React.Fragment>
