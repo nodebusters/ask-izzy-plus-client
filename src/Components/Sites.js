@@ -8,8 +8,13 @@ class Sites extends Component {
   render() {
     // Sites component inherits props from Organisation models, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     const { organisation } = this.props;
+    const org_id = organisation._id;
     // sites = [ {site1}, {site2}, {site3} ]
     const sites = organisation.sitesInOrganisation;
+    
+
+    //Storing updateOrganisation in a const so we can pass it to Site
+    const {updateOrganisation} =  this.props;
     return (
       <React.Fragment>
         <Tabs defaultIndex={2} >
@@ -24,7 +29,7 @@ class Sites extends Component {
 
                 {/* REACT-TABS: Nested TabPanel to show multiple Site information as content */}
                 <TabPanel>
-                  <Site site={site} />
+                  <Site org_id={org_id} site={site} updateOrganisation={updateOrganisation} />
                 </TabPanel>
               </React.Fragment>
             )

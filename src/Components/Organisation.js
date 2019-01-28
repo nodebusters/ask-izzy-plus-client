@@ -10,6 +10,7 @@ class Organisation extends Component {
   }
 
   submitForm = (e) => {
+    const {updateOrganisation} = this.props;
     e.preventDefault();
     //PUT request.
     const  org_id = this.props.organisation._id;
@@ -22,12 +23,14 @@ class Organisation extends Component {
 
     axios.put(url, data)
     .then((resp=>{
-      console.log('resp',': ', resp);
+      console.log('resp.data',': ', resp.data);
+      updateOrganisation(resp.data);
     }))
     .catch(err=>{
       
     })
   }
+  
 
   render() {
 
@@ -43,6 +46,8 @@ class Organisation extends Component {
           <label htmlFor="description"> Description: </label>
           <input type="text" id="description" onChange={this.handleInputChange} />
           <br></br>
+
+
           <button onClick={this.submitForm}>Update</button>
         </form>
 
