@@ -14,6 +14,14 @@ class Dashboard extends Component {
   // State is initially empty object, will contain { user } and { organisation } objects when component mounts
   state = {}
 
+  //This method is important to update the information after the forms are submitted. When the form is submited an new organisation object with the new data will be returned by the server, we can use this new data to update the state in dashboard and in the whole application as a result. 
+  // Note we need to pass this method to the other components in the props.
+  updateOrganisation = (newData) => {
+    this.setState({
+      organisation: newData
+    })
+  }
+
   // Check for response.tokenId in local storage, if token exists, GET the /protected/user endpoint, sending the token as a header option
   getUserData = (e) => {
     const token = localStorage.getItem('token');
@@ -56,9 +64,9 @@ class Dashboard extends Component {
     if (organisation) {
       return (
         <React.Fragment>
-        {/* REACT-TABS: Tabs (Container) */}
-        {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
-        {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
+          {/* REACT-TABS: Tabs (Container) */}
+          {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
+          {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
           <nav>
             <LogOut />
           </nav>
@@ -67,7 +75,7 @@ class Dashboard extends Component {
             // console.log(index + 1)
           }}>
 
-          {/* REACT-TABS: TabList (Wrapper) and Tab (Headers) */}
+            {/* REACT-TABS: TabList (Wrapper) and Tab (Headers) */}
             <TabList>
               <Tab>User Profile</Tab>
               <Tab>Organisation</Tab>
@@ -75,12 +83,23 @@ class Dashboard extends Component {
               <Tab>Services</Tab>
             </TabList>
 
-          {/* REACT-TABS: TabPanel (Content) */}
+            {/* REACT-TABS: TabPanel (Content) */}
             <TabPanel> <User user={user} /> </TabPanel>
-            <TabPanel> <Organisation organisation={organisation} /> </TabPanel>
-            {/* TODO: NOTE that we are passing the whole organisation and then deconstructing it in Sites.js */}
-            <TabPanel> <Sites organisation={organisation} /> </TabPanel>
-            <TabPanel> <Services organisation={organisation} /> </TabPanel>
+            
+            <TabPanel>
+              <Organisation organisation={organisation} updateOrganisation={this.updateOrganisation} />
+            </TabPanel>
+            
+            {/* NOTE that we are passing the whole organisation and then deconstructing it in Sites.js and Services.js */}
+            {/* Also note that we are passing updateOrganisation method so we can update the data after submitting forms. */}
+            
+            <TabPanel>
+              <Sites organisation={organisation} updateOrganisation={this.updateOrganisation} />
+            </TabPanel>
+            
+            <TabPanel>
+              <Services organisation={organisation} updateOrganisation={this.updateOrganisation} />
+            </TabPanel>
 
           </Tabs>
         </React.Fragment>
