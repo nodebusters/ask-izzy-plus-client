@@ -1,6 +1,19 @@
 import React, { Component } from "react";
 class Organisation extends Component {
+
+  handleInputChange = (e) => {
+    const { value, id } = e.currentTarget;
+    this.setState({ [id]: value });
+  }
+
+  submitForm = (e) => {
+    e.preventDefault();
+    //PUT request.
+  }
+
   render() {
+    console.log('this.state',': ', this.state);
+    
     // Organisation component inherits props from Organisation model, renders object's key/values as an array to Dashboard
     const { organisation } = this.props;
     return (
@@ -14,6 +27,17 @@ class Organisation extends Component {
             );
           }
         })}
+
+
+      <form>
+        <input type="text" id="username" onChange={this.handleInputChange} />
+        <input type="password" id="password" onChange={this.handleInputChange} />
+        <input type="text" id="role" onChange={this.handleInputChange} />
+        <button onClick={this.submitForm}>Send to API</button>
+      </form>
+
+
+
       </React.Fragment>
     );
   }
