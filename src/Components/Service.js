@@ -58,7 +58,6 @@ class Service extends Component {
     );
   }
 
-
   //TODO: implement site form below.
   render() {
     // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
@@ -71,7 +70,7 @@ class Service extends Component {
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
           {this.createTextInput("referralInfo", "Referral Info:")}
-          {this.createTextInput("adhcEligible", "ADHC Eligible:")}
+          {this.createOptionInput("adhcEligible", "ADHC Eligible:")}
           {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
           {this.createTextInput("targetGender", "Target Gender:")}
           {this.createTextInput("availability", "Availability:")}
@@ -85,8 +84,8 @@ class Service extends Component {
           {this.createTextInput("healthcareCardHolders", "Healthcare CardHolders:")}
           {this.createTextInput("intakeInfo", "Intake Info:")}
           {this.createTextInput("intakePoint", "Intake Point:")}
-          {this.createTextInput("isBulkBilling", "Is Bulk Billing:")}
-          {this.createTextInput("ndisApproved", "NDIS Approved:")}
+          {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
+          {this.createOptionInput("ndisApproved", "NDIS Approved:")}
           {this.createTextInput("promotedService", "Promoted Service:")}
           {this.createTextInput("specialRequirements", "Special Requirements:")}
           {this.createTextInput("language", "Language:")}
