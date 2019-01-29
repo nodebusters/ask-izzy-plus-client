@@ -119,8 +119,6 @@ class Site extends Component {
             return <p key={key}>{key}: {value} </p>
           }
         })}
-
-        <p> isMobile: {site.isMobile.toString()}</p>
       </React.Fragment>
     );
   }

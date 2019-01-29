@@ -96,7 +96,7 @@ class Service extends Component {
           {this.createTextInput("intakePoint", "Intake Point:")}
           {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
           {this.createOptionInput("ndisApproved", "NDIS Approved:")}
-          {this.createTextInput("promotedService", "Promoted Service:")}
+          {this.createOptionInput("promotedService", "Promoted Service:")}
           {this.createTextInput("specialRequirements", "Special Requirements:")}
           {this.createTextInput("language", "Language:")}
           {this.createTextInput("ageGroupKeyword", "Age Group Keyword:")}

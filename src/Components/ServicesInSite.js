@@ -32,16 +32,3 @@ class ServicesInSite extends Component {
   }
 }
 export default ServicesInSite;
-
-
-{/* <Tabs defaultIndex={2} >
-{services.map(service => {
-  return (
-    <React.Fragment>
-
-      <TabList> {service.name} </TabList>
-      <TabPanel> <Service service={service}/> </TabPanel>
-    </React.Fragment>
-  );
-})}
-</Tabs > */}
