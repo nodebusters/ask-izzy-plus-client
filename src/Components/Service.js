@@ -34,6 +34,17 @@ class Service extends Component {
      })
    }
 
+   createTextInput = (attr, description) => {
+    return (
+    <React.Fragment>
+      <label htmlFor={`"${attr}"`}> {description} </label>
+      <input type="text" id={`"${attr}"`} onChange={this.handleInputChange} />
+      <br></br>
+    </React.Fragment>
+    );
+  }
+
+
   //TODO: implement site form below.
   render() {
     // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
@@ -43,9 +54,39 @@ class Service extends Component {
       <React.Fragment>
 
         <form>
-          <label htmlFor="name"> Name: </label>
-          <input type="text" id="name" onChange={this.handleInputChange} />
-          <br></br>
+          {this.createTextInput("name", "Name:")}
+          {this.createTextInput("description", "Description:")}
+          {this.createTextInput("referralInfo", "Referral Info:")}
+          {this.createTextInput("adhcEligible", "ADHC Eligible:")}
+          {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
+          {this.createTextInput("targetGender", "Target Gender:")}
+          {this.createTextInput("availability", "Availability:")}
+          {this.createTextInput("billingMethod", "Billing Method:")}
+          {this.createTextInput("cost", "Cost:")}
+          {this.createTextInput("crisisKeywords", "Crisis Keywords:")}
+          {this.createTextInput("details", "Details:")}
+          {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
+          {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
+          {this.createTextInput("fundingBody", "Funding Body:")}
+          {this.createTextInput("healthcareCardHolders", "Healthcare CardHolders:")}
+          {this.createTextInput("intakeInfo", "Intake Info:")}
+          {this.createTextInput("intakePoint", "Intake Point:")}
+          {this.createTextInput("isBulkBilling", "Is Bulk Billing:")}
+          {this.createTextInput("ndisApproved", "NDIS Approved:")}
+          {this.createTextInput("promotedService", "Promoted Service:")}
+          {this.createTextInput("specialRequirements", "Special Requirements:")}
+          {this.createTextInput("language", "Language:")}
+          {this.createTextInput("ageGroupKeyword", "Age Group Keyword:")}
+          {this.createTextInput("ageGroupDescription", "Age Group Description:")}
+          {this.createTextInput("serviceTypes", "Service Types:")}
+          {this.createTextInput("indigenousClassification", "Indigenous Classification:")}
+          {this.createTextInput("capacityStatus", "Capacity Status:")}
+          {this.createTextInput("capacityStatusText", "Capacity Status Text:")}
+          {this.createTextInput("capacityFrequency", "Capacity Frequency:")}
+          {this.createTextInput("capacityLastNotification", "Capacity Last Notification:")}
+          {this.createTextInput("capacityLastStatusUpdate", "Capacity Last Status Update:")}
+          {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
+          {this.createTextInput("accreditationName", "Accreditation Name:")}
           <button onClick={this.submitForm}>Update</button>
         </form>
 
