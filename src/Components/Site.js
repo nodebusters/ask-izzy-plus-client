@@ -76,35 +76,28 @@ class Site extends Component {
           {this.createTextInput("locationDetails", "Location Details:")}
           {this.createTextInput("parkingInfo", "Parking Info:")}
           {this.createTextInput("publicTransportInfo", "Public Transport Info:")}
-          
           {this.createOptionInput("isMobile", "Is mobile:")}
-
           {this.createTextInput("emailAddress", "Email Address:")}
-          {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
+          {this.createOptionInput("emailIsConfidential", "Email Is Confidential:")}
           {this.createTextInput("website", "Website:")}
           {this.createTextInput("postalAddress", "Postal Address:")}
           {this.createTextInput("postalAddressState", "State:")}
           {this.createTextInput("postalAddressSuburb", "Suburb:")}
           {this.createTextInput("postalAddressPostcode", "Postcode:")}
-          
           {this.createOptionInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
-          
           {this.createTextInput("phoneNumber", "Phone Number:")}
           {this.createTextInput("phoneKind", "Phone Kind:")}
-          
           {this.createOptionInput("phoneIsConfidential", "Phone Is Confidential:")}
-          
           {this.createTextInput("addressBuilding", "Building:")}
           {this.createTextInput("addressLevel", "Level:")}
           {this.createTextInput("addressFlatUnit", "Flat Unit:")}
           {this.createTextInput("addressStreetNumber", "Street Number:")}
-          {this.createTextInput("addressStreetName", "StreetName:")}
-          {this.createTextInput("addressStreetType", "StreetType:")}
+          {this.createTextInput("addressStreetName", "Street Name:")}
+          {this.createTextInput("addressStreetType", "Street Type:")}
           {this.createTextInput("addressStreetSuffix", "Street Suffix:")}
           {this.createTextInput("addressSuburb", "Suburb:")}
           {this.createTextInput("addressState", "State:")}
           {this.createTextInput("addressPostcode", "Postcode:")}
-          
           {this.createOptionInput("addressIsConfidential", "Address Is Confidential:")}
           <button onClick={this.submitForm}>Update</button>
         </form>

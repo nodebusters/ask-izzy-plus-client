@@ -44,6 +44,20 @@ class Service extends Component {
     );
   }
 
+  createOptionInput = (attr, description) => {
+    const { site } = this.props;
+    return (
+    <React.Fragment>
+          <label htmlFor={`${attr}`}>{description} </label>
+          <select id = {`${attr}`} onChange={this.handleInputChange}>
+               <option value = "true">YES</option>
+               <option value = "false">NO</option>
+             </select>
+          <br></br>
+    </React.Fragment>
+    );
+  }
+
 
   //TODO: implement site form below.
   render() {
