@@ -71,7 +71,7 @@ class Dashboard extends Component {
             <LogOut />
           </nav>
 
-          <Tabs defaultIndex={2} onSelect={index => {
+          <Tabs defaultIndex={3} onSelect={index => {
             // console.log(index + 1)
           }}>
 
