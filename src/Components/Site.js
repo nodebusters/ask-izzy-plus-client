@@ -62,13 +62,26 @@ class Site extends Component {
           {this.createTextInput("isMobile", "Is Mobile:")}
           {this.createTextInput("emailAddress", "Email Address:")}
           {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
-          {this.createTextInput("name", "name:")}
+          {this.createTextInput("website", "Website:")}
+          {this.createTextInput("postalAddress", "Postal Address:")}
+          {this.createTextInput("postalAddressState", "State:")}
+          {this.createTextInput("postalAddressSuburb", "Suburb:")}
+          {this.createTextInput("postalAddressPostcode", "Postcode:")}
+          {this.createTextInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
+          {this.createTextInput("phoneNumber", "Phone Number:")}
+          {this.createTextInput("phoneKind", "Phone Kind:")}
+          {this.createTextInput("phoneIsConfidential", "Phone Is Confidential:")}
+          {this.createTextInput("addressBuilding", "Building:")}
+          {this.createTextInput("addressLevel", "Level:")}
+          {this.createTextInput("addressFlatUnit", "Flat Unit:")}
+          {this.createTextInput("addressStreetNumber", "Street Number:")}
+          {this.createTextInput("addressStreetName", "StreetName:")}
+          {this.createTextInput("addressStreetType", "StreetType:")}
+          {this.createTextInput("addressStreetSuffix", "Street Suffix:")}
+          {this.createTextInput("addressSuburb", "Suburb:")}
+          {this.createTextInput("addressState", "State:")}
+          {this.createTextInput("addressPostcode", "Postcode:")}
+          {this.createTextInput("addressIsConfidential", "Address Is Confidential:")}
           <button onClick={this.submitForm}>Update</button>
         </form>
 
