@@ -38,8 +38,8 @@ class Site extends Component {
   createTextInput = (attr, description) => {
     return (
     <React.Fragment>
-      <label htmlFor={`"${attr}"`}> {description} </label>
-      <input type="text" id={`"${attr}"`} onChange={this.handleInputChange} />
+      <label htmlFor={`${attr}`}> {description} </label>
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
       <br></br>
     </React.Fragment>
     );
@@ -59,7 +59,12 @@ class Site extends Component {
           {this.createTextInput("locationDetails", "Location Details:")}
           {this.createTextInput("parkingInfo", "Parking Info:")}
           {this.createTextInput("publicTransportInfo", "Public Transport Info:")}
-          {this.createTextInput("isMobile", "Is Mobile:")}
+          <label htmlFor="isMobile">Is Mobile: </label>
+          <select id = "isMobile">
+               <option value = "yes">YES</option>
+               <option value = "no">NO</option>
+             </select>
+          <br></br>
           {this.createTextInput("emailAddress", "Email Address:")}
           {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
           {this.createTextInput("website", "Website:")}
