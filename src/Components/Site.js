@@ -36,10 +36,11 @@ class Site extends Component {
   }
 
   createTextInput = (attr, description) => {
+    const { site } = this.props;
     return (
     <React.Fragment>
       <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
+      <input type="text" id={`${attr}`} placeholder={site[attr]} onChange={this.handleInputChange} />
       <br></br>
     </React.Fragment>
     );
@@ -50,6 +51,8 @@ class Site extends Component {
     // site1 = { siteName: 'Melbourne Medical', siteAddress: '123 Example Street'}
     const { site } = this.props;
     //TODO: implement site form below.
+    console.log('site.isMobile',': ', site.isMobile);
+    
     return (
       <React.Fragment>
 
@@ -60,9 +63,9 @@ class Site extends Component {
           {this.createTextInput("parkingInfo", "Parking Info:")}
           {this.createTextInput("publicTransportInfo", "Public Transport Info:")}
           <label htmlFor="isMobile">Is Mobile: </label>
-          <select id = "isMobile">
-               <option value = "yes">YES</option>
-               <option value = "no">NO</option>
+          <select id = "isMobile" onChange={this.handleInputChange}>
+               <option value = "true">YES</option>
+               <option value = "false">NO</option>
              </select>
           <br></br>
           {this.createTextInput("emailAddress", "Email Address:")}
@@ -97,6 +100,8 @@ class Site extends Component {
             return <p key={key}>{key}: {value} </p>
           }
         })}
+
+        <p> isMobile: {site.isMobile.toString()}</p>
       </React.Fragment>
     );
   }
