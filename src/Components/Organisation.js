@@ -49,12 +49,10 @@ class Organisation extends Component {
 
     return (
       <React.Fragment>
+        <p>Last updated: {organisation.lastUpdated}</p>
+        <p>Organisation: <strong>{organisation.name} </strong></p>
         <form>
-          {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
-          {this.createTextInput("creationTime", "Creation Time:")}
-          {this.createTextInput("lastModified", "Last Modified:")}
-          {this.createTextInput("lastUpdated", "Last Updated:")}
           {this.createTextInput("website", "Website:")}
           {this.createTextInput("abn", "ABN:")}
           {this.createTextInput("providerType", "Provider Type:")}
