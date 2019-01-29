@@ -3,45 +3,47 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Service extends Component {
-   //Declaring state.
-   state = {}
+  //Declaring state.
+  state = {}
 
-   handleInputChange = (e) => {
-     const { value, id } = e.currentTarget;
-     this.setState({[id]: value });
-   }
- 
-   submitForm = (e) => {
-     const {org_id, site_id, service, updateOrganisation} = this.props;
-     e.preventDefault();
-     //PUT request.
-      const service_id =  service._id;
+  handleInputChange = (e) => {
+    const { value, id } = e.currentTarget;
+    this.setState({ [id]: value });
+  }
 
-     console.log('this.state', ': ', this.state);
- 
-     const baseURL = process.env.REACT_APP_BASE_URL;
-     const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
- 
-     const data = this.state;
- 
-     axios.put(url, data)
-     .then((resp=>{
-       console.log('resp.data',': ', resp.data);
-       updateOrganisation(resp.data);
-     }))
-     .catch(err=>{
-       
-     })
-   }
+  submitForm = (e) => {
+    const { org_id, site_id, service, updateOrganisation } = this.props;
+    e.preventDefault();
+    //PUT request.
+    const service_id = service._id;
 
-   createTextInput = (attr, description) => {
-     const { service } = this.props;
+    console.log('this.state', ': ', this.state);
+
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
+
+    const data = this.state;
+
+    axios.put(url, data)
+      .then((resp => {
+        console.log('resp.data', ': ', resp.data);
+        updateOrganisation(resp.data);
+        //RELOADING THE WINDOW. 
+        window.location.reload();
+      }))
+      .catch(err => {
+
+      })
+  }
+
+  createTextInput = (attr, description) => {
+    const { service } = this.props;
     return (
-    <React.Fragment>
-      <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]}/>
-      <br></br>
-    </React.Fragment>
+      <React.Fragment>
+        <label htmlFor={`${attr}`}> {description} </label>
+        <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]} />
+        <br></br>
+      </React.Fragment>
     );
   }
 
@@ -56,15 +58,15 @@ class Service extends Component {
   createOptionInput = (attr, description) => {
     const { service } = this.props;
     return (
-    <React.Fragment>
-          <label htmlFor={`${attr}`}>{description} </label>
-          <select id = {`${attr}`} onChange={this.handleInputChange}>
-              <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
-               <option value = "true">YES</option>
-               <option value = "false">NO</option>
-             </select>
-          <br></br>
-    </React.Fragment>
+      <React.Fragment>
+        <label htmlFor={`${attr}`}>{description} </label>
+        <select id={`${attr}`} onChange={this.handleInputChange}>
+          <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
+          <option value="true">YES</option>
+          <option value="false">NO</option>
+        </select>
+        <br></br>
+      </React.Fragment>
     );
   }
 
@@ -72,7 +74,7 @@ class Service extends Component {
   render() {
     // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
     // service2 = { serviceName: 'Melbourne Medical X-Rays', siteAddress: '123 Example Street'}
-    const { service} = this.props;
+    const { service } = this.props;
     return (
       <React.Fragment>
 

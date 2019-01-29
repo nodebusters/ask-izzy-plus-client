@@ -6,39 +6,41 @@ class Organisation extends Component {
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
-    this.setState({[id]: value });
+    this.setState({ [id]: value });
   }
 
   submitForm = (e) => {
-    const {updateOrganisation} = this.props;
+    const { updateOrganisation } = this.props;
     e.preventDefault();
     //PUT request.
-    const  org_id = this.props.organisation._id;
+    const org_id = this.props.organisation._id;
     console.log('this.state', ': ', this.state);
-    
+
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/organisation/${org_id}`;
 
     const data = this.state;
 
     axios.put(url, data)
-    .then((resp=>{
-      console.log('resp.data',': ', resp.data);
-      updateOrganisation(resp.data);
-    }))
-    .catch(err=>{
-      
-    })
+      .then((resp => {
+        console.log('resp.data', ': ', resp.data);
+        updateOrganisation(resp.data);
+        //RELOADING THE WINDOW. 
+        window.location.reload();
+      }))
+      .catch(err => {
+
+      })
   }
 
   createTextInput = (attr, description) => {
     const { organisation } = this.props;
     return (
-    <React.Fragment>
-      <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={organisation[attr]}/>
-      <br></br>
-    </React.Fragment>
+      <React.Fragment>
+        <label htmlFor={`${attr}`}> {description} </label>
+        <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={organisation[attr]} />
+        <br></br>
+      </React.Fragment>
     );
   }
 
@@ -53,18 +55,18 @@ class Organisation extends Component {
   createOptionInput = (attr, description) => {
     const { organisation } = this.props;
     return (
-    <React.Fragment>
-          <label htmlFor={`${attr}`}>{description} </label>
-          <select id = {`${attr}`} onChange={this.handleInputChange}>
-            <option value="" selected disabled hidden>{this.convertToYesOrNo(organisation[attr])}</option>
-            <option value = "true">YES</option>
-            <option value = "false">NO</option>
-          </select>
-          <br></br>
-    </React.Fragment>
+      <React.Fragment>
+        <label htmlFor={`${attr}`}>{description} </label>
+        <select id={`${attr}`} onChange={this.handleInputChange}>
+          <option value="" selected disabled hidden>{this.convertToYesOrNo(organisation[attr])}</option>
+          <option value="true">YES</option>
+          <option value="false">NO</option>
+        </select>
+        <br></br>
+      </React.Fragment>
     );
   }
-    
+
 
   render() {
 
