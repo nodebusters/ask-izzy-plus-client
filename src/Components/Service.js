@@ -44,12 +44,21 @@ class Service extends Component {
     );
   }
 
+  convertToYesOrNo = (val) => {
+    if (val === true) {
+      return "YES"
+    } else {
+      return "NO"
+    }
+  }
+
   createOptionInput = (attr, description) => {
-    const { site } = this.props;
+    const { service } = this.props;
     return (
     <React.Fragment>
           <label htmlFor={`${attr}`}>{description} </label>
           <select id = {`${attr}`} onChange={this.handleInputChange}>
+              <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
                <option value = "true">YES</option>
                <option value = "false">NO</option>
              </select>
@@ -81,7 +90,7 @@ class Service extends Component {
           {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
           {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
           {this.createTextInput("fundingBody", "Funding Body:")}
-          {this.createTextInput("healthcareCardHolders", "Healthcare CardHolders:")}
+          {this.createOptionInput("healthcareCardHolders", "Healthcare CardHolders:")}
           {this.createTextInput("intakeInfo", "Intake Info:")}
           {this.createTextInput("intakePoint", "Intake Point:")}
           {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}

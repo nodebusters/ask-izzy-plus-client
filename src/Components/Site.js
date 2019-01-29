@@ -47,14 +47,24 @@ class Site extends Component {
     );
   }
 
+  convertToYesOrNo = (val) => {
+    if (val === true) {
+      return "YES"
+    } else {
+      return "NO"
+    }
+  }
+
   createOptionInput = (attr, description) => {
     const { site } = this.props;
+    console.log(site)
     return (
     <React.Fragment>
           <label htmlFor={`${attr}`}>{description} </label>
           <select id = {`${attr}`} onChange={this.handleInputChange}>
-               <option value = "true">YES</option>
-               <option value = "false">NO</option>
+              <option value="" selected disabled hidden>{this.convertToYesOrNo(site[attr])}</option>
+              <option value = "true">YES</option>
+              <option value = "false">NO</option>
              </select>
           <br></br>
     </React.Fragment>
