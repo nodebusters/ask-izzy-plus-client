@@ -4,6 +4,7 @@ import './stylesheets/App.css';
 import history from './history';
 import Dashboard from './Components/Dashboard';
 import HomePage from './Components/HomePage';
+import Home from './Components/Home';
 
 class App extends Component {
   render() {
@@ -13,6 +14,7 @@ class App extends Component {
 
           <Route exact path="/" component={HomePage} />          
           <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/home" component={Home} />
 
         </React.Fragment>
       </Router>

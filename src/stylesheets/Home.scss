@@ -1,0 +1,130 @@
+body {
+  /* background: aquamarine; */
+  margin: 0;
+  padding: 0;
+}
+
+.homepage-container {
+  background: dodgerblue;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* border: 10px solid goldenrod; */
+}
+
+.body-container {
+  background: magenta;
+  /* background: white; */
+  min-height: 100vh;
+  /* border: 10px solid orangered; */
+}
+
+.header-wrapper {
+  /* border: dashed blue 1px; */
+  height: 100%;
+}
+
+.header-bar {
+  display: flex;
+}
+
+.quick-exit-left {
+  background: gray;
+  min-width: 85%;
+  /* min-width: 70%; */
+  min-height: 44px;
+}
+
+.quick-exit-right {
+  background: red;
+  min-width: 15%;
+  /* min-width: 30%; */
+  min-height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  /* background: aqua; */
+  height: 200px;
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* position: relative; */
+}
+
+/* LOGO */
+.logo-image {
+  height: 100%;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-image img {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+}
+
+.login-button-container {
+  /* padding: 20px 20px; */
+}
+
+.login-button {
+  background-color: #4d13af;
+  color: #FFFFFF;
+  border: none;
+  font-size: 1em;
+  padding: 15px 350px;
+  /* width: 80px; */
+}
+
+.login-button:hover {
+  background-color: #6118dd;
+}
+
+.forgotten-password a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-container {
+  background: coral;
+  width: 800px;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+}
+
+.footer-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  /* text-align: center; */
+}
+
+.footer-list li {
+  /* margin: 1em; */
+  /* text-align: left; */
+  /* text-align: center; */
+  /* display: inline-block; */
+}
+
+.footer-list li a {
+  text-decoration: none;
+  color: black;
+  /* padding: 0 2em; */
+  /* margin: 0.5em 7em; */
+}
+
+.footer-list li a:hover {
+  background: white;
+}
