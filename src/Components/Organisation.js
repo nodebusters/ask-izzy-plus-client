@@ -32,10 +32,11 @@ class Organisation extends Component {
   }
 
   createTextInput = (attr, description) => {
+    const { organisation } = this.props;
     return (
     <React.Fragment>
       <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={organisation[attr]}/>
       <br></br>
     </React.Fragment>
     );

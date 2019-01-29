@@ -35,10 +35,11 @@ class Service extends Component {
    }
 
    createTextInput = (attr, description) => {
+     const { service } = this.props;
     return (
     <React.Fragment>
       <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]}/>
       <br></br>
     </React.Fragment>
     );
