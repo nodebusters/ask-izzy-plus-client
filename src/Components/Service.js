@@ -35,15 +35,38 @@ class Service extends Component {
    }
 
    createTextInput = (attr, description) => {
+     const { service } = this.props;
     return (
     <React.Fragment>
       <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]}/>
       <br></br>
     </React.Fragment>
     );
   }
 
+  convertToYesOrNo = (val) => {
+    if (val === true) {
+      return "YES"
+    } else {
+      return "NO"
+    }
+  }
+
+  createOptionInput = (attr, description) => {
+    const { service } = this.props;
+    return (
+    <React.Fragment>
+          <label htmlFor={`${attr}`}>{description} </label>
+          <select id = {`${attr}`} onChange={this.handleInputChange}>
+              <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
+               <option value = "true">YES</option>
+               <option value = "false">NO</option>
+             </select>
+          <br></br>
+    </React.Fragment>
+    );
+  }
 
   //TODO: implement site form below.
   render() {
@@ -57,7 +80,7 @@ class Service extends Component {
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
           {this.createTextInput("referralInfo", "Referral Info:")}
-          {this.createTextInput("adhcEligible", "ADHC Eligible:")}
+          {this.createOptionInput("adhcEligible", "ADHC Eligible:")}
           {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
           {this.createTextInput("targetGender", "Target Gender:")}
           {this.createTextInput("availability", "Availability:")}
@@ -68,11 +91,11 @@ class Service extends Component {
           {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
           {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
           {this.createTextInput("fundingBody", "Funding Body:")}
-          {this.createTextInput("healthcareCardHolders", "Healthcare CardHolders:")}
+          {this.createOptionInput("healthcareCardHolders", "Healthcare CardHolders:")}
           {this.createTextInput("intakeInfo", "Intake Info:")}
           {this.createTextInput("intakePoint", "Intake Point:")}
-          {this.createTextInput("isBulkBilling", "Is Bulk Billing:")}
-          {this.createTextInput("ndisApproved", "NDIS Approved:")}
+          {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
+          {this.createOptionInput("ndisApproved", "NDIS Approved:")}
           {this.createTextInput("promotedService", "Promoted Service:")}
           {this.createTextInput("specialRequirements", "Special Requirements:")}
           {this.createTextInput("language", "Language:")}

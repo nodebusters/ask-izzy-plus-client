@@ -32,11 +32,35 @@ class Organisation extends Component {
   }
 
   createTextInput = (attr, description) => {
+    const { organisation } = this.props;
     return (
     <React.Fragment>
       <label htmlFor={`${attr}`}> {description} </label>
-      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={organisation[attr]}/>
       <br></br>
+    </React.Fragment>
+    );
+  }
+
+  convertToYesOrNo = (val) => {
+    if (val === true) {
+      return "YES"
+    } else {
+      return "NO"
+    }
+  }
+
+  createOptionInput = (attr, description) => {
+    const { organisation } = this.props;
+    return (
+    <React.Fragment>
+          <label htmlFor={`${attr}`}>{description} </label>
+          <select id = {`${attr}`} onChange={this.handleInputChange}>
+            <option value="" selected disabled hidden>{this.convertToYesOrNo(organisation[attr])}</option>
+            <option value = "true">YES</option>
+            <option value = "false">NO</option>
+          </select>
+          <br></br>
     </React.Fragment>
     );
   }
@@ -58,15 +82,15 @@ class Organisation extends Component {
           {this.createTextInput("providerType", "Provider Type:")}
           {this.createTextInput("alsoKnownAs", "Also Known As:")}
           {this.createTextInput("emailAddress", "Email Address:")}
-          {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
+          {this.createOptionInput("emailIsConfidential", "Email Is Confidential:")}
           {this.createTextInput("postalAddress", "Postal Address:")}
           {this.createTextInput("postalAddressState", "State:")}
           {this.createTextInput("postalAddressSuburb", "Suburb:")}
           {this.createTextInput("postalAddressPostcode", "Postcode:")}
-          {this.createTextInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
+          {this.createOptionInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
           {this.createTextInput("phoneNumber", "Phone Number:")}
           {this.createTextInput("phoneKind", "Phone Kind:")}
-          {this.createTextInput("phoneIsConfidential", "Phone Is Confidential:")}
+          {this.createOptionInput("phoneIsConfidential", "Phone Is Confidential:")}
           {this.createTextInput("ceo", "CEO:")}
 
           <button onClick={this.submitForm}>Update</button>
