@@ -35,6 +35,16 @@ class Site extends Component {
     })
   }
 
+  createTextInput = (attr, description) => {
+    return (
+    <React.Fragment>
+      <label htmlFor={`"${attr}"`}> {description} </label>
+      <input type="text" id={`"${attr}"`} onChange={this.handleInputChange} />
+      <br></br>
+    </React.Fragment>
+    );
+  }
+
   render() {
     // Site component inherits props from Sites component, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     // site1 = { siteName: 'Melbourne Medical', siteAddress: '123 Example Street'}
@@ -44,9 +54,21 @@ class Site extends Component {
       <React.Fragment>
 
         <form>
-          <label htmlFor="name"> Name: </label>
-          <input type="text" id="name" onChange={this.handleInputChange} />
-          <br></br>
+          {this.createTextInput("name", "Name:")}
+          {this.createTextInput("accessibility", "Accessibility:")}
+          {this.createTextInput("locationDetails", "Location Details:")}
+          {this.createTextInput("parkingInfo", "Parking Info:")}
+          {this.createTextInput("publicTransportInfo", "Public Transport Info:")}
+          {this.createTextInput("isMobile", "Is Mobile:")}
+          {this.createTextInput("emailAddress", "Email Address:")}
+          {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
+          {this.createTextInput("name", "name:")}
           <button onClick={this.submitForm}>Update</button>
         </form>
 
