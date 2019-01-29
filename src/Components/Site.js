@@ -72,9 +72,6 @@ class Site extends Component {
   }
 
   render() {
-    // Site component inherits props from Sites component, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
-    // site1 = { siteName: 'Melbourne Medical', siteAddress: '123 Example Street'}
-    const { site } = this.props;
     //TODO: IMPLEMENT OPENING HOURS.
     return (
       <React.Fragment>

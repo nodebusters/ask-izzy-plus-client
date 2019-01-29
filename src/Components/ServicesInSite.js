@@ -15,8 +15,8 @@ class ServicesInSite extends Component {
         <Tabs defaultIndex={1} >
 
           <TabList>
+            {/* REACT-TABS: Nested TabList to show multiple Service names as header */ }
             {services.map(service => {
-              {/* REACT-TABS: Nested TabList to show multiple Service names as header */ }
               return <Tab>{service.name}</Tab>
             })}
           </TabList>
