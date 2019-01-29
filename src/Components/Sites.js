@@ -11,22 +11,24 @@ class Sites extends Component {
     const org_id = organisation._id;
     // sites = [ {site1}, {site2}, {site3} ]
     const sites = organisation.sitesInOrganisation;
-    
+
 
     //Storing updateOrganisation in a const so we can pass it to Site
-    const {updateOrganisation} =  this.props;
+    const { updateOrganisation } = this.props;
     return (
       <React.Fragment>
-        <Tabs defaultIndex={2} >
+        <Tabs defaultIndex={1} >
+
+          {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
+          <TabList>
+            {sites.map(site => {
+              return <Tab>{site.name}</Tab>
+            })}
+          </TabList>
+
           {sites.map(site => {
             return (
               <React.Fragment>
-              {/* TODO: Seed the database with multiple Sites for an Organisation to show in tabs */}
-                {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
-                <TabList>
-                  <Tab>{site.name}</Tab>
-                </TabList>
-
                 {/* REACT-TABS: Nested TabPanel to show multiple Site information as content */}
                 <TabPanel>
                   <Site org_id={org_id} site={site} updateOrganisation={updateOrganisation} />

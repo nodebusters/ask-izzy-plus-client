@@ -113,10 +113,9 @@ class Service extends Component {
           <button onClick={this.submitForm}>Update</button>
         </form>
 
-        {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
-        {Object.entries(service).map(([key, value]) => {
+        {/* {Object.entries(service).map(([key, value]) => {
           return <p key={key}>{key}: {value} </p>
-        })}
+        })} */}
       </React.Fragment>
     );
   }
