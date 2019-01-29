@@ -34,8 +34,8 @@ class Organisation extends Component {
   createTextInput = (attr, description) => {
     return (
     <React.Fragment>
-      <label htmlFor={`"${attr}"`}> {description} </label>
-      <input type="text" id={`"${attr}"`} onChange={this.handleInputChange} />
+      <label htmlFor={`${attr}`}> {description} </label>
+      <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
       <br></br>
     </React.Fragment>
     );
