@@ -29,6 +29,7 @@ class Site extends Component {
     .then((resp=>{
       console.log('resp.data',': ', resp.data);
       updateOrganisation(resp.data);
+      window.location.reload();
     }))
     .catch(err=>{
       
@@ -46,6 +47,20 @@ class Site extends Component {
     );
   }
 
+  createOptionInput = (attr, description) => {
+    const { site } = this.props;
+    return (
+    <React.Fragment>
+          <label htmlFor={`${attr}`}>{description} </label>
+          <select id = {`${attr}`} onChange={this.handleInputChange}>
+               <option value = "true">YES</option>
+               <option value = "false">NO</option>
+             </select>
+          <br></br>
+    </React.Fragment>
+    );
+  }
+
   render() {
     // Site component inherits props from Sites component, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     // site1 = { siteName: 'Melbourne Medical', siteAddress: '123 Example Street'}
@@ -55,19 +70,15 @@ class Site extends Component {
     
     return (
       <React.Fragment>
-
         <form>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}
           {this.createTextInput("locationDetails", "Location Details:")}
           {this.createTextInput("parkingInfo", "Parking Info:")}
           {this.createTextInput("publicTransportInfo", "Public Transport Info:")}
-          <label htmlFor="isMobile">Is Mobile: </label>
-          <select id = "isMobile" onChange={this.handleInputChange}>
-               <option value = "true">YES</option>
-               <option value = "false">NO</option>
-             </select>
-          <br></br>
+          
+          {this.createOptionInput("isMobile", "Is mobile:")}
+
           {this.createTextInput("emailAddress", "Email Address:")}
           {this.createTextInput("emailIsConfidential", "Email Is Confidential:")}
           {this.createTextInput("website", "Website:")}
@@ -75,10 +86,14 @@ class Site extends Component {
           {this.createTextInput("postalAddressState", "State:")}
           {this.createTextInput("postalAddressSuburb", "Suburb:")}
           {this.createTextInput("postalAddressPostcode", "Postcode:")}
-          {this.createTextInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
+          
+          {this.createOptionInput("postalAddressIsConfidential", "Postal Address Is Confidential:")}
+          
           {this.createTextInput("phoneNumber", "Phone Number:")}
           {this.createTextInput("phoneKind", "Phone Kind:")}
-          {this.createTextInput("phoneIsConfidential", "Phone Is Confidential:")}
+          
+          {this.createOptionInput("phoneIsConfidential", "Phone Is Confidential:")}
+          
           {this.createTextInput("addressBuilding", "Building:")}
           {this.createTextInput("addressLevel", "Level:")}
           {this.createTextInput("addressFlatUnit", "Flat Unit:")}
@@ -89,7 +104,8 @@ class Site extends Component {
           {this.createTextInput("addressSuburb", "Suburb:")}
           {this.createTextInput("addressState", "State:")}
           {this.createTextInput("addressPostcode", "Postcode:")}
-          {this.createTextInput("addressIsConfidential", "Address Is Confidential:")}
+          
+          {this.createOptionInput("addressIsConfidential", "Address Is Confidential:")}
           <button onClick={this.submitForm}>Update</button>
         </form>
 
