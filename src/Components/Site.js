@@ -18,7 +18,7 @@ class Site extends Component {
     const {org_id} = this.props;
     const site_id = this.props.site._id;
 
-    console.log('this.state', ': ', this.state);
+    console.log('FORM this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/site/${org_id}/${site_id}`;
@@ -27,9 +27,9 @@ class Site extends Component {
 
     axios.put(url, data)
     .then((resp=>{
-      console.log('resp.data',': ', resp.data);
+      console.log('PUT resp.data',': ', resp.data);
       updateOrganisation(resp.data);
-      window.location.reload();
+      // window.location.reload();
     }))
     .catch(err=>{
       
@@ -56,8 +56,7 @@ class Site extends Component {
   }
 
   createOptionInput = (attr, description) => {
-    const { site } = this.props;
-    console.log(site)
+    const { site } = this.props;    
     return (
     <React.Fragment>
           <label htmlFor={`${attr}`}>{description} </label>
@@ -75,9 +74,7 @@ class Site extends Component {
     // Site component inherits props from Sites component, iterates through the array values contained in sitesInOrganisation key, renders to Dashboard
     // site1 = { siteName: 'Melbourne Medical', siteAddress: '123 Example Street'}
     const { site } = this.props;
-    //TODO: implement site form below.
-    console.log('site.isMobile',': ', site.isMobile);
-    
+    //TODO: IMPLEMENT OPENING HOURS.
     return (
       <React.Fragment>
         <form>
@@ -112,13 +109,11 @@ class Site extends Component {
           <button onClick={this.submitForm}>Update</button>
         </form>
 
-        {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
-        {Object.entries(site).map(([key, value]) => {
-          // Unless no array exists in servicesInSite and openingHours, iterate through, otherwise render key/value for sitesInOrganisation
+        {/* {Object.entries(site).map(([key, value]) => {
           if (key !== 'servicesInSite' && key !== 'openingHours') {
             return <p key={key}>{key}: {value} </p>
           }
-        })}
+        })} */}
       </React.Fragment>
     );
   }
