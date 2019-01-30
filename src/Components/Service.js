@@ -3,53 +3,78 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Service extends Component {
-   //Declaring state.
-   state = {}
+  //Declaring state.
+  state = {}
 
-   handleInputChange = (e) => {
-     const { value, id } = e.currentTarget;
-     this.setState({[id]: value });
-   }
- 
-   submitForm = (e) => {
-     const {org_id, site_id, service, updateOrganisation} = this.props;
-     e.preventDefault();
-     //PUT request.
-      const service_id =  service._id;
+  handleInputChange = (e) => {
+    const { value, id } = e.currentTarget;
+    this.setState({ [id]: value });
+  }
 
-     console.log('this.state', ': ', this.state);
- 
-     const baseURL = process.env.REACT_APP_BASE_URL;
-     const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
- 
-     const data = this.state;
- 
-     axios.put(url, data)
-     .then((resp=>{
-       console.log('resp.data',': ', resp.data);
-       updateOrganisation(resp.data);
-     }))
-     .catch(err=>{
-       
-     })
-   }
+  submitForm = (e) => {
+    const { org_id, site_id, service, updateOrganisation } = this.props;
+    e.preventDefault();
+    //PUT request.
+    const service_id = service._id;
 
-   createTextInput = (attr, description) => {
+    console.log('this.state', ': ', this.state);
+
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
+
+    const data = this.state;
+
+    axios.put(url, data)
+      .then((resp => {
+        console.log('resp.data', ': ', resp.data);
+        updateOrganisation(resp.data);
+        //RELOADING THE WINDOW. 
+        window.location.reload();
+      }))
+      .catch(err => {
+
+      })
+  }
+
+  createTextInput = (attr, description) => {
+    const { service } = this.props;
     return (
-    <React.Fragment>
-      <label htmlFor={`"${attr}"`}> {description} </label>
-      <input type="text" id={`"${attr}"`} onChange={this.handleInputChange} />
-      <br></br>
-    </React.Fragment>
+      <React.Fragment>
+        <label htmlFor={`${attr}`}> {description} </label>
+        <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]} />
+        <br></br>
+      </React.Fragment>
     );
   }
 
+  convertToYesOrNo = (val) => {
+    if (val === true) {
+      return "YES"
+    } else {
+      return "NO"
+    }
+  }
+
+  createOptionInput = (attr, description) => {
+    const { service } = this.props;
+    return (
+      <React.Fragment>
+        <label htmlFor={`${attr}`}>{description} </label>
+        <select id={`${attr}`} onChange={this.handleInputChange}>
+          <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
+          <option value="true">YES</option>
+          <option value="false">NO</option>
+        </select>
+        <br></br>
+      </React.Fragment>
+    );
+  }
 
   //TODO: implement site form below.
   render() {
     // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
     // service2 = { serviceName: 'Melbourne Medical X-Rays', siteAddress: '123 Example Street'}
-    const { service} = this.props;
+    const { service } = this.props;
     return (
       <React.Fragment>
 
@@ -57,7 +82,7 @@ class Service extends Component {
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
           {this.createTextInput("referralInfo", "Referral Info:")}
-          {this.createTextInput("adhcEligible", "ADHC Eligible:")}
+          {this.createOptionInput("adhcEligible", "ADHC Eligible:")}
           {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
           {this.createTextInput("targetGender", "Target Gender:")}
           {this.createTextInput("availability", "Availability:")}
@@ -68,12 +93,12 @@ class Service extends Component {
           {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
           {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
           {this.createTextInput("fundingBody", "Funding Body:")}
-          {this.createTextInput("healthcareCardHolders", "Healthcare CardHolders:")}
+          {this.createOptionInput("healthcareCardHolders", "Healthcare CardHolders:")}
           {this.createTextInput("intakeInfo", "Intake Info:")}
           {this.createTextInput("intakePoint", "Intake Point:")}
-          {this.createTextInput("isBulkBilling", "Is Bulk Billing:")}
-          {this.createTextInput("ndisApproved", "NDIS Approved:")}
-          {this.createTextInput("promotedService", "Promoted Service:")}
+          {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
+          {this.createOptionInput("ndisApproved", "NDIS Approved:")}
+          {this.createOptionInput("promotedService", "Promoted Service:")}
           {this.createTextInput("specialRequirements", "Special Requirements:")}
           {this.createTextInput("language", "Language:")}
           {this.createTextInput("ageGroupKeyword", "Age Group Keyword:")}
@@ -90,10 +115,9 @@ class Service extends Component {
           <button onClick={this.submitForm}>Update</button>
         </form>
 
-        {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
-        {Object.entries(service).map(([key, value]) => {
+        {/* {Object.entries(service).map(([key, value]) => {
           return <p key={key}>{key}: {value} </p>
-        })}
+        })} */}
       </React.Fragment>
     );
   }

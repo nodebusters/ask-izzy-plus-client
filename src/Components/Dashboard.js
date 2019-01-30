@@ -71,7 +71,7 @@ class Dashboard extends Component {
             <LogOut />
           </nav>
 
-          <Tabs defaultIndex={3} onSelect={index => {
+          <Tabs defaultIndex={1} onSelect={index => {
             // console.log(index + 1)
           }}>
 
@@ -84,7 +84,7 @@ class Dashboard extends Component {
             </TabList>
 
             {/* REACT-TABS: TabPanel (Content) */}
-            <TabPanel> <User user={user} /> </TabPanel>
+            <TabPanel> <User user={user} organisation={organisation} /> </TabPanel>
             
             <TabPanel>
               <Organisation organisation={organisation} updateOrganisation={this.updateOrganisation} />

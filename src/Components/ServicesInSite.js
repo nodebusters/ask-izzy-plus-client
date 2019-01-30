@@ -11,13 +11,20 @@ class ServicesInSite extends Component {
     const { services, org_id, site_id, updateOrganisation } = this.props;
     return (
       <React.Fragment>
-        <Tabs defaultIndex={2} >
+        <strong>Services:</strong>
+        <Tabs defaultIndex={1} >
+
+          <TabList>
+            {services.map(service => {
+              {/* REACT-TABS: Nested TabList to show multiple Service names as header */ }
+              return <Tab>{service.name}</Tab>
+            })}
+          </TabList>
+
+
           {services.map(service => {
             return (
               <React.Fragment>
-                <strong>Services:</strong>
-                {/* REACT-TABS: Nested TabList to show multiple Service names as header */}
-                <TabList> <Tab>{service.name}</Tab> </TabList>
 
                 {/* REACT-TABS: Nested TabPanel to show multiple Service information as content */}
 
@@ -32,16 +39,3 @@ class ServicesInSite extends Component {
   }
 }
 export default ServicesInSite;
-
-
-{/* <Tabs defaultIndex={2} >
-{services.map(service => {
-  return (
-    <React.Fragment>
-
-      <TabList> {service.name} </TabList>
-      <TabPanel> <Service service={service}/> </TabPanel>
-    </React.Fragment>
-  );
-})}
-</Tabs > */}
