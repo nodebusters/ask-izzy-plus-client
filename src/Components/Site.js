@@ -5,13 +5,15 @@ import axios from 'axios';
 class Site extends Component {
   //Declaring state.
   state = {
-    data:{}
+    data: {} ,
+    formClass : "readMode",
+    editButton: "editButton"
   }
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     const data = this.state.data;
-    data[id]= value; 
+    data[id] = value;
     this.setState({ data });
   }
 
@@ -27,14 +29,17 @@ class Site extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/site/${org_id}/${site_id}`;
 
-    const {data} = this.state;
+    const { data } = this.state;
 
     axios.put(url, data)
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        //Changing to edit mode:
+        this.setState({
+          formClass : "readMode",
+          editButton: "editButton"
+        })
       }))
       .catch(err => {
 
@@ -75,11 +80,32 @@ class Site extends Component {
     );
   }
 
+  edit = (e) => {
+    e.preventDefault();
+    if (e.target.innerHTML==="Edit"){
+      e.target.innerHTML="Cancel"
+      this.setState({
+        formClass : "editMode",
+        editButton: "cancelButton"
+      })
+      
+    }else{
+      e.target.innerHTML="Edit"
+      this.setState({
+        formClass : "readMode",
+        editButton: "editButton"
+      })
+    }
+  }
+
   render() {
     //TODO: IMPLEMENT OPENING HOURS.
     return (
       <React.Fragment>
-        <form>
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
+        <form id="form" className={this.state.formClass}>
+          <button onClick={this.submitForm}>Update</button>
+          <br></br>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}
           {this.createTextInput("locationDetails", "Location Details:")}

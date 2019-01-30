@@ -6,7 +6,8 @@ class Organisation extends Component {
   //Declaring state.
   state = {
     data: {} ,
-    formClass : "readMode"
+    formClass : "readMode",
+    editButton: "editButton"
   }
 
   handleInputChange = (e) => {
@@ -32,8 +33,13 @@ class Organisation extends Component {
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        
+        //Changing to edit mode:
+        this.setState({
+          formClass : "readMode",
+          editButton: "editButton"
+        })
+        
       }))
       .catch(err => {
 
@@ -79,13 +85,14 @@ class Organisation extends Component {
     if (e.target.innerHTML==="Edit"){
       e.target.innerHTML="Cancel"
       this.setState({
-        formClass : "editMode"
+        formClass : "editMode",
+        editButton: "cancelButton"
       })
-      
     }else{
       e.target.innerHTML="Edit"
       this.setState({
-        formClass : "readMode"
+        formClass : "readMode",
+        editButton: "editButton"
       })
     }
   }
@@ -100,7 +107,7 @@ class Organisation extends Component {
         <p>Last updated: {organisation.lastUpdated}</p>
         <p>Organisation: <strong>{organisation.name} </strong></p>
           
-        <button onClick={this.edit}>Edit</button>          
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
         
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>

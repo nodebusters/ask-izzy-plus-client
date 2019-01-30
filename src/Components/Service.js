@@ -5,13 +5,15 @@ import axios from 'axios';
 class Service extends Component {
   //Declaring state.
   state = {
-    data:{}
+    data: {},
+    formClass: "readMode",
+    editButton: "editButton"
   }
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     const data = this.state.data;
-    data[id]= value; 
+    data[id] = value;
     this.setState({ data });
   }
 
@@ -26,14 +28,17 @@ class Service extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
 
-    const {data} = this.state;
+    const { data } = this.state;
 
     axios.put(url, data)
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        //Changing to edit mode:
+        this.setState({
+          formClass: "readMode",
+          editButton: "editButton"
+        })
       }))
       .catch(err => {
 
@@ -74,12 +79,31 @@ class Service extends Component {
     );
   }
 
-  //TODO: implement site form below.
+  edit = (e) => {
+    e.preventDefault();
+    if (e.target.innerHTML === "Edit") {
+      e.target.innerHTML = "Cancel"
+      this.setState({
+        formClass: "editMode",
+        editButton: "cancelButton"
+      })
+
+    } else {
+      e.target.innerHTML = "Edit"
+      this.setState({
+        formClass: "readMode",
+        editButton: "editButton"
+      })
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
-
-        <form>
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
+        <form id="form" className={this.state.formClass}>
+          <button onClick={this.submitForm}>Update</button>
+          <br></br>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
           {this.createTextInput("referralInfo", "Referral Info:")}
@@ -113,7 +137,6 @@ class Service extends Component {
           {this.createTextInput("capacityLastStatusUpdate", "Capacity Last Status Update:")}
           {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
           {this.createTextInput("accreditationName", "Accreditation Name:")}
-          <button onClick={this.submitForm}>Update</button>
         </form>
 
         {/* {Object.entries(service).map(([key, value]) => {
