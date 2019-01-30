@@ -33,8 +33,13 @@ class Organisation extends Component {
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        
+        //Changing to edit mode:
+        this.setState({
+          formClass : "readMode",
+          editButton: "editButton"
+        })
+        
       }))
       .catch(err => {
 
@@ -83,7 +88,6 @@ class Organisation extends Component {
         formClass : "editMode",
         editButton: "cancelButton"
       })
-      
     }else{
       e.target.innerHTML="Edit"
       this.setState({

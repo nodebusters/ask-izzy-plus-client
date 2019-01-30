@@ -5,8 +5,8 @@ import axios from 'axios';
 class Service extends Component {
   //Declaring state.
   state = {
-    data: {} ,
-    formClass : "readMode",
+    data: {},
+    formClass: "readMode",
     editButton: "editButton"
   }
 
@@ -34,8 +34,11 @@ class Service extends Component {
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        //Changing to edit mode:
+        this.setState({
+          formClass: "readMode",
+          editButton: "editButton"
+        })
       }))
       .catch(err => {
 
@@ -78,17 +81,17 @@ class Service extends Component {
 
   edit = (e) => {
     e.preventDefault();
-    if (e.target.innerHTML==="Edit"){
-      e.target.innerHTML="Cancel"
+    if (e.target.innerHTML === "Edit") {
+      e.target.innerHTML = "Cancel"
       this.setState({
-        formClass : "editMode",
+        formClass: "editMode",
         editButton: "cancelButton"
       })
-      
-    }else{
-      e.target.innerHTML="Edit"
+
+    } else {
+      e.target.innerHTML = "Edit"
       this.setState({
-        formClass : "readMode",
+        formClass: "readMode",
         editButton: "editButton"
       })
     }
@@ -97,7 +100,7 @@ class Service extends Component {
   render() {
     return (
       <React.Fragment>
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>
           <br></br>

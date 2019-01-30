@@ -35,8 +35,11 @@ class Site extends Component {
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        //RELOADING THE WINDOW. 
-        window.location.reload();
+        //Changing to edit mode:
+        this.setState({
+          formClass : "readMode",
+          editButton: "editButton"
+        })
       }))
       .catch(err => {
 
