@@ -4,11 +4,15 @@ import axios from 'axios';
 
 class Service extends Component {
   //Declaring state.
-  state = {}
+  state = {
+    data:{}
+  }
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
-    this.setState({ [id]: value });
+    const data = this.state.data;
+    data[id]= value; 
+    this.setState({ data });
   }
 
   submitForm = (e) => {
@@ -22,7 +26,7 @@ class Service extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
 
-    const data = this.state;
+    const {data} = this.state;
 
     axios.put(url, data)
       .then((resp => {
@@ -72,9 +76,6 @@ class Service extends Component {
 
   //TODO: implement site form below.
   render() {
-    // Service component inherits props from Services component, iterates through the array values contained in ServicesInSites key, renders to Dashboard
-    // service2 = { serviceName: 'Melbourne Medical X-Rays', siteAddress: '123 Example Street'}
-    const { service } = this.props;
     return (
       <React.Fragment>
 

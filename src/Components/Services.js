@@ -21,7 +21,7 @@ class Services extends Component {
           <strong>Sites:</strong>
           <TabList>
             {sites.map(site => {
-              return <Tab>{site.name}</Tab>
+              return <Tab key={site.name}>{site.name}</Tab>
             })}
           </TabList>
 
@@ -29,7 +29,7 @@ class Services extends Component {
             const site_id = site._id;
             const services = site.servicesInSite;
             return (
-              <React.Fragment>
+              <React.Fragment key={site.name}>
 
                 {/* REACT-TABS: Nested TabPanel to show multiple ServicesInSite information as content */}
                 {/* NOTE we are just passing down updateOrganisation to ServicesInSite, which will pass it to Site where we need to use it. ALSO NOTE we are passing down org_id and site_id. required for the PUT request */}

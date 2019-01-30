@@ -1,0 +1,60 @@
+.readMode {
+  /*disable input fields*/
+  pointer-events: none;
+  color: ligthen(black);
+  font-weight: bold;
+  input {
+    padding-bottom:.5rem;
+    border: 0;
+    /* Most modern browsers support this now. */
+    &::placeholder {
+      font-size: 1rem;
+      color: black;
+      padding-left: 10px;
+    }
+  }
+  select {
+    font-size: .9rem;
+    border: 0;
+    padding-bottom:.5rem;
+    background-color: transparent;
+
+    /*Removing the drop down arrow*/
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+    /* For IE10 */
+    &::-ms-expand {
+      display: none;
+    }
+  }
+  button {
+    visibility: hidden;
+    margin: .5rem;
+  }
+}
+
+.editMode {
+  color: ligthen(black);
+  font-weight: bold;
+  input {
+    padding-bottom:.2rem;
+    padding-top:.2rem;
+
+    /* Most modern browsers support this now. */
+    &::placeholder {
+      font-size: 1rem;
+      color: black;
+      padding-left: 10px;
+    }
+  }
+  select {
+    font-size: .9rem;
+    padding-bottom:.2rem;
+    padding-top:.2rem;
+  }
+  button {
+  margin: .5rem;
+  }
+}

@@ -15,17 +15,16 @@ class ServicesInSite extends Component {
         <Tabs defaultIndex={1} >
 
           <TabList>
+            {/* REACT-TABS: Nested TabList to show multiple Service names as header */ }
             {services.map(service => {
-              {/* REACT-TABS: Nested TabList to show multiple Service names as header */ }
-              return <Tab>{service.name}</Tab>
+              return <Tab key={service.name}>{service.name}</Tab>
             })}
           </TabList>
 
 
           {services.map(service => {
             return (
-              <React.Fragment>
-
+              <React.Fragment key={service.name}>
                 {/* REACT-TABS: Nested TabPanel to show multiple Service information as content */}
 
                 {/* NOTE this props are very important for the PUT request later on. */}

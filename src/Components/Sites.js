@@ -22,15 +22,15 @@ class Sites extends Component {
           {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
           <TabList>
             {sites.map(site => {
-              return <Tab>{site.name}</Tab>
+              return <Tab key={site.name}>{site.name}</Tab>
             })}
           </TabList>
 
           {sites.map(site => {
             return (
-              <React.Fragment>
+              <React.Fragment key={site.name}>
                 {/* REACT-TABS: Nested TabPanel to show multiple Site information as content */}
-                <TabPanel>
+                <TabPanel >
                   <Site org_id={org_id} site={site} updateOrganisation={updateOrganisation} />
                 </TabPanel>
               </React.Fragment>

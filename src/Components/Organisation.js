@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
+import '../stylesheets/Forms.css'
+
 class Organisation extends Component {
   //Declaring state.
-  state = {}
+  state = {
+    data: {} ,
+    formClass : "readMode"
+  }
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
-    this.setState({ [id]: value });
+    const data = this.state.data;
+    data[id]= value; 
+    this.setState({ data });
   }
 
   submitForm = (e) => {
@@ -19,7 +26,7 @@ class Organisation extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/organisation/${org_id}`;
 
-    const data = this.state;
+    const {data} = this.state;
 
     axios.put(url, data)
       .then((resp => {
@@ -67,6 +74,21 @@ class Organisation extends Component {
     );
   }
 
+  edit = (e) => {
+    e.preventDefault();
+    if (e.target.innerHTML==="Edit"){
+      e.target.innerHTML="Cancel"
+      this.setState({
+        formClass : "editMode"
+      })
+      
+    }else{
+      e.target.innerHTML="Edit"
+      this.setState({
+        formClass : "readMode"
+      })
+    }
+  }
 
   render() {
 
@@ -77,7 +99,12 @@ class Organisation extends Component {
       <React.Fragment>
         <p>Last updated: {organisation.lastUpdated}</p>
         <p>Organisation: <strong>{organisation.name} </strong></p>
-        <form>
+          
+        <button onClick={this.edit}>Edit</button>          
+        
+        <form id="form" className={this.state.formClass}>
+          <button onClick={this.submitForm}>Update</button>
+          <br></br>
           {this.createTextInput("description", "Description:")}
           {this.createTextInput("website", "Website:")}
           {this.createTextInput("abn", "ABN:")}
@@ -94,8 +121,6 @@ class Organisation extends Component {
           {this.createTextInput("phoneKind", "Phone Kind:")}
           {this.createOptionInput("phoneIsConfidential", "Phone Is Confidential:")}
           {this.createTextInput("ceo", "CEO:")}
-
-          <button onClick={this.submitForm}>Update</button>
         </form>
 
 
