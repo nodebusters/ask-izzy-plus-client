@@ -1,10 +1,30 @@
+@import "./Colors";
+
+@mixin buttonSolid() {
+  color: $light-color;
+  background: $main-color;
+  margin: 5px;
+  text-decoration: none;
+  padding: {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@mixin buttonHollow() {
+  @include buttonSolid();
+  background: $light-color;
+  color: $main-color;
+  border: 1px solid $main-color;
+}
+
 .readMode {
   /*disable input fields*/
   pointer-events: none;
   color: ligthen(black);
   font-weight: bold;
   input {
-    padding-bottom:.5rem;
+    padding-bottom: 0.5rem;
     border: 0;
     /* Most modern browsers support this now. */
     &::placeholder {
@@ -14,9 +34,9 @@
     }
   }
   select {
-    font-size: .9rem;
+    font-size: 0.9rem;
     border: 0;
-    padding-bottom:.5rem;
+    padding-bottom: 0.5rem;
     background-color: transparent;
 
     /*Removing the drop down arrow*/
@@ -31,7 +51,7 @@
   }
   button {
     visibility: hidden;
-    margin: .5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -39,8 +59,9 @@
   color: ligthen(black);
   font-weight: bold;
   input {
-    padding-bottom:.2rem;
-    padding-top:.2rem;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
 
     /* Most modern browsers support this now. */
     &::placeholder {
@@ -50,11 +71,24 @@
     }
   }
   select {
-    font-size: .9rem;
-    padding-bottom:.2rem;
-    padding-top:.2rem;
+    font-size: 0.9rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
   }
   button {
-  margin: .5rem;
+    margin: 0.5rem;
+    @include buttonHollow();
   }
+}
+
+.editButton{
+  @include buttonHollow();
+}
+
+.cancelButton{
+  @include buttonHollow();
+  $cancelColor : red;
+  color: $cancelColor;
+  border: 1px solid $cancelColor;
+  &:focus {outline:0;}
 }

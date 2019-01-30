@@ -4,7 +4,7 @@
   color: ligthen(black);
   font-weight: bold; }
   .readMode input {
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
@@ -12,9 +12,9 @@
       color: black;
       padding-left: 10px; }
   .readMode select {
-    font-size: .9rem;
+    font-size: 0.9rem;
     border: 0;
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
     background-color: transparent;
     /*Removing the drop down arrow*/
     /* for Firefox */
@@ -26,24 +26,60 @@
       display: none; }
   .readMode button {
     visibility: hidden;
-    margin: .5rem; }
+    margin: 0.5rem; }
 
 .editMode {
   color: ligthen(black);
   font-weight: bold; }
   .editMode input {
-    padding-bottom: .2rem;
-    padding-top: .2rem;
+    font-size: 1rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
     /* Most modern browsers support this now. */ }
     .editMode input::placeholder {
       font-size: 1rem;
       color: black;
       padding-left: 10px; }
   .editMode select {
-    font-size: .9rem;
-    padding-bottom: .2rem;
-    padding-top: .2rem; }
+    font-size: 0.9rem;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem; }
   .editMode button {
-    margin: .5rem; }
+    margin: 0.5rem;
+    color: #f2f2f2;
+    background: #1060af;
+    margin: 5px;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #f2f2f2;
+    color: #1060af;
+    border: 1px solid #1060af; }
+
+.editButton {
+  color: #f2f2f2;
+  background: #1060af;
+  margin: 5px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #f2f2f2;
+  color: #1060af;
+  border: 1px solid #1060af; }
+
+.cancelButton {
+  color: #f2f2f2;
+  background: #1060af;
+  margin: 5px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: #f2f2f2;
+  color: #1060af;
+  border: 1px solid #1060af;
+  color: red;
+  border: 1px solid red; }
+  .cancelButton:focus {
+    outline: 0; }
 
 /*# sourceMappingURL=Forms.css.map */
