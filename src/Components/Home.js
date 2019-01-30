@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./Home.css";
+import "../stylesheets/Home.css";
 import Navigation from './Navigation';
 import Login2 from './Login2';
 import Footer from './Footer';

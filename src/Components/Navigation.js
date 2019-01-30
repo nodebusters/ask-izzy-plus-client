@@ -1,6 +1,6 @@
 import React from "react";
-import header from "./Images/banners/atsi.png";
-import logo from './Image/logo/ask-izzy-logo-edited.svg'
+import header from "../Images/banners/atsi.png";
+import logo from '../Images/logo/ask-izzy-logo-edited.svg'
 // import logo from './ask-izzy-logo.png'
 // import logo from './ask-izzy-logo-original.svg'
 
