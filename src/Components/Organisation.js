@@ -87,14 +87,7 @@ class Organisation extends Component {
       this.setState({
         formClass : "readMode"
       })
-
     }
-
-    
-    console.log('this.state',': ', this.state);
-    
-    console.log("Changing form class");
-    
   }
 
   render() {

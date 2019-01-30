@@ -1,7 +1,49 @@
-.editMode {
-  color: blue; }
-
 .readMode {
-  color: green; }
+  /*disable input fields*/
+  pointer-events: none;
+  color: ligthen(black);
+  font-weight: bold; }
+  .readMode input {
+    padding-bottom: .5rem;
+    border: 0;
+    /* Most modern browsers support this now. */ }
+    .readMode input::placeholder {
+      font-size: 1rem;
+      color: black;
+      padding-left: 10px; }
+  .readMode select {
+    font-size: .9rem;
+    border: 0;
+    padding-bottom: .5rem;
+    background-color: transparent;
+    /*Removing the drop down arrow*/
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+    /* For IE10 */ }
+    .readMode select::-ms-expand {
+      display: none; }
+  .readMode button {
+    visibility: hidden;
+    margin: .5rem; }
+
+.editMode {
+  color: ligthen(black);
+  font-weight: bold; }
+  .editMode input {
+    padding-bottom: .2rem;
+    padding-top: .2rem;
+    /* Most modern browsers support this now. */ }
+    .editMode input::placeholder {
+      font-size: 1rem;
+      color: black;
+      padding-left: 10px; }
+  .editMode select {
+    font-size: .9rem;
+    padding-bottom: .2rem;
+    padding-top: .2rem; }
+  .editMode button {
+    margin: .5rem; }
 
 /*# sourceMappingURL=Forms.css.map */
