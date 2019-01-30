@@ -27,47 +27,49 @@ class Home extends Component {
                 <a href="logout">Logout</a>
               </span>
             </div>
-
             <div className="image-wrapper">
               <div className="hero-image">
                 <img src={header} />
               </div>
-              <div className="logo-image">
+              {/* <div className="logo-image">
                <img src={logo} />
-              </div>
+              </div> */}
             </div>
           </div>
           
-          {/* HEADER: ASK IZZY */}
-          <h1>Welcome to Ask Izzy Plus</h1>
+          {/* HEADER: */}
+          <h1>Welcome to App</h1>
 
-          {/* ASK IZZY PLUS: LOGIN VIA GOOGLE OAUTH */}
+          {/* LOGIN VIA GOOGLE OAUTH */}
           <div className="login-button-container">
-          <button className="login-button" onClick={this.handleGoogleLogin}>Login</button>
-
-          <div className="forgotten-password">
-            <a href="forgot-password">Forgot Password?</a>
+            <button className="login-button" onClick={this.handleGoogleLogin}>Login</button>
+            <div className="forgotten-password">
+              <a href="forgot-password">Forgot Password?</a>
+            </div>
           </div>
+        
+        {/* CONTAINER: MAIN (Closing <div> for body-container) */}
         </div>
 
-        </div>
+        {/* FOOTER */}
         <footer className="footer-container">
-            <ul className="footer-list">
-              <li>
-                <a href="about">About Ask Izzy Plus</a>
-              </li>
-              <li>
-                <a href="terms">Terms</a>
-              </li>
-              <li>
-                <a href="contact">Contact</a>
-              </li>
-              <li>
-                <a href="resources">Online Resources</a>
-              </li>
-            </ul>
+          <ul className="footer-list">
+            <li>
+              <a href="about">About</a>
+            </li>
+            <li>
+              <a href="terms">Terms</a>
+            </li>
+            <li>
+              <a href="contact">Contact</a>
+            </li>
+            <li>
+              <a href="resources">Online Resources</a>
+            </li>
+          </ul>
         </footer>
-
+      
+      {/* CONTAINER: ENTIRE PAGE (Closing <div> for homepage-container) */}
       </div>
     );
   }

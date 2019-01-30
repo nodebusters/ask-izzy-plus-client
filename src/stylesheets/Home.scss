@@ -1,7 +1,7 @@
 body {
-  /* background: aquamarine; */
-  margin: 0;
-  padding: 0;
+  // background: aquamarine;
+  margin: 0px;
+  padding: 0px;
 }
 
 .homepage-container {
@@ -79,6 +79,7 @@ body {
   /* padding: 20px 20px; */
 }
 
+// ---------- LOGIN BUTTON ---------- //
 .login-button {
   background-color: #4d13af;
   color: #FFFFFF;
@@ -97,6 +98,7 @@ body {
   color: black;
 }
 
+// ---------- FOOTER ---------- //
 .footer-container {
   background: coral;
   width: 800px;
@@ -106,8 +108,8 @@ body {
 
 .footer-list {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   /* text-align: center; */
 }
 
