@@ -16,7 +16,7 @@ class Home extends Component {
         {/* CONTAINER: MAIN */}
         <div className="body-container">
           {/* HEADER: ASK IZZY */}
-          <h1>Welcome to App</h1>
+          <h1>Welcome to Ask Izzy Plus</h1>
           {/* ASK IZZY PLUS: LOGIN BUTTON VIA GOOGLE OAUTH */}
           <Login2 />
         </div>
