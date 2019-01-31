@@ -12,6 +12,7 @@ import Services from './Services';
 import Navigation from './Navigation';
 import LogOut from './LogOut';
 import Footer from './Footer';
+const jwtDecode = require('jwt-decode');
 
 class Dashboard extends Component {
   // State is initially empty object, will contain { user } and { organisation } objects when component mounts
@@ -28,6 +29,11 @@ class Dashboard extends Component {
   // Check for response.tokenId in local storage, if token exists, GET the /protected/user endpoint, sending the token as a header option
   getUserData = (e) => {
     const token = localStorage.getItem('token');
+    const decoded = jwtDecode(token);
+
+    console.log('decoded',': ', decoded);
+    const {given_name,family_name} = decoded;
+    this.setState({ given_name, family_name })
     if (token) {
       // console.log(token);
       const baseURL = process.env.REACT_APP_BASE_URL;
@@ -48,6 +54,10 @@ class Dashboard extends Component {
           })
           console.log('this.state', ': ', this.state);
         })
+
+
+
+
     } else {
       console.log("doesnt exists");
       this.setState({ error: "token error" })
@@ -61,7 +71,7 @@ class Dashboard extends Component {
 
   render() {
     // Whenever component is rendered, get state data and store it in consts.
-    const { organisation, user } = this.state;
+    const { organisation, user, given_name,family_name } = this.state;
 
     // If organisation object exists in state, render information from { user } and { organisation } objects into tabs
     if (organisation) {
@@ -96,6 +106,8 @@ class Dashboard extends Component {
                 <User
                   user={user}
                   organisation={organisation}
+                  given_name={given_name}
+                  family_name = {family_name}
                 />
               </TabPanel>
               
