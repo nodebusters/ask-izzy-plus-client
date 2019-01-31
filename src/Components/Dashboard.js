@@ -65,12 +65,14 @@ class Dashboard extends Component {
     // If organisation object exists in state, render information from { user } and { organisation } objects into tabs
     if (organisation) {
       return (
-        <React.Fragment>
+        <div className="page-container">
           {/* REACT-TABS: Tabs (Container) */}
           {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
           {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
           
           <Navigation originPage='dashboard'/>
+
+          <div className="body-container">
 
           <Tabs defaultIndex={1} onSelect={index => {
             // console.log(index + 1)
@@ -103,18 +105,19 @@ class Dashboard extends Component {
             </TabPanel>
 
           </Tabs>
+          </div>
           <Footer />
-        </React.Fragment>
+        </div>
       );
     } else {
       return (
-        <React.Fragment>
+        <div className="page-container">
           <nav>
             <LogOut />
           </nav>
 
           <h3> {this.state.message} </h3>
-        </React.Fragment>
+        </div>
       );
     }
 

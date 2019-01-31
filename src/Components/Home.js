@@ -8,7 +8,7 @@ class Home extends Component {
   render() {
     return (
       // CONTAINER: ENTIRE PAGE (DODGERBLUE)
-      <div className="homepage-container">
+      <div className="page-container">
 
         {/* HEADER: NAVIGATION BAR/HERO IMAGE/LOGO */}
         <Navigation originPage='home'/>

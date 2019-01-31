@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import header from "../Images/banners/atsi.png";
+import header from "../Images/banners/food.png";
 import logo from '../Images/logo/ask-izzy-logo-edited.svg'
 // import logo from './ask-izzy-logo.png'
 // import logo from './ask-izzy-logo-original.svg'
