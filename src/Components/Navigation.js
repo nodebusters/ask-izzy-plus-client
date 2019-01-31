@@ -7,7 +7,7 @@ import LogOut from './LogOut';
 
 class Navigation extends Component {
   render() {
-    const { originPage } = this.props
+    const { originPage } = this.props;
       return (
         <div className="header-wrapper">
         <div className="header-bar">
