@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import LogOut from './LogOut';
+const jwtDecode = require('jwt-decode');
 
 // COMPONENTS
 // import User from './User';
@@ -26,6 +27,14 @@ class AdminDashboard extends Component {
 
   getAdminUserData = (e) => {
     const token = localStorage.getItem('token');
+    const decoded = jwtDecode(token);
+
+    console.log('decoded',': ', decoded);
+    const {given_name,family_name} = decoded;
+    const adminName = given_name;
+    const adminLastName = family_name;
+    this.setState({adminName,adminLastName})
+
     if (token) {
       // console.log(token);
       const baseURL = process.env.REACT_APP_BASE_URL;
@@ -85,8 +94,8 @@ class AdminDashboard extends Component {
   render() {
     const { adminUser } = this.state;
     if (adminUser) {
-      const { email, firstName, lastName } = adminUser;
-      const { organisations } = this.state;
+      const { email } = adminUser;
+      const { organisations, adminName, adminLastName } = this.state;
       return (
         <React.Fragment>
           <nav>
@@ -94,8 +103,8 @@ class AdminDashboard extends Component {
           </nav>
           <h3>You are now logged in as: </h3>
           <p>email: {email}</p>
-          <p>First Name: {firstName}</p>
-          <p>Last Name: {lastName}</p>
+          <p>First Name: {adminName}</p>
+          <p>Last Name: {adminLastName}</p>
 
           <form id="link_user_organisation">
             <h3>Add New User</h3>
