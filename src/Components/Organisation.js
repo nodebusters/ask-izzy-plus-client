@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
-import '../stylesheets/Forms.css'
+import '../stylesheets/Forms.css';
 
 class Organisation extends Component {
   //Declaring state.
   state = {
-    data: {} ,
-    formClass : "readMode",
+    data: {},
+    formClass: "readMode",
     editButton: "editButton"
   }
 
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     const data = this.state.data;
-    data[id]= value; 
+    data[id] = value;
     this.setState({ data });
   }
 
@@ -27,19 +27,19 @@ class Organisation extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/organisation/${org_id}`;
 
-    const {data} = this.state;
+    const { data } = this.state;
 
     axios.put(url, data)
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
-        
+
+        this.sendEmail();
         //Changing to edit mode:
         this.setState({
-          formClass : "readMode",
+          formClass: "readMode",
           editButton: "editButton"
         })
-        
       }))
       .catch(err => {
 
@@ -82,19 +82,47 @@ class Organisation extends Component {
 
   edit = (e) => {
     e.preventDefault();
-    if (e.target.innerHTML==="Edit"){
-      e.target.innerHTML="Cancel"
+    if (e.target.innerHTML === "Edit") {
+      e.target.innerHTML = "Cancel"
       this.setState({
-        formClass : "editMode",
+        formClass: "editMode",
         editButton: "cancelButton"
       })
-    }else{
-      e.target.innerHTML="Edit"
+    } else {
+      e.target.innerHTML = "Edit"
       this.setState({
-        formClass : "readMode",
+        formClass: "readMode",
         editButton: "editButton"
       })
     }
+  }
+
+  dataToString = (data)=>{
+    let result ="";
+    Object.keys(data).forEach((k, i) => {
+      result +=  `<li> ${k}: ${data[k]} </li>`;
+    });
+
+    return result;
+  }
+
+  sendEmail = ()=>{
+    const {data} = this.state;
+    console.log('data',': ', data);
+    
+    const {organisation} = this.props;    
+    console.log("Sending Email")
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/sendEmail`;
+    const  emailData  = {
+      email: "askizzyplustest2@gmail.com",
+      message: `<p> This is an update notification. The following data has been updated </p> <p> Organisation: <strong> ${organisation.name} </strong> </p> <p>The updated fields are: </p> <ol> ${this.dataToString(data)} </ol>`
+    } 
+
+    axios.put(url, emailData)
+    .then(resp => {
+      console.log('resp.data',': ', resp.data);
+    })
   }
 
   render() {
@@ -104,11 +132,13 @@ class Organisation extends Component {
 
     return (
       <React.Fragment>
+
+
         <p>Last updated: {organisation.lastUpdated}</p>
         <p>Organisation: <strong>{organisation.name} </strong></p>
-          
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
-        
+
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
+
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>
           <br></br>

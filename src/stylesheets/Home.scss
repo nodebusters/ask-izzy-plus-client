@@ -65,12 +65,13 @@ body {
   /* background: aqua; */
   max-height: 200px;
   width: 100%;
-}
+  
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-.hero-image img {
-  width: 100%;
-  object-fit: cover;
-}
+}  
 
 
 
