@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import "../stylesheets/Home.css";
 import Navigation from './Navigation';
-import Login2 from './Login2';
+import Login from './Login';
 import Footer from './Footer';
 
 class Home extends Component {
@@ -18,7 +18,7 @@ class Home extends Component {
           {/* HEADER: ASK IZZY */}
           <h1>Welcome to Ask Izzy Plus</h1>
           {/* ASK IZZY PLUS: LOGIN BUTTON VIA GOOGLE OAUTH */}
-          <Login2 />
+          <Login />
         </div>
         
         {/* FOOTER: Main Ask Izzy Links */}

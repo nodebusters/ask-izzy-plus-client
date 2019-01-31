@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 import GoogleLogin from "react-google-login";
-// import axios from 'axios';
 import history from "../history";
 
-// REACT-GOOGLE-LOGIN: Google oAUth Login Component (required: clientId, onSuccess and onFailure callback)
-// FIXME: Rename LogIn component and filename to Login ???
-class LogIn extends Component {
+class Login extends Component {
   responseGoogle = response => {
-    // console.log(response.tokenId);
     localStorage.setItem("token", response.tokenId);
     history.push("/dashboard");
   };
@@ -16,19 +12,33 @@ class LogIn extends Component {
     console.log(response);
   };
 
+  handleGoogleLogin = () => {
+    console.log("Successfully clicked!");
+  };
   render() {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
-      <React.Fragment>
+      <div className="login-button-container">
+        {/* <button className="login-button" onClick={this.handleGoogleLogin}>
+          Login
+        </button>
+        <div className="forgotten-password">
+          <a href="forgot-password">Forgot Password?</a>
+        </div> */}
+
         <GoogleLogin
           clientId={googleClient}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.errorGoogle}
+          className="login-button"
         />
-      </React.Fragment>
+        <div className="forgotten-password">
+          <a href="forgot-password">Forgot Password?</a>
+        </div>
+      </div>
     );
   }
 }
 
-export default LogIn;
+export default Login;
