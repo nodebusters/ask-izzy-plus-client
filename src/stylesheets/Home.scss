@@ -4,7 +4,7 @@ body {
   padding: 0;
 }
 
-.homepage-container {
+.page-container {
   background: dodgerblue;
   max-width: 100vw;
   /* min-height: 100vh; */
@@ -27,6 +27,8 @@ body {
 .header-wrapper {
   /* border: dashed blue 1px; */
   /* height: 100%; */
+  max-width: 800px;
+
 }
 
 .header-bar {
@@ -63,14 +65,16 @@ body {
   grid-row: 1/4;
   grid-column: 1/4;
   /* background: aqua; */
-  max-height: 200px;
+  /* max-height: 500px; */
+  height: 100%;
   width: 100%;
-}
+  
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-.hero-image img {
-  width: 100%;
-  object-fit: cover;
-}
+}  
 
 
 
@@ -100,7 +104,7 @@ body {
   border: none;
   font-size: 1em;
   /* width: 100% */
-  /* padding: 15px 45%; */
+  padding: 15px 45%;
   /* width: 80px; */
 }
 
