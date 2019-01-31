@@ -11,7 +11,7 @@ class Home extends Component {
       <div className="homepage-container">
 
         {/* HEADER: NAVIGATION BAR/HERO IMAGE/LOGO */}
-        <Navigation />
+        <Navigation originPage='home'/>
       
         {/* CONTAINER: MAIN */}
         <div className="body-container">

@@ -8,7 +8,9 @@ import User from './User';
 import Organisation from './Organisation';
 import Sites from './Sites';
 import Services from './Services';
+import Navigation from './Navigation';
 import LogOut from './LogOut';
+import Footer from './Footer';
 
 class Dashboard extends Component {
   // State is initially empty object, will contain { user } and { organisation } objects when component mounts
@@ -67,9 +69,8 @@ class Dashboard extends Component {
           {/* REACT-TABS: Tabs (Container) */}
           {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
           {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
-          <nav>
-            <LogOut />
-          </nav>
+          
+          <Navigation originPage='dashboard'/>
 
           <Tabs defaultIndex={1} onSelect={index => {
             // console.log(index + 1)
@@ -102,6 +103,7 @@ class Dashboard extends Component {
             </TabPanel>
 
           </Tabs>
+          <Footer />
         </React.Fragment>
       );
     } else {
