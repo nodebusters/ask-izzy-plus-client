@@ -15,7 +15,10 @@ import Footer from './Footer';
 
 class Dashboard extends Component {
   // State is initially empty object, will contain { user } and { organisation } objects when component mounts
-  state = {}
+  state = {
+    isModified:false,
+    emailMessage:""
+  }
 
   //This method is important to update the information after the forms are submitted. When the form is submited an new organisation object with the new data will be returned by the server, we can use this new data to update the state in dashboard and in the whole application as a result. 
   // Note we need to pass this method to the other components in the props.
