@@ -3,7 +3,6 @@ import { Router, Route } from 'react-router-dom';
 import './stylesheets/App.css';
 import history from './history';
 import Dashboard from './Components/Dashboard';
-import HomePage from './Components/HomePage';
 import Home from './Components/Home';
 
 class App extends Component {
@@ -12,9 +11,8 @@ class App extends Component {
       <Router history={history}>
         <React.Fragment>
 
-          <Route exact path="/" component={HomePage} />          
+          <Route exact path="/" component={Home} />          
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/home" component={Home} />
 
         </React.Fragment>
       </Router>
