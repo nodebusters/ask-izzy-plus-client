@@ -16,6 +16,9 @@ class LogOut extends Component {
         <GoogleLogout
           buttonText="Logout"
           onLogoutSuccess={this.logout}
+          render={renderProps => (
+            <button onClick={renderProps.onClick} className="logout-button">Logout</button>
+          )}
         >
         </GoogleLogout>
       </React.Fragment>

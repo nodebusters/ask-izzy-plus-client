@@ -67,57 +67,82 @@ class Dashboard extends Component {
     if (organisation) {
       return (
         <div className="page-container">
-          {/* REACT-TABS: Tabs (Container) */}
-          {/* defaultIndex allows changing the tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
-          {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
           
+          {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
           <Navigation originPage='dashboard'/>
 
           <div className="body-container">
+          {/* REACT-TABS: Main <Tabs> Container */}
+            {/* defaultIndex changes he tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
+            {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
+            <Tabs
+              defaultIndex={1}
+              onSelect={index => {
+              // console.log(index + 1)
+              }}
+            >
+            {/* REACT-TABS: <TabList> Wrapper and <Tab> Headers */}
+              {/* User Profile, Organisation, Sites, Services */}
+              <TabList>
+                <Tab>User Profile</Tab>
+                <Tab>Organisation</Tab>
+                <Tab>Sites</Tab>
+                <Tab>Services</Tab>
+              </TabList>
 
-          <Tabs defaultIndex={1} onSelect={index => {
-            // console.log(index + 1)
-          }}>
-
-            {/* REACT-TABS: TabList (Wrapper) and Tab (Headers) */}
-            <TabList>
-              <Tab>User Profile</Tab>
-              <Tab>Organisation</Tab>
-              <Tab>Sites</Tab>
-              <Tab>Services</Tab>
-            </TabList>
-
-            {/* REACT-TABS: TabPanel (Content) */}
-            <TabPanel> <User user={user} organisation={organisation} /> </TabPanel>
-            
-            <TabPanel>
-              <Organisation organisation={organisation} updateOrganisation={this.updateOrganisation} />
-            </TabPanel>
-            
-            {/* NOTE that we are passing the whole organisation and then deconstructing it in Sites.js and Services.js */}
-            {/* Also note that we are passing updateOrganisation method so we can update the data after submitting forms. */}
-            
-            <TabPanel>
-              <Sites organisation={organisation} updateOrganisation={this.updateOrganisation} />
-            </TabPanel>
-            
-            <TabPanel>
-              <Services organisation={organisation} updateOrganisation={this.updateOrganisation} />
-            </TabPanel>
-
-          </Tabs>
+            {/* REACT-TABS: <TabPanel> Body Content */}
+              {/* TAB: User */}
+              <TabPanel>
+                <User
+                  user={user}
+                  organisation={organisation}
+                />
+              </TabPanel>
+              
+              {/* TAB: Organisation */}
+              <TabPanel>
+                <Organisation
+                  organisation={organisation}
+                  updateOrganisation={this.updateOrganisation}
+                />
+              </TabPanel>
+              
+            {/* TAB: Organisation > Sites */}
+              {/* NOTE that we are passing the whole organisation and then deconstructing it in Sites.js and Services.js */}
+              {/* Also note that we are passing updateOrganisation method so we can update the data after submitting forms. */}
+              <TabPanel>
+                <Sites
+                  organisation={organisation}
+                  updateOrganisation={this.updateOrganisation}
+                />
+              </TabPanel>
+              
+              {/* TAB: Organisation > Sites > Services */}
+              <TabPanel>
+                <Services
+                  organisation={organisation}
+                  updateOrganisation={this.updateOrganisation}
+                />
+              </TabPanel>
+            </Tabs>
           </div>
+
           <Footer />
+
         </div>
       );
     } else {
       return (
         <div className="page-container">
+        
           <nav>
             <LogOut />
           </nav>
 
-          <h3> {this.state.message} </h3>
+          <div className="body-container">
+            <h3> {this.state.message} </h3>
+          </div>
+
         </div>
       );
     }
