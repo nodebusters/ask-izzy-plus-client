@@ -8,33 +8,33 @@ body {
 
 // Container: Entire Page
 .page-container {
-  // background: dodgerblue;
   background: #C1C0BA;
+  // background: dodgerblue;
   max-width: 100vw;
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* border: 10px solid goldenrod; */
+  border: 3px solid goldenrod;
 }
 
 // Container: Body
 .body-container {
-  background: magenta;
-  /* background: white; */
+  // background: magenta;
+  background: white;
   min-height: 100vh;
   max-width: 800px;
   width: 100%;
-  /* border: 10px solid orangered; */
+  border: 1px solid orangered;
 }
 
 // ---------- NAVIGATION ---------- //
 // Navigation: Wrapper
 .header-wrapper {
-  /* border: dashed blue 1px; */
-  /* height: 100%; */
+  border: dashed blue 1px;
   max-width: 800px;
+  max-height: 400px;
 }
 
 // Navigation: Bar Container
@@ -75,10 +75,8 @@ body {
 .hero-image {
   grid-row: 1/4;
   grid-column: 1/4;
-  /* background: aqua; */
-  /* max-height: 500px; */
+  // background: aqua;
   height: 100%;
-  width: 100%;
   
   // Navigation: Hero Image
   img {
@@ -88,12 +86,6 @@ body {
   }
 
 }  
-
-// .hero-image img {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-// }
 
 // Navigation: Logo Image (Container)
 .logo-image {

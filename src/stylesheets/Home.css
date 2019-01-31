@@ -11,20 +11,19 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* border: 10px solid goldenrod; */ }
+  border: 3px solid goldenrod; }
 
 .body-container {
-  background: magenta;
-  /* background: white; */
+  background: white;
   min-height: 100vh;
   max-width: 800px;
   width: 100%;
-  /* border: 10px solid orangered; */ }
+  border: 1px solid orangered; }
 
 .header-wrapper {
-  /* border: dashed blue 1px; */
-  /* height: 100%; */
-  max-width: 800px; }
+  border: dashed blue 1px;
+  max-width: 800px;
+  max-height: 400px; }
 
 .header-bar {
   display: flex;
@@ -55,10 +54,7 @@ body {
 .hero-image {
   grid-row: 1/4;
   grid-column: 1/4;
-  /* background: aqua; */
-  /* max-height: 500px; */
-  height: 100%;
-  width: 100%; }
+  height: 100%; }
   .hero-image img {
     width: 100%;
     height: 100%;
