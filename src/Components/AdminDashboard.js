@@ -38,8 +38,8 @@ class AdminDashboard extends Component {
       axios.get(url, options)
         .then(res => { 
           // console.log(res.data);
-          const adminUser = res.data; 
-          this.setState({ adminUser });
+          const { adminUser, message } = res.data; 
+          this.setState({ adminUser, message });
         })
     } else {
       console.log("doesnt exists");
@@ -83,8 +83,10 @@ class AdminDashboard extends Component {
   }
 
   render() {
-    const { email, firstName, lastName } = this.state.adminUser;
-    const { organisations } = this.state;
+    const { adminUser } = this.state;
+    if (adminUser) {
+      const { email, firstName, lastName } = adminUser;
+      const { organisations } = this.state;
       return (
         <React.Fragment>
           <nav>
@@ -113,6 +115,16 @@ class AdminDashboard extends Component {
           </form>
         </React.Fragment>
       );
+    } else {
+      return (
+        <React.Fragment>
+          <nav>
+            <LogOut />
+          </nav>
+          <h3> {this.state.message} </h3>
+        </React.Fragment>
+      );
+    }
     }
   }
 export default AdminDashboard;
