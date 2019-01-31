@@ -17,16 +17,16 @@ body {
   align-items: center;
   text-align: center;
   border: 3px solid goldenrod;
-}
 
-// Container: Body
-.body-container {
-  // background: magenta;
-  background: white;
-  min-height: 100vh;
-  max-width: 800px;
-  width: 100%;
-  border: 1px solid orangered;
+  // Container: Body
+  .body-container {
+    // background: magenta;
+    background: white;
+    min-height: 100vh;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid turquoise;
+  }
 }
 
 // ---------- NAVIGATION ---------- //
@@ -36,40 +36,44 @@ body {
   max-width: 800px;
   max-height: 400px;
 }
-
 // Navigation: Bar Container
 .header-bar {
   display: flex;
   background: #363e43;
   justify-content: flex-end;
-}
 
-// Navigation: Bar (Left)
-.quick-exit-left {
-  background: #363e43;
-  min-width: 85%;
-  /* min-width: 70%; */
-  min-height: 44px;
-}
+  // Navigation: Bar (Left)
+  .quick-exit-left {
+    min-width: 85%;
+    /* min-width: 70%; */
+    min-height: 44px;
+  }
 
-// Navigation: Bar (Right)
-.quick-exit-right {
-  background: #B40202;
-  padding: 0 1em;
-  min-width: 15%;
-  /* min-width: 30%; */
-  min-height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  // Navigation: Bar (Right)
+  .quick-exit-right {
+    background: #B40202;
+    padding: 0 1em;
+    min-width: 15%;
+    /* min-width: 30%; */
+    min-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // Navigation: Logout Button
+    .logout-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
+    }
 
-.logout-button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1em;
-  font-weight: bold;
+    // Navigation: Header Link Button
+    .header-link {
+      text-decoration: none;
+    }
+  }
 }
 
 // Navigation: Image Wrapper (Hero & Logo)
@@ -77,69 +81,70 @@ body {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-}
 
-// Navigation: Hero Image (Container)
-.hero-image {
-  grid-row: 1/4;
-  grid-column: 1/4;
-  // background: aqua;
-  height: 100%;
-  
-  // Navigation: Hero Image
-  img {
-    width: 100%;
+  // Navigation: Hero Image (Container)
+  .hero-image {
+    grid-row: 1/4;
+    grid-column: 1/4;
+    // background: aqua;
     height: 100%;
-    object-fit: cover;
+    
+    // Navigation: Hero Image
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
-}  
+  // Navigation: Logo Image (Container)
+  .logo-image {
+    grid-row: 1/4;
+    grid-column: 1/4;
+    z-index: 999999;
+    width: 45%;
+    margin: auto;
 
-// Navigation: Logo Image (Container)
-.logo-image {
-  grid-row: 1/4;
-  grid-column: 1/4;
-  z-index: 999999;
-  width: 45%;
-  margin: auto;
+    // Navigation: Logo Image (Container)
+    .logo-image img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
-// Navigation: Logo Image (Container)
-.logo-image img {
-  width: 100%;
-  height: 100%;
+// ---------- BODY #1: HOME ---------- //
+.home-headline {
+  font-family: 'Quicksand';
 }
 
-// Navigation: Login Button (Container)
+// Home: Login Button (Container)
 .login-button-container {
   background: aquamarine;
   padding: 0 1em;
-}
 
-// Navigation: Login Button
-.login-button {
-  width: 100%;
-  background-color: #4d13af;
-  color: #FFFFFF;
-  border: none;
-  font-size: 1em;
-  /* width: 100% */
-  padding: 15px 45%;
-  /* width: 80px; */
-}
+  // Home: Login Button
+  .login-button {
+    width: 100%;
+    background-color: #4d13af;
+    color: #FFFFFF;
+    border: none;
+    font-size: 1em;
+    /* width: 100% */
+    padding: 15px 45%;
+    /* width: 80px; */
 
-// Navigation: Login Button (Hover)
-.login-button:hover {
-  background-color: #6118dd;
-}
+    // Home: Login Button (Hover)
+    &:hover {
+      background-color: #6118dd;
+    }
+  }
 
-// .forgotten-password a {
-//   text-decoration: none;
-//   color: black;
-// }
-
-h1 {
-  font-family: 'Quicksand';
+  // Home: Forgotten Password
+  // .forgotten-password a {
+  //   text-decoration: none;
+  //   color: black;
+  // }
 }
 
 // ---------- FOOTER ---------- //
@@ -147,40 +152,38 @@ h1 {
 .footer-container {
   background: coral;
   max-width: 800px;
-  width: 100%
-}
-
-// Footer: Unordered List
-.footer-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
 
-// Footer: List Items
-.footer-list li {
-  border: solid .1em;
-  width: 50%;
-  box-sizing: border-box;
-  background: #363e43;
-  padding: .5em .5em;
-}
+  // Footer: Unordered List
+  .footer-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 
-// Footer: List Item Links
-.footer-list li a {
-  // background: blue;
-  display: flex;
-  width: 100%;
-  text-decoration: none;
-  color: white;
-  /* padding: 0 2em; */
-  /* margin: 0.5em 7em; */
-}
+    // Footer: List Items
+    li {
+      border: solid .1em;
+      width: 50%;
+      box-sizing: border-box;
+      background: #363e43;
+      padding: .5em .5em;
 
-// Footer: List Item Links (Hover)
-.footer-list li a:hover {
-  background: white;
+      // Footer: List Item Links
+      a {
+        // background: blue;
+        display: flex;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        /* padding: 0 2em; */
+        /* margin: 0.5em 7em; */
+        &:hover {
+          background: white;
+        }
+      }
+    }
+  }
 }

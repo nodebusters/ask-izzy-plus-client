@@ -19,7 +19,7 @@ class Navigation extends Component {
           )}
           {originPage === "home" && (
             <span className="quick-exit-right">
-              <a href="other-link">Register</a>
+              <a href="" className="header-link">Register</a>
             </span>
           )}
         </div>
