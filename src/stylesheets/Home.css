@@ -4,7 +4,7 @@ body {
   padding: 0; }
 
 .page-container {
-  background: dodgerblue;
+  background: #C1C0BA;
   max-width: 100vw;
   /* min-height: 100vh; */
   display: flex;
@@ -28,17 +28,17 @@ body {
 
 .header-bar {
   display: flex;
-  background: gray;
+  background: #363e43;
   justify-content: flex-end; }
 
 .quick-exit-left {
-  background: gray;
+  background: #363e43;
   min-width: 85%;
   /* min-width: 70%; */
   min-height: 44px; }
 
 .quick-exit-right {
-  background: red;
+  background: #B40202;
   padding: 0 1em;
   min-width: 15%;
   /* min-width: 30%; */
@@ -109,7 +109,7 @@ body {
   border: solid .1em;
   width: 50%;
   box-sizing: border-box;
-  background: pink;
+  background: #363e43;
   padding: .5em .5em; }
 
 .footer-list li a {
