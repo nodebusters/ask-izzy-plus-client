@@ -100,6 +100,8 @@ class Site extends Component {
 
   render() {
     //TODO: IMPLEMENT OPENING HOURS.
+    console.log('this.state',': ', this.state);
+    
     return (
       <React.Fragment>
         <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
