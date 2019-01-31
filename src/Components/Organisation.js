@@ -27,7 +27,7 @@ class Organisation extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/update/organisation/${org_id}`;
 
-    const {data} = this.state;
+    const { data } = this.state;
 
     axios.put(url, data)
       .then((resp => {

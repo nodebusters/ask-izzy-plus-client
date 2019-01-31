@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import LogOut from './LogOut';
 
 // COMPONENTS
 // import User from './User';
 // import Organisation from './Organisation';
 
 class AdminDashboard extends Component {
-  state = {}
+  state = {
+    adminUser: {},
+    newUser: {
+      email: "",
+      firstName: "",
+      lastName: "",
+      organisation:""
+    },
+    organisations: []
+  }
 
   componentDidMount() {
     console.log("AdminDashboard Component did mount");
     this.getAdminUserData();
+    this.getOrganisationData();
   }
 
   getAdminUserData = (e) => {
@@ -26,13 +37,9 @@ class AdminDashboard extends Component {
       // The server will send back res.data containing { user } and { organisation } objects
       axios.get(url, options)
         .then(res => { 
-          const { _id, email, firstName, lastName } = res.data; 
-          this.setState({
-            id: _id,
-            email,
-            firstName,
-            lastName
-          })
+          // console.log(res.data);
+          const adminUser = res.data; 
+          this.setState({ adminUser });
         })
     } else {
       console.log("doesnt exists");
@@ -40,14 +47,70 @@ class AdminDashboard extends Component {
     }
   }
 
+  getOrganisationData = (e) => {
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/organisations`; 
+    axios.get(url)
+      .then(res => {
+        const organisations = [];
+        for (let i=0; i<res.data.length; i++) {
+          const organisation = {name: "", _id: ""};
+          organisation.name = res.data[i].name
+          organisation._id = res.data[i]._id
+          organisations.push(organisation)
+        }
+        this.setState({ organisations })
+      })
+  }
+
+  handleInputChange = (e) => {
+    const { value, id } = e.currentTarget;
+    const { newUser } = this.state;
+    newUser[id]= value; 
+    this.setState({ newUser });
+    // console.log(newUser);
+    // console.log(this.state.newUser)
+  }
+
+  submitForm = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/create/user`; 
+    const { newUser } = this.state;
+    axios.post(url, newUser)
+      .then(res => console.log(res))
+  }
+
   render() {
-    const { email, firstName, lastName } = this.state;
+    const { email, firstName, lastName } = this.state.adminUser;
+    const { organisations } = this.state;
       return (
         <React.Fragment>
+          <nav>
+            <LogOut />
+          </nav>
           <h3>You are now logged in as: </h3>
           <p>email: {email}</p>
           <p>First Name: {firstName}</p>
           <p>Last Name: {lastName}</p>
+
+          <form id="link_user_organisation">
+            <h3>Add New User</h3>
+            <label> New user email: </label>
+              <input type="text" id="email" onChange={this.handleInputChange}></input>
+              <br></br>
+            <label> New user organisation </label>
+              <select id="organisation" onChange={this.handleInputChange}>
+              <option key="" value="1234567890">Testing Organisation Name</option>
+              {organisations.map(organisation => {
+                return <option key={organisation._id} value={organisation._id}>{organisation.name}</option>
+              })
+              }
+              </select>
+              <br></br>
+              <button onClick={this.submitForm}>Submit</button>
+          </form>
         </React.Fragment>
       );
     }
