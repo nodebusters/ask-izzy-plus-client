@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <React.Fragment>
-          <Route exact path="/" component={HomePage} />          
+          <Route exact path="/" component={Home} />          
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/admin" component={Admin} />
