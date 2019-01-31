@@ -28,17 +28,17 @@ class Login extends Component {
 
         <GoogleLogin
           clientId={googleClient}
-          render={renderProps => (
-            <button onClick={renderProps.onClick} className="login-button">Login</button>
-          )}
+          // render={renderProps => (
+          //   <button onClick={renderProps.onClick} className="login-button">Login</button>
+          // )}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.errorGoogle}
           className="login-button"
         />
-        <div className="forgotten-password">
+        {/* <div className="forgotten-password">
           <a href="forgot-password">Forgot Password?</a>
-        </div>
+        </div> */}
       </div>
     );
   }

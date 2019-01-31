@@ -59,11 +59,9 @@ body {
   /* max-height: 500px; */
   height: 100%;
   width: 100%; }
-
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; }
+  .hero-image img {
+    width: 100%;
+    object-fit: cover; }
 
 /* LOGO */
 .logo-image {
@@ -93,10 +91,6 @@ body {
 
 .login-button:hover {
   background-color: #6118dd; }
-
-.forgotten-password a {
-  text-decoration: none;
-  color: black; }
 
 .footer-container {
   background: coral;
