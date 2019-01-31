@@ -19,12 +19,6 @@ class Login extends Component {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
       <div className="login-button-container">
-        {/* <button className="login-button" onClick={this.handleGoogleLogin}>
-          Login
-        </button>
-        <div className="forgotten-password">
-          <a href="forgot-password">Forgot Password?</a>
-        </div> */}
 
         <GoogleLogin
           clientId={googleClient}

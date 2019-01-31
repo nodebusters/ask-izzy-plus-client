@@ -46,6 +46,13 @@ body {
   justify-content: center;
   align-items: center; }
 
+.logout-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  font-weight: bold; }
+
 .image-wrapper {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -87,6 +94,9 @@ body {
 
 .login-button:hover {
   background-color: #6118dd; }
+
+h1 {
+  font-family: 'Quicksand'; }
 
 .footer-container {
   background: coral;

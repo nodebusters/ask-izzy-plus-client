@@ -10,6 +10,7 @@ class Navigation extends Component {
     const { originPage } = this.props;
     return (
       <div className="header-wrapper">
+      
         <div className="header-bar">
           {originPage === "dashboard" && (
             <span className="quick-exit-right">

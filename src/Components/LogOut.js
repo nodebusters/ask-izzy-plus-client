@@ -17,7 +17,7 @@ class LogOut extends Component {
           buttonText="Logout"
           onLogoutSuccess={this.logout}
           render={renderProps => (
-            <button onClick={renderProps.onClick}>Logout</button>
+            <button onClick={renderProps.onClick} className="logout-button">Logout</button>
           )}
         >
         </GoogleLogout>
