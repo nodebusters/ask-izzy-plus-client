@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import LogOut from './LogOut';
+import AdminLogOut from './AdminLogOut';
 const jwtDecode = require('jwt-decode');
 
 // COMPONENTS
@@ -99,12 +99,12 @@ class AdminDashboard extends Component {
       return (
         <React.Fragment>
           <nav>
-            <LogOut />
+            <AdminLogOut />
           </nav>
           <h3>You are now logged in as: </h3>
-          <p>email: {email}</p>
-          <p>First Name: {adminName}</p>
-          <p>Last Name: {adminLastName}</p>
+            <p>email: {email}</p>
+            <p>First Name: {adminName}</p>
+            <p>Last Name: {adminLastName}</p>
 
           <form id="link_user_organisation">
             <h3>Add New User</h3>
@@ -122,13 +122,15 @@ class AdminDashboard extends Component {
               <br></br>
               <button onClick={this.submitForm}>Submit</button>
           </form>
+          <h3>All users</h3>
+
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
           <nav>
-            <LogOut />
+            <AdminLogOut />
           </nav>
           <h3> {this.state.message} </h3>
         </React.Fragment>
