@@ -35,7 +35,6 @@ class NewSite extends Component {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
         //Changing to edit mode:
-        history.push('/dashboard')
       }))
       .catch(err => {
 

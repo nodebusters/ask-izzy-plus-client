@@ -97,34 +97,6 @@ class Organisation extends Component {
     }
   }
 
-  dataToString = (data)=>{
-    let result ="";
-    Object.keys(data).forEach((k, i) => {
-      result +=  `<li> ${k}: ${data[k]} </li>`;
-    });
-
-    return result;
-  }
-
-  sendEmail = ()=>{
-    const {data} = this.state;
-    console.log('data',': ', data);
-    
-    const {organisation} = this.props;    
-    console.log("Sending Email")
-    const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/sendEmail`;
-    const  emailData  = {
-      email: "askizzyplustest2@gmail.com",
-      message: `<p> This is an update notification. The following data has been updated </p> <p> Organisation: <strong> ${organisation.name} </strong> </p> <p>The updated fields are: </p> <ol> ${this.dataToString(data)} </ol>`
-    } 
-
-    axios.put(url, emailData)
-    .then(resp => {
-      console.log('resp.data',': ', resp.data);
-    })
-  }
-
   render() {
 
     // Organisation component inherits props from Organisation model, renders object's key/values as an array to Dashboard
@@ -132,8 +104,6 @@ class Organisation extends Component {
 
     return (
       <React.Fragment>
-
-
         <p>Last updated: {organisation.lastUpdated}</p>
         <p>Organisation: <strong>{organisation.name} </strong></p>
 
@@ -160,14 +130,6 @@ class Organisation extends Component {
           {this.createTextInput("ceo", "CEO:")}
         </form>
 
-
-        {/* {Object.entries(organisation).map(([key, value]) => {
-          if (key !== "sitesInOrganisation") {
-            return (
-              <p key={key}> {key}: {value} </p>
-            );
-          }
-        })} */}
       </React.Fragment>
     );
   }
