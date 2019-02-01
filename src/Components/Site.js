@@ -5,8 +5,8 @@ import axios from 'axios';
 class Site extends Component {
   //Declaring state.
   state = {
-    data: {} ,
-    formClass : "readMode",
+    data: {},
+    formClass: "readMode",
     editButton: "editButton"
   }
 
@@ -37,7 +37,7 @@ class Site extends Component {
         updateOrganisation(resp.data);
         //Changing to edit mode:
         this.setState({
-          formClass : "readMode",
+          formClass: "readMode",
           editButton: "editButton"
         })
       }))
@@ -82,29 +82,37 @@ class Site extends Component {
 
   edit = (e) => {
     e.preventDefault();
-    if (e.target.innerHTML==="Edit"){
-      e.target.innerHTML="Cancel"
+    if (e.target.innerHTML === "Edit") {
+      e.target.innerHTML = "Cancel"
       this.setState({
-        formClass : "editMode",
+        formClass: "editMode",
         editButton: "cancelButton"
       })
-      
-    }else{
-      e.target.innerHTML="Edit"
+
+    } else {
+      e.target.innerHTML = "Edit"
       this.setState({
-        formClass : "readMode",
+        formClass: "readMode",
         editButton: "editButton"
       })
     }
   }
 
+  delete = (e) =>{
+    e.preventDefault();
+    console.log("Delete request triggered.");
+
+    
+  }
+
   render() {
     //TODO: IMPLEMENT OPENING HOURS.
-    console.log('this.state',': ', this.state);
-    
+    console.log('this.state', ': ', this.state);
+
     return (
       <React.Fragment>
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>          
+        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
+        <button onClick={this.delete} className="cancelButton">Delete</button>
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>
           <br></br>
