@@ -34,7 +34,6 @@ class Organisation extends Component {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
 
-        this.sendEmail();
         //Changing to edit mode:
         this.setState({
           formClass: "readMode",

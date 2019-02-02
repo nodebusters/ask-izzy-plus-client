@@ -1,7 +1,6 @@
 //Component Description: Site component takes information of only one site and returns a react fractment displaying its attributes. Later on this component will return a form allowing the user to send PUT requests.  
 import React, { Component } from 'react';
 import axios from 'axios';
-import history from '../history';
 
 class NewSite extends Component {
   //Declaring state.
@@ -30,7 +29,7 @@ class NewSite extends Component {
 
     const { data } = this.state;
 
-    axios.put(url, data)
+    axios.post(url, data)
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
