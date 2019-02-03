@@ -1,7 +1,7 @@
 //Component Decription: Services component objective is to list all the sites in the organisation and its services. It returns a tab for each site and as a tab content the ServicesInSite component. 
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import ServicesInSite from './ServicesInSite'
+import ServicesInSite from './ServicesInSite';
 
 class Services extends Component {
   render() {
