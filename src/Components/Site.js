@@ -4,10 +4,17 @@ import axios from 'axios';
 
 class Site extends Component {
   //Declaring state.
+  //Note we need to define openingHours here so there is no error the first time it renders. 
   state = {
     data: {},
     formClass: "readMode",
     editButton: "editButton"
+  }
+
+  //This steps are important in order to retrieve the data in the db and store it in state. Otherwise everytime we update opening hours it could erase existing data. 
+  componentDidMount(){
+    const {site} = this.props;
+    this.setState({data:site});
   }
 
   handleInputChange = (e) => {
@@ -16,6 +23,7 @@ class Site extends Component {
     data[id] = value;
     this.setState({ data });
   }
+
 
   submitForm = (e) => {
     const { updateOrganisation } = this.props;
@@ -98,30 +106,119 @@ class Site extends Component {
     }
   }
 
-  delete = (e) =>{
+  delete = (e) => {
     e.preventDefault();
     console.log("Delete request triggered.");
     //NOTE that we are getting updateOrganisation method from props.
-    const {org_id, site, updateOrganisation} = this.props;
+    const { org_id, site, updateOrganisation } = this.props;
     const site_id = site._id;
     // console.log('org_id',': ', org_id);
     // console.log('site_id',': ', site_id);
-    
+
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}`;
-    
+
     axios.delete(url)
-    .then(resp=>{
-      //res.data supposed to be the new organisation after deleting site.
-      console.log('resp.data',': ', resp.data);
-      //calling updateOrganisation so it renders the new data. 
-      updateOrganisation(resp.data);
-    })
+      .then(resp => {
+        //res.data supposed to be the new organisation after deleting site.
+        console.log('resp.data', ': ', resp.data);
+        //calling updateOrganisation so it renders the new data. 
+        updateOrganisation(resp.data);
+      })
+  }
+
+  convertIndexToDay = (index) => {
+    if (index === 0) {
+      return "Monday"
+    }
+    if (index === 1) {
+      return "Tuesday"
+    }
+    if (index === 2) {
+      return "Wednesday"
+    }
+    if (index === 3) {
+      return "Thursday"
+    }
+    if (index === 4) {
+      return "Friday"
+    }
+    if (index === 5) {
+      return "Saturday"
+    }
+    if (index === 6) {
+      return "Sunday"
+    }
+  }
+
+  handleOpeningHours = (e) => {
+    const { value, id, name} = e.currentTarget;
+    const { data } = this.state;
+    // console.log('data',': ', data);
+    const {openingHours} = data;
+    // console.log('openingHours',': ', openingHours);
+  
+    //Note that in this case name refers to the day index (eg. 0 => Monday)
+    openingHours[name][id] = value;
+    this.setState({data});
+    // console.log('HANDLE, this.state.data', ': ', this.state.data);
+  }
+
+  openingHoursCreateDay = (day, index) => {
+    return (
+      <React.Fragment>
+        <td>
+          {this.convertIndexToDay(index)}
+        </td>
+        <td>
+          <input type="text" name={index} id="openTime" placeholder={day.openTime} onChange={this.handleOpeningHours} />
+        </td>
+        <td>
+          <input type="text" name={index} id="closeTime" placeholder={day.closeTime} onChange={this.handleOpeningHours} />
+        </td>
+        <td>
+          <input type="text" name={index} id="openingHoursNote" placeholder={day.openingHoursNote} onChange={this.handleOpeningHours} />
+        </td>
+      </React.Fragment>
+    )
+  }
+
+  openingHours = () => {
+    const { site } = this.props;
+    console.log('site', ': ', site);
+
+    const { openingHours } = site;
+
+    return (
+      <React.Fragment>
+        <table>
+          <thead>
+            <tr>
+              <th> Day </th>
+              <th> Opening Time </th>
+              <th> Closing Time </th>
+              <th> Notes </th>
+            </tr>
+          </thead>
+          <tbody>
+            {openingHours.map((day, index) => {
+              // console.log(`day ${index}`,': ', day);
+              
+              return (
+                <tr>
+                  {this.openingHoursCreateDay(day, index)}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        <br></br>
+      </React.Fragment>
+    );
   }
 
   render() {
-    //TODO: IMPLEMENT OPENING HOURS.
-    console.log('this.state', ': ', this.state);
 
     return (
       <React.Fragment>
@@ -130,6 +227,10 @@ class Site extends Component {
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>
           <br></br>
+
+          {this.openingHours()}
+
+          <hr></hr>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}
           {this.createTextInput("locationDetails", "Location Details:")}
@@ -161,11 +262,6 @@ class Site extends Component {
           <button onClick={this.submitForm}>Update</button>
         </form>
 
-        {/* {Object.entries(site).map(([key, value]) => {
-          if (key !== 'servicesInSite' && key !== 'openingHours') {
-            return <p key={key}>{key}: {value} </p>
-          }
-        })} */}
       </React.Fragment>
     );
   }

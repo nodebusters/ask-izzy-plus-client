@@ -31,7 +31,7 @@ class Dashboard extends Component {
     const token = localStorage.getItem('token');
     const decoded = jwtDecode(token);
 
-    console.log('decoded',': ', decoded);
+    // console.log('decoded',': ', decoded);
     const {given_name,family_name} = decoded;
     this.setState({ given_name, family_name })
     if (token) {
@@ -52,12 +52,8 @@ class Dashboard extends Component {
             user,
             message
           })
-          console.log('this.state', ': ', this.state);
+          console.log('DASHBOARD this.state', ': ', this.state);
         })
-
-
-
-
     } else {
       console.log("doesnt exists");
       this.setState({ error: "token error" })
@@ -86,7 +82,7 @@ class Dashboard extends Component {
             {/* defaultIndex changes he tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
             {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
             <Tabs
-              defaultIndex={1}
+              defaultIndex={2}
               onSelect={index => {
               // console.log(index + 1)
               }}
