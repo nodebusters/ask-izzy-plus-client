@@ -50,14 +50,6 @@ class NewSite extends Component {
     );
   }
 
-  convertToYesOrNo = (val) => {
-    if (val === true) {
-      return "YES"
-    } else {
-      return "NO"
-    }
-  }
-
   createOptionInput = (attr, description) => {
     // const { site } = this.props;
     return (
@@ -97,7 +89,7 @@ class NewSite extends Component {
     return (
       <React.Fragment>
         <form id="form" className="editMode">
-          <button onClick={this.submitForm}>Update</button>
+          <button onClick={this.submitForm}>Create</button>
           <br></br>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}

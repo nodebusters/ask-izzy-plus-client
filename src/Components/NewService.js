@@ -1,13 +1,11 @@
-//Component Description: Service component takes information of only one service and returns a react fractment displaying its attributes. Later on this component will return a form allowing the user to send PUT requests.  
+//Component Description: Site component takes information of only one site and returns a react fractment displaying its attributes. Later on this component will return a form allowing the user to send PUT requests.  
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Service extends Component {
+class NewService extends Component {
   //Declaring state.
   state = {
-    data: {},
-    formClass: "readMode",
-    editButton: "editButton"
+    data: {} 
   }
 
   handleInputChange = (e) => {
@@ -18,27 +16,23 @@ class Service extends Component {
   }
 
   submitForm = (e) => {
-    const { org_id, site_id, service, updateOrganisation } = this.props;
+    //This method updates the org data in the app.
+    const { org_id, site_id, updateOrganisation } = this.props;
     e.preventDefault();
     //PUT request.
-    const service_id = service._id;
 
-    console.log('this.state', ': ', this.state);
+    console.log('FORM this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
+    const url = `${baseURL}/protected/create/service/${org_id}/${site_id}`;
 
     const { data } = this.state;
 
-    axios.put(url, data)
+    axios.post(url, data)
       .then((resp => {
-        console.log('resp.data', ': ', resp.data);
+        console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
         //Changing to edit mode:
-        this.setState({
-          formClass: "readMode",
-          editButton: "editButton"
-        })
       }))
       .catch(err => {
 
@@ -46,31 +40,22 @@ class Service extends Component {
   }
 
   createTextInput = (attr, description) => {
-    const { service } = this.props;
     return (
       <React.Fragment>
         <label htmlFor={`${attr}`}> {description} </label>
-        <input type="text" id={`${attr}`} onChange={this.handleInputChange} placeholder={service[attr]} />
+        <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
         <br></br>
       </React.Fragment>
     );
   }
 
-  convertToYesOrNo = (val) => {
-    if (val === true) {
-      return "YES"
-    } else {
-      return "NO"
-    }
-  }
-
   createOptionInput = (attr, description) => {
-    const { service } = this.props;
+    // const { site } = this.props;
     return (
       <React.Fragment>
         <label htmlFor={`${attr}`}>{description} </label>
         <select id={`${attr}`} onChange={this.handleInputChange}>
-          <option value="" selected disabled hidden>{this.convertToYesOrNo(service[attr])}</option>
+          <option value="" selected disabled hidden> </option>
           <option value="true">YES</option>
           <option value="false">NO</option>
         </select>
@@ -79,52 +64,12 @@ class Service extends Component {
     );
   }
 
-  edit = (e) => {
-    e.preventDefault();
-    if (e.target.innerHTML === "Edit") {
-      e.target.innerHTML = "Cancel"
-      this.setState({
-        formClass: "editMode",
-        editButton: "cancelButton"
-      })
-
-    } else {
-      e.target.innerHTML = "Edit"
-      this.setState({
-        formClass: "readMode",
-        editButton: "editButton"
-      })
-    }
-  }
-
-  delete = (e) =>{
-    e.preventDefault();
-    console.log("Delete request triggered.");
-    //NOTE that we are getting updateOrganisation method from props.
-    const {org_id, site_id, service, updateOrganisation} = this.props;
-    const service_id = service._id;
-    // console.log('org_id',': ', org_id);
-    // console.log('site_id',': ', site_id);
-    
-    const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}/${service_id}`;
-    
-    axios.delete(url)
-    .then(resp=>{
-      //res.data supposed to be the new organisation after deleting site.
-      console.log('resp.data',': ', resp.data);
-      //calling updateOrganisation so it renders the new data. 
-      updateOrganisation(resp.data);
-    })
-  }
-
   render() {
+    //TODO: IMPLEMENT OPENING HOURS.
     return (
       <React.Fragment>
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
-        <button onClick={this.delete} className="cancelButton">Delete</button>
-        <form id="form" className={this.state.formClass}>
-          <button onClick={this.submitForm}>Update</button>
+        <form id="form" className="editMode">
+          <button onClick={this.submitForm}>Create</button>
           <br></br>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("description", "Description:")}
@@ -160,12 +105,8 @@ class Service extends Component {
           {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
           {this.createTextInput("accreditationName", "Accreditation Name:")}
         </form>
-
-        {/* {Object.entries(service).map(([key, value]) => {
-          return <p key={key}>{key}: {value} </p>
-        })} */}
       </React.Fragment>
     );
   }
 }
-export default Service;
+export default NewService;
