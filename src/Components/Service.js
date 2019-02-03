@@ -97,10 +97,32 @@ class Service extends Component {
     }
   }
 
+  delete = (e) =>{
+    e.preventDefault();
+    console.log("Delete request triggered.");
+    //NOTE that we are getting updateOrganisation method from props.
+    const {org_id, site_id, service, updateOrganisation} = this.props;
+    const service_id = service._id;
+    // console.log('org_id',': ', org_id);
+    // console.log('site_id',': ', site_id);
+    
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}/${service_id}`;
+    
+    axios.delete(url)
+    .then(resp=>{
+      //res.data supposed to be the new organisation after deleting site.
+      console.log('resp.data',': ', resp.data);
+      //calling updateOrganisation so it renders the new data. 
+      updateOrganisation(resp.data);
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
         <button onClick={this.edit} className={this.state.editButton}>Edit</button>
+        <button onClick={this.delete} className="cancelButton">Delete</button>
         <form id="form" className={this.state.formClass}>
           <button onClick={this.submitForm}>Update</button>
           <br></br>
