@@ -5,7 +5,9 @@ import axios from 'axios';
 class NewSite extends Component {
   //Declaring state.
   state = {
-    data: {} 
+    data: {
+      openingHours:[{},{},{},{},{},{},{}]
+    }
   }
 
   handleInputChange = (e) => {
@@ -67,30 +69,122 @@ class NewSite extends Component {
 
   edit = (e) => {
     e.preventDefault();
-    if (e.target.innerHTML==="Edit"){
-      e.target.innerHTML="Cancel"
+    if (e.target.innerHTML === "Edit") {
+      e.target.innerHTML = "Cancel"
       this.setState({
-        formClass : "editMode",
+        formClass: "editMode",
         editButton: "cancelButton"
       })
-      
-    }else{
-      e.target.innerHTML="Edit"
+
+    } else {
+      e.target.innerHTML = "Edit"
       this.setState({
-        formClass : "readMode",
+        formClass: "readMode",
         editButton: "editButton"
       })
     }
   }
 
+  convertIndexToDay = (index) => {
+    if (index === 0) {
+      return "Monday"
+    }
+    if (index === 1) {
+      return "Tuesday"
+    }
+    if (index === 2) {
+      return "Wednesday"
+    }
+    if (index === 3) {
+      return "Thursday"
+    }
+    if (index === 4) {
+      return "Friday"
+    }
+    if (index === 5) {
+      return "Saturday"
+    }
+    if (index === 6) {
+      return "Sunday"
+    }
+  }
+
+  handleOpeningHours = (e) => {
+    const { value, id, name } = e.currentTarget;
+    const { data } = this.state;
+    // console.log('data',': ', data);
+    const { openingHours } = data;
+    // console.log('openingHours',': ', openingHours);
+
+    //Note that in this case name refers to the day index (eg. 0 => Monday)
+    openingHours[name][id] = value;
+    this.setState({ data });
+    // console.log('HANDLE, this.state.data', ': ', this.state.data);
+  }
+
+  openingHoursCreateDay = (day, index) => {
+    return (
+      <React.Fragment>
+        <td>
+          {this.convertIndexToDay(index)}
+        </td>
+        <td>
+          <input type="text" name={index} id="openTime" placeholder={day.openTime} onChange={this.handleOpeningHours} />
+        </td>
+        <td>
+          <input type="text" name={index} id="closeTime" placeholder={day.closeTime} onChange={this.handleOpeningHours} />
+        </td>
+        <td>
+          <input type="text" name={index} id="openingHoursNote" placeholder={day.openingHoursNote} onChange={this.handleOpeningHours} />
+        </td>
+      </React.Fragment>
+    )
+  }
+
+  openingHours = () => {
+    const {data:{openingHours}} = this.state;
+
+    return (
+      <React.Fragment>
+        <table>
+          <thead>
+            <tr>
+              <th> Day </th>
+              <th> Opening Time </th>
+              <th> Closing Time </th>
+              <th> Notes </th>
+            </tr>
+          </thead>
+          <tbody>
+            {openingHours.map((day, index) => {
+              // console.log(`day ${index}`,': ', day);
+
+              return (
+                <tr>
+                  {this.openingHoursCreateDay(day, index)}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+
+        <br></br>
+      </React.Fragment>
+    );
+  }
+
   render() {
     //TODO: IMPLEMENT OPENING HOURS.
-    
+
     return (
       <React.Fragment>
         <form id="form" className="editMode">
           <button onClick={this.submitForm}>Create</button>
           <br></br>
+
+          {this.openingHours()}
+
+          <hr></hr>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}
           {this.createTextInput("locationDetails", "Location Details:")}
