@@ -1,7 +1,8 @@
 //Component Description: ServicesInSite component iterates each of the services of only one site that has been passed in props, and it returns in a separate tab the service name and the Service component as a tab conent. 
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Service from './Service'
+import Service from './Service';
+import NewService from './NewService';
 
 class ServicesInSite extends Component {
   render() {
@@ -19,6 +20,7 @@ class ServicesInSite extends Component {
             {services.map(service => {
               return <Tab key={service.name}>{service.name}</Tab>
             })}
+            <Tab key="New"> New </Tab>
           </TabList>
 
 
@@ -32,6 +34,9 @@ class ServicesInSite extends Component {
               </React.Fragment>
             )
           })}
+          <TabPanel>
+            <NewService org_id={org_id} site_id={site_id} updateOrganisation={updateOrganisation} />
+          </TabPanel>
         </Tabs>
       </React.Fragment>
     );

@@ -2,19 +2,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Site extends Component {
+class NewSite extends Component {
   //Declaring state.
-  //Note we need to define openingHours here so there is no error the first time it renders. 
   state = {
-    data: {},
-    formClass: "readMode",
-    editButton: "editButton"
-  }
-
-  //This steps are important in order to retrieve the data in the db and store it in state. Otherwise everytime we update opening hours it could erase existing data. 
-  componentDidMount(){
-    const {site} = this.props;
-    this.setState({data:site});
+    data: {
+      openingHours:[{},{},{},{},{},{},{}]
+    }
   }
 
   handleInputChange = (e) => {
@@ -24,30 +17,25 @@ class Site extends Component {
     this.setState({ data });
   }
 
-
   submitForm = (e) => {
+    //This method updates the org data in the app.
     const { updateOrganisation } = this.props;
     e.preventDefault();
     //PUT request.
     const { org_id } = this.props;
-    const site_id = this.props.site._id;
 
     console.log('FORM this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/site/${org_id}/${site_id}`;
+    const url = `${baseURL}/protected/create/site/${org_id}`;
 
     const { data } = this.state;
 
-    axios.put(url, data)
+    axios.post(url, data)
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
         //Changing to edit mode:
-        this.setState({
-          formClass: "readMode",
-          editButton: "editButton"
-        })
       }))
       .catch(err => {
 
@@ -55,31 +43,22 @@ class Site extends Component {
   }
 
   createTextInput = (attr, description) => {
-    const { site } = this.props;
     return (
       <React.Fragment>
         <label htmlFor={`${attr}`}> {description} </label>
-        <input type="text" id={`${attr}`} placeholder={site[attr]} onChange={this.handleInputChange} />
+        <input type="text" id={`${attr}`} onChange={this.handleInputChange} />
         <br></br>
       </React.Fragment>
     );
   }
 
-  convertToYesOrNo = (val) => {
-    if (val === true) {
-      return "YES"
-    } else {
-      return "NO"
-    }
-  }
-
   createOptionInput = (attr, description) => {
-    const { site } = this.props;
+    // const { site } = this.props;
     return (
       <React.Fragment>
         <label htmlFor={`${attr}`}>{description} </label>
         <select id={`${attr}`} onChange={this.handleInputChange}>
-          <option value="" selected disabled hidden>{this.convertToYesOrNo(site[attr])}</option>
+          <option value="" selected disabled hidden> </option>
           <option value="true">YES</option>
           <option value="false">NO</option>
         </select>
@@ -104,27 +83,6 @@ class Site extends Component {
         editButton: "editButton"
       })
     }
-  }
-
-  delete = (e) => {
-    e.preventDefault();
-    console.log("Delete request triggered.");
-    //NOTE that we are getting updateOrganisation method from props.
-    const { org_id, site, updateOrganisation } = this.props;
-    const site_id = site._id;
-    // console.log('org_id',': ', org_id);
-    // console.log('site_id',': ', site_id);
-
-    const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}`;
-
-    axios.delete(url)
-      .then(resp => {
-        //res.data supposed to be the new organisation after deleting site.
-        console.log('resp.data', ': ', resp.data);
-        //calling updateOrganisation so it renders the new data. 
-        updateOrganisation(resp.data);
-      })
   }
 
   convertIndexToDay = (index) => {
@@ -152,15 +110,15 @@ class Site extends Component {
   }
 
   handleOpeningHours = (e) => {
-    const { value, id, name} = e.currentTarget;
+    const { value, id, name } = e.currentTarget;
     const { data } = this.state;
     // console.log('data',': ', data);
-    const {openingHours} = data;
+    const { openingHours } = data;
     // console.log('openingHours',': ', openingHours);
-  
+
     //Note that in this case name refers to the day index (eg. 0 => Monday)
     openingHours[name][id] = value;
-    this.setState({data});
+    this.setState({ data });
     // console.log('HANDLE, this.state.data', ': ', this.state.data);
   }
 
@@ -184,10 +142,7 @@ class Site extends Component {
   }
 
   openingHours = () => {
-    const { site } = this.props;
-    console.log('site', ': ', site);
-
-    const { openingHours } = site;
+    const {data:{openingHours}} = this.state;
 
     return (
       <React.Fragment>
@@ -203,7 +158,7 @@ class Site extends Component {
           <tbody>
             {openingHours.map((day, index) => {
               // console.log(`day ${index}`,': ', day);
-              
+
               return (
                 <tr>
                   {this.openingHoursCreateDay(day, index)}
@@ -219,13 +174,12 @@ class Site extends Component {
   }
 
   render() {
+    //TODO: IMPLEMENT OPENING HOURS.
 
     return (
       <React.Fragment>
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
-        <button onClick={this.delete} className="cancelButton">Delete</button>
-        <form id="form" className={this.state.formClass}>
-          <button onClick={this.submitForm}>Update</button>
+        <form id="form" className="editMode">
+          <button onClick={this.submitForm}>Create</button>
           <br></br>
 
           {this.openingHours()}
@@ -259,11 +213,9 @@ class Site extends Component {
           {this.createTextInput("addressState", "State:")}
           {this.createTextInput("addressPostcode", "Postcode:")}
           {this.createOptionInput("addressIsConfidential", "Address Is Confidential:")}
-          <button onClick={this.submitForm}>Update</button>
         </form>
-
       </React.Fragment>
     );
   }
 }
-export default Site;
+export default NewSite;

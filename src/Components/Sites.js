@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Site from './Site'
+import NewSite from './NewSite'
 
 class Sites extends Component {
   render() {
@@ -24,6 +25,7 @@ class Sites extends Component {
             {sites.map(site => {
               return <Tab key={site.name}>{site.name}</Tab>
             })}
+            <Tab key="New"> New </Tab>
           </TabList>
 
           {sites.map(site => {
@@ -36,6 +38,10 @@ class Sites extends Component {
               </React.Fragment>
             )
           })}
+          {/* NEW SITE FORM */}
+          <TabPanel>
+            <NewSite org_id={org_id}  updateOrganisation={updateOrganisation} />
+          </TabPanel>
         </Tabs>
       </React.Fragment>
     );
