@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import Register from './Components/Register';
 import Admin from './Components/Admin';
 import AdminDashboard from './Components/AdminDashboard';
+import PageNotFound from './Components/PageNotFound';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/register" component={Register} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/admin/dashboard" component={AdminDashboard} />
+          <Route exact path="*" component={PageNotFound} />
 
         </React.Fragment>
       </Router>
