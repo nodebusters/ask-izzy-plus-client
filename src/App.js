@@ -4,6 +4,7 @@ import './stylesheets/App.css';
 import history from './history';
 import Dashboard from './Components/Dashboard';
 import Home from './Components/Home';
+import Register from './Components/Register';
 import Admin from './Components/Admin';
 import AdminDashboard from './Components/AdminDashboard';
 
@@ -15,6 +16,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />          
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/register" component={Register} />
           <Route exact path="/admin" component={Admin} />
           <Route exact path="/admin/dashboard" component={AdminDashboard} />
 
