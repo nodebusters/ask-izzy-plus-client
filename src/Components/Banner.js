@@ -51,11 +51,15 @@ const Banner = () => {
   return (
     <div className="image-wrapper">
       <div className="hero-image">
-        <img src={header} alt="Ask Izzy Plus banner" />
+        <a href="/" className="root-link">
+          <img src={header} alt="Ask Izzy Plus banner" />
+        </a>
       </div>
       <div className="logo-image">
+      <a href="/" className="root-link">
         <img src={logo} alt="Ask Izzy Plus logo" />
         <h3 className="subhead">Need to update your details?</h3>
+      </a>
       </div>
     </div>
   );
