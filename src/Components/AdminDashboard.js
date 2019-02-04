@@ -23,6 +23,7 @@ class AdminDashboard extends Component {
     console.log("AdminDashboard Component did mount");
     this.getAdminUserData();
     this.getOrganisationData();
+    this.getAllUsersData();
   }
 
   getAdminUserData = (e) => {
@@ -72,6 +73,24 @@ class AdminDashboard extends Component {
       })
   }
 
+  getAllUsersData = () => {
+    console.log("running get all users data")
+    const baseURL = process.env.REACT_APP_BASE_URL;
+    const url = `${baseURL}/protected/users`; 
+    axios.get(url)
+      .then(res => {
+        console.log(res.data)
+        const users = res.data
+        this.setState({ users })
+  })
+}
+
+  // displayAllUsers = (users) => {
+  //   users.map(user => {
+  //     return <p key={user._id}>{user.organisation}</p>
+  //   })
+  // }
+
   handleInputChange = (e) => {
     const { value, id } = e.currentTarget;
     const { newUser } = this.state;
@@ -92,10 +111,11 @@ class AdminDashboard extends Component {
   }
 
   render() {
-    const { adminUser } = this.state;
-    if (adminUser) {
+    const { adminUser, users } = this.state;
+    if (adminUser && users) {
       const { email } = adminUser;
       const { organisations, adminName, adminLastName } = this.state;
+      // const userData = this.displayAllUsers(users);
       return (
         <React.Fragment>
           <nav>
@@ -123,7 +143,15 @@ class AdminDashboard extends Component {
               <button onClick={this.submitForm}>Submit</button>
           </form>
           <h3>All users</h3>
-
+          {users.map(user => {
+            return (
+              <React.Fragment>
+                <span key={user._id}>{user.email} | {user.organisation}</span>
+                <button>Delete</button>
+                <br></br>
+              </React.Fragment>
+            )
+          })}
         </React.Fragment>
       );
     } else {
