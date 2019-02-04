@@ -1,6 +1,7 @@
 //Component Description: Service component takes information of only one service and returns a react fractment displaying its attributes. Later on this component will return a form allowing the user to send PUT requests.  
 import React, { Component } from 'react';
 import axios from 'axios';
+import "../stylesheets/Service.css";
 
 class Service extends Component {
   //Declaring state.
@@ -137,43 +138,45 @@ class Service extends Component {
         <button onClick={this.edit} className={this.state.editButton}>Edit</button>
         <button onClick={this.delete} className="cancelButton">Delete</button>
         <button onClick={this.submitForm} className="updateButton">Update</button>
-        <form id="form" className={this.state.formClass}>
-          {/* <button onClick={this.submitForm} className="updateButton">Update</button> */}
-          <br></br>
-          {this.createTextInput("name", "Name:")}
-          {this.createTextInput("description", "Description:")}
-          {this.createTextInput("referralInfo", "Referral Info:")}
-          {this.createOptionInput("adhcEligible", "ADHC Eligible:")}
-          {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
-          {this.createTextInput("targetGender", "Target Gender:")}
-          {this.createTextInput("availability", "Availability:")}
-          {this.createTextInput("billingMethod", "Billing Method:")}
-          {this.createTextInput("cost", "Cost:")}
-          {this.createTextInput("crisisKeywords", "Crisis Keywords:")}
-          {this.createTextInput("details", "Details:")}
-          {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
-          {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
-          {this.createTextInput("fundingBody", "Funding Body:")}
-          {this.createOptionInput("healthcareCardHolders", "Healthcare CardHolders:")}
-          {this.createTextInput("intakeInfo", "Intake Info:")}
-          {this.createTextInput("intakePoint", "Intake Point:")}
-          {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
-          {this.createOptionInput("ndisApproved", "NDIS Approved:")}
-          {this.createOptionInput("promotedService", "Promoted Service:")}
-          {this.createTextInput("specialRequirements", "Special Requirements:")}
-          {this.createTextInput("language", "Language:")}
-          {this.createTextInput("ageGroupKeyword", "Age Group Keyword:")}
-          {this.createTextInput("ageGroupDescription", "Age Group Description:")}
-          {this.createTextInput("serviceTypes", "Service Types:")}
-          {this.createTextInput("indigenousClassification", "Indigenous Classification:")}
-          {this.createTextInput("capacityStatus", "Capacity Status:")}
-          {this.createTextInput("capacityStatusText", "Capacity Status Text:")}
-          {this.createTextInput("capacityFrequency", "Capacity Frequency:")}
-          {this.createTextInput("capacityLastNotification", "Capacity Last Notification:")}
-          {this.createTextInput("capacityLastStatusUpdate", "Capacity Last Status Update:")}
-          {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
-          {this.createTextInput("accreditationName", "Accreditation Name:")}
-        </form>
+        <div className="service-form">
+          <form id="form" className={this.state.formClass} data-service-form>
+            {/* <button onClick={this.submitForm} className="updateButton">Update</button> */}
+            <br></br>
+            {this.createTextInput("name", "Name:")}
+            {this.createTextInput("description", "Description:")}
+            {this.createTextInput("referralInfo", "Referral Info:")}
+            {this.createOptionInput("adhcEligible", "ADHC Eligible:")}
+            {this.createTextInput("assessmentCriteria", "Assessment Criteria:")}
+            {this.createTextInput("targetGender", "Target Gender:")}
+            {this.createTextInput("availability", "Availability:")}
+            {this.createTextInput("billingMethod", "Billing Method:")}
+            {this.createTextInput("cost", "Cost:")}
+            {this.createTextInput("crisisKeywords", "Crisis Keywords:")}
+            {this.createTextInput("details", "Details:")}
+            {this.createTextInput("eligibilityInfo", "Eligibility Info:")}
+            {this.createTextInput("ineligibilityInfo", "Ineligibility Info:")}
+            {this.createTextInput("fundingBody", "Funding Body:")}
+            {this.createOptionInput("healthcareCardHolders", "Healthcare CardHolders:")}
+            {this.createTextInput("intakeInfo", "Intake Info:")}
+            {this.createTextInput("intakePoint", "Intake Point:")}
+            {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
+            {this.createOptionInput("ndisApproved", "NDIS Approved:")}
+            {this.createOptionInput("promotedService", "Promoted Service:")}
+            {this.createTextInput("specialRequirements", "Special Requirements:")}
+            {this.createTextInput("language", "Language:")}
+            {this.createTextInput("ageGroupKeyword", "Age Group Keyword:")}
+            {this.createTextInput("ageGroupDescription", "Age Group Description:")}
+            {this.createTextInput("serviceTypes", "Service Types:")}
+            {this.createTextInput("indigenousClassification", "Indigenous Classification:")}
+            {this.createTextInput("capacityStatus", "Capacity Status:")}
+            {this.createTextInput("capacityStatusText", "Capacity Status Text:")}
+            {this.createTextInput("capacityFrequency", "Capacity Frequency:")}
+            {this.createTextInput("capacityLastNotification", "Capacity Last Notification:")}
+            {this.createTextInput("capacityLastStatusUpdate", "Capacity Last Status Update:")}
+            {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
+            {this.createTextInput("accreditationName", "Accreditation Name:")}
+          </form>
+        </div>
 
         {/* {Object.entries(service).map(([key, value]) => {
           return <p key={key}>{key}: {value} </p>
