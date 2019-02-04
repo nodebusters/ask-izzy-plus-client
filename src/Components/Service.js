@@ -30,7 +30,14 @@ class Service extends Component {
 
     const { data } = this.state;
 
-    axios.put(url, data)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+
+    axios.put(url, data, config)
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);

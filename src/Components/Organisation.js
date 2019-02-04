@@ -28,8 +28,14 @@ class Organisation extends Component {
     const url = `${baseURL}/protected/update/organisation/${org_id}`;
 
     const { data } = this.state;
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
 
-    axios.put(url, data)
+    axios.put(url, data, config)
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
