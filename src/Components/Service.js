@@ -26,7 +26,7 @@ class Service extends Component {
     console.log('this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/service/${org_id}/${site_id}/${service_id}`;
+    const url = `${baseURL}/protected/service/${org_id}/${site_id}/${service_id}`;
 
     const { data } = this.state;
 
@@ -114,7 +114,7 @@ class Service extends Component {
     // console.log('site_id',': ', site_id);
     
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}/${service_id}`;
+    const url = `${baseURL}/protected/service/${org_id}/${site_id}/${service_id}`;
     const token = localStorage.getItem('token');
     const config = {
       headers:{

@@ -24,7 +24,7 @@ class NewService extends Component {
     console.log('FORM this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/create/service/${org_id}/${site_id}`;
+    const url = `${baseURL}/protected/service/${org_id}/${site_id}`;
 
     const { data } = this.state;
     const token = localStorage.getItem('token');

@@ -25,7 +25,7 @@ class Organisation extends Component {
     console.log('this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/organisation/${org_id}`;
+    const url = `${baseURL}/protected/organisation/${org_id}`;
 
     const { data } = this.state;
     const token = localStorage.getItem('token');
