@@ -81,7 +81,7 @@ class Dashboard extends Component {
             {/* defaultIndex changes he tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
             {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
             <Tabs
-              defaultIndex={2}
+              defaultIndex={1}
               onSelect={index => {
               // console.log(index + 1)
               }}

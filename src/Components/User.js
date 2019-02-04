@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import userAvatar from '../Images/user-avatar.svg';
+
 class User extends Component {
   render() {
     // User component inherits props from User model, renders object's key/values as an array to Dashboard
@@ -7,13 +9,20 @@ class User extends Component {
     
     return (
       <React.Fragment>
-        {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
         <h1> Welcome {user.firstName} </h1>
-        <h3> User details: </h3>
-        <p> First Name:  {given_name} </p>
-        <p> Last Name:  {family_name} </p>
-        <p> Registered Email:  {user.email} </p>
-        <p> Organisation:  {organisation.name} </p>
+          <div className="user-card">
+            {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
+            <div className="user-info">
+              <h3> User Profile </h3>
+              <p> <strong>First Name: </strong> {given_name} </p>
+              <p> <strong>Last Name: </strong> {family_name} </p>
+              <p> <strong> Registered Email: </strong> {user.email} </p>
+              <p> <strong> Organisation: </strong> {organisation.name} </p>
+            </div>
+            <div className="user-avatar">
+              <img src={userAvatar} alt="User avatar"/>
+            </div>
+          </div>
       </React.Fragment>
     );
   }

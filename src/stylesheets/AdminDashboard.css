@@ -1,19 +1,50 @@
-.admin-container {
-  border: dashed dodgerblue 1px; }
+.admin-card {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 30px;
+  flex-wrap: wrap-reverse; }
+  .admin-card .user-avatar {
+    object-fit: cover;
+    width: 100%;
+    max-width: 200px; }
+    .admin-card .user-avatar img {
+      border-radius: 100%; }
+  .admin-card .admin-info {
+    text-align: left; }
+  @media only screen and (max-width: 600px) {
+    .admin-card {
+      justify-content: center; } }
 
 .add-user-container {
   border: dashed dodgerblue 1px; }
-  .add-user-container .create-user-button {
-    margin: 5px;
+  .add-user-container .createUsers {
+    background: #4d13af;
+    color: #ffffff;
+    border: 1px solid #4d13af;
+    border-radius: 3px;
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
     text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: white;
-    color: black;
-    border: 1px solid black;
-    font-family: "Quicksand", sans-serif; }
+    padding: 1em 5em;
+    margin: 10px;
+    min-width: 75px; }
+    .add-user-container .createUsers:hover {
+      background-color: #6118dd; }
 
 .all-users-container {
   border: dashed dodgerblue 1px; }
+  .all-users-container .deleteUsers {
+    background: #4d13af;
+    color: #ffffff;
+    border: 1px solid #4d13af;
+    border-radius: 3px;
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1em 5em;
+    margin: 10px;
+    min-width: 75px; }
+    .all-users-container .deleteUsers:hover {
+      background-color: #6118dd; }
 
 /*# sourceMappingURL=AdminDashboard.css.map */

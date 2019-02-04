@@ -31,7 +31,7 @@ class LogOut extends Component {
           &&
           <div onClick={this.logout} className="logout-button header-link">
             Logout
-        </div>
+          </div>
         }
       </React.Fragment>
     );

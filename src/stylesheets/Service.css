@@ -1,0 +1,108 @@
+.service-form {
+  display: block;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box; }
+  .service-form [data-service-form] {
+    text-align: left; }
+    .service-form [data-service-form] input {
+      background: aqua;
+      width: 100%;
+      font-family: "Quicksand", sans-serif; }
+    .service-form [data-service-form] select {
+      background: 100%;
+      width: 100%;
+      font-family: "Quicksand", sans-serif; }
+
+.readMode {
+  /*disable input fields*/
+  pointer-events: none;
+  color: dodgerblue;
+  font-weight: bold; }
+  .readMode input {
+    border: 0;
+    /* Most modern browsers support this now. */ }
+    .readMode input::placeholder {
+      color: black; }
+  .readMode select {
+    color: mediumvioletred;
+    border: 0;
+    background-color: transparent;
+    /*Removing the drop down arrow*/
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Chrome */
+    -webkit-appearance: none;
+    /* For IE10 */ }
+    .readMode select::-ms-expand {
+      display: none; }
+  .readMode button {
+    visibility: hidden;
+    margin: 0.5rem; }
+
+.editMode {
+  color: teal;
+  font-weight: bold; }
+  .editMode input {
+    /* Most modern browsers support this now. */ }
+    .editMode input::placeholder {
+      color: black; }
+  .editMode button {
+    background: #4d13af;
+    color: #ffffff;
+    border: 1px solid #4d13af;
+    border-radius: 3px;
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1em 5em;
+    margin: 10px;
+    min-width: 75px; }
+    .editMode button:hover {
+      background-color: #6118dd; }
+
+.editButton {
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
+  border-radius: 3px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .editButton:hover {
+    background-color: #6118dd; }
+
+.cancelButton {
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
+  border-radius: 3px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .cancelButton:hover {
+    background-color: #6118dd; }
+  .cancelButton:focus {
+    outline: 0; }
+
+.updateButton {
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
+  border-radius: 3px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .updateButton:hover {
+    background-color: #6118dd; }
+
+/*# sourceMappingURL=Service.css.map */
