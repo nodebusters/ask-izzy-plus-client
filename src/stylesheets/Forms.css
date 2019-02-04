@@ -52,6 +52,7 @@
     background: white;
     color: black;
     border: 1px solid black;
+    border-radius: 3px;
     font-family: "Quicksand", sans-serif; }
 
 .editButton {
@@ -62,6 +63,7 @@
   background: white;
   color: black;
   border: 1px solid black;
+  border-radius: 3px;
   font-family: "Quicksand", sans-serif; }
 
 .cancelButton {
@@ -72,6 +74,7 @@
   background: white;
   color: black;
   border: 1px solid black;
+  border-radius: 3px;
   font-family: "Quicksand", sans-serif; }
   .cancelButton:focus {
     outline: 0; }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import axios from 'axios';
 
 // COMPONENTS
@@ -155,48 +156,73 @@ class AdminDashboard extends Component {
           <Navigation originPage='dashboard'/>
 
           <div className="body-container">
-            <div className="admin-container">
-              <h3>You are now logged in as: </h3>
-                <p>email: {email}</p>
-                <p>First Name: {adminName}</p>
-                <p>Last Name: {adminLastName}</p>
-            </div>
 
-            <div className="add-user-container">
-              <form id="link_user_organisation" className="add-user-form">
-                <h3>Add New User</h3>
-                <label> New User Email: </label>
-                  <input type="text" id="email" onChange={this.handleInputChange}></input>
-                  <br></br>
-                <label> New User Organisation: </label>
-                  <select id="organisation" onChange={this.handleInputChange}>
-                  <option key="" value="1234567890">Testing Organisation Name</option>
-                  {organisations.map(organisation => {
-                    return <option key={organisation._id} value={organisation._id}>{organisation.name}</option>
-                  })
-                }
-                  </select>
-                  <br></br>
-                  <button onClick={this.submitForm} className="create-user-button">Submit</button>
-              </form>
-            </div>
+            <Tabs
+              defaultIndex={2}
+              onSelect={index => {
+              // console.log(index + 1)
+              }}
+            >
 
-            <div className="all-users-container">
-              <h3>All users</h3>
-              {users.map(user => {
-                return (
-                  <React.Fragment key={`fragment of`+ user._id}>
-                    <span key={`info of`+user._id}>{user.email} | {user.organisation}</span>
-                    <button key={user._id} id={user._id} onClick={this.deleteOneUser}>Delete</button>
-                    <br></br>
-                  </React.Fragment>
-                )
-              })}
-              </div>
+              <TabList>
+                <Tab>Admin Profile</Tab>
+                <Tab>Add New Users</Tab>
+                <Tab>All Users</Tab>
+                <Tab>Settings</Tab>
+              </TabList>
+
+              <TabPanel>
+                <div className="admin-container">
+                  <h3>You are now logged in as: </h3>
+                    <p>email: {email}</p>
+                    <p>First Name: {adminName}</p>
+                    <p>Last Name: {adminLastName}</p>
+                </div>
+              </TabPanel>
+
+              <TabPanel>
+                <div className="add-user-container">
+                  <form id="link_user_organisation" className="add-user-form">
+                    <h3>Add New User</h3>
+                    <label> New User Email: </label>
+                      <input type="text" id="email" onChange={this.handleInputChange}></input>
+                      <br></br>
+                    <label> New User Organisation: </label>
+                      <select id="organisation" onChange={this.handleInputChange}>
+                      <option key="" value="1234567890">Testing Organisation Name</option>
+                      {organisations.map(organisation => {
+                        return <option key={organisation._id} value={organisation._id}>{organisation.name}</option>
+                      })
+                    }
+                      </select>
+                      <br></br>
+                      <button onClick={this.submitForm} className="create-user-button">Submit</button>
+                  </form>
+                </div>
+              </TabPanel>
+              
+              <TabPanel>
+                <div className="all-users-container">
+                  <h3>All users</h3>
+                  {users.map(user => {
+                    return (
+                      <React.Fragment key={`fragment of`+ user._id}>
+                        <span key={`info of`+user._id}>{user.email} | {user.organisation}</span>
+                        <button key={user._id} id={user._id} onClick={this.deleteOneUser}>Delete</button>
+                        <br></br>
+                      </React.Fragment>
+                    )
+                  })}
+                  </div>
+              </TabPanel>
+
+              <TabPanel>
+                <h1>Settings</h1>
+              </TabPanel>
+            </Tabs>
           </div>
           <Footer/>
       </div>
-
       );
     } else {
       return (
