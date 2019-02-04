@@ -1,46 +1,80 @@
 @import "./Colors";
 @import "./Fonts";
 
-@mixin buttonSolid() {
-  // BUTTON: Spacing between buttons
-  margin: 5px;
+@mixin button() {
+  // BUTTON: Button background colour
+  background: $button-background;
+
+  // BUTTON: Inner text colour (when selected)
+  color: $button-text;
+
+  // BUTTON: Box outline colour
+  border: 1px solid $button-background;
+
+  // Button: Rounded corners
+  border-radius: 3px;
+
+  // BUTTON: Text font-family
+  font-family: $main-body-font;
+
+  // BUTTON: Sizing/decoration
+  box-sizing: border-box;
   text-decoration: none;
-  // BUTTON: Width
-  padding: {
-    left: 20px;
-    right: 20px;
+  
+  // BUTTON: Padding between button text and button border
+  padding: 1em 5em;
+
+  // BUTTON: Spacing between different buttons
+  margin: 10px;
+  min-width: 75px;
+  
+  // BUTTON: Change background color on hover
+  &:hover {
+    background-color: $button-hover;
   }
 }
 
-// Applied to editMode, editButton and cancelButton when selected
-@mixin buttonHollow() {
-  @include buttonSolid();
-  // BUTTON: Button background colour
-  background: $light-color;
-
-  // BUTTON: Inner text colour (when selected)
-  color: $main-color;
-
-  // BUTTON: Box outline colour
-  border: 1px solid $main-color;
-
-  // BUTTON: Text font
-  font-family: $main-body-font;
-}
-
-.admin-container {
+// DASHBOARD: Tab - User Profile
+.admin-card {
+  display: flex;
   border: dashed dodgerblue 1px;
   // background: dodgerblue;
+  justify-content: space-evenly;
+  padding: 0 30px;
+  flex-wrap: wrap-reverse;
+
+  .user-avatar {
+    // max-width: 300px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 200px;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .admin-info {
+    text-align: left;
+  }
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
 }
 
 .add-user-container {
   border: dashed dodgerblue 1px;
 
-  .create-user-button {
-    @include buttonHollow();
+  .createUsers {
+    @include button();
   }
 }
 
 .all-users-container {
   border: dashed dodgerblue 1px;
+
+  .deleteUsers {
+    @include button();
+  }
 }

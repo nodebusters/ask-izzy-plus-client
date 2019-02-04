@@ -236,8 +236,9 @@ class Site extends Component {
       <React.Fragment>
         <button onClick={this.edit} className={this.state.editButton}>Edit</button>
         <button onClick={this.delete} className="cancelButton">Delete</button>
+        <button onClick={this.submitForm} className="updateButton">Update</button>
         <form id="form" className={this.state.formClass}>
-          <button onClick={this.submitForm}>Update</button>
+          {/* <button onClick={this.submitForm}>Update</button> */}
           <br></br>
 
           {this.openingHours()}

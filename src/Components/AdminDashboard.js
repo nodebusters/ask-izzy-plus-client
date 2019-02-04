@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
+import userAvatar from '../Images/user-avatar.svg';
+import "../stylesheets/AdminDashboard.css";
 
 // COMPONENTS
 // import User from './User';
@@ -9,7 +11,6 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import AdminLogOut from "./AdminLogOut";
 
-import "../stylesheets/AdminDashboard.css";
 const jwtDecode = require("jwt-decode");
 
 class AdminDashboard extends Component {
@@ -160,23 +161,29 @@ class AdminDashboard extends Component {
               <TabList>
                 <Tab>Admin Profile</Tab>
                 <Tab>Add New Users</Tab>
-                <Tab>All Users</Tab>
+                <Tab>View All</Tab>
                 <Tab>Settings</Tab>
               </TabList>
 
               <TabPanel>
-                <div className="admin-container">
-                  <h3>You are now logged in as: </h3>
-                  <p>email: {email}</p>
-                  <p>First Name: {adminName}</p>
-                  <p>Last Name: {adminLastName}</p>
-                </div>
+                <h1> Welcome {adminName}</h1>
+                <div className="admin-card">
+                    <div className="admin-info">
+                      <h3>You are now logged in as: </h3>
+                      <p>email: {email}</p>
+                      <p>First Name: {adminName}</p>
+                      <p>Last Name: {adminLastName}</p>
+                    </div>
+                    <div className="user-avatar">
+                      <img src={userAvatar} alt="User avatar"/>
+                    </div>
+                  </div>
               </TabPanel>
 
               <TabPanel>
                 <div className="add-user-container">
                   <form id="link_user_organisation" className="add-user-form">
-                    <h3>Add New User</h3>
+                    <h1>Add New User</h1>
                     <label> New User Email: </label>
                     <input
                       type="text"
@@ -203,7 +210,7 @@ class AdminDashboard extends Component {
                     <br />
                     <button
                       onClick={this.submitForm}
-                      className="create-user-button"
+                      className="createUsers"
                     >
                       Submit
                     </button>
@@ -213,7 +220,7 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="all-users-container">
-                  <h3>All users</h3>
+                  <h1>View All Users</h1>
                   {users.map(user => {
                     return (
                       <React.Fragment key={`fragment of` + user._id}>
@@ -224,6 +231,7 @@ class AdminDashboard extends Component {
                           key={user._id}
                           id={user._id}
                           onClick={this.deleteOneUser}
+                          className="deleteUsers"
                         >
                           Delete
                         </button>

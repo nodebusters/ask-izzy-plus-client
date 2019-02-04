@@ -15,23 +15,34 @@
     .user-card {
       justify-content: center; } }
 
+.org-form {
+  display: block;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box; }
+  .org-form [data-org-form] {
+    text-align: left; }
+    .org-form [data-org-form] input {
+      width: 100%;
+      font-family: "Quicksand", sans-serif; }
+    .org-form [data-org-form] select {
+      background: 100%;
+      width: 100%;
+      font-family: "Quicksand", sans-serif; }
+
 .readMode {
   /*disable input fields*/
   pointer-events: none;
-  color: ligthen(black);
+  color: dodgerblue;
   font-weight: bold; }
   .readMode input {
-    padding-bottom: 0.5rem;
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
-      font-size: 1rem;
-      color: black;
-      padding-left: 10px; }
+      color: mediumspringgreen; }
   .readMode select {
-    font-size: 0.9rem;
+    color: mediumvioletred;
     border: 0;
-    padding-bottom: 0.5rem;
     background-color: transparent;
     /*Removing the drop down arrow*/
     /* for Firefox */
@@ -49,51 +60,65 @@
   color: black;
   font-weight: bold; }
   .editMode input {
-    font-size: 1rem;
-    padding-bottom: 0.2rem;
-    padding-top: 0.2rem;
     /* Most modern browsers support this now. */ }
     .editMode input::placeholder {
-      font-size: 1rem;
-      color: black;
-      padding-left: 10px; }
-  .editMode select {
-    font-size: 0.9rem;
-    padding-bottom: 0.2rem;
-    padding-top: 0.2rem; }
+      color: black; }
   .editMode button {
-    margin: 5px;
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: white;
-    color: black;
-    border: 1px solid black;
+    background: #4d13af;
+    color: #ffffff;
+    border: 1px solid #4d13af;
     border-radius: 3px;
-    font-family: "Quicksand", sans-serif; }
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1em 5em;
+    margin: 10px;
+    min-width: 75px; }
+    .editMode button:hover {
+      background-color: #6118dd; }
 
 .editButton {
-  margin: 5px;
-  text-decoration: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: white;
-  color: black;
-  border: 1px solid black;
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
   border-radius: 3px;
-  font-family: "Quicksand", sans-serif; }
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .editButton:hover {
+    background-color: #6118dd; }
 
 .cancelButton {
-  margin: 5px;
-  text-decoration: none;
-  padding-left: 20px;
-  padding-right: 20px;
-  background: white;
-  color: black;
-  border: 1px solid black;
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
   border-radius: 3px;
-  font-family: "Quicksand", sans-serif; }
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .cancelButton:hover {
+    background-color: #6118dd; }
   .cancelButton:focus {
     outline: 0; }
+
+.updateButton {
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
+  border-radius: 3px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .updateButton:hover {
+    background-color: #6118dd; }
 
 /*# sourceMappingURL=Forms.css.map */

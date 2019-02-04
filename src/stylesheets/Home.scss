@@ -1,3 +1,6 @@
+@import "./Colors";
+@import "./Fonts";
+
 // ---------- BODY: HOME ---------- //
 .home-headline {
   font-family: 'Quicksand', sans-serif;
@@ -11,8 +14,8 @@
   // Home: Login Button
   .login-button {
     width: 100%;
-    background-color: #4d13af;
-    color: #FFFFFF;
+    background-color: $button-background;
+    color: $button-text;
     border: none;
     font-size: 1em;
     border-radius: 3px;
@@ -20,7 +23,7 @@
     padding: 15px 45%;
     // Home: Login Button (Hover)
     &:hover {
-      background-color: #6118dd;
+      background-color: $button-hover;
     }
   }
 

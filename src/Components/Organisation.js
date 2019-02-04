@@ -35,8 +35,7 @@ class Organisation extends Component {
       }
     };
 
-    axios
-      .put(url, data, config)
+    axios.put(url, data, config)
       .then(resp => {
         console.log("resp.data", ": ", resp.data);
         updateOrganisation(resp.data);
@@ -74,6 +73,7 @@ class Organisation extends Component {
     }
   };
 
+  // FORM: Handle <select> inputs (Yes/No) for Organisation
   createOptionInput = (attr, description) => {
     const { organisation } = this.props;
     return (
@@ -91,14 +91,17 @@ class Organisation extends Component {
     );
   };
 
+  // FORM: On button click, toggle between editMode and readMode in formClass
   edit = e => {
     e.preventDefault();
+    // If innerHTML is equal to Edit, change formClass to editMode and editButton to cancelButton
     if (e.target.innerHTML === "Edit") {
       e.target.innerHTML = "Cancel";
       this.setState({
         formClass: "editMode",
         editButton: "cancelButton"
       });
+    // Else, let innerHTMl equal to Edit, formClass set to readMode and editButton is equal to editButton
     } else {
       e.target.innerHTML = "Edit";
       this.setState({
@@ -123,35 +126,40 @@ class Organisation extends Component {
           Edit
         </button>
 
-        <form id="form" className={this.state.formClass}>
-          <button onClick={this.submitForm}>Update</button>
-          <br />
-          {this.createTextInput("description", "Description:")}
-          {this.createTextInput("website", "Website:")}
-          {this.createTextInput("abn", "ABN:")}
-          {this.createTextInput("providerType", "Provider Type:")}
-          {this.createTextInput("alsoKnownAs", "Also Known As:")}
-          {this.createTextInput("emailAddress", "Email Address:")}
-          {this.createOptionInput(
-            "emailIsConfidential",
-            "Email Is Confidential:"
-          )}
-          {this.createTextInput("postalAddress", "Postal Address:")}
-          {this.createTextInput("postalAddressState", "State:")}
-          {this.createTextInput("postalAddressSuburb", "Suburb:")}
-          {this.createTextInput("postalAddressPostcode", "Postcode:")}
-          {this.createOptionInput(
-            "postalAddressIsConfidential",
-            "Postal Address Is Confidential:"
-          )}
-          {this.createTextInput("phoneNumber", "Phone Number:")}
-          {this.createTextInput("phoneKind", "Phone Kind:")}
-          {this.createOptionInput(
-            "phoneIsConfidential",
-            "Phone Is Confidential:"
-          )}
-          {this.createTextInput("ceo", "CEO:")}
-        </form>
+        <button onClick={this.submitForm} className="updateButton">
+          Update
+        </button>
+
+        <div className="org-form">
+          <form id="form" className={this.state.formClass} data-org-form >
+            <br />
+            {this.createTextInput("description", "Description:")}
+            {this.createTextInput("website", "Website:")}
+            {this.createTextInput("abn", "ABN:")}
+            {this.createTextInput("providerType", "Provider Type:")}
+            {this.createTextInput("alsoKnownAs", "Also Known As:")}
+            {this.createTextInput("emailAddress", "Email Address:")}
+            {this.createOptionInput(
+              "emailIsConfidential",
+              "Email Is Confidential:"
+              )}
+            {this.createTextInput("postalAddress", "Postal Address:")}
+            {this.createTextInput("postalAddressState", "State:")}
+            {this.createTextInput("postalAddressSuburb", "Suburb:")}
+            {this.createTextInput("postalAddressPostcode", "Postcode:")}
+            {this.createOptionInput(
+              "postalAddressIsConfidential",
+              "Postal Address Is Confidential:"
+              )}
+            {this.createTextInput("phoneNumber", "Phone Number:")}
+            {this.createTextInput("phoneKind", "Phone Kind:")}
+            {this.createOptionInput(
+              "phoneIsConfidential",
+              "Phone Is Confidential:"
+              )}
+            {this.createTextInput("ceo", "CEO:")}
+          </form>
+        </div>
       </React.Fragment>
     );
   }
