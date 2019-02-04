@@ -95,13 +95,8 @@ class AdminDashboard extends Component {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/delete/user/${user_id}`;
     
-    // axios.delete(url)
-    // .then(resp=>{
-    //   //res.data supposed to be the new organisation after deleting site.
-    //   console.log('resp.data',': ', resp.data);
-    //   //calling updateOrganisation so it renders the new data. 
-    //   // updateOrganisation(resp.data);
-    // })
+    axios.delete(url)
+    .then(res => this.updateUser(res.data))
   }
 
   submitForm = (e) => {
@@ -119,7 +114,6 @@ class AdminDashboard extends Component {
 
   render() {
     const { adminUser, users } = this.state;
-    console.log(users)
     if (adminUser && users) {
       const { email } = adminUser;
       const { organisations, adminName, adminLastName } = this.state;
