@@ -11,7 +11,7 @@ body {
 
 // Container: Entire Page
 .page-container {
-  background: #C1C0BA;
+  background: $page-container-background;
   // background: dodgerblue;
   max-width: 100vw;
   /* min-height: 100vh; */
@@ -44,7 +44,7 @@ body {
 // Navigation: Bar Container
 .header-bar {
   display: flex;
-  background: #363e43;
+  background: $page-navigation-footer;
   justify-content: flex-end;
 
   // Navigation: Bar (Left)
@@ -132,7 +132,7 @@ body {
 // ---------- FOOTER ---------- //
 // Footer: Container (Links)
 .footer-container {
-  background: coral;
+  // background: coral;
   max-width: 800px;
   width: 100%;
 
@@ -147,10 +147,10 @@ body {
 
     // Footer: List Items
     li {
-      border: solid .1em;
+      // border: solid .1em;
       width: 50%;
       box-sizing: border-box;
-      background: #363e43;
+      background: $page-navigation-footer;
       padding: .5em .5em;
 
       // Footer: List Item Links
@@ -160,11 +160,6 @@ body {
         width: 100%;
         text-decoration: none;
         color: white;
-        /* padding: 0 2em; */
-        /* margin: 0.5em 7em; */
-        &:hover {
-          background: white;
-        }
       }
     }
   }
