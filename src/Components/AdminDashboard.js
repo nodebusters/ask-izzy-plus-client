@@ -155,7 +155,7 @@ class AdminDashboard extends Component {
             return (
               <React.Fragment key={`fragment of`+ user._id}>
                 <span key={`info of`+user._id}>{user.email} | {user.organisation}</span>
-                {/* <button key={user._id} id={user._id} onClick={this.deleteOneUser}>Delete</button> */}
+                <button key={user._id} id={user._id} onClick={this.deleteOneUser}>Delete</button>
                 <br></br>
               </React.Fragment>
             )
