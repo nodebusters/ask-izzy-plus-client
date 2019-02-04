@@ -29,7 +29,7 @@
   font-family: $main-body-font;
 }
 
-// FORM STYLING: readMode
+// ---------- FORM STYLING: readMode ---------- //
 // Applied to formClass when Edit button is not clicked, { state } set to readMode by default
 .readMode {
   /*disable input fields*/
@@ -73,7 +73,7 @@
   }
 }
 
-// FORM STYLING: editMode
+// ---------- FORM STYLING: editMode ---------- //
 // formClass changes to editMode when Edit button is clicked 
 .editMode {
   // Font style for form field text when Edit button is clicked

@@ -14,7 +14,7 @@ class Home extends Component {
         <Navigation originPage='home'/>
 
         <div className="body-container">
-          <h1 className="home-headline">Welcome to Ask Izzy Plus</h1>
+          <h1 className="home-headline">Welcome to Ask Izzy Plus, User</h1>
           <Login />
         </div>
 

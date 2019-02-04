@@ -1,0 +1,46 @@
+@import "./Colors";
+@import "./Fonts";
+
+@mixin buttonSolid() {
+  // BUTTON: Spacing between buttons
+  margin: 5px;
+  text-decoration: none;
+  // BUTTON: Width
+  padding: {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+// Applied to editMode, editButton and cancelButton when selected
+@mixin buttonHollow() {
+  @include buttonSolid();
+  // BUTTON: Button background colour
+  background: $light-color;
+
+  // BUTTON: Inner text colour (when selected)
+  color: $main-color;
+
+  // BUTTON: Box outline colour
+  border: 1px solid $main-color;
+
+  // BUTTON: Text font
+  font-family: $main-body-font;
+}
+
+.admin-container {
+  border: dashed dodgerblue 1px;
+  // background: dodgerblue;
+}
+
+.add-user-container {
+  border: dashed dodgerblue 1px;
+
+  .create-user-button {
+    @include buttonHollow();
+  }
+}
+
+.all-users-container {
+  border: dashed dodgerblue 1px;
+}
