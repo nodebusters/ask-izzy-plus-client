@@ -61,7 +61,13 @@ class AdminDashboard extends Component {
   getOrganisationData = (e) => {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/organisations`; 
-    axios.get(url)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+    axios.get(url, config)
       .then(res => {
         const organisations = [];
         for (let i=0; i<res.data.length; i++) {
@@ -77,7 +83,13 @@ class AdminDashboard extends Component {
   getAllUsersData = () => {
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/users`; 
-    axios.get(url)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+    axios.get(url, config)
       .then(res => {
         const users = res.data
         this.setState({ users })
@@ -97,18 +109,30 @@ class AdminDashboard extends Component {
     console.log(e.currentTarget.id)
     const user_id = e.currentTarget.id
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/user/${user_id}`;
-    
-    axios.delete(url)
+    const url = `${baseURL}/protected/user/${user_id}`;
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+    axios.delete(url, config)
     .then(res => this.updateUser(res.data))
   }
 
   submitForm = (e) => {
     e.preventDefault();
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/create/user`; 
+    const url = `${baseURL}/protected/user`; 
     const { newUser } = this.state;
-    axios.post(url, newUser)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+
+    axios.post(url, newUser, config)
       .then(res => this.updateUser(res.data))
   }
 

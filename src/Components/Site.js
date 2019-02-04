@@ -27,19 +27,27 @@ class Site extends Component {
 
   submitForm = (e) => {
     const { updateOrganisation } = this.props;
+    
     e.preventDefault();
     //PUT request.
     const { org_id } = this.props;
     const site_id = this.props.site._id;
-
+    
     console.log('FORM this.state', ': ', this.state);
-
+    
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+    
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/site/${org_id}/${site_id}`;
+    const url = `${baseURL}/protected/site/${org_id}/${site_id}`;
 
     const { data } = this.state;
 
-    axios.put(url, data)
+    axios.put(url, data, config)
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
@@ -116,12 +124,17 @@ class Site extends Component {
     // console.log('site_id',': ', site_id);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}`;
-
-    axios.delete(url)
+    const url = `${baseURL}/protected/site/${org_id}/${site_id}`;
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+    axios.delete(url, config)
       .then(resp => {
-        //res.data supposed to be the new organisation after deleting site.
-        console.log('resp.data', ': ', resp.data);
+        //res.data is the new organisation after deleting site.
+        // console.log('resp.data', ': ', resp.data);
         //calling updateOrganisation so it renders the new data. 
         updateOrganisation(resp.data);
       })
@@ -185,7 +198,6 @@ class Site extends Component {
 
   openingHours = () => {
     const { site } = this.props;
-    console.log('site', ': ', site);
 
     const { openingHours } = site;
 

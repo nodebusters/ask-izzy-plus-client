@@ -25,11 +25,17 @@ class Organisation extends Component {
     console.log('this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/update/organisation/${org_id}`;
+    const url = `${baseURL}/protected/organisation/${org_id}`;
 
     const { data } = this.state;
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
 
-    axios.put(url, data)
+    axios.put(url, data, config)
       .then((resp => {
         console.log('resp.data', ': ', resp.data);
         updateOrganisation(resp.data);

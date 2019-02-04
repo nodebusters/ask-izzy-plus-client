@@ -27,11 +27,17 @@ class NewSite extends Component {
     console.log('FORM this.state', ': ', this.state);
 
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/create/site/${org_id}`;
+    const url = `${baseURL}/protected/site/${org_id}`;
 
     const { data } = this.state;
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
 
-    axios.post(url, data)
+    axios.post(url, data, config)
       .then((resp => {
         console.log('PUT resp.data', ': ', resp.data);
         updateOrganisation(resp.data);
