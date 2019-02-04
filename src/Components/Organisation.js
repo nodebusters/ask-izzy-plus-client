@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../stylesheets/Forms.css";
+import "../stylesheets/Organisation.css";
 
 class Organisation extends Component {
   //Declaring state.

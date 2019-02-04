@@ -1,6 +1,5 @@
 .admin-card {
   display: flex;
-  border: dashed dodgerblue 1px;
   justify-content: space-evenly;
   padding: 0 30px;
   flex-wrap: wrap-reverse; }
