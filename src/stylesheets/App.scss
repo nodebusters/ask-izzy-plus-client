@@ -7,6 +7,7 @@ body {
   background: aquamarine;
   margin: 0;
   padding: 0;
+  font-family: $main-body-font;
 }
 
 // Container: Entire Page
@@ -77,6 +78,7 @@ body {
     // Navigation: Header Link Button
     .header-link {
       text-decoration: none;
+      color: white;
     }
   }
 }

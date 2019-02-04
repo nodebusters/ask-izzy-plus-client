@@ -29,7 +29,7 @@
     margin: 0.5rem; }
 
 .editMode {
-  color: ligthen(black);
+  color: black;
   font-weight: bold; }
   .editMode input {
     font-size: 1rem;
@@ -45,40 +45,31 @@
     padding-bottom: 0.2rem;
     padding-top: 0.2rem; }
   .editMode button {
-    margin: 0.5rem;
-    color: #f2f2f2;
-    background: #1060af;
     margin: 5px;
     text-decoration: none;
     padding-left: 20px;
     padding-right: 20px;
-    background: #f2f2f2;
-    color: #1060af;
-    border: 1px solid #1060af; }
+    background: white;
+    color: black;
+    border: 1px solid black; }
 
 .editButton {
-  color: #f2f2f2;
-  background: #1060af;
   margin: 5px;
   text-decoration: none;
   padding-left: 20px;
   padding-right: 20px;
-  background: #f2f2f2;
-  color: #1060af;
-  border: 1px solid #1060af; }
+  background: white;
+  color: black;
+  border: 1px solid black; }
 
 .cancelButton {
-  color: #f2f2f2;
-  background: #1060af;
   margin: 5px;
   text-decoration: none;
   padding-left: 20px;
   padding-right: 20px;
-  background: #f2f2f2;
-  color: #1060af;
-  border: 1px solid #1060af;
-  color: red;
-  border: 1px solid red; }
+  background: white;
+  color: black;
+  border: 1px solid black; }
   .cancelButton:focus {
     outline: 0; }
 

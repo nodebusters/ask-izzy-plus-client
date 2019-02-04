@@ -1,23 +1,33 @@
 @import "./Colors";
+@import "./Fonts";
 
+// Applied to editMode, editButton and cancelButton
 @mixin buttonSolid() {
-  color: $light-color;
-  background: $main-color;
+  // BUTTON: Spacing between buttons
   margin: 5px;
   text-decoration: none;
+  // BUTTON: Width
   padding: {
     left: 20px;
     right: 20px;
   }
 }
 
+// Applied to editMode, editButton and cancelButton when selected
 @mixin buttonHollow() {
   @include buttonSolid();
+  // BUTTON: Button background colour
   background: $light-color;
+
+  // BUTTON: Inner text colour (when selected)
   color: $main-color;
+
+  // Button box outline colour
   border: 1px solid $main-color;
 }
 
+// FORM STYLING: readMode
+// Applied to formClass when Edit button is not clicked, { state } set to readMode by default
 .readMode {
   /*disable input fields*/
   pointer-events: none;
@@ -29,10 +39,13 @@
     /* Most modern browsers support this now. */
     &::placeholder {
       font-size: 1rem;
+      // FONT: Colour of placeholder text
       color: black;
+      // PADDING: Between field and placeholder
       padding-left: 10px;
     }
   }
+  // Styling for Yes/No dropdown menus
   select {
     font-size: 0.9rem;
     border: 0;
@@ -50,46 +63,59 @@
     }
   }
 
+  // Hide update button when Edit mode is not selected, { state } is set to readMode by default
   button {
     visibility: hidden;
     margin: 0.5rem;
   }
 }
 
+// FORM STYLING: editMode
+// formClass changes to editMode when Edit button is clicked 
 .editMode {
-  color: ligthen(black);
+  // Font style for form field text when Edit button is clicked
+  color: black;
   font-weight: bold;
+  // Font style for form inputs - actual 
   input {
     font-size: 1rem;
     padding-bottom: 0.2rem;
     padding-top: 0.2rem;
+    // color: aquamarine;
 
     /* Most modern browsers support this now. */
+    // Font style for form inputs - placeholder 
     &::placeholder {
       font-size: 1rem;
       color: black;
       padding-left: 10px;
     }
   }
+  // Styling for Yes/No dropdown menus
   select {
     font-size: 0.9rem;
     padding-bottom: 0.2rem;
     padding-top: 0.2rem;
   }
+  // Button styling for Update button in editMode
   button {
-    margin: 0.5rem;
+    // margin: 0.5rem;
     @include buttonHollow();
   }
 }
 
+// Styling for Edit button
 .editButton{
   @include buttonHollow();
 }
 
+// Styling for Cancel button
 .cancelButton{
   @include buttonHollow();
-  $cancelColor : red;
-  color: $cancelColor;
-  border: 1px solid $cancelColor;
+  $cancelColor: red;
+  // Button styling for button font text
+  // color: $cancelColor;
+  // border: 1px solid $cancelColor;
   &:focus {outline:0;}
+
 }

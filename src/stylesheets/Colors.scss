@@ -1,7 +1,19 @@
-$main-color: rgb(16, 96, 175);
-$light-color: darken( #ffffff, 5%);
-$background-color:darken( #ffffff, 2%);
+// DIEGO
+// $main-color: rgb(16, 96, 175);
+// $light-color: darken( #ffffff, 5%);
+// $background-color:darken( #ffffff, 2%);
 
-// Ask Izzy Brand Colours
+// ---------- ASK IZZY PLUS BRAND COLOURS ---------- //
 $page-container-background: #C1C0BA;
 $page-navigation-footer: #363e43;
+
+// ---------- MAIN FORM STYLING ---------- //
+// Button text colour
+$main-color: black;
+
+// Button box background colour
+// $light-color: darken( #ffffff, 15%);
+$light-color: white;
+// $light-color: pink;
+
+$background-color:darken( #ffffff, 2%);

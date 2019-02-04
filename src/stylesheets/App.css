@@ -1,7 +1,8 @@
 body {
   background: aquamarine;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-family: "Quicksand", sans-serif; }
 
 .page-container {
   background: #C1C0BA;
@@ -49,7 +50,8 @@ body {
       font-size: 1em;
       font-weight: bold; }
     .header-bar .quick-exit-right .header-link {
-      text-decoration: none; }
+      text-decoration: none;
+      color: white; }
 
 .image-wrapper {
   display: grid;
@@ -77,7 +79,7 @@ body {
         height: 100%; }
       .image-wrapper .logo-image .root-link .subhead {
         color: white;
-        font-family: "Comfortaa", sans-serif; }
+        font-family: "Quicksand", sans-serif; }
 
 .footer-container {
   max-width: 800px;
