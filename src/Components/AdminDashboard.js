@@ -109,7 +109,7 @@ class AdminDashboard extends Component {
     console.log(e.currentTarget.id)
     const user_id = e.currentTarget.id
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/delete/user/${user_id}`;
+    const url = `${baseURL}/protected/user/${user_id}`;
     const token = localStorage.getItem('token');
     const config = {
       headers:{
@@ -123,7 +123,7 @@ class AdminDashboard extends Component {
   submitForm = (e) => {
     e.preventDefault();
     const baseURL = process.env.REACT_APP_BASE_URL;
-    const url = `${baseURL}/protected/create/user`; 
+    const url = `${baseURL}/protected/user`; 
     const { newUser } = this.state;
     const token = localStorage.getItem('token');
     const config = {

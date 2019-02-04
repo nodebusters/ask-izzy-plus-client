@@ -115,8 +115,14 @@ class Service extends Component {
     
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/delete/site/${org_id}/${site_id}/${service_id}`;
-    
-    axios.delete(url)
+    const token = localStorage.getItem('token');
+    const config = {
+      headers:{
+        token
+      }
+    }
+
+    axios.delete(url, config)
     .then(resp=>{
       //res.data supposed to be the new organisation after deleting site.
       console.log('resp.data',': ', resp.data);
