@@ -22,8 +22,11 @@
   // BUTTON: Inner text colour (when selected)
   color: $main-color;
 
-  // Button box outline colour
+  // BUTTON: Box outline colour
   border: 1px solid $main-color;
+
+  // BUTTON: Text font
+  font-family: $main-body-font;
 }
 
 // FORM STYLING: readMode
