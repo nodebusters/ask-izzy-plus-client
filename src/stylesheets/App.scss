@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 3px solid goldenrod;
+  border: 3px solid red;
 
   // Container: Body
   .body-container {
@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
     max-width: 800px;
     width: 100%;
-    border: 1px solid turquoise;
+    border: 1px solid yellow;
   }
 }
 
@@ -127,40 +127,6 @@ body {
       }
     }
   }
-}
-
-// ---------- BODY #1: HOME ---------- //
-.home-headline {
-  font-family: 'Quicksand', sans-serif;
-}
-
-// Home: Login Button (Container)
-.login-button-container {
-  background: aquamarine;
-  padding: 0 1em;
-
-  // Home: Login Button
-  .login-button {
-    width: 100%;
-    background-color: #4d13af;
-    color: #FFFFFF;
-    border: none;
-    font-size: 1em;
-    /* width: 100% */
-    padding: 15px 45%;
-    /* width: 80px; */
-
-    // Home: Login Button (Hover)
-    &:hover {
-      background-color: #6118dd;
-    }
-  }
-
-  // Home: Forgotten Password
-  // .forgotten-password a {
-  //   text-decoration: none;
-  //   color: black;
-  // }
 }
 
 // ---------- FOOTER ---------- //

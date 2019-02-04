@@ -11,13 +11,13 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 3px solid goldenrod; }
+  border: 3px solid red; }
   .page-container .body-container {
     background: white;
     min-height: 100vh;
     max-width: 800px;
     width: 100%;
-    border: 1px solid turquoise; }
+    border: 1px solid yellow; }
 
 .header-wrapper {
   border: dashed blue 2px;
@@ -78,24 +78,6 @@ body {
       .image-wrapper .logo-image .root-link .subhead {
         color: white;
         font-family: 'Quicksand', sans-serif; }
-
-.home-headline {
-  font-family: 'Quicksand', sans-serif; }
-
-.login-button-container {
-  background: aquamarine;
-  padding: 0 1em; }
-  .login-button-container .login-button {
-    width: 100%;
-    background-color: #4d13af;
-    color: #FFFFFF;
-    border: none;
-    font-size: 1em;
-    /* width: 100% */
-    padding: 15px 45%;
-    /* width: 80px; */ }
-    .login-button-container .login-button:hover {
-      background-color: #6118dd; }
 
 .footer-container {
   background: coral;
