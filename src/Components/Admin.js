@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
+
+import "../stylesheets/Admin.css";
+
+import Navigation from './Navigation';
 import AdminLogIn from './AdminLogIn';
+import Footer from './Footer';
 
 class Admin extends Component {
   render() {
     return (
-      <React.Fragment>
-        <h1>This page is for Admin from Infoxchange</h1>
-        <AdminLogIn />
-      </React.Fragment>
+
+      <div className="page-container">
+        <Navigation originPage="home"/>
+
+        <div className="body-container">
+          <h1>Welcome to Ask Izzy Plus, Infoxchange</h1>
+          <AdminLogIn />
+        </div>
+
+        <Footer />
+      </div>
     );
   }
 }

@@ -1,0 +1,19 @@
+.home-headline {
+  font-family: 'Quicksand', sans-serif; }
+
+.login-button-container {
+  background: aquamarine;
+  padding: 0 1em; }
+  .login-button-container .login-button {
+    width: 100%;
+    background-color: #4d13af;
+    color: #FFFFFF;
+    border: none;
+    font-size: 1em;
+    /* width: 100% */
+    padding: 15px 45%;
+    /* width: 80px; */ }
+    .login-button-container .login-button:hover {
+      background-color: #6118dd; }
+
+/*# sourceMappingURL=Admin.css.map */

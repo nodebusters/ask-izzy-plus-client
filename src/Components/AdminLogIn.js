@@ -19,14 +19,17 @@ class AdminLogIn extends Component {
   render() {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
-      <React.Fragment>
+      <div className="login-button-container">
         <GoogleLogin
           clientId={googleClient}
+          render={renderProps => (
+            <button onClick={renderProps.onClick} className="login-button">Login</button>
+          )}
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.errorGoogle}
         />
-      </React.Fragment>
+      </div>
     );
   }
 }
