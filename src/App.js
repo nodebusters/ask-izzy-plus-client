@@ -5,7 +5,7 @@ import history from './history';
 import Dashboard from './Components/Dashboard';
 import Home from './Components/Home';
 import Register from './Components/Register';
-import Admin from './Components/Admin';
+import AdminHome from './Components/AdminHome';
 import AdminDashboard from './Components/AdminDashboard';
 import PageNotFound from './Components/PageNotFound';
 
@@ -18,7 +18,7 @@ class App extends Component {
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/admin" component={AdminHome} />
           <Route exact path="/admin/dashboard" component={AdminDashboard} />
           <Route path="*" component={PageNotFound} />
         </Switch>
