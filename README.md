@@ -217,7 +217,7 @@ There is to be no confidentiality agreement to be entered into.
 ### Task Management (Trello)
 - Project plan and effort estimation
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
-
+//TODO: 
 ## Tools & Methodologies
 Demonstrate your project management skills,
 - Trello or similar project management tool to be used for Kanban process to track progress of build
@@ -226,7 +226,22 @@ Demonstrate your project management skills,
 - Code review - Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others
 - Show evidence of client communication, e.g. meeting minutes, emails, or other communication tools
 ### Trello
+We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
+
+* Deliverables
+* To-do
+* To-do Today
+* Doing
+* Done
+* MVP
+* Nice to have
+
+Then we assinged cards to each of this lists and relocate the cards as teh project advanced. We also took advatange of the calendar tool in order to keep track of important deadlines. 
+
+![](docs/images/trello-screenshot.png)
+
 ### Figma/Balsimiq
+
 ### Source Control
 #### Github and Gitflow
 Provide an overview and description of your source control process.
