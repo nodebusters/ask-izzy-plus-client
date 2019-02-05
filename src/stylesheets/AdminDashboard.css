@@ -55,19 +55,37 @@
     .user-card {
       justify-content: center; } }
 
-.add-user-container .createUsers {
-  background: #4d13af;
-  color: #ffffff;
-  border: 1px solid #4d13af;
-  border-radius: 3px;
-  font-family: "Quicksand", sans-serif;
-  box-sizing: border-box;
-  text-decoration: none;
-  padding: 1em 5em;
-  margin: 10px;
-  min-width: 75px; }
-  .add-user-container .createUsers:hover {
-    background-color: #6118dd; }
+.add-user-container {
+  display: block;
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box; }
+  .add-user-container [data-new-form] {
+    text-align: left; }
+    .add-user-container [data-new-form] label {
+      font-size: 1em; }
+    .add-user-container [data-new-form] input {
+      width: 100%;
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
+    .add-user-container [data-new-form] select {
+      background: 100%;
+      width: 100%;
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
+  .add-user-container .createUsers {
+    background: #4d13af;
+    color: #ffffff;
+    border: 1px solid #4d13af;
+    border-radius: 3px;
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 1em 5em;
+    margin: 10px;
+    min-width: 75px; }
+    .add-user-container .createUsers:hover {
+      background-color: #6118dd; }
 
 .all-users-container .deleteUsers {
   background: #4d13af;

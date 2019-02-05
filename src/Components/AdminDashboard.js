@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
-import userAvatar from '../Images/user-avatar.svg';
+import userAvatar from "../Images/user-avatar.svg";
 import "../stylesheets/AdminDashboard.css";
 
 // COMPONENTS
@@ -160,27 +160,27 @@ class AdminDashboard extends Component {
                 <Tab>Admin Profile</Tab>
                 <Tab>Add New Users</Tab>
                 <Tab>View All</Tab>
-                <Tab>Settings</Tab>
+                <Tab>About</Tab>
               </TabList>
 
               <TabPanel>
                 <h1> Welcome {adminName}</h1>
                 <div className="user-card">
-                    <div className="user-info">
-                      <h3>You are now logged in as: </h3>
-                      <p>email: {email}</p>
-                      <p>First Name: {adminName}</p>
-                      <p>Last Name: {adminLastName}</p>
-                    </div>
-                    <div className="user-avatar">
-                      <img src={userAvatar} alt="User avatar"/>
-                    </div>
+                  <div className="user-info">
+                    <h3>You are now logged in as: </h3>
+                    <p>email: {email}</p>
+                    <p>First Name: {adminName}</p>
+                    <p>Last Name: {adminLastName}</p>
                   </div>
+                  <div className="user-avatar">
+                    <img src={userAvatar} alt="User avatar" />
+                  </div>
+                </div>
               </TabPanel>
 
               <TabPanel>
                 <div className="add-user-container">
-                  <form id="link_user_organisation" className="add-user-form">
+                  <form id="link_user_organisation" className="add-user-form" data-new-form>
                     <h1>Add New User</h1>
                     <label> New User Email: </label>
                     <input
@@ -203,10 +203,7 @@ class AdminDashboard extends Component {
                       })}
                     </select>
                     <br />
-                    <button
-                      onClick={this.submitForm}
-                      className="createUsers"
-                    >
+                    <button onClick={this.submitForm} className="createUsers">
                       Submit
                     </button>
                   </form>
@@ -238,7 +235,8 @@ class AdminDashboard extends Component {
               </TabPanel>
 
               <TabPanel>
-                <h1>Settings</h1>
+                <h1>About</h1>
+                <h3>This is how to use Ask Izzy Plus!</h3>
               </TabPanel>
             </Tabs>
           </div>
