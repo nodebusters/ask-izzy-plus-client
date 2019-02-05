@@ -132,7 +132,10 @@ class AdminDashboard extends Component {
       }
     };
 
-    axios.post(url, newUser, config).then(res => this.updateUser(res.data));
+    axios.post(url, newUser, config).then(res => {
+      this.updateUser(res.data)
+      this.submitSuccessMsg();
+    });
   };
 
   updateUser = newData => {
@@ -144,7 +147,7 @@ class AdminDashboard extends Component {
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
-          <div className='custom-ui'>
+          <div className='confirm-delete'>
             <h1>Are you sure?</h1>
             <p>You want to delete this user?</p>
             <button onClick={onClose}>No</button>
@@ -158,22 +161,21 @@ class AdminDashboard extends Component {
     })
   }
 
-  // confirmAlert({
-  //   customUI: ({ onClose }) => {
-  //     return (
-  //       <div className='custom-ui'>
-  //         <h1>Are you sure?</h1>
-  //         <p>You want to delete this file?</p>
-  //         <button onClick={onClose}>No</button>
-  //         <button onClick={() => {
-  //             this.handleClickDelete()
-  //             onClose()
-  //         }}>Yes, Delete it!</button>
-  //       </div>
-  //     )
-  //   }
-  // })
+  submitSuccessMsg = () => {
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className='submit-new-user-msg'>
+            <h1>A new user has been added</h1>
+            <p>You can find all users in the "View All Users" tab</p>
+            <button onClick={onClose}>Close</button>
+          </div>
+        )
+      }
+    })
+  }
 
+  
   render() {
     const { adminUser, users } = this.state;
     if (adminUser && users) {
@@ -197,8 +199,8 @@ class AdminDashboard extends Component {
             >
               <TabList>
                 <Tab>Admin Profile</Tab>
-                <Tab>Add New Users</Tab>
-                <Tab>View All</Tab>
+                <Tab>Add New User</Tab>
+                <Tab>View All Users</Tab>
                 <Tab>Settings</Tab>
               </TabList>
 
@@ -254,7 +256,7 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="all-users-container">
-                  <h1>View All Users</h1>
+                  <h3>Authorized service providers</h3>
                   {users.map(user => {
                     return (
                       <React.Fragment key={`fragment of` + user._id}>
