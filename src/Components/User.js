@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import userAvatar from '../images/user-avatar.svg';
+import userAvatar from '../images/user_avatar.svg';
 
 class User extends Component {
   render() {
