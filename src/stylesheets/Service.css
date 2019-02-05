@@ -6,7 +6,6 @@
   .service-form [data-service-form] {
     text-align: left; }
     .service-form [data-service-form] input {
-      background: aqua;
       width: 100%;
       font-family: "Quicksand", sans-serif; }
     .service-form [data-service-form] select {
@@ -17,15 +16,13 @@
 .readMode {
   /*disable input fields*/
   pointer-events: none;
-  color: dodgerblue;
   font-weight: bold; }
   .readMode input {
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
-      color: black; }
+      color: mediumblue; }
   .readMode select {
-    color: mediumvioletred;
     border: 0;
     background-color: transparent;
     /*Removing the drop down arrow*/
@@ -41,7 +38,7 @@
     margin: 0.5rem; }
 
 .editMode {
-  color: teal;
+  color: black;
   font-weight: bold; }
   .editMode input {
     /* Most modern browsers support this now. */ }

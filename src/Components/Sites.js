@@ -18,7 +18,7 @@ class Sites extends Component {
     const { updateOrganisation } = this.props;
     return (
       <React.Fragment>
-        <Tabs defaultIndex={1} >
+        <Tabs defaultIndex={0} >
 
           {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
           <TabList>

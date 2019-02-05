@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": "AAKA,cAAe;EACb,WAAW,ECEC,uBAAuB;;ADErC,uBAAwB;EELtB,OAAO,EAAE,KAAK;EAGd,qCAAc;IACZ,KAAK,EAAE,IAAI;IACX,gBAAgB,ECUA,OAAO;IDRvB,KAAK,ECUK,OAAO;IDTjB,MAAM,EAAE,IAAI;IACZ,SAAS,EAAE,GAAG;IACd,aAAa,EAAE,GAAG;IAClB,iBAAiB;IACjB,OAAO,EAAE,QAAQ;IAGjB,2CAAQ;MACN,gBAAgB,ECAP,OAAO",
-"sources": ["Home.scss","Fonts.scss","Mixins.scss","Colors.scss"],
+"sources": ["AdminHome.scss","Fonts.scss","Mixins.scss","Colors.scss"],
 "names": [],
-"file": "Home.css"
+"file": "AdminHome.css"
 }

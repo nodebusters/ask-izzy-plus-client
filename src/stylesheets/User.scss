@@ -1,12 +1,7 @@
-@import "./Tabs";
-@import "./Colors";
-@import "./Fonts";
-@import "./Mixins";
-
+// ---------- DASHBOARD: readMode for User ---------- //
 // DASHBOARD: Tab - User Profile
-.admin-card {
+.user-card {
   display: flex;
-  // border: dashed dodgerblue 1px;
   // background: dodgerblue;
   justify-content: space-evenly;
   padding: 0 30px;
@@ -23,27 +18,11 @@
     }
   }
 
-  .admin-info {
+  .user-info {
     text-align: left;
   }
 
   @media only screen and (max-width: 600px) {
     justify-content: center;
-  }
-}
-
-.add-user-container {
-  border: dashed dodgerblue 1px;
-
-  .createUsers {
-    @include crudButton()
-  }
-}
-
-.all-users-container {
-  border: dashed dodgerblue 1px;
-
-  .deleteUsers {
-    @include crudButton()
   }
 }

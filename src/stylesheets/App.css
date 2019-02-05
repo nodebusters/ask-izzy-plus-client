@@ -17,7 +17,7 @@ body {
     min-height: 100vh;
     max-width: 800px;
     width: 100%;
-    border: 1px solid yellow; }
+    border: 2px solid dodgerblue; }
 
 .header-wrapper {
   border: dashed blue 2px;

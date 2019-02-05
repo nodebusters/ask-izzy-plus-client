@@ -5,8 +5,6 @@ import userAvatar from '../Images/user-avatar.svg';
 import "../stylesheets/AdminDashboard.css";
 
 // COMPONENTS
-// import User from './User';
-// import Organisation from './Organisation';
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 import AdminLogOut from "./AdminLogOut";
