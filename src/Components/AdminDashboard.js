@@ -149,7 +149,7 @@ class AdminDashboard extends Component {
         return (
           <div className='confirm-delete'>
             <h1>Are you sure?</h1>
-            <p>You want to delete this user?</p>
+            <p>Delete this user?</p>
             <button onClick={onClose}>No</button>
             <button onClick={() => {
                 this.deleteOneUser(user_id)
@@ -198,14 +198,14 @@ class AdminDashboard extends Component {
               }}
             >
               <TabList>
-                <Tab>Admin Profile</Tab>
+                <Tab>Administrator Profile</Tab>
                 <Tab>Add New User</Tab>
                 <Tab>View All Users</Tab>
                 <Tab>Settings</Tab>
               </TabList>
 
               <TabPanel>
-                <h1> Welcome {adminName}</h1>
+                <h2> Welcome {adminName}</h2>
                 <div className="admin-card">
                     <div className="admin-info">
                       <h3>You are now logged in as: </h3>
@@ -222,15 +222,15 @@ class AdminDashboard extends Component {
               <TabPanel>
                 <div className="add-user-container">
                   <form id="link_user_organisation" className="add-user-form">
-                    <h1>Add New User</h1>
-                    <label> New User Email: </label>
+                    <h2>Add New User</h2>
+                    <label> Email: </label>
                     <input
                       type="text"
                       id="email"
                       onChange={this.handleInputChange}
                     />
                     <br />
-                    <label> New User Organisation: </label>
+                    <label> Organisation: </label>
                     <select id="organisation" onChange={this.handleInputChange}>
                       {organisations.map(organisation => {
                         return (
@@ -256,7 +256,7 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="all-users-container">
-                  <h3>Authorized service providers</h3>
+                  <h2>Authorized service providers</h2>
                   {users.map(user => {
                     return (
                       <React.Fragment key={`fragment of` + user._id}>
@@ -279,7 +279,7 @@ class AdminDashboard extends Component {
               </TabPanel>
 
               <TabPanel>
-                <h1>Settings</h1>
+                <h2>Settings</h2>
               </TabPanel>
             </Tabs>
           </div>
