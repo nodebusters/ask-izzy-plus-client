@@ -1,7 +1,7 @@
 //Component Description: Service component takes information of only one service and returns a react fractment displaying its attributes. Later on this component will return a form allowing the user to send PUT requests.  
 import React, { Component } from 'react';
 import axios from 'axios';
-// import "../stylesheets/Service.css";
+import "../stylesheets/Service.css";
 
 class Service extends Component {
   //Declaring state.
