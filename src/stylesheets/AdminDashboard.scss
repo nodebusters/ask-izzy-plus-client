@@ -4,46 +4,20 @@
 @import "./Mixins";
 
 // DASHBOARD: Tab - User Profile
-.admin-card {
-  display: flex;
-  // border: dashed dodgerblue 1px;
-  // background: dodgerblue;
-  justify-content: space-evenly;
-  padding: 0 30px;
-  flex-wrap: wrap-reverse;
-
-  .user-avatar {
-    // max-width: 300px;
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px;
-
-    img {
-      border-radius: 100%;
-    }
-  }
-
-  .admin-info {
-    text-align: left;
-  }
-
-  @media only screen and (max-width: 600px) {
-    justify-content: center;
-  }
+.user-card {
+  @include userTabCard();
 }
 
 .add-user-container {
-  border: dashed dodgerblue 1px;
 
   .createUsers {
-    @include crudButton()
+    @include crudButton();
   }
 }
 
 .all-users-container {
-  border: dashed dodgerblue 1px;
 
   .deleteUsers {
-    @include crudButton()
+    @include crudButton();
   }
 }

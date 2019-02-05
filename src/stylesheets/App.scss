@@ -1,6 +1,5 @@
 @import "./Colors";
 @import "./Fonts";
-// @import "/Mixins";
 
 // ---------- PAGE CONTAINER ---------- //
 // CONTAINER: All HTML contents of an HTML document, such as text, hyperlinks, images, tables, lists, etc.
@@ -21,7 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: 3px solid red;
+  // border: 3px solid red;
 
   // CONTAINER: Body - between Navigation (Header) and Footer
   .body-container {
@@ -30,14 +29,14 @@ body {
     min-height: 100vh;
     max-width: 800px;
     width: 100%;
-    border: 2px solid dodgerblue;
+    // border: 2px solid dodgerblue;
   }
 }
 
 // ---------- NAVIGATION ---------- //
 // NAVIGATION: Wrapper
 .header-wrapper {
-  border: dashed blue 2px;
+  // border: dashed blue 2px;
   max-width: 800px;
   max-height: 400px;
   overflow: hidden;

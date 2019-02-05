@@ -1,28 +1,11 @@
+
+@import "./Tabs";
+@import "./Colors";
+@import "./Fonts";
+@import "./Mixins";
+
 // ---------- DASHBOARD: readMode for User ---------- //
 // DASHBOARD: Tab - User Profile
 .user-card {
-  display: flex;
-  // background: dodgerblue;
-  justify-content: space-evenly;
-  padding: 0 30px;
-  flex-wrap: wrap-reverse;
-
-  .user-avatar {
-    // max-width: 300px;
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px;
-
-    img {
-      border-radius: 100%;
-    }
-  }
-
-  .user-info {
-    text-align: left;
-  }
-
-  @media only screen and (max-width: 600px) {
-    justify-content: center;
-  }
+  @include userTabCard();
 }

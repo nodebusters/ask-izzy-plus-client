@@ -165,8 +165,8 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <h1> Welcome {adminName}</h1>
-                <div className="admin-card">
-                    <div className="admin-info">
+                <div className="user-card">
+                    <div className="user-info">
                       <h3>You are now logged in as: </h3>
                       <p>email: {email}</p>
                       <p>First Name: {adminName}</p>

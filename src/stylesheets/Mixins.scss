@@ -65,6 +65,33 @@
 }
 
 // ---------- FORM STYLING: by formClass ---------- //
+@mixin userTabCard() {
+  display: flex;
+  // background: yellow;
+  justify-content: space-evenly;
+  padding: 0 30px;
+  flex-wrap: wrap-reverse;
+
+  .user-avatar {
+    // max-width: 300px;
+    object-fit: cover;
+    width: 100%;
+    max-width: 200px;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .user-info {
+    text-align: left;
+  }
+
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
 @mixin formInputAndSelect() {
   // background: dodgerblue;
   text-align: left;
