@@ -3,10 +3,10 @@
 @import "./Mixins";
 
 .new-form {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
+  // display: block;
+  // width: 100%;
+  // padding: 0 30px;
+  // box-sizing: border-box;
   [data-new-form] {
     @include formInputAndSelect;
   }

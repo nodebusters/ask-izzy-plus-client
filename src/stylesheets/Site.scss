@@ -4,10 +4,7 @@
 
 // DASHBOARD: Tab - Organisation
 .site-form {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
+  @include formContainer();
   [data-site-form] {
     @include formInputAndSelect;
   }

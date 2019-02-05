@@ -5,12 +5,9 @@
 // ---------- DASHBOARD: readMode/editMode for User, Organisation, Site and Services ---------- //
 // DASHBOARD: Tab - Organisation
 .org-form {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
+  @include formContainer();
   [data-org-form] {
-    @include formInputAndSelect;
+    @include formInputAndSelect();
   }
 }
 

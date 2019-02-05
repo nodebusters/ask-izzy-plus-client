@@ -1,7 +1,7 @@
 .service-form {
   display: block;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .service-form [data-service-form] {
     text-align: left; }

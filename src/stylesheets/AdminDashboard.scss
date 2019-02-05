@@ -10,10 +10,7 @@
 
 // DASHBOARD: Tab - Add New User
 .add-user-container {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
+  @include formContainer();
   [data-new-form] {
     @include formInputAndSelect;
   }

@@ -180,8 +180,8 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="add-user-container">
+                  <h1>Add New User</h1>
                   <form id="link_user_organisation" className="add-user-form" data-new-form>
-                    <h1>Add New User</h1>
                     <label> New User Email: </label>
                     <input
                       type="text"

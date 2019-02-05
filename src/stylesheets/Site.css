@@ -1,7 +1,7 @@
 .site-form {
   display: block;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .site-form [data-site-form] {
     text-align: left; }
