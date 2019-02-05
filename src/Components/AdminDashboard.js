@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
 import userAvatar from '../Images/user-avatar.svg';
 import "../stylesheets/AdminDashboard.css";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 // COMPONENTS
 // import User from './User';
@@ -102,11 +104,11 @@ class AdminDashboard extends Component {
     this.setState({ newUser });
   };
 
-  deleteOneUser = e => {
-    e.preventDefault();
+ deleteOneUser = (user_id) => {
+    // e.preventDefault();
     console.log("Delete one user request triggered.");
-    console.log(e.currentTarget.id);
-    const user_id = e.currentTarget.id;
+    // console.log(e.currentTarget.id);
+    // const user_id = e.currentTarget.id;
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/user/${user_id}`;
     const token = localStorage.getItem("token");
@@ -136,6 +138,41 @@ class AdminDashboard extends Component {
   updateUser = newData => {
     this.setState({ users: newData });
   };
+
+  confirmDelete = (e) => {
+    const user_id = e.currentTarget.id;
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className='custom-ui'>
+            <h1>Are you sure?</h1>
+            <p>You want to delete this user?</p>
+            <button onClick={onClose}>No</button>
+            <button onClick={() => {
+                this.deleteOneUser(user_id)
+                onClose()
+            }}>Yes, delete it!</button>
+          </div>
+        )
+      }
+    })
+  }
+
+  // confirmAlert({
+  //   customUI: ({ onClose }) => {
+  //     return (
+  //       <div className='custom-ui'>
+  //         <h1>Are you sure?</h1>
+  //         <p>You want to delete this file?</p>
+  //         <button onClick={onClose}>No</button>
+  //         <button onClick={() => {
+  //             this.handleClickDelete()
+  //             onClose()
+  //         }}>Yes, Delete it!</button>
+  //       </div>
+  //     )
+  //   }
+  // })
 
   render() {
     const { adminUser, users } = this.state;
@@ -227,7 +264,7 @@ class AdminDashboard extends Component {
                         <button
                           key={user._id}
                           id={user._id}
-                          onClick={this.deleteOneUser}
+                          onClick={this.confirmDelete}
                           className="deleteUsers"
                         >
                           Delete
