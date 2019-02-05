@@ -207,10 +207,10 @@ class Site extends Component {
         <table className="opening-hours">
           <thead>
             <tr>
-              <th> Day </th>
-              <th> Opening Time </th>
-              <th> Closing Time </th>
-              <th> Notes </th>
+              <th className="opening-days">Day</th>
+              <th className="opening-times">Opening Time</th>
+              <th className="opening-times">Closing Time</th>
+              <th className="open">Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -240,12 +240,6 @@ class Site extends Component {
         <button onClick={this.submitForm} className="updateButton">Update</button>
         <div className="site-form">
           <form id="form" className={this.state.formClass} data-site-form>
-            {/* <button onClick={this.submitForm}>Update</button> */}
-            <br></br>
-
-            {this.openingHours()}
-
-            <hr></hr>
             {this.createTextInput("name", "Name:")}
             {this.createTextInput("accessibility", "Accessibility:")}
             {this.createTextInput("locationDetails", "Location Details:")}
@@ -274,7 +268,13 @@ class Site extends Component {
             {this.createTextInput("addressState", "State:")}
             {this.createTextInput("addressPostcode", "Postcode:")}
             {this.createOptionInput("addressIsConfidential", "Address Is Confidential:")}
-            <button onClick={this.submitForm}>Update</button>
+            {/* FIXME: What is this button for??? */}
+            {/* <button onClick={this.submitForm}>Update Site</button> */}
+
+            <br></br>
+            {this.openingHours()}
+            <button onClick={this.submitForm} className="updateButton">Update</button>
+            
           </form>
         </div>
       </React.Fragment>

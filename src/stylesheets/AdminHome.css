@@ -8,9 +8,10 @@
     background-color: #4d13af;
     color: #ffffff;
     border: none;
+    font-family: "Quicksand", sans-serif;
     font-size: 1em;
+    font-weight: bold;
     border-radius: 3px;
-    /* width: 100% */
     padding: 15px 45%; }
     .login-button-container .login-button:hover {
       background-color: #6118dd; }

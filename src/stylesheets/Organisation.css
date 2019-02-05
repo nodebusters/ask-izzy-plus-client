@@ -5,13 +5,17 @@
   box-sizing: border-box; }
   .org-form [data-org-form] {
     text-align: left; }
+    .org-form [data-org-form] label {
+      font-size: 1em; }
     .org-form [data-org-form] input {
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
     .org-form [data-org-form] select {
       background: 100%;
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
 
 .readMode {
   /*disable input fields*/
@@ -21,6 +25,7 @@
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
+      font-size: 1em;
       color: mediumblue; }
   .readMode select {
     border: 0;
@@ -41,6 +46,7 @@
   color: black;
   font-weight: bold; }
   .editMode input {
+    font-size: 1em;
     /* Most modern browsers support this now. */ }
     .editMode input::placeholder {
       color: black; }

@@ -13,6 +13,14 @@
   }
 }
 
+.opening-hours {
+  @include formFontSize();
+
+  .opening-day {
+    background: yellow;
+  }
+}
+
 // ---------- FORM STYLING: by formClass ---------- //
 // readMode: Applied to formClass when Edit button is not clicked, { state } set to readMode by default
 .readMode {

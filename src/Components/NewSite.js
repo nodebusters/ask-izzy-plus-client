@@ -187,10 +187,6 @@ class NewSite extends Component {
         <form id="form" className="editMode">
           <button onClick={this.submitForm}>Create</button>
           <br></br>
-
-          {this.openingHours()}
-
-          <hr></hr>
           {this.createTextInput("name", "Name:")}
           {this.createTextInput("accessibility", "Accessibility:")}
           {this.createTextInput("locationDetails", "Location Details:")}
@@ -219,6 +215,11 @@ class NewSite extends Component {
           {this.createTextInput("addressState", "State:")}
           {this.createTextInput("addressPostcode", "Postcode:")}
           {this.createOptionInput("addressIsConfidential", "Address Is Confidential:")}
+
+          <br></br>
+          
+          {this.openingHours()}
+
         </form>
       </React.Fragment>
     );

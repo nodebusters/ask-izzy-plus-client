@@ -1,5 +1,5 @@
-// @import "./Colors";
-// @import "./Fonts";
+@import "./Colors";
+@import "./Fonts";
 
 @mixin loginButton {
   // background: aquamarine;
@@ -12,9 +12,10 @@
     // background-color: dodgerblue;
     color: $button-text;
     border: none;
-    font-size: 1em;
+    font-family: $button-font;
+    font-size: $font-size-login-button;
+    font-weight: bold;
     border-radius: 3px;
-    /* width: 100% */
     padding: 15px 45%;
 
     // Home: Login Button (Hover)
@@ -73,7 +74,6 @@
   flex-wrap: wrap-reverse;
 
   .user-avatar {
-    // max-width: 300px;
     object-fit: cover;
     width: 100%;
     max-width: 200px;
@@ -93,19 +93,25 @@
 }
 
 @mixin formInputAndSelect() {
-  // background: dodgerblue;
   text-align: left;
+  
+  label {
+    @include formFontSize();
+  }
+  
   input {
     width: 100%;
     font-family: $main-body-font;
     // background: dodgerblue;
-    // font-size: 5em;
+    @include formFontSize();
   }
-
+  
   select {
     background: 100%;
     width: 100%;
     font-family: $main-body-font;
+    @include formFontSize();
+    // background: dodgerblue;
   }
 }
 
@@ -121,7 +127,7 @@
     border: 0;
     /* Most modern browsers support this now. */
     &::placeholder {
-      // font-size: 1rem;
+      font-size: 1em;
       // FONT: Colour of placeholder text
       // color: mediumspringgreen;
       color: mediumblue;
@@ -163,7 +169,7 @@
   font-weight: bold;
   // Font style for form inputs - actual 
   input {
-    // font-size: 1rem;
+    @include formFontSize();
     // padding-bottom: 0.2rem;
     // padding-top: 0.2rem;
     // color: aquamarine;
