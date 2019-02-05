@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
 import userAvatar from '../images/user-avatar.svg';
-// import "../stylesheets/AdminDashboard.css";
+import "../stylesheets/AdminDashboard.css";
 
 // COMPONENTS
 // import User from './User';
