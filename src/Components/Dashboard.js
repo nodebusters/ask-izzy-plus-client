@@ -141,15 +141,15 @@ class Dashboard extends Component {
     } else {
       return (
         <div className="page-container">
-        
-          <nav>
-            <LogOut />
-          </nav>
+          
+          {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
+          <Navigation originPage='dashboard'/>
 
           <div className="body-container">
             <h3> {this.state.message} </h3>
           </div>
-
+          
+          <Footer />
         </div>
       );
     }

@@ -7,7 +7,7 @@ import "../stylesheets/AdminDashboard.css";
 // COMPONENTS
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import AdminLogOut from "./AdminLogOut";
+// import AdminLogOut from "./AdminLogOut";
 
 const jwtDecode = require("jwt-decode");
 
@@ -245,12 +245,17 @@ class AdminDashboard extends Component {
       );
     } else {
       return (
-        <React.Fragment>
-          <nav>
-            <AdminLogOut />
-          </nav>
-          <h3> {this.state.message} </h3>
-        </React.Fragment>
+        <div className="page-container">
+          
+          {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
+          <Navigation originPage='dashboard'/>
+
+          <div className="body-container">
+            <h3> {this.state.message} </h3>
+          </div>
+          
+          <Footer />
+        </div>
       );
     }
   }
