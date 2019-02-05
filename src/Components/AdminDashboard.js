@@ -193,9 +193,6 @@ class AdminDashboard extends Component {
                     <br />
                     <label> New User Organisation: </label>
                     <select id="organisation" onChange={this.handleInputChange}>
-                      <option key="" value="1234567890">
-                        Testing Organisation Name
-                      </option>
                       {organisations.map(organisation => {
                         return (
                           <option
