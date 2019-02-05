@@ -17,7 +17,7 @@ https://github.com/ask-izzy/ask-izzy
 Brief summary description of functionality and background for Ask Izzy Plus application/Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
-|[![Diego Rodriguez](/src/Images/contributors/contributors-diegorodriguez2018-70x70.jpg)](https://github.com/DiegoRodriguez2018)| [![Aitzu Hu](/src/Images/contributors/contributors-Aitzu-70x70.jpg)](https://github.com/Aitzu) | [![Linda Lai](/src/Images/contributors/contributors-linda-lai-70x70.jpg)](https://github.com/linda-lai)| [![James Hastings](/src/Images/contributors/contributors-omegadefender-70x70.jpg)](https://github.com/omegadefender) 
+|[![Diego Rodriguez](/src/images/contributors/contributors-diegorodriguez2018-70x70.jpg)](https://github.com/DiegoRodriguez2018)| [![Aitzu Hu](/src/images/contributors/contributors-Aitzu-70x70.jpg)](https://github.com/Aitzu) | [![Linda Lai](/src/images/contributors/contributors-linda-lai-70x70.jpg)](https://github.com/linda-lai)| [![James Hastings](/src/images/contributors/contributors-omegadefender-70x70.jpg)](https://github.com/omegadefender) 
 |-----------|-----------|-------------| ------------- |
 | Diego Rodriguez | Aitzu Hu | Linda Lai | James Hastings |
 

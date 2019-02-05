@@ -1,26 +1,26 @@
 import React from "react";
 
-import advocacy from "../Images/banners/advocacy.png";
-import atsi from "../Images/banners/atsi.png";
-import atsi2 from "../Images/banners/atsi2.png";
-import centrelink from "../Images/banners/centrelink.png";
-import drugsAlcohol from "../Images/banners/drugs-alcohol.png";
-import everydayThings from "../Images/banners/everyday-things.png";
-import facilities from "../Images/banners/facilities.png";
-import familyViolence from "../Images/banners/family-violence.png";
-import findingWork from "../Images/banners/finding-work.png";
-import food from "../Images/banners/food.png";
-import health from "../Images/banners/health.png";
-import homepage from "../Images/banners/homepage.png";
-import housing from "../Images/banners/housing.png";
-import legal from "../Images/banners/legal.png";
-import lifeSkillsEducation from "../Images/banners/life-skills-education.png";
-import moneyHelp from "../Images/banners/money-help.png";
-import somethingToDo from "../Images/banners/something-to-do.png";
-import supportCounselling from "../Images/banners/support-counselling.png";
-import technology from "../Images/banners/technology.png";
+import advocacy from "../images/banners/advocacy.png";
+import atsi from "../images/banners/atsi.png";
+import atsi2 from "../images/banners/atsi2.png";
+import centrelink from "../images/banners/centrelink.png";
+import drugsAlcohol from "../images/banners/drugs-alcohol.png";
+import everydayThings from "../images/banners/everyday-things.png";
+import facilities from "../images/banners/facilities.png";
+import familyViolence from "../images/banners/family-violence.png";
+import findingWork from "../images/banners/finding-work.png";
+import food from "../images/banners/food.png";
+import health from "../images/banners/health.png";
+import homepage from "../images/banners/homepage.png";
+import housing from "../images/banners/housing.png";
+import legal from "../images/banners/legal.png";
+import lifeSkillsEducation from "../images/banners/life-skills-education.png";
+import moneyHelp from "../images/banners/money-help.png";
+import somethingToDo from "../images/banners/something-to-do.png";
+import supportCounselling from "../images/banners/support-counselling.png";
+import technology from "../images/banners/technology.png";
 
-import logo from "../Images/logo/ask-izzy-logo-edited.svg";
+import logo from "../images/logo/ask-izzy-logo-edited.svg";
 
 const Banner = () => {
   const randomHeaderImages = [
