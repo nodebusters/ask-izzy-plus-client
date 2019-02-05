@@ -231,7 +231,8 @@ class AdminDashboard extends Component {
                     />
                     <br />
                     <label> Organisation: </label>
-                    <select id="organisation" onChange={this.handleInputChange}>
+                    <select id="organisation" onChange={this.handleInputChange} >
+                      <option>Please select</option>
                       {organisations.map(organisation => {
                         return (
                           <option
