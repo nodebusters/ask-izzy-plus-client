@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
-import userAvatar from '../Images/user-avatar.svg';
+import userAvatar from "../Images/user-avatar.svg";
 import "../stylesheets/AdminDashboard.css";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 // COMPONENTS
-// import User from './User';
-// import Organisation from './Organisation';
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-import AdminLogOut from "./AdminLogOut";
+// import AdminLogOut from "./AdminLogOut";
 
 const jwtDecode = require("jwt-decode");
 
@@ -216,7 +214,10 @@ class AdminDashboard extends Component {
                     <div className="user-avatar">
                       <img src={userAvatar} alt="User avatar"/>
                     </div>
+                  <div className="user-avatar">
+                    <img src={userAvatar} alt="User avatar" />
                   </div>
+                </div>
               </TabPanel>
 
               <TabPanel>
@@ -245,10 +246,7 @@ class AdminDashboard extends Component {
                       })}
                     </select>
                     <br />
-                    <button
-                      onClick={this.submitForm}
-                      className="createUsers"
-                    >
+                    <button onClick={this.submitForm} className="createUsers">
                       Submit
                     </button>
                   </form>
@@ -289,12 +287,17 @@ class AdminDashboard extends Component {
       );
     } else {
       return (
-        <React.Fragment>
-          <nav>
-            <AdminLogOut />
-          </nav>
-          <h3> {this.state.message} </h3>
-        </React.Fragment>
+        <div className="page-container">
+          
+          {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
+          <Navigation originPage='dashboard'/>
+
+          <div className="body-container">
+            <h3> {this.state.message} </h3>
+          </div>
+          
+          <Footer />
+        </div>
       );
     }
   }

@@ -1,0 +1,11 @@
+
+@import "./Tabs";
+@import "./Colors";
+@import "./Fonts";
+@import "./Mixins";
+
+// ---------- DASHBOARD: readMode for User ---------- //
+// DASHBOARD: Tab - User Profile
+.user-card {
+  @include userTabCard();
+}

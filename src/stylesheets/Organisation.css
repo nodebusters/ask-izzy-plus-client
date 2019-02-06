@@ -1,47 +1,33 @@
-.user-card {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0 30px;
-  flex-wrap: wrap-reverse; }
-  .user-card .user-avatar {
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px; }
-    .user-card .user-avatar img {
-      border-radius: 100%; }
-  .user-card .user-info {
-    text-align: left; }
-  @media only screen and (max-width: 600px) {
-    .user-card {
-      justify-content: center; } }
-
 .org-form {
   display: block;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .org-form [data-org-form] {
     text-align: left; }
+    .org-form [data-org-form] label {
+      font-size: 1em; }
     .org-form [data-org-form] input {
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
     .org-form [data-org-form] select {
       background: 100%;
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
 
 .readMode {
   /*disable input fields*/
   pointer-events: none;
-  color: dodgerblue;
   font-weight: bold; }
   .readMode input {
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
-      color: mediumspringgreen; }
+      font-size: 1em;
+      color: mediumblue; }
   .readMode select {
-    color: mediumvioletred;
     border: 0;
     background-color: transparent;
     /*Removing the drop down arrow*/
@@ -60,6 +46,7 @@
   color: black;
   font-weight: bold; }
   .editMode input {
+    font-size: 1em;
     /* Most modern browsers support this now. */ }
     .editMode input::placeholder {
       color: black; }

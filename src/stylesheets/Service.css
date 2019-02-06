@@ -1,31 +1,33 @@
 .service-form {
   display: block;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .service-form [data-service-form] {
     text-align: left; }
+    .service-form [data-service-form] label {
+      font-size: 1em; }
     .service-form [data-service-form] input {
-      background: aqua;
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
     .service-form [data-service-form] select {
       background: 100%;
       width: 100%;
-      font-family: "Quicksand", sans-serif; }
+      font-family: "Quicksand", sans-serif;
+      font-size: 1em; }
 
 .readMode {
   /*disable input fields*/
   pointer-events: none;
-  color: dodgerblue;
   font-weight: bold; }
   .readMode input {
     border: 0;
     /* Most modern browsers support this now. */ }
     .readMode input::placeholder {
-      color: black; }
+      font-size: 1em;
+      color: mediumblue; }
   .readMode select {
-    color: mediumvioletred;
     border: 0;
     background-color: transparent;
     /*Removing the drop down arrow*/
@@ -41,9 +43,10 @@
     margin: 0.5rem; }
 
 .editMode {
-  color: teal;
+  color: black;
   font-weight: bold; }
   .editMode input {
+    font-size: 1em;
     /* Most modern browsers support this now. */ }
     .editMode input::placeholder {
       color: black; }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import '../stylesheets/Tabs.css';
+import '../stylesheets/Dashboard.css';
 
 // COMPONENTS
 import User from './User';
@@ -81,7 +81,7 @@ class Dashboard extends Component {
             {/* defaultIndex changes he tab that should be open on initial render. This is a zero-based index, so first tab is 0, second tab is 1, ... */}
             {/* onSelect is called every time a tab is about to change. It will be called with the index that it will be changed to, the lastIndex which was selected before and the underlying event. */}
             <Tabs
-              defaultIndex={1}
+              defaultIndex={0}
               onSelect={index => {
               // console.log(index + 1)
               }}
@@ -141,15 +141,15 @@ class Dashboard extends Component {
     } else {
       return (
         <div className="page-container">
-        
-          <nav>
-            <LogOut />
-          </nav>
+          
+          {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
+          <Navigation originPage='dashboard'/>
 
           <div className="body-container">
             <h3> {this.state.message} </h3>
           </div>
-
+          
+          <Footer />
         </div>
       );
     }
