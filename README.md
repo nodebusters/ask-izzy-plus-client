@@ -57,6 +57,8 @@ Brief summary description of functionality and background for Ask Izzy Plus appl
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
   - [Q2: What libraries are being used in the app and why?](#q2-what-libraries-are-being-used-in-the-app-and-why)
+    - [Client Side:](#client-side)
+    - [Server Side:](#server-side)
   - [Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?](#q3-a-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-what-knowledge-and-skills-would-they-need-in-order-to-develop-the-project)
   - [Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?](#q4-within-your-own-project-what-knowledge-or-skills-were-required-to-complete-your-project-and-overcome-challenges)
   - [Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?](#q5-evaluate-how-effective-your-knowledge-and-skills-were-this-project-using-examples-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)
@@ -315,11 +317,32 @@ Testing was performed often during the development of the application. Testing t
 * Separation of concerns: separate your program into modules that each deal with one particular focus, or concern.
 
 ### Q2: What libraries are being used in the app and why?
-* Mongo / Mongoose
-* Express
-* React.js
-* Node.js
-* Passport
+#### Client Side:
+├── axios@0.18.0: To perform promise based HTTP requests
+├── history@4.7.2: To redirect pages programmatically in react. 
+├── jwt-decode@2.2.0: To decode jwt tokens.
+├── nodemailer@5.1.1: To send emails from node. 
+├── react@16.7.0: To produce view/controller components of our application. 
+├── react-confirm-alert@2.1.0: 
+├── react-dom@16.7.0
+├── react-google-login@5.0.0
+├── react-router-dom@4.3.1
+├── react-scripts@2.1.3
+└── react-tabs@3.0.0
+
+#### Server Side:
+├── cookie-parser@1.4.3
+├── cookie-session@2.0.0-beta.3
+├── cors@2.8.5
+├── dotenv@6.2.0
+├── express@4.16.4
+├── jwt-decode@2.2.0
+├── mongoose@5.4.6
+├── nodemailer@5.1.1
+├── nodemon@1.18.9
+├── now@13.1.2
+├── passport@0.4.0
+└── passport-google-oauth@1.0.0
 
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 * Business Context
