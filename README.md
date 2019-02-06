@@ -490,7 +490,8 @@ Testing was performed often during the development of the application. Testing t
 ├── nodemailer@5.1.1: To send emails from node. 
 ├── nodemon@1.18.9: To To monitor the performance of the API during development.
 ├── now@13.1.2: To deploy the server in now.sh
-├── passport@0.4.0: 
+├── nodemailer@5.1.1: To send emails from node. 
+├── passport@0.4.0: To deal with authentication in node. 
 └── passport-google-oauth@1.0.0: To handle google OAuth strategy. 
 
 <!-- FIXME: ??? -->
