@@ -90,10 +90,11 @@ After finding our client, we met and worked with Ask Izzy's product manager to u
 <!-- TODO: LINDA -->
 ## Screenshots (Live Application)
 <!-- FIXME: Add Final Screenshots -->
---- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
 |[![](/docs/images/ask-izzy-plus-ui-desktop.png)]() | [![](/docs/images/ask-izzy-plus-ui-desktop.png)]() |
 |-----------|-----------|
 ![](/docs/images/ask-izzy-plus-ui-mobile.png) | ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
+
+--- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
 
 <!-- TODO: LINDA -->
 ## The Brief
@@ -143,6 +144,7 @@ Possible extensions discussed with our client during this ideation stage for the
 * Ability to get push updates or notifications (such as weather warnings that might impact clients/rough sleepers).
 
 ## Application Design
+```
 Demonstrate your ability to break down the problem and design a solution.
 - Compose a summary of your application including problem definition and solution
 - Review the conceptual design with the client and edit based on their feedback
@@ -153,6 +155,7 @@ Demonstrate your ability to break down the problem and design a solution.
 - Project plan and effort estimation
 - Data Flow Diagram
 - OO design documentation
+```
 
 <!-- TODO: AITZU -->
 ### Design Process
@@ -171,15 +174,22 @@ Demonstrate your ability to break down the problem and design a solution.
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
 - A workflow diagram of the user journey/s
+
+<!-- TODO: AITZU/LINDA -->
 ### Wireframes
 -- INSERT WIREFRAMES --
 * Figma, Balsamiq
 * Provide UX/UI design documentation(wireframes) that adequately show Agile methodology implementation.
+
+<!-- TODO: LINDA -->
 ### Database Schema
 - MONGOOSE SCHEMA
 - CHALLENGE: COMPLEXITY, TRANSLATING TO DOCUMENT DATABASE
+
+<!-- TODO: LINDA -->
 ### Data Flow Diagram
 -- INSERT DATAFLOW DIAGRAM --
+
 <!-- FIXME: Checking with Matt/Harrison if this is required -->
 ### OO Design Documentation
 ??? CONFIRM WHAT THIS REQUIREMENT IS ???
@@ -204,18 +214,25 @@ Demonstrate your ability to satisfy your client with the quality of your work an
 - Obtain final project sign-off
 - As a team, conduct post project review
 - Create a questionnaire for the client to ascertain the satisfaction with your products and services
+
+<!-- TODO: LINDA -->
 ### Project Plan and Timeline
 - Project plan and effort estimation
 1.   Employ and utilise project management methodology
 2.   Employ and utilise task delegation methodology
+
+<!-- TODO: LINDA -->
 ### Client Communications
 When approaching your client, be upfront about this being a project you are doing as part of your Diploma.
 There is to be no expectations on you, the students, to deploy the application for use of the client. Make sure the client is aware of this and that it is agreed upon.
 There is to be no confidentiality agreement to be entered into.
+
+<!-- TODO: LINDA -->
 ### Task Management (Trello)
 - Project plan and effort estimation
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
 
+<!-- TODO: DIEGO -->
 ## Tools & Methodologies
 ### Trello
 We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
@@ -232,9 +249,10 @@ Then we assigned cards to each of this lists and relocate the cards as the proje
 
 ![](docs/images/trello-screenshot.png)
 
-
+<!-- TODO: LINDA -->
 ### Figma/Balsimiq
 
+<!-- TODO: DIEGO -->
 ### Source Control
 #### Github and Gitflow
 Provide an overview and description of your source control process.
@@ -247,6 +265,7 @@ We decided to create a GitHub Organisation with the objective of having all memb
 
 As an organisation we also agreed to work in well named branches, and always push the branch instead of master in order to raise well documented pull requests. 
 
+<!-- TODO: DIEGO -->
 ### Agile Methodologies
 We implemented several agile methodologies during the planning and execution of the project. As an organisation we decided to distribute the responsibilities of a scrum master among all the team members.
 
@@ -258,6 +277,7 @@ Sustainable development and simplicity were also very important for us. During t
 
 Another important technique we implemented in the initial stages of the project was pair programming. This was very helpful to get all the team members in the same page in terms of database design and application flow. 
 
+<!-- TODO: DIEGO -->
 ### Code Review
 As mention before we decided that team members were not allowed to merge their own pull request, but instead another team member is responsible for code review and merging if appropriate. 
 
@@ -269,6 +289,7 @@ This approach worked really well as it allowed us to pick up issues early in the
 4. Code review an solve conflicts as required. 
 5. Push the branch now we the conflicts solved. 
 
+<!-- TODO: DIEGO -->
 ### Deployment
 We decided to use a distributed deployment approach for this project with the following set up:
 
@@ -281,6 +302,7 @@ The server side of the application was deployed in now.sh, and a now.json file w
 #### Database
 The database of the application was stored in a mLab sandbox database.    
 
+<!-- TODO: DIEGO -->
 ### Testing
 Testing was performed often during the development of the application. Testing techniques included the following:
 
@@ -290,13 +312,18 @@ Testing was performed often during the development of the application. Testing t
 * Testing the production version of the application by performing a diverse range of processes live. 
 
 ## Short Answers: Post-Review
+<!-- TODO: LINDA -->
 ### Q1: What are the most important aspects of quality software?
+1. For the end-user (customer)
+2. For the developer/business (client)
+
 * Functional Components
 * Reusability
 * Composition
 * DRY - don't repeat yourself: Demonstrate DRY principles in all code.
 * Separation of concerns: separate your program into modules that each deal with one particular focus, or concern.
 
+<!-- TODO: DIEGO -->
 ### Q2: What libraries are being used in the app and why?
 * Mongo / Mongoose
 * Express
@@ -317,13 +344,16 @@ Testing was performed often during the development of the application. Testing t
 * Learnings, Future Lessons
 
 ## Future Development
+<!-- TODO: JAMES -->
 ### Extensions
+<!-- TODO: JAMES -->
 ### Handover
 ### Client Survey/Questionnaire
 <!-- TODO: DIEGO -->
 ### Running Ask Izzy+ (Developers)
 Developer instructions for running Ask Izzy Plus can be found here: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md
 
+<!-- TODO: GROUP -->
 ## Presentation
 You are to deliver a 7 minute presentation to the class.
 
