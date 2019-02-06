@@ -157,6 +157,11 @@ Demonstrate your ability to break down the problem and design a solution.
 ### User Stories
 - Trello User Stories/Personas: User stories for the whole application
 - Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+
+![Trello User Stories](/docs/images/ask-izzy-plus-trello-user-stories.png)
+- Trello User Stories/Personas: User stories for the whole application
+- Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+
 <!-- TODO: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
@@ -317,7 +322,7 @@ This approach worked really well as it allowed us to pick up issues early in the
 ### Client Survey/Questionnaire
 <!-- TODO: DIEGO -->
 ### Running Ask Izzy+ (Developers)
-Developer instructions for running Ask Izzy Plus can be found here: https://github.com/linda-lai/nodebusters-testing/blob/master/README_dev.md
+Developer instructions for running Ask Izzy Plus can be found here: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md
 
 ## Presentation
 You are to deliver a 7 minute presentation to the class.
