@@ -1,27 +1,30 @@
 # Ask Izzy Plus <!-- omit in toc -->
-A self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
+Ask Izzy Plus is self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
 
-## Tagline/Logo <!-- omit in toc --> 
---INSERT ASK IZZY PLUS TAGLINE/LOGO--
-https://github.com/ask-izzy/ask-izzy
+[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://github.com/nodebusters/)
 
-### Deployed Link <!-- omit in toc --> 
+## Ask Izzy Plus Links
+### Deployed <!-- omit in toc --> 
 * Client: https://ask-izzy-plus.netlify.com
 * Server: https://ask-izzy.now.sh/
 
-### GitHub Link <!-- omit in toc --> 
+### GitHub Repositories <!-- omit in toc --> 
 * Client: https://github.com/nodebusters/ask-izzy-plus-client
 * Server: https://github.com/nodebusters/ask-izzy-plus-server
 
 ## Summary <!-- omit in toc -->
-Brief summary description of functionality and background for Ask Izzy Plus application/Coder Academy project.
+Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
+
+[![Nodebusters Logo](docs/images/nodebusters-logo-small.png)](https://github.com/nodebusters/)
+
 |[![Diego Rodriguez](/docs/contributors/contributors-diegorodriguez2018-70x70.jpg)](https://github.com/DiegoRodriguez2018)| [![Aitzu Hu](/docs/contributors/contributors-Aitzu-70x70.jpg)](https://github.com/Aitzu) | [![Linda Lai](/docs/contributors/contributors-linda-lai-70x70.jpg)](https://github.com/linda-lai)| [![James Hastings](/docs/contributors/contributors-omegadefender-70x70.jpg)](https://github.com/omegadefender) 
 |-----------|-----------|-------------| ------------- |
 | Diego Rodriguez | Aitzu Hu | Linda Lai | James Hastings |
 
 ## Contents <!-- omit in toc -->
+- [Ask Izzy Plus Links](#ask-izzy-plus-links)
 - [About Ask Izzy Plus](#about-ask-izzy-plus)
   - [Project Background](#project-background)
   - [Functionality and Features](#functionality-and-features)
@@ -70,99 +73,74 @@ Brief summary description of functionality and background for Ask Izzy Plus appl
 <!-- TODO: LINDA -->
 ## About Ask Izzy Plus
 ### Project Background
-**Description**
-Ask Izzy Plus is a self-service web application built for our client Infoxchange. Service providers listed on Ask Izzy can log in and update contact 
+Tasked with finding a real world customer to design, build, deploy and present a web application for our final Coder Academy project, Ask Izzy Plus is a self-service application built in JavaScript using the MERN stack to our client Infoxchange's requirements. 
 
-A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment for a commercial client (using appropriate tools and methodologies).
+The scope of our project for the MVP was to build a working prototype/proof of concept application for our client to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project. To this end, simplifying the process for service providers to update their information with Infoxchange, and enabling service providers to update their details via a self-service application was a key pain point/wishlist identified by Infoxchange.
 
-* You are to design, build, deploy and present a web application (App) built for a real world customer.
-* Find a business or organisation (preferably near your campus) to build an App for.
-* Meet with the business owner or organisation manager to find out what challenges they face. Find a problem that you can solve with an App and present your ideas to the client.
-* The project must be completed in the assigned groups.
-
-**Technologies**
-Demonstrate your full stack development skills by implementing the following requirements, At a minimum use the following technologies:
-* Mongo / Mongoose
-* Express
-* React.js
-* Node.js
+After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js), and other node packages.
 
 <!-- TODO: LINDA -->
 ### Functionality and Features
-The goal of the Ask Izzy Plus project is to explore the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it more useful to them. For example, this may include an Ask Izzy Dashboard that organisations can log in to, where they can:
-
-**MVP**
-- Editing or removing your site or service
-- If you need to make changes to your service details, or remove your service from the Ask Izzy homelessness website and Infoxchange Service Seeker national directory, please click 'Update/remove service' on the individual service listing and provide all of the requested information. The changes you request will be actioned within seven (7) calendar days from submission.
-
-**Extensions**
--	The ability to update their details and information on Ask Izzy easily.  
--	Create lists of ‘favourite’ services that they could share easily with their clients by hardcopy, SMS or email.
-
-**Prototype**
-
-As a prototype MVP it would be great to build out the Service Provider ability to:
-* Login/Logout
-* Create/Update/Amend their details
+[Ask Izzy Plus](https://ask-izzy-plus.netlify.com) is a supplementary self-service application for service providers listed on Infoxchange's flagship [Ask Izzy](https://askizzy.org.au) platform, a mobile website that helps people who are homeless or at risk of becoming homeless to find essential services they need nearby and now.
+* Using Ask Izzy Plus, service providers from Ask Izzy that have been whitelisted to use the platform by admins can login/logout and view contact details structured at multiple levels (organisation, site and services), in line with the data structure of the Infoxchange's Service Seeker database (which supports a number of directory services provided by Infoxchange, including Ask Izzy).
+* From there, service providers can create, read, update and delete details for the organisation, sites and services they have been associated with. Users are associated with a particular organisation (which contain multiple sites and associated services with each site) by admins when onboarded that determine which organisation, sites and services they can view and edit.
+* In turn, admin users (i.e. Nodebusters or Infoxchange) are responsible for pre-qualifying and onboarding service provider users onto Ask Izzy Plus first by whitelisting authorised email addresses and associating authorised users with a particular organisation. Admins can view all whitelisted users and whitelist a new user to an organisation in the admin dashboard.
+* Our Ask Izzy Plus prototype uses Google OAuth to handle all user logins and manage authentication via a third-party provider.
 
 <!-- TODO: LINDA -->
 ## Screenshots (Live Application)
---INSERT SCREENSHOTS---
+<!-- FIXME: Add Final Screenshots -->
+--- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
+|![](/docs/images/ask-izzy-plus-ui-desktop.png) | ![](/docs/images/ask-izzy-plus-ui-desktop.png)|
+|-----------|-----------|
+![](/docs/images/ask-izzy-plus-ui-mobile.png)| ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
 
 <!-- TODO: LINDA -->
 ## The Brief
 ### The Client
+
 **Infoxchange**
 
-Infoxchange is an organisation that develops and supports innovative software for a wide range of purposes to help people who face disadvantage and the organisations that support them.
+Our client, [Infoxchange](https://www.infoxchange.org/au/ask-izzy), is a not-for-profit social enterprise/non-government organisation that develops and supports software for a wide range of purposes to help support people who face disadvantage and the community organisations that support them. Infoxchange's Service Seeker database is Australia's largest up-to-date directory of health and welfare services, powering its sister directory Ask Izzy, the product we were supporting for our project brief.
 
 **Ask Izzy**
 
-Infoxchange's mobile website Ask Izzy connects people at risk of or experiencing homelessness or disadvantage to over 360,000 services across Australia, including housing, a meal, support and counselling, and much more.
-* Ask Izzy is a centralised directory that provides relevant, up to date information about services available to people who are experiencing or are at risk of homelessness and the people who support them.
-* Ask Izzy is a comprehensive and easy to use resource for mobile, tablet and desktop. It’s a place for you and the people you support to find out about location based housing options, where to access meals, material aid and health services. There are also links to local services including: legal, financial, alcohol and other drugs, family violence and mental health.
-* With more than 1.3 million searches on the site since it was first launched -  Ask Izzy connects close to 1000 people a day to help nearby.
-* Help us keep Ask Izzy relevant. Up-to-date service information is vital. Organisations across the sector can contribute to this community led initiative to help us make it better. Your organisation can even add information about your temporary services to the program and events section.
+Infoxchange's mobile website Ask Izzy is a centralised directory that provides a broad range of location and service-based search for people at risk of or experiencing homelessness or disadvantage to service providers across Australia. Users can find out about location based housing options, where to access meals, material aid and health services and local services including legal, financial, alcohol and other drugs, family violence and mental health. 
 
+Designed mobile-first, and free and anonymous to use, Ask Izzy is compatible across desktop, tablet and mobile and connects close to 1000 people a day to help nearby, with its primary users being people who face disadvantage or risk, and staff working in organisations that support them.
 
-Ask Izzy is an open source application and can be located on GitHub https://github.com/ask-izzy/ask-izzy.
+Infoxchange's Ask Izzy is an open source application and can be located on GitHub: https://github.com/ask-izzy/ask-izzy.
 
 <!-- TODO: LINDA -->
 ### The Problem (Problem Definition)
-**Need/Problem**
-* Service providers need to be able to update their service
-details
-* Identified that service providers often rely on their person network.
-* The process needs to be simplified for services providers to update their information
-* Accuracy of services available are important to clients using these services
+With over 360,000 service providers listed across Australia and close to 1,000 people a day connecting to Ask Izzy, accuracy of services available and up-to-date information is hugely important to clients using these services and vital to keeping Ask Izzy relevant. Infoxchange policy requires that direct contact be made with service providers prior to adding or updating records to comply with privacy laws, confirm that changes were submitted by the service provider's office and verify the validity, accuracy and completeness of the information.
 
-**Business Context**
-* Infoxchange policy requires that direct contact be made with service providers prior to adding or updating their records. Such contact ensures compliance with privacy laws, confirms that changes were submitted by the service provider’s office and verifies the validity, accuracy and completeness of the information.
-* Online updates submitted by service providers require procedures to ensure validity and accuracy. Updates submitted online are stored in a holding bay until they can be verified with the provider, checked for consistency and correct formatting, edited if necessary, and finally included in the directory.
-* Experience confirms that self-authoring approaches, even those that are automated, are insufficient to maintain community service directories at an acceptable standard.
-* Responses to auto-emails have increased as agencies become accustomed to the
-procedure, but after a number of years, they still have a return rate of only forty to sixty per cent. Telephone contact has clearly proved itself the most effective updating method.
+Infoxchange employs several updating methods (scheduled bulk auto-emails, self-responses via online forms, mail-outs, telephone and fax-backs), with a week's turnaround on change requests and phone contact proving itself the most effective updating method. Currently, if service details need to be updated or removed from the Ask Izzy and Infoxchange Service Seeker directly, users must click on the Feedback/Report an Error link on the individual service listing and provide all of the requested information.
 
-Infoxchange employs several updating methods:
-* Scheduled bulk emails out to service listings
-* Provision of self-response opportunities – via online forms
-* Mail-outs
-* Telephone contact
-* Fax-backs.
-
-**Solution/Outcome**
-* Service providers want more control over their available services
-* Accommodation providers want to update their availability/vacancy and be able to do this seamlessly
-* Service providers would like to be able to save favourites lists
+To this end, simplifying the process for service providers to update their information, and enabling service providers to access a self-service functionality served as the basis for our prototype MVP.
 
 <!-- TODO: LINDA -->
 ### The Solution (Purpose)
-* MVP
-* Traffic light system (for Vacancies)
-* Login to update details
-* Further details of the type of housing on Ask Izzy
-* Ask Izzy tracks appointments for clients
-* Alert sent to Ask Izzy if a SP update their details
+With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
+
+> “Everyone wears different hats depending on the day.”
+
+> “The System should be a funnel, instead it’s a colander.”
+
+* Service providers need to be able to update their service details.
+* The process needs to be simplified for service providers to update their information.
+* Accuracy of services available are important to clients using these services.
+* Service providers would like to be able to login to/logout of a user dashboard and update their details and information on Ask Izzy easily.
+
+Our brief from Infoxchange entailed creating a working prototype/proof of concept web application called Ask Izzy Plus, a supplementary self-service application to Ask Izzy, to enable service providers to login/logout of a user dashboard, view, create, delete and update contact information about their organisation and its site and services, and send an alert to Infoxchange of any changes to improve current data maintenance methods.
+
+Our prototype will be used by Infoxchange to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project.
+
+Possible extensions discussed with our client during this ideation stage for the Ask Izzy Plus self-service app prototype included:
+* Create Favourites lists of services that could easily be shared with clients via hardcopy, SMS or email;
+* Update vacancy details if they provide crisis/short-term accommodation and for vacancy status to be displayed on their service page.
+* View feedback from clients on their services.
+* Ability to get push updates or notifications (such as weather warnings that might impact clients/rough sleepers).
 
 ## Application Design
 Demonstrate your ability to break down the problem and design a solution.
@@ -184,6 +162,11 @@ Demonstrate your ability to break down the problem and design a solution.
 ### User Stories
 - Trello User Stories/Personas: User stories for the whole application
 - Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+
+![Trello User Stories](/docs/images/ask-izzy-plus-trello-user-stories.png)
+- Trello User Stories/Personas: User stories for the whole application
+- Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+
 <!-- TODO: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
@@ -339,7 +322,7 @@ Testing was performed often during the development of the application. Testing t
 ### Client Survey/Questionnaire
 <!-- TODO: DIEGO -->
 ### Running Ask Izzy+ (Developers)
-Developer instructions for running Ask Izzy Plus can be found here: https://github.com/linda-lai/nodebusters-testing/blob/master/README_dev.md
+Developer instructions for running Ask Izzy Plus can be found here: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md
 
 ## Presentation
 You are to deliver a 7 minute presentation to the class.
