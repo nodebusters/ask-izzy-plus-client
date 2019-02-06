@@ -53,9 +53,6 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Agile Methodologies](#agile-methodologies)
   - [Code Review](#code-review)
   - [Deployment](#deployment)
-    - [Client Side](#client-side)
-    - [Server Side](#server-side)
-    - [Database](#database)
   - [Testing](#testing)
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
@@ -157,11 +154,11 @@ Demonstrate your ability to break down the problem and design a solution.
 - OO design documentation
 ```
 
-<!-- TODO: AITZU -->
+<!-- FIXME: AITZU -->
 ### Design Process
 - Compose a summary of your application including problem definition and solution
 - Review the conceptual design with the client and edit based on their feedback
-<!-- TODO: AITZU -->
+<!-- FIXME: AITZU -->
 ### User Stories
 - Trello User Stories/Personas: User stories for the whole application
 - Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
@@ -170,23 +167,23 @@ Demonstrate your ability to break down the problem and design a solution.
 - Trello User Stories/Personas: User stories for the whole application
 - Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
 
-<!-- TODO: AITZU -->
+<!-- FIXME: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
 - A workflow diagram of the user journey/s
 
-<!-- TODO: AITZU/LINDA -->
+<!-- FIXME: AITZU/LINDA -->
 ### Wireframes
 -- INSERT WIREFRAMES --
 * Figma, Balsamiq
 * Provide UX/UI design documentation(wireframes) that adequately show Agile methodology implementation.
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Database Schema
 - MONGOOSE SCHEMA
 - CHALLENGE: COMPLEXITY, TRANSLATING TO DOCUMENT DATABASE
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Data Flow Diagram
 -- INSERT DATAFLOW DIAGRAM --
 
@@ -195,39 +192,42 @@ Demonstrate your ability to break down the problem and design a solution.
 ??? CONFIRM WHAT THIS REQUIREMENT IS ???
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ## Project Management & Planning
+```
 Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
-**Client**
+
+Client:
 - Record interactions with your client in a diary format
 - Plan information gathering activities to determine project requirements, constraints and risks
 
-**Project Management**
+Project Management:
 - Develop project charter, including preliminary statement of project scope and obtain sign-off
 - Prepare project work breakdown and schedule
 - Allocate roles and responsibilities to team members, based on project solution requirements
 - Monitor each other’s assigned work
 - Reassess ongoing project scope changes, risks and issues
 
-**Handover**
+Handover:
 - Manage system testing and hand over activities. Prepare maintenance or support plans for client
 - Obtain final project sign-off
 - As a team, conduct post project review
 - Create a questionnaire for the client to ascertain the satisfaction with your products and services
+```
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Project Plan and Timeline
 - Project plan and effort estimation
 1.   Employ and utilise project management methodology
 2.   Employ and utilise task delegation methodology
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Client Communications
 When approaching your client, be upfront about this being a project you are doing as part of your Diploma.
 There is to be no expectations on you, the students, to deploy the application for use of the client. Make sure the client is aware of this and that it is agreed upon.
 There is to be no confidentiality agreement to be entered into.
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Task Management (Trello)
 - Project plan and effort estimation
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
@@ -249,7 +249,7 @@ Then we assigned cards to each of this lists and relocate the cards as the proje
 
 ![](docs/images/trello-screenshot.png)
 
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Figma/Balsimiq
 
 <!-- TODO: DIEGO -->
@@ -293,13 +293,16 @@ This approach worked really well as it allowed us to pick up issues early in the
 ### Deployment
 We decided to use a distributed deployment approach for this project with the following set up:
 
-#### Client Side
+**Client Side: Netlify**
+
 The client side of the application was deployed using Netlify continuous deployment. Netlify GUI was utilized to manage environmental variables and build processes. 
 
-#### Server Side
+**Server Side: Now**
+
 The server side of the application was deployed in now.sh, and a now.json file was used to manage environment variables and build processes. 
 
-#### Database
+**Database: mLab**
+
 The database of the application was stored in a mLab sandbox database.    
 
 <!-- TODO: DIEGO -->
@@ -312,7 +315,7 @@ Testing was performed often during the development of the application. Testing t
 * Testing the production version of the application by performing a diverse range of processes live. 
 
 ## Short Answers: Post-Review
-<!-- TODO: LINDA -->
+<!-- FIXME: LINDA -->
 ### Q1: What are the most important aspects of quality software?
 1. For the end-user (customer)
 2. For the developer/business (client)
@@ -323,7 +326,7 @@ Testing was performed often during the development of the application. Testing t
 * DRY - don't repeat yourself: Demonstrate DRY principles in all code.
 * Separation of concerns: separate your program into modules that each deal with one particular focus, or concern.
 
-<!-- TODO: DIEGO -->
+<!-- FIXME: DIEGO -->
 ### Q2: What libraries are being used in the app and why?
 * Mongo / Mongoose
 * Express
@@ -331,29 +334,32 @@ Testing was performed often during the development of the application. Testing t
 * Node.js
 * Passport
 
+<!-- FIXME: ??? -->
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 * Business Context
 
+<!-- FIXME: ??? -->
 ### Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
 * Knowledge
 * Skills
 * Challenges
 
+<!-- FIXME: ??? -->
 ### Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
 * Effectiveness - Strengths and Weaknesses
 * Learnings, Future Lessons
 
 ## Future Development
-<!-- TODO: JAMES -->
+<!-- FIXME: JAMES -->
 ### Extensions
-<!-- TODO: JAMES -->
+<!-- FIXME: JAMES -->
 ### Handover
 ### Client Survey/Questionnaire
-<!-- TODO: DIEGO -->
+<!-- FIXME: DIEGO -->
 ### Running Ask Izzy+ (Developers)
 Developer instructions for running Ask Izzy Plus can be found here: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md
 
-<!-- TODO: GROUP -->
+<!-- FIXME: GROUP -->
 ## Presentation
 You are to deliver a 7 minute presentation to the class.
 
