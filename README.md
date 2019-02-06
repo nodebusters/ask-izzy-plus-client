@@ -333,7 +333,7 @@ Because of the adaptability and flexibility of the MERN software stack(**M**ongo
 
 <!-- TODO: LINDA -->
 ### OO Design Documentation
-When considering OO design and class atttributes, methods and relationships, our 
+When considering OO design and class attributes, methods and relationships, our main consideration was representing people (users) and locations (organisations, sites and services)
 
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
 
