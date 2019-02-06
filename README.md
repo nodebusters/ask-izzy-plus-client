@@ -64,6 +64,7 @@ Brief summary description of functionality and background for Ask Izzy Plus appl
   - [Running Ask Izzy+ (Developers)](#running-ask-izzy-developers)
 - [Presentation](#presentation)
 
+<!-- TODO: LINDA -->
 ## About Ask Izzy Plus
 ### Project Background
 **Description**
@@ -83,6 +84,7 @@ Demonstrate your full stack development skills by implementing the following req
 * React.js
 * Node.js
 
+<!-- TODO: LINDA -->
 ### Functionality and Features
 The goal of the Ask Izzy Plus project is to explore the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it more useful to them. For example, this may include an Ask Izzy Dashboard that organisations can log in to, where they can:
 
@@ -100,9 +102,11 @@ As a prototype MVP it would be great to build out the Service Provider ability t
 * Login/Logout
 * Create/Update/Amend their details
 
+<!-- TODO: LINDA -->
 ## Screenshots (Live Application)
 --INSERT SCREENSHOTS---
 
+<!-- TODO: LINDA -->
 ## The Brief
 ### The Client
 **Infoxchange**
@@ -120,6 +124,7 @@ Infoxchange's mobile website Ask Izzy connects people at risk of or experiencing
 
 Ask Izzy is an open source application and can be located on GitHub https://github.com/ask-izzy/ask-izzy.
 
+<!-- TODO: LINDA -->
 ### The Problem (Problem Definition)
 **Need/Problem**
 * Service providers need to be able to update their service
@@ -146,6 +151,8 @@ Infoxchange employs several updating methods:
 * Service providers want more control over their available services
 * Accommodation providers want to update their availability/vacancy and be able to do this seamlessly
 * Service providers would like to be able to save favourites lists
+
+<!-- TODO: LINDA -->
 ### The Solution (Purpose)
 * MVP
 * Traffic light system (for Vacancies)
@@ -166,12 +173,15 @@ Demonstrate your ability to break down the problem and design a solution.
 - Data Flow Diagram
 - OO design documentation
 
+<!-- TODO: AITZU -->
 ### Design Process
 - Compose a summary of your application including problem definition and solution
 - Review the conceptual design with the client and edit based on their feedback
+<!-- TODO: AITZU -->
 ### User Stories
 - Trello User Stories/Personas: User stories for the whole application
 - Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+<!-- TODO: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
 - A workflow diagram of the user journey/s
@@ -184,10 +194,12 @@ Demonstrate your ability to break down the problem and design a solution.
 - CHALLENGE: COMPLEXITY, TRANSLATING TO DOCUMENT DATABASE
 ### Data Flow Diagram
 -- INSERT DATAFLOW DIAGRAM --
+<!-- FIXME: Checking with Matt/Harrison if this is required -->
 ### OO Design Documentation
 ??? CONFIRM WHAT THIS REQUIREMENT IS ???
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
 
+<!-- TODO: LINDA -->
 ## Project Management & Planning
 Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
 **Client**
@@ -218,6 +230,7 @@ There is to be no confidentiality agreement to be entered into.
 - Project plan and effort estimation
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
 
+<!-- TODO: DIEGO -->
 ## Tools & Methodologies
 Demonstrate your project management skills,
 - Trello or similar project management tool to be used for Kanban process to track progress of build
@@ -225,8 +238,11 @@ Demonstrate your project management skills,
 - Use Agile development methodologies
 - Code review - Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others
 - Show evidence of client communication, e.g. meeting minutes, emails, or other communication tools
+<!-- TODO: DIEGO -->
 ### Trello
+<!-- TODO: LINDA -->
 ### Figma/Balsimiq
+<!-- TODO: DIEGO -->
 ### Source Control
 #### Github and Gitflow
 Provide an overview and description of your source control process.
@@ -236,6 +252,7 @@ Provide an overview and description of your source control process.
 1.  Employ and utilise proper source control methodology
 
 ### Agile Methodologies
+<!-- TODO: DIEGO -->
 ### Code Review
 * Do not merge if you raised the PR - trust, but verify.
 * Generally worked OK, largely stuck to, able to resolve conflicts relatively quickly.
@@ -243,6 +260,7 @@ Provide an overview and description of your source control process.
 2.  Demonstrate use of functions
 3.  Apply Object oriented principles/patterns
 
+<!-- TODO: DIEGO -->
 ### Deployment
 <!-- USER INTERFACE -->
 32. Deployment
@@ -253,6 +271,7 @@ Provide an overview and description of your source control process.
 * mLab
 * Now
 
+<!-- TODO: DIEGO -->
 ### Testing
 <!-- TESTING -->
 34. Development testing
@@ -292,6 +311,7 @@ Provide an overview and description of your source control process.
 ### Extensions
 ### Handover
 ### Client Survey/Questionnaire
+<!-- TODO: DIEGO -->
 ### Running Ask Izzy+ (Developers)
 Developer instructions for running Ask Izzy Plus can be found here: https://github.com/linda-lai/nodebusters-testing/blob/master/README_dev.md
 
