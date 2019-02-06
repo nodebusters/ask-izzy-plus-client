@@ -119,11 +119,12 @@ To this end, simplifying the process for service providers to update their infor
 
 <!-- TODO: LINDA -->
 ### The Solution (Purpose)
-With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
-
 > “Everyone wears different hats depending on the day.”
 
 > “The System should be a funnel, instead it’s a colander.”
+
+With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
+
 
 * Service providers need to be able to update their service details.
 * The process needs to be simplified for service providers to update their information.
@@ -156,8 +157,11 @@ Demonstrate your ability to break down the problem and design a solution.
 
 <!-- FIXME: AITZU -->
 ### Design Process
+After receiving an initial brief and researching Ask Izzy's UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details. Integrating this functionality into the existing main Ask Izzy platform was beyond the scope of our project; being a prototype for our client, this meant we could create our own database. However, we endeavoured to align our document database as closely as possible to Infoxchange's relational database structure. For branding and design consistency, our Ask Izzy Plus app mimics the layout and design elements of Infoxchange's Ask Izzy UI, and is compatible with mobile, tablet and desktop.
+
 - Compose a summary of your application including problem definition and solution
-- Review the conceptual design with the client and edit based on their feedback
+- Review the conceptual design with the client and edit based on their feedbac
+
 <!-- FIXME: AITZU -->
 ### User Stories
 - Trello User Stories/Personas: User stories for the whole application
