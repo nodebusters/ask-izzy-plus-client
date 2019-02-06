@@ -5,7 +5,7 @@
   padding: 0 1em; }
   .login-button-container .login-button {
     width: 100%;
-    background-color: #4d13af;
+    background-color: #5B98BB;
     color: #ffffff;
     border: none;
     font-family: "Quicksand", sans-serif;
@@ -14,6 +14,14 @@
     border-radius: 3px;
     padding: 15px 45%; }
     .login-button-container .login-button:hover {
-      background-color: #6118dd; }
+      background-color: #74A8C6; }
+  .login-button-container .toggle-login-container {
+    padding-top: 1em; }
+  .login-button-container .toggle-login {
+    padding-top: 1em;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold; }
 
 /*# sourceMappingURL=AdminHome.css.map */

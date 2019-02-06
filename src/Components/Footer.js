@@ -5,16 +5,22 @@ const Footer = () => {
     <footer className="footer-container">
       <ul className="footer-list">
         <li>
-          <a href="about">About</a>
+          <a href="https://askizzy.org.au/about">About Ask Izzy Plus</a>
         </li>
         <li>
-          <a href="terms">Terms</a>
+          <a href="support@askizzy.org.au">Contact</a>
         </li>
         <li>
-          <a href="contact">Contact</a>
+          <a href="https://askizzy.org.au/terms">Terms</a>
         </li>
         <li>
-          <a href="resources">Online Resources</a>
+          <a href="https://www.infoxchange.org/au/ask-izzy">Online Resources</a>
+        </li>
+        <li>
+          <a href="https://github.com/nodebusters">About Nodebusters</a>
+        </li>
+        <li>
+          <a href="support@askizzy.org.au">Report an Issue</a>
         </li>
       </ul>
     </footer>

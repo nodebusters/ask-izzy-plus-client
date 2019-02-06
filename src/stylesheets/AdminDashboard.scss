@@ -3,6 +3,13 @@
 @import "./Fonts";
 @import "./Mixins";
 
+
+.user-field {
+  // background: $form-field-highlight;
+  // padding: 0.5em;
+  // margin-bottom: 0.5em;
+}
+
 // DASHBOARD: Tab - Admin User Profile
 .user-card {
   @include userTabCard();
@@ -11,8 +18,9 @@
 // DASHBOARD: Tab - Add New User
 .add-user-container {
   @include formContainer();
-  [data-new-form] {
+  .add-user-form {
     @include formInputAndSelect;
+    @include editMode();
   }
 
   .createUsers {

@@ -20,7 +20,7 @@ import somethingToDo from "../Images/banners/something-to-do.png";
 import supportCounselling from "../Images/banners/support-counselling.png";
 import technology from "../Images/banners/technology.png";
 
-import logo from "../Images/logo/ask-izzy-logo-edited.svg";
+import logo from "../Images/logo/ask-izzy-plus-logo.svg";
 
 const Banner = () => {
   const randomHeaderImages = [

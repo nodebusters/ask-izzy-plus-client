@@ -29,6 +29,9 @@ class AdminLogIn extends Component {
           onSuccess={this.responseGoogle}
           onFailure={this.errorGoogle}
         />
+        <div className="toggle-login-container">
+          <a className="toggle-login" href="/home">Are you a Service Provider?</a>
+        </div>
       </div>
     );
   }

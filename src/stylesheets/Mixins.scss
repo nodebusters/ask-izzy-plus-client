@@ -1,6 +1,7 @@
 @import "./Colors";
 @import "./Fonts";
 
+// ---------- BUTTON MIXINS: loginButton, crudButton ---------- //
 @mixin loginButton {
   // background: aquamarine;
   padding: 0 1em;
@@ -24,11 +25,18 @@
     }
   }
 
-  // Home: Forgotten Password
-  // .forgotten-password a {
-  //   text-decoration: none;
-  //   color: black;
-  // }
+  .toggle-login-container {
+    padding-top: 1em;
+  }
+
+  // Home: Admin Login
+  .toggle-login {
+    padding-top: 1em;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
 }
 
 // Button styling applied to editButton (in readOnly mode), editMode, updateButton and cancelButton when selected
@@ -48,12 +56,15 @@
   // BUTTON: Text font-family
   font-family: $main-body-font;
 
+  // BUTTON: Text font size
+  font-size: $font-size-crud-button;
+
   // BUTTON: Sizing/decoration
   box-sizing: border-box;
   text-decoration: none;
   
   // BUTTON: Padding between button text and button border
-  padding: 1em 5em;
+  padding: 1em 4em;
 
   // BUTTON: Spacing between different buttons
   margin: 10px;
@@ -65,13 +76,15 @@
   }
 }
 
-// ---------- FORM STYLING: by formClass ---------- //
+// ---------- FORM MIXINS: userTabCard, formContainer, formInputAndSelect, formClass=readMode and formClass=editMode ---------- //
+// FORM STYLING: Applicable to User Profile in main <body> container
 @mixin userTabCard() {
   display: flex;
-  // background: yellow;
   justify-content: space-evenly;
+  vertical-align: middle;
   padding: 0 30px;
   flex-wrap: wrap-reverse;
+  font-size: $main-body-font;
 
   .user-avatar {
     object-fit: cover;
@@ -92,65 +105,109 @@
   }
 }
 
+// FORM STYLING: Applicable to Organisation, Site and Service <div className="org-form"> container for <form>
 @mixin formContainer() {
+  // Make each form a block element
   display: block;
   width: 100%;
+  // Add padding to the left, right and bottom
   padding: 0 50px 50px 50px;
+  // Fit to border-box sizing, including padding
   box-sizing: border-box;
 }
 
+// FORM STYLING: Applicable to elements within <form> in both readMode and editMode; <form id="form" className={this.state.formClass} data-org-form >
 @mixin formInputAndSelect() {
+  // Align form < labels > to left instead of centre
   text-align: left;
-  
+
+  // Set font for all <form> elements except <select>
+  font-family: $main-body-font;
+  // font-family: 'Arial';
+  // Set form <label> styling (font-size)
+
   label {
     @include formFontSize();
+    // Font styling for form <labels>
+    font-weight: bold;
+    // color: #4D13AF;
   }
   
+  // Set form <input> styling
   input {
+    @include formFontSize();
+    // Make input field fill entire <form> body
     width: 100%;
     font-family: $main-body-font;
-    // background: dodgerblue;
-    @include formFontSize();
+    &::placeholder {
+      // Font size for placeholder text (existing data)
+      font-size: $font-size-form;
+      font-family: $main-body-font;
+    }
+    // Removes border box highlighting when selected
+    &:focus {
+      outline: none;
+    }
   }
   
+  // Styling for Yes/No dropdown menus
   select {
-    background: 100%;
-    width: 100%;
-    font-family: $main-body-font;
     @include formFontSize();
+    // Removes background colour shadow at 100%
+    background: 100%;
+    // To set dropdown box size to full width of container
+    width: 100%;
+    // Remove inbuilt border box for dropdown
+    font-family: $main-body-font;
+    // To change the font colour of dropdown options
+    // color: aquamarine;
+    // To change the background of <select> dropdowns
     // background: dodgerblue;
+
+    // Add padding between <label> and <input>
+    // padding-top: 0.5rem;
+    // padding-bottom: 0.5rem;
+
+    &:focus {
+      // Removes border box highlighting when selected
+      outline: none;
+
+      // In Edit Mode, dropbox box outline
+      border-color: none;
+    }
   }
 }
 
-// readMode: Applied to formClass when Edit button is not clicked, { state } set to readMode by default
+// FORM STYLING @readMode: Applicable to elements within <form> in readMode and editMode; <form id="form" className={this.state.formClass} data-org-form >, set to readMode by default
 @mixin readMode() {
-  /*disable input fields*/
+  /* Disable default input border box when point events triggered */
   pointer-events: none;
-  // color: dodgerblue;
-  // color: black;
-  font-weight: bold;
+
+  label {
+    display: block;
+    color: $form-label-read;
+    // margin-top: 0.7rem;
+    background: rgba(110,201,204,0.5);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+  }
+
+  // Styling for form <inputs> in readMode
   input {
-    // padding-bottom: 0.5rem;
-    border: 0;
     /* Most modern browsers support this now. */
+    // Remove inbuilt border box styling in form <input>
+    border: none;
+    // Add padding between <label> and <input>
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     &::placeholder {
-      font-size: 1em;
-      // FONT: Colour of placeholder text
-      // color: mediumspringgreen;
-      color: mediumblue;
-      // PADDING: Between field and placeholder
-      // padding-left: 10px;
+      // FONT: Font colour of placeholder text (existing data) in readOnly mode
+      color: $form-input-placeholder-read;
     }
   }
   // Styling for Yes/No dropdown menus
   select {
-    // font-size: 0.9rem;
-    // color: mediumvioletred;
-    // color: coral;
-    border: 0;
-    // padding-bottom: 0.5rem;
-    background-color: transparent;
-
     /*Removing the drop down arrow*/
     /* for Firefox */
     -moz-appearance: none;
@@ -160,6 +217,10 @@
     &::-ms-expand {
       display: none;
     }
+    padding-left: 10px;
+    height: 35px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
   }
 
   // Hide update button when Edit mode is not selected, { state } is set to readMode by default
@@ -169,35 +230,53 @@
   }
 }
 
-// editMode: Applied to formClass when Edit button is not clicked, { state } set to readMode by default (formClass changes to editMode when Edit button is clicked)
+// FORM STYLING @editMode: Applicable to elements within <form> in editMode; <form id="form" className={this.state.formClass} data-org-form >, set to readMode by default (formClass changes when Edit button is clicked)
 @mixin editMode() {
-  // Font style for form field text when Edit button is clicked
-  color: black;
-  font-weight: bold;
+  label {
+    // Font colour for form <labels>
+    color: $form-label-edit;
+    padding-top: 10px;
+    display: block;
+  }
+
   // Font style for form inputs - actual 
   input {
     @include formFontSize();
-    // padding-bottom: 0.2rem;
-    // padding-top: 0.2rem;
-    // color: aquamarine;
-
+    // Background of input box area
+    // background: lightblue;
+    // Removes inbuilt input border box
+    border: none;
+    // Add padding between <label> and <input>
+    padding-top: 5px;
+    padding-bottom: 10px;
+    // Adds border along button of input box
+    border-bottom: 1.5px solid $form-edit-outline;
+    // Adds padding between input text & border box
+    
     /* Most modern browsers support this now. */
     // Font style for form inputs - placeholder 
     &::placeholder {
-      // font-size: 1rem;
-      color: black;
-      // padding-left: 10px;
+      // FONT: Font colour of placeholder text (existing data) in editMode
+      color: white;
+    }
+
+    // Removes border highlighting when selected
+    &:focus {
+      outline: none;
     }
   }
   // Styling for Yes/No dropdown menus
   select {
-    // font-size: 0.9rem;
-    // padding-bottom: 0.2rem;
-    // padding-top: 0.2rem;
+    color: black;
+    border: 1.5px solid #6EC9CC;
+    padding-left: 10px;
+    height: 35px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
   }
+
   // Button styling for Update button in editMode
   button {
-    // margin: 0.5rem;
     @include crudButton();
   }
 }
