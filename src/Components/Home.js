@@ -7,6 +7,7 @@ import Login from './Login';
 import Footer from './Footer';
 
 class Home extends Component {
+
   render() {
     return (
       <div className="page-container">
@@ -14,10 +15,13 @@ class Home extends Component {
         <Navigation originPage='home'/>
 
         <div className="body-container">
-          <h1 className="home-headline">Welcome to Ask Izzy Plus, User</h1>
-          <Login />
-        </div>
+        
+          <div className="root-container">
+            <h1 className="home-headline">Welcome to Ask Izzy Plus, User</h1>
+            <Login />
+          </div>
 
+        </div>
         <Footer />
       </div>
     );

@@ -1,0 +1,15 @@
+.new-form [data-new-form] {
+  text-align: left; }
+  .new-form [data-new-form] label {
+    font-size: 1em; }
+  .new-form [data-new-form] input {
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em; }
+  .new-form [data-new-form] select {
+    background: 100%;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1em; }
+
+/*# sourceMappingURL=NewForm.css.map */

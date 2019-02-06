@@ -15,7 +15,7 @@ class Services extends Component {
     const sites = organisation.sitesInOrganisation;
     return (
       <React.Fragment>
-        <Tabs defaultIndex={1} >
+        <Tabs defaultIndex={0} >
 
           {/* REACT-TABS: Nested TabList to show multiple Site names as header */}
           <strong>Sites:</strong>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import "../stylesheets/Admin.css";
+// import "../stylesheets/AdminHome.css";
 
 import Navigation from './Navigation';
 import AdminLogIn from './AdminLogIn';

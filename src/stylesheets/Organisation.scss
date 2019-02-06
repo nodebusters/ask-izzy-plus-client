@@ -1,179 +1,35 @@
 @import "./Colors";
 @import "./Fonts";
+@import "./Mixins";
 
 // ---------- DASHBOARD: readMode/editMode for User, Organisation, Site and Services ---------- //
-// Button styling applied to editButton (in readOnly mode), editMode, updateButton and cancelButton when selected
-@mixin button() {
-  // BUTTON: Button background colour
-  background: $button-background;
-
-  // BUTTON: Inner text colour (when selected)
-  color: $button-text;
-
-  // BUTTON: Box outline colour
-  border: 1px solid $button-background;
-
-  // Button: Rounded corners
-  border-radius: 3px;
-
-  // BUTTON: Text font-family
-  font-family: $main-body-font;
-
-  // BUTTON: Sizing/decoration
-  box-sizing: border-box;
-  text-decoration: none;
-  
-  // BUTTON: Padding between button text and button border
-  padding: 1em 5em;
-
-  // BUTTON: Spacing between different buttons
-  margin: 10px;
-  min-width: 75px;
-  
-  // BUTTON: Change background color on hover
-  &:hover {
-    background-color: $button-hover;
-  }
-}
-
-// DASHBOARD: Tab - User Profile
-.user-card {
-  display: flex;
-  // background: dodgerblue;
-  justify-content: space-evenly;
-  padding: 0 30px;
-  flex-wrap: wrap-reverse;
-
-  .user-avatar {
-    // max-width: 300px;
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px;
-
-    img {
-      border-radius: 100%;
-    }
-  }
-
-  .user-info {
-    text-align: left;
-  }
-
-  @media only screen and (max-width: 600px) {
-    justify-content: center;
-  }
-}
-
 // DASHBOARD: Tab - Organisation
 .org-form {
-  display: block;
-  width: 100%;
-  padding: 0 30px;
-  box-sizing: border-box;
+  @include formContainer();
   [data-org-form] {
-    // background: dodgerblue;
-    text-align: left;
-    input {
-      // background: aqua;
-      width: 100%;
-      font-family: $main-body-font;
-    }
-
-    select {
-      background: 100%;
-      width: 100%;
-      font-family: $main-body-font;
-    }
+    @include formInputAndSelect();
   }
 }
 
 // ---------- FORM STYLING: by formClass ---------- //
 // readMode: Applied to formClass when Edit button is not clicked, { state } set to readMode by default
 .readMode {
-  /*disable input fields*/
-  pointer-events: none;
-  // color: lighten(black);
-  color: dodgerblue;
-  font-weight: bold;
-  input {
-    // padding-bottom: 0.5rem;
-    border: 0;
-    /* Most modern browsers support this now. */
-    &::placeholder {
-      // font-size: 1rem;
-      // FONT: Colour of placeholder text
-      color: mediumspringgreen;
-      // PADDING: Between field and placeholder
-      // padding-left: 10px;
-    }
-  }
-  // Styling for Yes/No dropdown menus
-  select {
-    // font-size: 0.9rem;
-    color: mediumvioletred;
-    border: 0;
-    // padding-bottom: 0.5rem;
-    background-color: transparent;
-
-    /*Removing the drop down arrow*/
-    /* for Firefox */
-    -moz-appearance: none;
-    /* for Chrome */
-    -webkit-appearance: none;
-    /* For IE10 */
-    &::-ms-expand {
-      display: none;
-    }
-  }
-
-  // Hide update button when Edit mode is not selected, { state } is set to readMode by default
-  button {
-    visibility: hidden;
-    margin: 0.5rem;
-  }
+  @include readMode();
 }
 
 // editMode: Applied to formClass when Edit button is not clicked, { state } set to readMode by default (formClass changes to editMode when Edit button is clicked)
 .editMode {
-  // Font style for form field text when Edit button is clicked
-  color: black;
-  font-weight: bold;
-  // Font style for form inputs - actual 
-  input {
-    // font-size: 1rem;
-    // padding-bottom: 0.2rem;
-    // padding-top: 0.2rem;
-    // color: aquamarine;
-
-    /* Most modern browsers support this now. */
-    // Font style for form inputs - placeholder 
-    &::placeholder {
-      // font-size: 1rem;
-      color: black;
-      // padding-left: 10px;
-    }
-  }
-  // Styling for Yes/No dropdown menus
-  select {
-    // font-size: 0.9rem;
-    // padding-bottom: 0.2rem;
-    // padding-top: 0.2rem;
-  }
-  // Button styling for Update button in editMode
-  button {
-    // margin: 0.5rem;
-    @include button();
-  }
+  @include editMode();
 }
 
 // Styling for Edit button
 .editButton{
-  @include button();
+  @include crudButton();
 }
 
 // Styling for Cancel button
 .cancelButton{
-  @include button();
+  @include crudButton();
   $cancelColor: red;
   // Button styling for button font text
   // color: $cancelColor;
@@ -182,5 +38,5 @@
 }
 
 .updateButton {
-  @include button();
+  @include crudButton();
 }

@@ -1,8 +1,16 @@
 // $hero-subheadline-font: 'Comfortaa', sans-serif;
 // $main-body-font: 'Comfortaa', sans-serif;
-
 // $hero-subheadline-font: 'Mallanna', sans-serif;
 // $main-body-font: 'Mallanna', sans-serif;
 
 $hero-subheadline-font: 'Quicksand', sans-serif;
 $main-body-font: 'Quicksand', sans-serif;
+$button-font: 'Quicksand', sans-serif;
+
+@mixin formFontSize() {
+  font-size: 1em;
+}
+
+$font-size-navigation-button: 1em;
+$font-size-login-button: 1em;
+$font-size-form: 1em;

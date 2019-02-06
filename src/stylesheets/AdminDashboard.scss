@@ -1,80 +1,30 @@
+@import "./Tabs";
 @import "./Colors";
 @import "./Fonts";
+@import "./Mixins";
 
-@mixin button() {
-  // BUTTON: Button background colour
-  background: $button-background;
-
-  // BUTTON: Inner text colour (when selected)
-  color: $button-text;
-
-  // BUTTON: Box outline colour
-  border: 1px solid $button-background;
-
-  // Button: Rounded corners
-  border-radius: 3px;
-
-  // BUTTON: Text font-family
-  font-family: $main-body-font;
-
-  // BUTTON: Sizing/decoration
-  box-sizing: border-box;
-  text-decoration: none;
-  
-  // BUTTON: Padding between button text and button border
-  padding: 1em 5em;
-
-  // BUTTON: Spacing between different buttons
-  margin: 10px;
-  min-width: 75px;
-  
-  // BUTTON: Change background color on hover
-  &:hover {
-    background-color: $button-hover;
-  }
+// DASHBOARD: Tab - Admin User Profile
+.user-card {
+  @include userTabCard();
 }
 
-// DASHBOARD: Tab - User Profile
-.admin-card {
-  display: flex;
-  // border: dashed dodgerblue 1px;
-  // background: dodgerblue;
-  justify-content: space-evenly;
-  padding: 0 30px;
-  flex-wrap: wrap-reverse;
-
-  .user-avatar {
-    // max-width: 300px;
-    object-fit: cover;
-    width: 100%;
-    max-width: 200px;
-
-    img {
-      border-radius: 100%;
-    }
-  }
-
-  .admin-info {
-    text-align: left;
-  }
-
-  @media only screen and (max-width: 600px) {
-    justify-content: center;
-  }
-}
-
+// DASHBOARD: Tab - Add New User
 .add-user-container {
-  border: dashed dodgerblue 1px;
+  @include formContainer();
+  [data-new-form] {
+    @include formInputAndSelect;
+  }
 
   .createUsers {
-    @include button();
+    @include crudButton();
   }
 }
 
+// DASHBOARD: Tab - View All Users
 .all-users-container {
-  border: dashed dodgerblue 1px;
-
   .deleteUsers {
-    @include button();
+    @include crudButton();
   }
 }
+
+// DASHBOARD: Tab - About

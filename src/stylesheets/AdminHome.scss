@@ -1,0 +1,13 @@
+@import "./Colors";
+@import "./Fonts";
+@import "./Mixins";
+
+// ---------- BODY: ADMIN HOME ---------- //
+.home-headline {
+  font-family: $button-font;
+}
+
+// Home: Login Button (Container)
+.login-button-container {
+  @include loginButton()
+}
