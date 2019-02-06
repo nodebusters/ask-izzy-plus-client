@@ -214,7 +214,6 @@ class AdminDashboard extends Component {
                     <div className="user-avatar">
                       <img src={userAvatar} alt="User avatar"/>
                     </div>
-                  </div>
                   <div className="user-avatar">
                     <img src={userAvatar} alt="User avatar" />
                   </div>
