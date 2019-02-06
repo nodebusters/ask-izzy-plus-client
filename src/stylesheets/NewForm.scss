@@ -3,11 +3,8 @@
 @import "./Mixins";
 
 .new-form {
-  // display: block;
-  // width: 100%;
-  // padding: 0 30px;
-  // box-sizing: border-box;
+  @include formContainer();
   [data-new-form] {
-    @include formInputAndSelect;
+    @include formInputAndSelect();
   }
 }

@@ -16,6 +16,9 @@ class Site extends Component {
   componentDidMount(){
     const {site} = this.props;
     this.setState({data:site});
+    //Hidding updateButton:
+    const updateButton = document.querySelector("#updateButton");
+    updateButton.style.visibility = "hidden";
   }
 
   handleInputChange = (e) => {
@@ -97,23 +100,29 @@ class Site extends Component {
     );
   }
 
-  edit = (e) => {
+  edit = e => {
     e.preventDefault();
+    // If innerHTML is equal to Edit, change formClass to editMode and editButton to cancelButton
     if (e.target.innerHTML === "Edit") {
-      e.target.innerHTML = "Cancel"
+      e.target.innerHTML = "Cancel";
       this.setState({
         formClass: "editMode",
         editButton: "cancelButton"
-      })
-
+      });
+      //Showing the updateButton with vanilla js.
+      const updateButton = document.querySelector("#updateButton");
+      updateButton.style.visibility = "visible";
     } else {
-      e.target.innerHTML = "Edit"
+      e.target.innerHTML = "Edit";
       this.setState({
         formClass: "readMode",
         editButton: "editButton"
-      })
+      });
+      //Hiding the updateButton with vanilla js.
+      const updateButton = document.querySelector("#updateButton");
+      updateButton.style.visibility = "hidden";
     }
-  }
+  };
 
   delete = (e) => {
     e.preventDefault();
@@ -237,7 +246,7 @@ class Site extends Component {
       <React.Fragment>
         <button onClick={this.edit} className={this.state.editButton}>Edit</button>
         <button onClick={this.delete} className="cancelButton">Delete</button>
-        <button onClick={this.submitForm} className="updateButton">Update</button>
+        <button onClick={this.submitForm} id="updateButton" className="updateButton">Update</button>
         <div className="site-form">
           <form id="form" className={this.state.formClass} data-site-form>
             {this.createTextInput("name", "Name:")}

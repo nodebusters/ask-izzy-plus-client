@@ -119,11 +119,12 @@ To this end, simplifying the process for service providers to update their infor
 
 <!-- TODO: LINDA -->
 ### The Solution (Purpose)
-With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
-
 > “Everyone wears different hats depending on the day.”
 
 > “The System should be a funnel, instead it’s a colander.”
+
+With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
+
 
 * Service providers need to be able to update their service details.
 * The process needs to be simplified for service providers to update their information.
@@ -154,47 +155,185 @@ Demonstrate your ability to break down the problem and design a solution.
 - OO design documentation
 ```
 
-<!-- FIXME: AITZU -->
+<!-- TODO: LINDA -->
 ### Design Process
-- Compose a summary of your application including problem definition and solution
-- Review the conceptual design with the client and edit based on their feedback
-<!-- FIXME: AITZU -->
+After receiving an initial brief and researching Ask Izzy's existing UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details.
+
+Integrating this functionality into the existing main Ask Izzy platform was beyond the scope of our project; being a prototype for our client, this meant we could create our own database. However, we endeavoured to align our document database as closely as possible to Infoxchange's relational database structure. For branding and design consistency, Sam suggested and we agreed that the Ask Izzy Plus app should mimick the layout and design elements of Infoxchange's Ask Izzy UI, and be compatible with mobile, tablet and desktop.
+
+From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
+
+<!-- TODO: Linda -->
 ### User Stories
-- Trello User Stories/Personas: User stories for the whole application
-- Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
+Following Agile methodologies, user stories were written up in Trello to guide the development of our MVP from the perspective of our core Ask Izzy Plus end users to capture a description of our software features from their perspective: users (service providers) and admin (Infoxchange).
+
+This pushed us to provide a high level definition of a requirement to create a simplified description, and helped to break down the features and functionality of the MVP early on.
 
 ![Trello User Stories](/docs/images/ask-izzy-plus-trello-user-stories.png)
-- Trello User Stories/Personas: User stories for the whole application
-- Provide UX/UI design documentation(user stories) that adequately show Agile methodology implementation.
 
 <!-- FIXME: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
-- A workflow diagram of the user journey/s
+A workflow diagram of the user journeys
 
-<!-- FIXME: AITZU/LINDA -->
+<!-- FIXME: AITZU -->
 ### Wireframes
 -- INSERT WIREFRAMES --
-* Figma, Balsamiq
-* Provide UX/UI design documentation(wireframes) that adequately show Agile methodology implementation.
+Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
 
-<!-- FIXME: LINDA -->
+Mimicking the general UI layout of the core Ask Izzy platform in our MVP had multiple advantages: along with consistency in UX, the UI itself lends itself well to responsive design, accessability and readability.
+
+![Figma Wireframes](/docs/images/.png)
+
+<!-- TODO: Linda -->
 ### Database Schema
-- MONGOOSE SCHEMA
-- CHALLENGE: COMPLEXITY, TRANSLATING TO DOCUMENT DATABASE
+Infoxchange's Service Seeker platform uses a relational database with information structured at multiple levels, namely:
+* Organisation (which can contain multiple Sites)
+* Site (which can supply multiple Services at a single Site)
+* Service (a single service that a Site offers or an individual Practitioner)
+
+While the prototype Ask Izzy Plus application uses a different database both in terms of structure (a document rather than a relational database) and storage (MongoDB instead of an SQL database), we endevoured to align our database as closely as possible to Infoxchange's existing Service Seeker database, based on documentation and data samples provided to us during the briefing process.
+
+Given the numerous information fields associated with a single organisation, site and service, and the nested nature of the database models, this stage proved to be one of the trickiest elements to reconcile.
+
+Based on Infoxchange's information hierarchy, the following MongoDB collections/schemas were created for Ask Izzy Plus: `User`, `AdminUser`, `Service` (nested as an array within `Site`), `Site` (nested as an array within `Organisation`) and `Organisation`.
+* `Organisation`: An Organisation represents a single auspicing group or body responsible for sites providing services.
+* `Site`: A Site represents a physical location, or alternatively a mobile unit with a catchment.
+* `Service`: A Service represents a single service that a site offers; services offered at multiple sites will have different service records per site. Alternatively, a Practitioner (an individual that should be listed as a referral endpoint) can also be listed as a Service; individuals working at multiple sites will have different records.
+  
+  ```js
+    const serviceSchema = new Schema({
+        id: String // auto-generated by Mongoose
+        name: String,
+        description: String,
+        referralInfo: String,
+        adhcEligible: Boolean,
+        assessmentCriteria: String,
+        targetGender: String,
+        availability: String,
+        billingMethod: String,
+        cost: String,
+        crisisKeywords: String,
+        details: String,
+        eligibilityInfo: String,
+        ineligibilityInfo: String,
+        fundingBody: String,
+        healthcareCardHolders: Boolean,
+        intakeInfo: String,
+        intakePoint: String,
+        isBulkBilling: Boolean,
+        ndisApproved: Boolean,
+        promotedService: Boolean,
+        specialRequirements: String,
+        language: String,
+        ageGroupKeyword: String,
+        ageGroupDescription: String,
+        serviceTypes: String,
+        indigenousClassification: String,
+        capacityStatus: String,
+        capacityStatusText: String,
+        capacityFrequency: String,
+        capacityLastNotification: String,
+        capacityLastStatusUpdate: String,
+        capacityExpireDate: String,
+        accreditationName: String,
+    });
+
+    const openingHoursSchema = new Schema({
+        id: String // auto-generated by Mongoose
+        day:String,
+        openTime:String,
+        closeTime:String,
+        openingHoursNote: String,
+    })
+
+    const siteSchema = new Schema({
+        id: String // auto-generated by Mongoose
+        name: String,
+        accessibility: String,
+        locationDetails: String,
+        parkingInfo: String,
+        publicTransportInfo: String,
+        isMobile: Boolean,
+        emailAddress: String,
+        emailIsConfidential: Boolean,
+        website: String,
+        postalAddress: String,
+        postalAddressState: String,
+        postalAddressSuburb: String,
+        postalAddressPostcode: String,
+        postalAddressIsConfidential: Boolean,
+        phoneNumber: String,
+        phoneKind: String,
+        phoneIsConfidential: Boolean,
+        openingHours: [openingHoursSchema],
+        addressBuilding: String,
+        addressLevel: String,
+        addressFlatUnit: String,
+        addressStreetNumber: String,
+        addressStreetName: String,
+        addressStreetType: String,
+        addressStreetSuffix: String,
+        addressSuburb: String,
+        addressState: String,
+        addressPostcode: String,
+        addressIsConfidential: Boolean,
+        servicesInSite: [serviceSchema],
+    });
+
+    const organisationSchema = new Schema({
+        id: String // auto-generated by Mongoose
+        name: String,
+        description: String,
+        createdAt: Date,
+        lastUpdated: Date,
+        website: String,
+        abn: String,
+        providerType: String,
+        alsoKnownAs: String,
+        emailAddress: String,
+        emailIsConfidential: Boolean,
+        postalAddress: String,
+        postalAddressState: String,
+        postalAddressSuburb: String,
+        postalAddressPostcode: String,
+        postalAddressIsConfidential: Boolean,
+        phoneNumber: String,
+        phoneKind: String,
+        phoneIsConfidential: Boolean,
+        ceo: String,
+        sitesInOrganisation: [siteSchema],
+    });
+    ```
+
+* `User`: A user from an Ask Izzy service provider.
+    ```js
+    const userSchema = new Schema({
+        email: String,
+        organisation:{type: mongoose.Schema.Types.ObjectId, ref: 'Organisation'}
+    });
+    ```
+
+* `Admin User`: An admin user for Ask Izzy Plus from Infoxchange.
+    ```js
+    const AdminUserSchema = new Schema({
+        email: String,
+        firstName: String,
+        lastName: String
+    });
+    ```
 
 <!-- FIXME: LINDA -->
 ### Data Flow Diagram
-![MERN Stack Overview](/docs/images/mern2.png)
-
--- INSERT DATAFLOW DIAGRAM --
+![MERN Stack Overview](/docs/images/data-flow-mern.png)
 
 <!-- FIXME: LINDA -->
 ### OO Design Documentation
-??? CONFIRM WHAT THIS REQUIREMENT IS ???
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
 
 This (the OO Design Documentation) is one of those oddities that results from the admin side of things. Please just give some sense of the structure of your React components. (A family tree perhaps.)
+
+![OO Design - React Component Family Tree](/docs/images/data-flow-mern.png)
 
 <!-- FIXME: LINDA -->
 ## Project Management & Planning

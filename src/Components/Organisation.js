@@ -10,6 +10,11 @@ class Organisation extends Component {
     editButton: "editButton"
   };
 
+  componentDidMount() {
+    const updateButton = document.querySelector("#updateButton");
+    updateButton.style.visibility = "hidden";
+  }
+
   handleInputChange = e => {
     const { value, id } = e.currentTarget;
     const data = this.state.data;
@@ -46,7 +51,7 @@ class Organisation extends Component {
           editButton: "editButton"
         });
       })
-      .catch(err => {});
+      .catch(err => { });
   };
 
   createTextInput = (attr, description) => {
@@ -101,13 +106,18 @@ class Organisation extends Component {
         formClass: "editMode",
         editButton: "cancelButton"
       });
-    // Else, let innerHTMl equal to Edit, formClass set to readMode and editButton is equal to editButton
+      //Showing the updateButton with vanilla js.
+      const updateButton = document.querySelector("#updateButton");
+      updateButton.style.visibility = "visible";
     } else {
       e.target.innerHTML = "Edit";
       this.setState({
         formClass: "readMode",
         editButton: "editButton"
       });
+      //Hiding the updateButton with vanilla js.
+      const updateButton = document.querySelector("#updateButton");
+      updateButton.style.visibility = "hidden";
     }
   };
 
@@ -125,10 +135,10 @@ class Organisation extends Component {
         <button onClick={this.edit} className={this.state.editButton}>
           Edit
         </button>
-
-        <button onClick={this.submitForm} className="updateButton">
+        <button onClick={this.submitForm} id="updateButton" className="updateButton">
           Update
         </button>
+
 
         <div className="org-form">
           <form id="form" className={this.state.formClass} data-org-form >
@@ -142,7 +152,7 @@ class Organisation extends Component {
             {this.createOptionInput(
               "emailIsConfidential",
               "Email Is Confidential:"
-              )}
+            )}
             {this.createTextInput("postalAddress", "Postal Address:")}
             {this.createTextInput("postalAddressState", "State:")}
             {this.createTextInput("postalAddressSuburb", "Suburb:")}
@@ -150,13 +160,13 @@ class Organisation extends Component {
             {this.createOptionInput(
               "postalAddressIsConfidential",
               "Postal Address Is Confidential:"
-              )}
+            )}
             {this.createTextInput("phoneNumber", "Phone Number:")}
             {this.createTextInput("phoneKind", "Phone Kind:")}
             {this.createOptionInput(
               "phoneIsConfidential",
               "Phone Is Confidential:"
-              )}
+            )}
             {this.createTextInput("ceo", "CEO:")}
           </form>
         </div>
