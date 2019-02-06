@@ -333,11 +333,12 @@ Because of the adaptability and flexibility of the MERN software stack(**M**ongo
 
 <!-- TODO: LINDA -->
 ### OO Design Documentation
-When considering OO design and class attributes, methods and relationships, our main consideration was representing people (users) and locations (organisations, sites and services)
+When considering OO design and class attributes, methods and relationships, our main consideration was representing people (users) and locations (organisations, sites and services), and the relationship between them: our document database has three collections, `AdminUser`, `User` and `Organisation`, with arrays of `Sites` and `Services` embedded across three levels in the Organisation collection.
 
-OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
+For the prototype it was preferred that authentication be handled by a third party, for which we implemented Google OAuth using Passport, an npm package. As the admin user, our client can create a new user (service provider) by whitelisting a Google email address and associating them with an organisation, view all users and delete users from the admin dashboard.
+From the service provider portal, whitelisted users can create, read, update and delete locations and update their information and contact details. An update from the current record in our database will trigger a mailer notification to admin (Infoxchange's support team) that an update is required.
 
-This (the OO Design Documentation) is one of those oddities that results from the admin side of things. Please just give some sense of the structure of your React components. (A family tree perhaps.)
+The Ask Izzy Plus client uses Axios to query the User/AdminUser and Organisation collections in the MongoDB database and iterative logic to display the nested arrays of Sites and Services embedded within the Organisation collection.
 
 ![OO Design - React Component Family Tree](/docs/images/oo-design-react-family-tree.png)
 
