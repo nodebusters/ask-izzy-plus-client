@@ -50,6 +50,9 @@ Brief summary description of functionality and background for Ask Izzy Plus appl
   - [Agile Methodologies](#agile-methodologies)
   - [Code Review](#code-review)
   - [Deployment](#deployment)
+    - [Client Side](#client-side)
+    - [Server Side](#server-side)
+    - [Database](#database)
   - [Testing](#testing)
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
@@ -270,6 +273,8 @@ From the beginning we focused in working software and customer collaboration. We
 
 Sustainable development and simplicity were also very important for us. During the planning process we agreed in setting realistic goals with a good buffer in case of unexpected issues. Likewise, we agreed on pursuing the satisfaction of our customer requirements in the simplest way possible.
 
+Another important technique we implemented in the initial stages of the project was pair programming. This was very helpful to get all the team members in the same page in terms of database design and application flow. 
+
 ### Code Review
 As mention before we decided that team members were not allowed to merge their own pull request, but instead another team member is responsible for code review and merging if appropriate. 
 
@@ -281,25 +286,25 @@ This approach worked really well as it allowed us to pick up issues early in the
 4. Code review an solve conflicts as required. 
 5. Push the branch now we the conflicts solved. 
 
-<!-- TODO: DIEGO -->
 ### Deployment
-<!-- USER INTERFACE -->
-1.  Deployment
-    
-2.  User interface
+We decided to use a distributed deployment approach for this project with the following set up:
 
-* Netlify
-* mLab
-* Now
+#### Client Side
+The client side of the application was deployed using Netlify continuous deployment. Netlify GUI was utilized to manage environmental variables and build processes. 
 
-<!-- TODO: DIEGO -->
+#### Server Side
+The server side of the application was deployed in now.sh, and a now.json file was used to manage environment variables and build processes. 
+
+#### Database
+The database of the application was stored in a mLab sandbox database.    
+
 ### Testing
-<!-- TESTING -->
-34. Development testing
+Testing was performed often during the development of the application. Testing techniques included the following:
 
-35. Production testing
-
-36. Formal testing framework
+* Console logging variables both in the back and front end in order to check that the values are as expected. 
+* Test new features in new git branches and check if they perform as expected in localhost before deploying. 
+* Using Postman to confirm the server routes are receiving and sending the right information.
+* Testing the production version of the application by performing a diverse range of processes live. 
 
 ## Short Answers: Post-Review
 ### Q1: What are the most important aspects of quality software?
