@@ -231,13 +231,6 @@ There is to be no confidentiality agreement to be entered into.
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
 
 ## Tools & Methodologies
-Demonstrate your project management skills,
-- Trello or similar project management tool to be used for Kanban process to track progress of build
-- GitHub - Demonstrate use of frequent commits, feature branches (based on user stories), pull requests and merges
-- Use Agile development methodologies
-- Code review - Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others
-- Show evidence of client communication, e.g. meeting minutes, emails, or other communication tools
-<!-- TODO: DIEGO -->
 ### Trello
 We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
 
