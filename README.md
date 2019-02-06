@@ -16,6 +16,9 @@ Ask Izzy Plus is self-service application for service providers listed on Ask Iz
 Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
+
+[![Nodebusters Logo](docs/images/nodebusters-logo-small.png)](https://github.com/nodebusters/)
+
 |[![Diego Rodriguez](/docs/contributors/contributors-diegorodriguez2018-70x70.jpg)](https://github.com/DiegoRodriguez2018)| [![Aitzu Hu](/docs/contributors/contributors-Aitzu-70x70.jpg)](https://github.com/Aitzu) | [![Linda Lai](/docs/contributors/contributors-linda-lai-70x70.jpg)](https://github.com/linda-lai)| [![James Hastings](/docs/contributors/contributors-omegadefender-70x70.jpg)](https://github.com/omegadefender) 
 |-----------|-----------|-------------| ------------- |
 | Diego Rodriguez | Aitzu Hu | Linda Lai | James Hastings |
@@ -67,7 +70,6 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
 <!-- TODO: LINDA -->
 ## About Ask Izzy Plus
 ### Project Background
-**Description**
 Tasked with finding a real world customer to design, build, deploy and present a web application for our final Coder Academy project, Ask Izzy Plus is a self-service application built in JavaScript using the MERN stack to our client Infoxchange's requirements. 
 
 The scope of our project for the MVP was to build a working prototype/proof of concept application for our client to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project. To this end, simplifying the process for service providers to update their information with Infoxchange, and enabling service providers to update their details via a self-service application was a key pain point/wishlist identified by Infoxchange.
@@ -86,9 +88,9 @@ After finding our client, we met and worked with Ask Izzy's product manager to u
 ## Screenshots (Live Application)
 <!-- FIXME: Add Final Screenshots -->
 --- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
-|[![](/docs/images/ask-izzy-plus-ui-desktop.png)]() | [![](/docs/images/ask-izzy-plus-ui-desktop.png)]() |
+|![](/docs/images/ask-izzy-plus-ui-desktop.png) | ![](/docs/images/ask-izzy-plus-ui-desktop.png)|
 |-----------|-----------|
-![](/docs/images/ask-izzy-plus-ui-mobile.png) | ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
+![](/docs/images/ask-izzy-plus-ui-mobile.png)| ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
 
 <!-- TODO: LINDA -->
 ## The Brief
