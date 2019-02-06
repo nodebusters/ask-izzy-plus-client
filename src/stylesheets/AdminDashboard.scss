@@ -11,7 +11,7 @@
 // DASHBOARD: Tab - Add New User
 .add-user-container {
   @include formContainer();
-  [data-new-form] {
+  .add-user-form {
     @include formInputAndSelect;
   }
 

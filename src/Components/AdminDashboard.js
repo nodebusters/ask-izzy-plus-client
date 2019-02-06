@@ -199,13 +199,13 @@ class AdminDashboard extends Component {
                 <Tab>Administrator Profile</Tab>
                 <Tab>Add New User</Tab>
                 <Tab>View All Users</Tab>
-                <Tab>Settings</Tab>
+                <Tab>About</Tab>
               </TabList>
 
               <TabPanel>
                 <h2> Welcome {adminName}</h2>
-                <div className="admin-card">
-                    <div className="admin-info">
+                <div className="user-card">
+                    <div className="user-info">
                       <h3>You are now logged in as: </h3>
                       <p>email: {email}</p>
                       <p>First Name: {adminName}</p>
@@ -214,9 +214,6 @@ class AdminDashboard extends Component {
                     <div className="user-avatar">
                       <img src={userAvatar} alt="User avatar"/>
                     </div>
-                  <div className="user-avatar">
-                    <img src={userAvatar} alt="User avatar" />
-                  </div>
                 </div>
               </TabPanel>
 
@@ -255,7 +252,7 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="all-users-container">
-                  <h2>Authorized service providers</h2>
+                  <h2>Authorised Service Providers</h2>
                   {users.map(user => {
                     return (
                       <React.Fragment key={`fragment of` + user._id}>
@@ -278,7 +275,7 @@ class AdminDashboard extends Component {
               </TabPanel>
 
               <TabPanel>
-                <h2>Settings</h2>
+                <h2>About</h2>
               </TabPanel>
             </Tabs>
           </div>
