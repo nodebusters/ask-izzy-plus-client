@@ -9,8 +9,8 @@ class User extends Component {
     console.log('given_name',': ', given_name);
     
     return (
-      <React.Fragment>
-        <h1> Welcome {user.firstName} </h1>
+      <div className="user-container">
+        <h1> Welcome {given_name} </h1>
           <div className="user-card">
             {/* Object.entries() returns an array of a given object's own enumerable property [key, value] pairs, in the same order as that provided */}
             <div className="user-info">
@@ -24,7 +24,7 @@ class User extends Component {
               <img src={userAvatar} alt="User avatar"/>
             </div>
           </div>
-      </React.Fragment>
+      </div>
     );
   }
 }

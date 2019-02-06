@@ -49,12 +49,15 @@
   // BUTTON: Text font-family
   font-family: $main-body-font;
 
+  // BUTTON: Text font size
+  font-size: $font-size-crud-button;
+
   // BUTTON: Sizing/decoration
   box-sizing: border-box;
   text-decoration: none;
   
   // BUTTON: Padding between button text and button border
-  padding: 1em 5em;
+  padding: 1em 4em;
 
   // BUTTON: Spacing between different buttons
   margin: 10px;
@@ -70,8 +73,8 @@
 // FORM STYLING: Applicable to User Profile in main <body> container
 @mixin userTabCard() {
   display: flex;
-  // background: yellow;
   justify-content: space-evenly;
+  vertical-align: middle;
   padding: 0 30px;
   flex-wrap: wrap-reverse;
   font-size: $main-body-font;
@@ -114,12 +117,13 @@
   // Set font for all <form> elements except <select>
   font-family: $main-body-font;
   // font-family: 'Arial';
-  
   // Set form <label> styling (font-size)
+
   label {
     @include formFontSize();
     // Font styling for form <labels>
     font-weight: bold;
+    // color: #4D13AF;
   }
   
   // Set form <input> styling
@@ -127,17 +131,11 @@
     @include formFontSize();
     // Make input field fill entire <form> body
     width: 100%;
-    // Remove inbuilt border box styling in form <input>
-    border: none;
-    // Add padding between <label> and <input>
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    font-family: $main-body-font;
     &::placeholder {
       // Font size for placeholder text (existing data)
       font-size: $font-size-form;
       font-family: $main-body-font;
-      // FONT: Font colour of placeholder text (existing data) in readOnly mode
-      // color: mediumblue;
     }
     // Removes border box highlighting when selected
     &:focus {
@@ -153,7 +151,6 @@
     // To set dropdown box size to full width of container
     width: 100%;
     // Remove inbuilt border box for dropdown
-    border: 0;
     font-family: $main-body-font;
     // To change the font colour of dropdown options
     // color: aquamarine;
@@ -161,8 +158,8 @@
     // background: dodgerblue;
 
     // Add padding between <label> and <input>
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    // padding-top: 0.5rem;
+    // padding-bottom: 0.5rem;
 
     &:focus {
       // Removes border box highlighting when selected
@@ -180,15 +177,26 @@
   pointer-events: none;
 
   label {
-    color: black;
+    display: block;
+    color: $form-label-read;
+    // margin-top: 0.7rem;
+    background: rgba(110,201,204,0.5);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
   }
 
   // Styling for form <inputs> in readMode
   input {
     /* Most modern browsers support this now. */
+    // Remove inbuilt border box styling in form <input>
+    border: none;
+    // Add padding between <label> and <input>
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     &::placeholder {
       // FONT: Font colour of placeholder text (existing data) in readOnly mode
-      // color: mediumblue;
+      color: $form-input-placeholder-read;
     }
   }
   // Styling for Yes/No dropdown menus
@@ -202,6 +210,10 @@
     &::-ms-expand {
       display: none;
     }
+    padding-left: 10px;
+    height: 35px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
   }
 
   // Hide update button when Edit mode is not selected, { state } is set to readMode by default
@@ -215,26 +227,30 @@
 @mixin editMode() {
   label {
     // Font colour for form <labels>
-    color: black;
-
+    color: $form-label-edit;
+    padding-top: 10px;
+    display: block;
   }
 
   // Font style for form inputs - actual 
   input {
     @include formFontSize();
     // Background of input box area
-    background: lightblue;
+    // background: lightblue;
     // Removes inbuilt input border box
     border: none;
+    // Add padding between <label> and <input>
+    padding-top: 5px;
+    padding-bottom: 10px;
     // Adds border along button of input box
-    border-bottom: 1.5px solid dodgerblue;
+    border-bottom: 1.5px solid $form-edit-outline;
     // Adds padding between input text & border box
     
     /* Most modern browsers support this now. */
     // Font style for form inputs - placeholder 
     &::placeholder {
       // FONT: Font colour of placeholder text (existing data) in editMode
-      color: black;
+      color: white;
     }
 
     // Removes border highlighting when selected
@@ -245,6 +261,11 @@
   // Styling for Yes/No dropdown menus
   select {
     color: black;
+    border: 1.5px solid #6EC9CC;
+    padding-left: 10px;
+    height: 35px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
   }
 
   // Button styling for Update button in editMode

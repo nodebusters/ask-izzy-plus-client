@@ -203,17 +203,19 @@ class AdminDashboard extends Component {
               </TabList>
 
               <TabPanel>
-                <h2> Welcome {adminName}</h2>
-                <div className="user-card">
-                    <div className="user-info">
-                      <h3>You are now logged in as: </h3>
-                      <p>email: {email}</p>
-                      <p>First Name: {adminName}</p>
-                      <p>Last Name: {adminLastName}</p>
-                    </div>
-                    <div className="user-avatar">
-                      <img src={userAvatar} alt="User avatar"/>
-                    </div>
+                <div className="user-container">
+                  <h2> Welcome {adminName}</h2>
+                  <div className="user-card">
+                      <div className="user-info">
+                        <h3>You are now logged in as: </h3>
+                        <p><strong className="user-field">Email: </strong> {email}</p>
+                        <p><strong className="user-field">First Name: </strong> {adminName}</p>
+                        <p><strong className="user-field">Last Name:</strong> {adminLastName}</p>
+                      </div>
+                      <div className="user-avatar">
+                        <img src={userAvatar} alt="User avatar"/>
+                      </div>
+                  </div>
                 </div>
               </TabPanel>
 

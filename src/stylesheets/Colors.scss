@@ -1,23 +1,18 @@
-// DIEGO
-// $main-color: rgb(16, 96, 175);
-// $light-color: darken( #ffffff, 5%);
-// $background-color:darken( #ffffff, 2%);
-
 // ---------- ASK IZZY PLUS BRAND COLOURS ---------- //
 $page-container-background: #C1C0BA;
 $page-navigation-footer: #363e43;
 
 // ---------- MAIN FORM STYLING ---------- //
-// Button text colour
-$main-color: black;
+$main-color: #1B2B38;
+// $form-label:#4D13AF;
+$form-label-read: #1B2B38;
+$form-label-edit: #1B2B38;
+$form-edit-outline: #6EC9CC;
+$form-input-placeholder-read: #1B2B38;
+$form-input-placeholder-edit: #1B2B38;
+$form-field-highlight: rgb(110,201,204);
 
-// Button box background colour
-// $light-color: darken( #ffffff, 15%);
-$light-color: white;
-// $light-color: pink;
-
-$background-color:darken( #ffffff, 2%);
-
-$button-background: #4d13af;
-$button-hover: #6118dd;
+// ---------- MAIN BUTTON STYLING ---------- //
+$button-background: #5B98BB;
+$button-hover: #74A8C6;
 $button-text: #ffffff;

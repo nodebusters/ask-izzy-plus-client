@@ -41,6 +41,7 @@
 .user-card {
   display: flex;
   justify-content: space-evenly;
+  vertical-align: middle;
   padding: 0 30px;
   flex-wrap: wrap-reverse;
   font-size: "Quicksand", sans-serif; }
