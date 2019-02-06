@@ -152,7 +152,7 @@ Demonstrate your ability to break down the problem and design a solution.
 - Entity Relationship Diagram (ERD)
 - Project plan and effort estimation
 - Data Flow Diagram
-- OO design documentation
+- OO design documentation∆
 ```
 
 <!-- FIXME: AITZU -->
