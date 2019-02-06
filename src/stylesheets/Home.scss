@@ -7,6 +7,13 @@
   font-family: $button-font;
 }
 
+.homepage-icon {
+  img {
+    max-width: 250px;
+    padding: 1em;
+  }
+}
+
 // Home: Login Button (Container)
 .login-button-container {
   @include loginButton()

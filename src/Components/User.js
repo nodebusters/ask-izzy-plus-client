@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../stylesheets/User.css";
-import userAvatar from '../Images/user-avatar.svg';
+import avatar from '../Images/app/user-avatar.svg';
 
 class User extends Component {
   render() {
@@ -21,7 +21,7 @@ class User extends Component {
               <p> <strong> Organisation: </strong> {organisation.name} </p>
             </div>
             <div className="user-avatar">
-              <img src={userAvatar} alt="User avatar"/>
+              <img src={avatar} alt="User avatar"/>
             </div>
           </div>
       </div>

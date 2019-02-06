@@ -1,6 +1,10 @@
 .home-headline {
   font-family: "Quicksand", sans-serif; }
 
+.homepage-icon img {
+  max-width: 250px;
+  padding: 1em; }
+
 .login-button-container {
   padding: 0 1em; }
   .login-button-container .login-button {

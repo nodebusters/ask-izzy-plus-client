@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
-import userAvatar from "../Images/user-avatar.svg";
+import avatar from "../Images/app/user-avatar.svg";
 import "../stylesheets/AdminDashboard.css";
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
@@ -213,7 +213,7 @@ class AdminDashboard extends Component {
                         <p><strong className="user-field">Last Name:</strong> {adminLastName}</p>
                       </div>
                       <div className="user-avatar">
-                        <img src={userAvatar} alt="User avatar"/>
+                        <img src={avatar} alt="User avatar"/>
                       </div>
                   </div>
                 </div>
