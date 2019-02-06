@@ -91,7 +91,7 @@ After finding our client, we met and worked with Ask Izzy's product manager to u
 ## Screenshots (Live Application)
 <!-- FIXME: Add Final Screenshots -->
 --- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
-|![](/docs/images/ask-izzy-plus-ui-desktop.png) | ![](/docs/images/ask-izzy-plus-ui-desktop.png) |
+|[![](/docs/images/ask-izzy-plus-ui-desktop.png)]() | [![](/docs/images/ask-izzy-plus-ui-desktop.png)]() |
 |-----------|-----------|
 ![](/docs/images/ask-izzy-plus-ui-mobile.png) | ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
 
