@@ -400,12 +400,6 @@ Then we assigned cards to each of this lists and relocate the cards as the proje
 <!-- TODO: DIEGO -->
 ### Source Control
 #### Github and Gitflow
-Provide an overview and description of your source control process.
-* GitHub Organisations
-* GitFlow: Merge Commissions
-* Branches, etc.
-1.  Employ and utilise proper source control methodology
-
 We decided to create a GitHub Organisation with the objective of having all members as owners of the repository. The main advantage of this approach is that we can optimise production processes as under this setup any team member is able to code review and merge pull requests. Nevertheless, we decided also that if a team member creates a pull request she/he will not merge the pull request herself/himself but instead another team member will be responsible of code review and potentially merging that branch. 
 
 As an organisation we also agreed to work in well named branches, and always push the branch instead of master in order to raise well documented pull requests. 
@@ -426,7 +420,7 @@ Another important technique we implemented in the initial stages of the project 
 ### Code Review
 As mention before we decided that team members were not allowed to merge their own pull request, but instead another team member is responsible for code review and merging if appropriate. 
 
-This approach worked really well as it allowed us to pick up issues early in the development process. Ocationally we had conflicts but we were able to resolve them relatively quickly. The conflict solving process was as follows:
+This approach worked really well as it allowed us to pick up issues early in the development process. Occasionally we had conflicts but we were able to resolve them relatively quickly. The conflict solving process was as follows:
 
 1. Fetch the branch to be merged locally. 
 2. Pull the latest version of master locally.
@@ -477,28 +471,27 @@ Testing was performed often during the development of the application. Testing t
 ├── axios@0.18.0: To perform promise based HTTP requests
 ├── history@4.7.2: To redirect pages programmatically in react. 
 ├── jwt-decode@2.2.0: To decode jwt tokens.
-├── nodemailer@5.1.1: To send emails from node. 
 ├── react@16.7.0: To produce view/controller components of our application. 
-├── react-confirm-alert@2.1.0: 
-├── react-dom@16.7.0
-├── react-google-login@5.0.0
-├── react-router-dom@4.3.1
-├── react-scripts@2.1.3
-└── react-tabs@3.0.0
+├── react-confirm-alert@2.1.0: To handle confirm dialogs. 
+├── react-dom@16.7.0: To interact with the DOM.
+├── react-google-login@5.0.0: To handle google OAuth process. 
+├── react-router-dom@4.3.1: To load components in different routes. 
+├── react-scripts@2.1.3: To configure scripts for create-react-app.
+└── react-tabs@3.0.0: To easily create tab components. 
 
 #### Server Side:
-├── cookie-parser@1.4.3
-├── cookie-session@2.0.0-beta.3
-├── cors@2.8.5
-├── dotenv@6.2.0
-├── express@4.16.4
-├── jwt-decode@2.2.0
-├── mongoose@5.4.6
-├── nodemailer@5.1.1
-├── nodemon@1.18.9
-├── now@13.1.2
-├── passport@0.4.0
-└── passport-google-oauth@1.0.0
+├── cookie-parser@1.4.3: To parse cookies with signatures. 
+├── cookie-session@2.0.0-beta.3: To configure and manage sessions. 
+├── cors@2.8.5: To enable cors in the server. 
+├── dotenv@6.2.0: To have access to environment variables.
+├── express@4.16.4: To configure and develop the app API. 
+├── jwt-decode@2.2.0: To decode jwt tokens.
+├── mongoose@5.4.6: To interact with MongoDB database. 
+├── nodemailer@5.1.1: To send emails from node. 
+├── nodemon@1.18.9: To To monitor the performance of the API during development.
+├── now@13.1.2: To deploy the server in now.sh
+├── passport@0.4.0: 
+└── passport-google-oauth@1.0.0: To handle google OAuth strategy. 
 
 <!-- FIXME: ??? -->
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
