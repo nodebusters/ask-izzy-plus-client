@@ -1,7 +1,7 @@
 # Ask Izzy Plus <!-- omit in toc -->
 Ask Izzy Plus is self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
 
-[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://github.com/nodebusters/)
+[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://ask-izzy-plus.netlify.com/)
 
 ## Ask Izzy Plus Links
 ### Deployed <!-- omit in toc --> 
@@ -13,7 +13,7 @@ Ask Izzy Plus is self-service application for service providers listed on Ask Iz
 * Server: https://github.com/nodebusters/ask-izzy-plus-server
 
 ## Summary <!-- omit in toc -->
-Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
+Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
 
@@ -74,7 +74,7 @@ Tasked with finding a real world customer to design, build, deploy and present a
 
 The scope of our project for the MVP was to build a working prototype/proof of concept application for our client to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project. To this end, simplifying the process for service providers to update their information with Infoxchange, and enabling service providers to update their details via a self-service application was a key pain point/wishlist identified by Infoxchange.
 
-After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js), and other node packages.
+After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), and other node packages.
 
 <!-- TODO: LINDA -->
 ### Functionality and Features
@@ -323,17 +323,21 @@ Based on Infoxchange's information hierarchy, the following MongoDB collections/
     });
     ```
 
-<!-- FIXME: LINDA -->
+<!-- TODO: LINDA -->
 ### Data Flow Diagram
+Because of the adaptability and flexibility of the MERN software stack(**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), along with other client, server and database npm packages like Axios, Nodemailer and Mongoose, we were able to scaffold a prototype for Ask Izzy Plus, with the overall data flow represented below:
+
 ![MERN Stack Overview](/docs/images/data-flow-mern.png)
 
-<!-- FIXME: LINDA -->
+<!-- TODO: LINDA -->
 ### OO Design Documentation
+When considering OO design and class atttributes, methods and relationships, our 
+
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
 
 This (the OO Design Documentation) is one of those oddities that results from the admin side of things. Please just give some sense of the structure of your React components. (A family tree perhaps.)
 
-![OO Design - React Component Family Tree](/docs/images/data-flow-mern.png)
+![OO Design - React Component Family Tree](/docs/images/oo-design-react-family-tree.png)
 
 <!-- FIXME: LINDA -->
 ## Project Management & Planning
