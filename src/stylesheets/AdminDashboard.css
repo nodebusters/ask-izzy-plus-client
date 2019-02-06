@@ -60,15 +60,15 @@
   width: 100%;
   padding: 0 50px 50px 50px;
   box-sizing: border-box; }
-  .add-user-container [data-new-form] {
+  .add-user-container .add-user-form {
     text-align: left; }
-    .add-user-container [data-new-form] label {
+    .add-user-container .add-user-form label {
       font-size: 1em; }
-    .add-user-container [data-new-form] input {
+    .add-user-container .add-user-form input {
       width: 100%;
       font-family: "Quicksand", sans-serif;
       font-size: 1em; }
-    .add-user-container [data-new-form] select {
+    .add-user-container .add-user-form select {
       background: 100%;
       width: 100%;
       font-family: "Quicksand", sans-serif;

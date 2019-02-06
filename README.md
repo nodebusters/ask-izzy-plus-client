@@ -185,12 +185,16 @@ Demonstrate your ability to break down the problem and design a solution.
 
 <!-- FIXME: LINDA -->
 ### Data Flow Diagram
+![MERN Stack Overview](/docs/images/mern2.png)
+
 -- INSERT DATAFLOW DIAGRAM --
 
-<!-- FIXME: Checking with Matt/Harrison if this is required -->
+<!-- FIXME: LINDA -->
 ### OO Design Documentation
 ??? CONFIRM WHAT THIS REQUIREMENT IS ???
 OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
+
+This (the OO Design Documentation) is one of those oddities that results from the admin side of things. Please just give some sense of the structure of your React components. (A family tree perhaps.)
 
 <!-- FIXME: LINDA -->
 ## Project Management & Planning
