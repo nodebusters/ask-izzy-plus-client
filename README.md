@@ -1,20 +1,19 @@
 # Ask Izzy Plus <!-- omit in toc -->
-A self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
+Ask Izzy Plus is self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
 
-## Tagline/Logo <!-- omit in toc --> 
---INSERT ASK IZZY PLUS TAGLINE/LOGO--
-https://github.com/ask-izzy/ask-izzy
+[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://github.com/nodebusters/)
 
-### Deployed Link <!-- omit in toc --> 
+## Ask Izzy Plus Links
+### Deployed <!-- omit in toc --> 
 * Client: https://ask-izzy-plus.netlify.com
 * Server: https://ask-izzy.now.sh/
 
-### GitHub Link <!-- omit in toc --> 
+### GitHub Repositories <!-- omit in toc --> 
 * Client: https://github.com/nodebusters/ask-izzy-plus-client
 * Server: https://github.com/nodebusters/ask-izzy-plus-server
 
 ## Summary <!-- omit in toc -->
-Brief summary description of functionality and background for Ask Izzy Plus application/Coder Academy project.
+Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
 |[![Diego Rodriguez](/docs/contributors/contributors-diegorodriguez2018-70x70.jpg)](https://github.com/DiegoRodriguez2018)| [![Aitzu Hu](/docs/contributors/contributors-Aitzu-70x70.jpg)](https://github.com/Aitzu) | [![Linda Lai](/docs/contributors/contributors-linda-lai-70x70.jpg)](https://github.com/linda-lai)| [![James Hastings](/docs/contributors/contributors-omegadefender-70x70.jpg)](https://github.com/omegadefender) 
@@ -22,6 +21,7 @@ Brief summary description of functionality and background for Ask Izzy Plus appl
 | Diego Rodriguez | Aitzu Hu | Linda Lai | James Hastings |
 
 ## Contents <!-- omit in toc -->
+- [Ask Izzy Plus Links](#ask-izzy-plus-links)
 - [About Ask Izzy Plus](#about-ask-izzy-plus)
   - [Project Background](#project-background)
   - [Functionality and Features](#functionality-and-features)
