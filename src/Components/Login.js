@@ -15,6 +15,11 @@ class Login extends Component {
   handleGoogleLogin = () => {
     console.log("Successfully clicked!");
   };
+
+  redirect = () => {
+    history.push('/admin')
+  }
+
   render() {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
@@ -30,8 +35,13 @@ class Login extends Component {
           onFailure={this.errorGoogle}
           className="login-button"
         />
+
         <div className="toggle-login-container">
-          <a className="toggle-login" href="/admin">Are you an Admin?</a>
+        
+          <a className="toggle-login" onClick={this.redirect} >
+          Are you an Admin?
+          </a>
+        
         </div>
       </div>
     );
