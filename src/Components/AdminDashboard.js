@@ -3,6 +3,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
 import userAvatar from "../Images/user-avatar.svg";
 import "../stylesheets/AdminDashboard.css";
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
 
 // COMPONENTS
 import Navigation from "./Navigation";
@@ -100,11 +102,11 @@ class AdminDashboard extends Component {
     this.setState({ newUser });
   };
 
-  deleteOneUser = e => {
-    e.preventDefault();
+ deleteOneUser = (user_id) => {
+    // e.preventDefault();
     console.log("Delete one user request triggered.");
-    console.log(e.currentTarget.id);
-    const user_id = e.currentTarget.id;
+    // console.log(e.currentTarget.id);
+    // const user_id = e.currentTarget.id;
     const baseURL = process.env.REACT_APP_BASE_URL;
     const url = `${baseURL}/protected/user/${user_id}`;
     const token = localStorage.getItem("token");
@@ -128,13 +130,50 @@ class AdminDashboard extends Component {
       }
     };
 
-    axios.post(url, newUser, config).then(res => this.updateUser(res.data));
+    axios.post(url, newUser, config).then(res => {
+      this.updateUser(res.data)
+      this.submitSuccessMsg();
+    });
   };
 
   updateUser = newData => {
     this.setState({ users: newData });
   };
 
+  confirmDelete = (e) => {
+    const user_id = e.currentTarget.id;
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className='confirm-delete'>
+            <h1>Are you sure?</h1>
+            <p>Delete this user?</p>
+            <button onClick={onClose}>No</button>
+            <button onClick={() => {
+                this.deleteOneUser(user_id)
+                onClose()
+            }}>Yes, delete it!</button>
+          </div>
+        )
+      }
+    })
+  }
+
+  submitSuccessMsg = () => {
+    confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className='submit-new-user-msg'>
+            <h1>A new user has been added</h1>
+            <p>You can find all users in the "View All Users" tab</p>
+            <button onClick={onClose}>Close</button>
+          </div>
+        )
+      }
+    })
+  }
+
+  
   render() {
     const { adminUser, users } = this.state;
     if (adminUser && users) {
@@ -157,20 +196,24 @@ class AdminDashboard extends Component {
               }}
             >
               <TabList>
-                <Tab>Admin Profile</Tab>
-                <Tab>Add New Users</Tab>
-                <Tab>View All</Tab>
-                <Tab>About</Tab>
+                <Tab>Administrator Profile</Tab>
+                <Tab>Add New User</Tab>
+                <Tab>View All Users</Tab>
+                <Tab>Settings</Tab>
               </TabList>
 
               <TabPanel>
-                <h1> Welcome {adminName}</h1>
-                <div className="user-card">
-                  <div className="user-info">
-                    <h3>You are now logged in as: </h3>
-                    <p>email: {email}</p>
-                    <p>First Name: {adminName}</p>
-                    <p>Last Name: {adminLastName}</p>
+                <h2> Welcome {adminName}</h2>
+                <div className="admin-card">
+                    <div className="admin-info">
+                      <h3>You are now logged in as: </h3>
+                      <p>email: {email}</p>
+                      <p>First Name: {adminName}</p>
+                      <p>Last Name: {adminLastName}</p>
+                    </div>
+                    <div className="user-avatar">
+                      <img src={userAvatar} alt="User avatar"/>
+                    </div>
                   </div>
                   <div className="user-avatar">
                     <img src={userAvatar} alt="User avatar" />
@@ -180,17 +223,18 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="add-user-container">
-                  <h1>Add New User</h1>
-                  <form id="link_user_organisation" className="add-user-form" data-new-form>
-                    <label> New User Email: </label>
+                  <form id="link_user_organisation" className="add-user-form">
+                    <h2>Add New User</h2>
+                    <label> Email: </label>
                     <input
                       type="text"
                       id="email"
                       onChange={this.handleInputChange}
                     />
                     <br />
-                    <label> New User Organisation: </label>
-                    <select id="organisation" onChange={this.handleInputChange}>
+                    <label> Organisation: </label>
+                    <select id="organisation" onChange={this.handleInputChange} >
+                      <option>Please select</option>
                       {organisations.map(organisation => {
                         return (
                           <option
@@ -212,7 +256,7 @@ class AdminDashboard extends Component {
 
               <TabPanel>
                 <div className="all-users-container">
-                  <h1>View All Users</h1>
+                  <h2>Authorized service providers</h2>
                   {users.map(user => {
                     return (
                       <React.Fragment key={`fragment of` + user._id}>
@@ -222,7 +266,7 @@ class AdminDashboard extends Component {
                         <button
                           key={user._id}
                           id={user._id}
-                          onClick={this.deleteOneUser}
+                          onClick={this.confirmDelete}
                           className="deleteUsers"
                         >
                           Delete
@@ -235,8 +279,7 @@ class AdminDashboard extends Component {
               </TabPanel>
 
               <TabPanel>
-                <h1>About</h1>
-                <h3>This is how to use Ask Izzy Plus!</h3>
+                <h2>Settings</h2>
               </TabPanel>
             </Tabs>
           </div>
