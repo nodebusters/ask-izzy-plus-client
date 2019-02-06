@@ -30,9 +30,9 @@ class Login extends Component {
           onFailure={this.errorGoogle}
           className="login-button"
         />
-        {/* <div className="forgotten-password">
-          <a href="forgot-password">Forgot Password?</a>
-        </div> */}
+        <div className="toggle-login-container">
+          <a className="toggle-login" href="/admin">Are you an Admin?</a>
+        </div>
       </div>
     );
   }

@@ -152,15 +152,16 @@ Demonstrate your ability to break down the problem and design a solution.
 - Entity Relationship Diagram (ERD)
 - Project plan and effort estimation
 - Data Flow Diagram
-- OO design documentation∆
+- OO design documentation
 ```
 
-<!-- FIXME: AITZU -->
+<!-- TODO: LINDA -->
 ### Design Process
-After receiving an initial brief and researching Ask Izzy's UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details. Integrating this functionality into the existing main Ask Izzy platform was beyond the scope of our project; being a prototype for our client, this meant we could create our own database. However, we endeavoured to align our document database as closely as possible to Infoxchange's relational database structure. For branding and design consistency, our Ask Izzy Plus app mimics the layout and design elements of Infoxchange's Ask Izzy UI, and is compatible with mobile, tablet and desktop.
+After receiving an initial brief and researching Ask Izzy's UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details.
 
-- Compose a summary of your application including problem definition and solution
-- Review the conceptual design with the client and edit based on their feedbac
+Integrating this functionality into the existing main Ask Izzy platform was beyond the scope of our project; being a prototype for our client, this meant we could create our own database. However, we endeavoured to align our document database as closely as possible to Infoxchange's relational database structure. For branding and design consistency, Sam suggested and we agreed that the Ask Izzy Plus app should mimick the layout and design elements of Infoxchange's Ask Izzy UI, and be compatible with mobile, tablet and desktop.
+
+From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
 
 <!-- FIXME: AITZU -->
 ### User Stories

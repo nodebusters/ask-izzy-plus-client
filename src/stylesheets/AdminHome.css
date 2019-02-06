@@ -15,5 +15,13 @@
     padding: 15px 45%; }
     .login-button-container .login-button:hover {
       background-color: #74A8C6; }
+  .login-button-container .toggle-login-container {
+    padding-top: 1em; }
+  .login-button-container .toggle-login {
+    padding-top: 1em;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold; }
 
 /*# sourceMappingURL=AdminHome.css.map */
