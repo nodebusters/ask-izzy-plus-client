@@ -230,7 +230,6 @@ There is to be no confidentiality agreement to be entered into.
 - Project plan and effort estimation
 - Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
 
-<!-- TODO: DIEGO -->
 ## Tools & Methodologies
 Demonstrate your project management skills,
 - Trello or similar project management tool to be used for Kanban process to track progress of build
@@ -240,9 +239,23 @@ Demonstrate your project management skills,
 - Show evidence of client communication, e.g. meeting minutes, emails, or other communication tools
 <!-- TODO: DIEGO -->
 ### Trello
-<!-- TODO: LINDA -->
+We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
+
+* Deliverables
+* To-do
+* To-do Today
+* Doing
+* Done
+* MVP
+* Nice to have
+
+Then we assigned cards to each of this lists and relocate the cards as the project advanced. We also took advantage of the calendar tool in order to keep track of important deadlines.
+
+![](docs/images/trello-screenshot.png)
+
+
 ### Figma/Balsimiq
-<!-- TODO: DIEGO -->
+
 ### Source Control
 #### Github and Gitflow
 Provide an overview and description of your source control process.
@@ -251,21 +264,36 @@ Provide an overview and description of your source control process.
 * Branches, etc.
 1.  Employ and utilise proper source control methodology
 
+We decided to create a GitHub Organisation with the objective of having all members as owners of the repository. The main advantage of this approach is that we can optimise production processes as under this setup any team member is able to code review and merge pull requests. Nevertheless, we decided also that if a team member creates a pull request she/he will not merge the pull request herself/himself but instead another team member will be responsible of code review and potentially merging that branch. 
+
+As an organisation we also agreed to work in well named branches, and always push the branch instead of master in order to raise well documented pull requests. 
+
 ### Agile Methodologies
-<!-- TODO: DIEGO -->
+We implemented several agile methodologies during the planning and execution of the project. As an organisation we decided to distribute the responsibilities of a scrum master among all the team members.
+
+We also performed daily standups where we discussed in a brief way how all the different parts of the project were developing and how the project as whole was being implemented.
+
+From the beginning we focused in working software and customer collaboration. We aimed to have a conversation with the customer as the project was developing. For us customer satisfaction was the main priority and we aimed to adapt accordingly to the customer requirements.
+
+Sustainable development and simplicity were also very important for us. During the planning process we agreed in setting realistic goals with a good buffer in case of unexpected issues. Likewise, we agreed on pursuing the satisfaction of our customer requirements in the simplest way possible.
+
 ### Code Review
-* Do not merge if you raised the PR - trust, but verify.
-* Generally worked OK, largely stuck to, able to resolve conflicts relatively quickly.
-1.  Demonstrate code flow control
-2.  Demonstrate use of functions
-3.  Apply Object oriented principles/patterns
+As mention before we decided that team members were not allowed to merge their own pull request, but instead another team member is responsible for code review and merging if appropriate. 
+
+This approach worked really well as it allowed us to pick up issues early in the development process. Ocationally we had conflicts but we were able to resolve them relatively quickly. The conflict solving process was as follows:
+
+1. Fetch the branch to be merged locally. 
+2. Pull the latest version of master locally.
+3. Merge master to the branch to be merged. 
+4. Code review an solve conflicts as required. 
+5. Push the branch now we the conflicts solved. 
 
 <!-- TODO: DIEGO -->
 ### Deployment
 <!-- USER INTERFACE -->
-32. Deployment
+1.  Deployment
     
-34. User interface
+2.  User interface
 
 * Netlify
 * mLab
