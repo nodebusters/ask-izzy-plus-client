@@ -2,8 +2,8 @@
   -webkit-tap-highlight-color: transparent;
 
   &__tab-list {
-    border-bottom: 1px solid #aaa;
-    margin: 0 0 10px;
+    border-bottom: 1px solid #C1C0BA;
+    margin: 0 0 20px;
     padding: 0;
   }
 
@@ -14,12 +14,12 @@
     bottom: -1px;
     position: relative;
     list-style: none;
-    padding: 6px 12px;
+    padding: 6px 30px;
     cursor: pointer;
 
     &--selected {
       background: #fff;
-      border-color: #aaa;
+      border-color: #C1C0BA;
       color: black;
       border-radius: 3px 3px 0 0;
     }
@@ -30,8 +30,8 @@
     }
 
     &:focus {
-      box-shadow: 0 0 5px hsl(208, 99%, 50%);
-      border-color: hsl(208, 99%, 50%);
+      box-shadow: 0 0 5px #5B98BB;
+      border-color: #5B98BB;
       outline: none;
 
       &:after {

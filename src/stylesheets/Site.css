@@ -4,18 +4,33 @@
   padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .site-form [data-site-form] {
-    text-align: left; }
+    text-align: left;
+    font-family: "Quicksand", sans-serif; }
     .site-form [data-site-form] label {
-      font-size: 1em; }
+      font-size: 1em;
+      font-weight: bold; }
     .site-form [data-site-form] input {
+      font-size: 1em;
       width: 100%;
-      font-family: "Quicksand", sans-serif;
-      font-size: 1em; }
+      border: none;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+      .site-form [data-site-form] input::placeholder {
+        font-size: 1em;
+        font-family: "Quicksand", sans-serif; }
+      .site-form [data-site-form] input:focus {
+        outline: none; }
     .site-form [data-site-form] select {
+      font-size: 1em;
       background: 100%;
       width: 100%;
+      border: 0;
       font-family: "Quicksand", sans-serif;
-      font-size: 1em; }
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+      .site-form [data-site-form] select:focus {
+        outline: none;
+        border-color: none; }
 
 .opening-hours {
   font-size: 1em; }
@@ -23,18 +38,13 @@
     background: yellow; }
 
 .readMode {
-  /*disable input fields*/
-  pointer-events: none;
-  font-weight: bold; }
+  /* Disable default input border box when point events triggered */
+  pointer-events: none; }
+  .readMode label {
+    color: black; }
   .readMode input {
-    border: 0;
     /* Most modern browsers support this now. */ }
-    .readMode input::placeholder {
-      font-size: 1em;
-      color: mediumblue; }
   .readMode select {
-    border: 0;
-    background-color: transparent;
     /*Removing the drop down arrow*/
     /* for Firefox */
     -moz-appearance: none;
@@ -47,27 +57,33 @@
     visibility: hidden;
     margin: 0.5rem; }
 
-.editMode {
-  color: black;
-  font-weight: bold; }
-  .editMode input {
-    font-size: 1em;
-    /* Most modern browsers support this now. */ }
-    .editMode input::placeholder {
-      color: black; }
-  .editMode button {
-    background: #4d13af;
-    color: #ffffff;
-    border: 1px solid #4d13af;
-    border-radius: 3px;
-    font-family: "Quicksand", sans-serif;
-    box-sizing: border-box;
-    text-decoration: none;
-    padding: 1em 5em;
-    margin: 10px;
-    min-width: 75px; }
-    .editMode button:hover {
-      background-color: #6118dd; }
+.editMode label {
+  color: black; }
+.editMode input {
+  font-size: 1em;
+  background: lightblue;
+  border: none;
+  border-bottom: 1.5px solid dodgerblue;
+  /* Most modern browsers support this now. */ }
+  .editMode input::placeholder {
+    color: black; }
+  .editMode input:focus {
+    outline: none; }
+.editMode select {
+  color: black; }
+.editMode button {
+  background: #4d13af;
+  color: #ffffff;
+  border: 1px solid #4d13af;
+  border-radius: 3px;
+  font-family: "Quicksand", sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 1em 5em;
+  margin: 10px;
+  min-width: 75px; }
+  .editMode button:hover {
+    background-color: #6118dd; }
 
 .editButton {
   background: #4d13af;

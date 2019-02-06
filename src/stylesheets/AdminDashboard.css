@@ -1,8 +1,8 @@
 .react-tabs {
   -webkit-tap-highlight-color: transparent; }
   .react-tabs__tab-list {
-    border-bottom: 1px solid #aaa;
-    margin: 0 0 10px;
+    border-bottom: 1px solid #C1C0BA;
+    margin: 0 0 20px;
     padding: 0; }
   .react-tabs__tab {
     display: inline-block;
@@ -11,19 +11,19 @@
     bottom: -1px;
     position: relative;
     list-style: none;
-    padding: 6px 12px;
+    padding: 6px 30px;
     cursor: pointer; }
     .react-tabs__tab--selected {
       background: #fff;
-      border-color: #aaa;
+      border-color: #C1C0BA;
       color: black;
       border-radius: 3px 3px 0 0; }
     .react-tabs__tab--disabled {
       color: GrayText;
       cursor: default; }
     .react-tabs__tab:focus {
-      box-shadow: 0 0 5px #0188fe;
-      border-color: #0188fe;
+      box-shadow: 0 0 5px #5B98BB;
+      border-color: #5B98BB;
       outline: none; }
       .react-tabs__tab:focus:after {
         content: "";
@@ -42,7 +42,8 @@
   display: flex;
   justify-content: space-evenly;
   padding: 0 30px;
-  flex-wrap: wrap-reverse; }
+  flex-wrap: wrap-reverse;
+  font-size: "Quicksand", sans-serif; }
   .user-card .user-avatar {
     object-fit: cover;
     width: 100%;
@@ -61,18 +62,33 @@
   padding: 0 50px 50px 50px;
   box-sizing: border-box; }
   .add-user-container .add-user-form {
-    text-align: left; }
+    text-align: left;
+    font-family: "Quicksand", sans-serif; }
     .add-user-container .add-user-form label {
-      font-size: 1em; }
+      font-size: 1em;
+      font-weight: bold; }
     .add-user-container .add-user-form input {
+      font-size: 1em;
       width: 100%;
-      font-family: "Quicksand", sans-serif;
-      font-size: 1em; }
+      border: none;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+      .add-user-container .add-user-form input::placeholder {
+        font-size: 1em;
+        font-family: "Quicksand", sans-serif; }
+      .add-user-container .add-user-form input:focus {
+        outline: none; }
     .add-user-container .add-user-form select {
+      font-size: 1em;
       background: 100%;
       width: 100%;
+      border: 0;
       font-family: "Quicksand", sans-serif;
-      font-size: 1em; }
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem; }
+      .add-user-container .add-user-form select:focus {
+        outline: none;
+        border-color: none; }
   .add-user-container .createUsers {
     background: #4d13af;
     color: #ffffff;
