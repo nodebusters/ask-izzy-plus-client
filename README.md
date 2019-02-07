@@ -176,9 +176,12 @@ This pushed us to provide a high level definition of a requirement to create a s
 <!-- FIXME: AITZU -->
 ### Workflow Diagram: User Journeys
 -- INSERT DIAGRAM --
-A workflow diagram of the user journeys
 
+User Journey for Service Provider
 ![User Journey for Service Provider](/docs/images/user_journey_service_provider.png)
+
+User Journey for administrator
+![User Journey for administrator](/docs/images/user_journey_admin.png)
 
 <!-- FIXME: AITZU -->
 ### Wireframes
