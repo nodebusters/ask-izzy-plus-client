@@ -573,10 +573,10 @@ Nevertheless, as a group we agree that soft skills were essential to complete th
 * Abstract thinking. 
 * Research and development skills. 
 
-<!-- FIXME: ??? -->
+<!-- FIXME: AITZU -->
 ### Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
-* Effectiveness - Strengths and Weaknesses
-* Learnings, Future Lessons
+* We as a team had all the required knowledge and skills to complete this project however we had someone focusing on backend, frontend and project management. The allocation of tasks was mainly based on our strengths. For future projects we would like to further optimize our time management and efficiency so everyone gets a chance to work on their weaknesses as well while still being able to finish the project. 
+* By the time we started this project not everyone was familiar with the basics of MERN stack. For future projects we would like to make sure everyone at least is comfortable with the basic content from class so we could better use our time while working as a group.  
 
 ## Future Development
 <!-- FIXME: AITZU -->
