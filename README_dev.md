@@ -50,21 +50,25 @@ GOOGLE_CALLBACK_URL="[INSERT-GOOGLE-API-CALLBACK]"
 GMAIL_ACCOUNT="[INSERT-INFOXCHANGE-MAILER-EMAIL-ADDRESS]"
 GMAIL_PASS="[INSERT-INFOXCHANGE-MAILER-EMAIL-PASSWORD]"
 ```
-Note that SESSION_SECRET_KEY can be set to any string value, ideally encoded. On the other hand, GOOGLE env variables are set in a Google Developer account, and the GMAIL env variables refers to the credentials for the mailer account used in the back end. Is important to note that in the current set up Gmail is the current email provider for nodemailer. This probably is not ideal if the site traffic increases and more emails need to be handled. In that scenario a provider like Mailgun would be more appropriate. 
+Note that SESSION_SECRET_KEY can be set to any string value, ideally encoded. On the other hand, Google `.env` variables are set in a Google Developer account, and the Gmail `.env` variables refers to the credentials for the mailer account used in the back end. Is important to note that in the current set up Gmail is the current email provider for nodemailer. This probably is not ideal if the site traffic increases and more emails need to be handled. In that scenario a provider like Mailgun would be more appropriate. 
 
 ### Step 2: Seed MongoDB
 The MongoDB database can be seeded with generic data by running the `seedDatabase.js` seeding file located at the server folder. This process is appropriate to seed both local and cloud based databases. 
 
 If the data to be seeded is available on JSON format, a most appropriate way to seed it would be using the mongoimport command. 
 
-#### Local database seeding with mongoimport:
-`mongoimport --db <database-name> --collection <collection-name> --file <file-name>.json`
+#### Local Database Seeding with mongoimport:
+```
+$ mongoimport --db <database-name> --collection <collection-name> --file <file-name>.json
+```
 
 #### mLab database seeding with mongoimport:
 For an mLab database it will look similar to the following:
-`mongoimport -h ds211875.mlab.com:11875 -d <database-name> -c <collection-name> -u <user> -p <password> --file <input-file>`
+```
+$ mongoimport -h ds211875.mlab.com:11875 -d <database-name> -c <collection-name> -u <user> -p <password> --file <input-file>
+```
 
-Note that `ds211875.mlab.com:11875` refers to the sandbox mLab database, and this value will be different if different database is being used. 
+Note that `ds211875.mlab.com:11875` refers to the sandbox mLab database, and this value will be different if a different database is being used. 
 
 ### Step 3: Running the application on localhost
 #### Server

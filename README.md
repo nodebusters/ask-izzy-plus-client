@@ -75,8 +75,8 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?](#q5-evaluate-how-effective-your-knowledge-and-skills-were-this-project-using-examples-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)
 - [Future Development](#future-development)
   - [Extensions](#extensions)
-  - [Handover](#handover)
-  - [Client Survey/Questionnaire](#client-surveyquestionnaire)
+  - [Handover/Feedback](#handoverfeedback)
+  - [Client Survey](#client-survey)
   - [Running Ask Izzy+ (Developers)](#running-ask-izzy-developers)
 - [Presentation](#presentation)
 
@@ -415,8 +415,8 @@ Team members were not allowed to raised and merge their own pull request; instea
 
 This approach worked really well as it allowed us to pick up issues early in the development process. Occasionally we had conflicts but we were able to resolve them relatively quickly.
 
-```
 The conflict solving process was as follows:
+```
 1. Fetch the branch to be merged locally. 
 2. Pull the latest version of master locally.
 3. Merge master to the branch to be merged. 
@@ -486,29 +486,29 @@ From a dev pespective, a hugely important aspect of quality software is to write
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 Based on our experience with developing a custom application for a client, some key takeaways and recommendations about the knowledge and skills required to develop a project of this scope from end to end are:
 
-* Business Context: Developing software that brings value to a client requires a thorough understanding of the underlying business requirements data structure and processes your application is supported. Underestimating this aspect of software development can set the project up for failure before it even starts by developing software that won't be used.
+* **Business Context**: Developing software that brings value to a client requires a thorough understanding of the underlying business requirements data structure and processes your application is supported. Underestimating this aspect of software development can set the project up for failure before it even starts by developing software that won't be used.
 
-* Future Plans: Likewise is important to understand what are the future plans, budget, strategic objectives and biggested threats and challenges of your client's organisation. This information is helpful to develop software that adds value to your clients organisation not only for now but in the longer term. 
+* **Future Plans**: Likewise is important to understand what are the future plans, budget, strategic objectives and biggested threats and challenges of your client's organisation. This information is helpful to develop software that adds value to your clients organisation not only for now but in the longer term. 
   
-* Current Database Structure: Where appropriate, is important to consider your client's current database structure and try to preserve it as much as possible. This will enable your client to easily migrate from one system to other. 
+* **Current Database Structure**: Where appropriate, is important to consider your client's current database structure and try to preserve it as much as possible. This will enable your client to easily migrate from one system to other. 
 
-* Expected Traffic/Scope: is important understand expectations regarding web traffic and the amount of users the website will handle. Our prototype will be piloted with a small sample of service providers while the longer-term implementation of this functionality into Infoxchange's ecosystem would involve a number of large integrations and querying a database with over 350,000 service listings.
+* **Expected Traffic/Scope**: is important understand expectations regarding web traffic and the amount of users the website will handle. Our prototype will be piloted with a small sample of service providers while the longer-term implementation of this functionality into Infoxchange's ecosystem would involve a number of large integrations and querying a database with over 350,000 service listings.
 
 ### Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
 The technical knowledge and skills required to complete this project included:
-* Vanilla Javascript: understanding functional programming principles, asynchronous code, and callbacks.
-* Document Databases (MongoDB/Mongoose): converting a relational databse structure into document database.
-* Express API/Server: creating and using middleware to manage requests and respsonses to public and protected routes.
-* React.js: working with multiple layers of components and create-react-app folder structure.
-* Node.js: using Node.js to run multiple localhost ports on one computer.
-* NPM and NPM libraries: researching and applying NPM packages and libraries to our application.
-* GitHub and GitHub Organisations: each of us were required to create branchs, push to master, peer to peer code review and merging or resolving conflicts in GitHub.
-* HTML5: compiling semantic HTML in React components logic.
-* SASS/CSS3: using Sass compilers to create mixins and global variables to refactor code.
-* Figma/Balsamiq: used as a design tool for wireframes and assets.
-* Trello: breakdown of tasks following Agile methodologies.
-* Distributed Deployment: client, server and database deployed to Netlify, Now, mLab respectively.
-* Google Developer API: required to implement Google OAuth for Passport authentication.
+* **Vanilla Javascript**: understanding functional programming principles, asynchronous code, and callbacks.
+* **Document Databases (MongoDB/Mongoose)**: converting a relational databse structure into document database.
+* **Express API/Server**: creating and using middleware to manage requests and respsonses to public and protected routes.
+* **React.js**: working with multiple layers of components and create-react-app folder structure.
+* **Node.js**: using Node.js to run multiple localhost ports on one computer.
+* **NPM and NPM libraries**: researching and applying NPM packages and libraries to our application.
+* **GitHub/GitHub Organisations**: each of us were required to create branchs, push to master, peer to peer code review and merging or resolving conflicts in GitHub.
+* **HTML5**: compiling semantic HTML in React components logic.
+* **SASS/CSS3**: using Sass compilers to create mixins and global variables to refactor code.
+* **Figma/Balsamiq**: used as a design tool for wireframes and assets.
+* **Trello**: breakdown of tasks following Agile methodologies.
+* **Distributed Deployment**: client, server and database deployed to Netlify, Now, mLab respectively.
+* **Google Developer API**: required to implement Google OAuth for Passport authentication.
 
 Looking back as a group we agreed that soft skills were essential to complete this project and overcome challenges, namely:
 * Team collaboration
@@ -525,18 +525,19 @@ Looking back as a group we agreed that soft skills were essential to complete th
 ## Future Development
 <!-- FIXME: AITZU -->
 ### Extensions
-
 1. Update housing vacancy details
 2. Notification centre in admin dashboard to display and approve/disapprove all requests from service providers. 
 3. Different levels of access for organisation users. Ex. some users only have access to certain sites or services.
 4. Integration with the main Ask Izzy app. 
-   
-<!-- FIXME: LINDA -->
-### Handover
-### Client Survey/Questionnaire
-<!-- FIXME: DIEGO -->
+
+### Handover/Feedback
+### Client Survey
+As part of our planned retrospective, we've created a client survey using Typeform for Sam and Claire to complete after we've demoed the application in person and provided handover documentation to Infoxchange.
+
+[![Nodebusters Client Survey](docs/images/client-survey.png)](https://ask-izzy-plus.netlify.com/)
+
 ### Running Ask Izzy+ (Developers)
-Developer instructions for running Ask Izzy Plus can be found here: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md
+Developer instructions for running Ask Izzy Plus can be found on in this [GitHub](https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md) repo.
 
 <!-- FIXME: GROUP -->
 ## Presentation
