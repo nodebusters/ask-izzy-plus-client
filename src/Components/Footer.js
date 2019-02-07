@@ -20,7 +20,7 @@ const Footer = () => {
           <a href="https://github.com/nodebusters">About Nodebusters</a>
         </li>
         <li>
-          <a href="support@askizzy.org.au">Report an Issue</a>
+          <a href="https://lindalai1.typeform.com/to/cnNTDX">Report an Issue</a>
         </li>
       </ul>
     </footer>
