@@ -1,7 +1,7 @@
 # Ask Izzy Plus <!-- omit in toc -->
 Ask Izzy Plus is self-service application for service providers listed on Ask Izzy to update their contact details with our client Infoxchange. Built in the JavaScript MERN stack for our final Coder Academy group project.
 
-[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://github.com/nodebusters/)
+[![Ask Izzy Plus Logo](docs/images/ask-izzy-plus-logo.png)](https://ask-izzy-plus.netlify.com/)
 
 ## Ask Izzy Plus Links
 ### Deployed <!-- omit in toc --> 
@@ -13,7 +13,7 @@ Ask Izzy Plus is self-service application for service providers listed on Ask Iz
 * Server: https://github.com/nodebusters/ask-izzy-plus-server
 
 ## Summary <!-- omit in toc -->
-Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
+Ask Izzy Plus is a self-service application built to our client Infoxchange's specifications to allow service providers listed on Infoxchange's Ask Izzy platform to update organisation, site and service contact details. Built using JavaScript and the MERN stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js) for our final Coder Academy project.
 
 ## Contributors <!-- omit in toc --> 
 
@@ -43,11 +43,11 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [OO Design Documentation](#oo-design-documentation)
 - [Project Management & Planning](#project-management--planning)
   - [Project Plan and Timeline](#project-plan-and-timeline)
+  - [Team Communication](#team-communication)
   - [Client Communications](#client-communications)
-  - [Task Management (Trello)](#task-management-trello)
 - [Tools & Methodologies](#tools--methodologies)
-  - [Trello](#trello)
-  - [Figma/Balsimiq](#figmabalsimiq)
+  - [Task Management](#task-management)
+  - [Design Tools](#design-tools)
   - [Source Control](#source-control)
     - [Github and Gitflow](#github-and-gitflow)
   - [Agile Methodologies](#agile-methodologies)
@@ -76,7 +76,7 @@ Tasked with finding a real world customer to design, build, deploy and present a
 
 The scope of our project for the MVP was to build a working prototype/proof of concept application for our client to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project. To this end, simplifying the process for service providers to update their information with Infoxchange, and enabling service providers to update their details via a self-service application was a key pain point/wishlist identified by Infoxchange.
 
-After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB/Mongoose, **E**xpress, **R**eact and **N**ode.js), and other node packages.
+After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), and other node packages.
 
 <!-- TODO: LINDA -->
 ### Functionality and Features
@@ -337,19 +337,23 @@ Based on Infoxchange's information hierarchy, the following MongoDB collections/
     });
     ```
 
-<!-- FIXME: LINDA -->
+<!-- TODO: LINDA -->
 ### Data Flow Diagram
+Because of the adaptability and flexibility of the MERN software stack(**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), along with other client, server and database npm packages like Axios, Nodemailer and Mongoose, we were able to scaffold a prototype for Ask Izzy Plus, with the overall data flow represented below:
+
 ![MERN Stack Overview](/docs/images/data-flow-mern.png)
 
-<!-- FIXME: LINDA -->
+<!-- TODO: LINDA -->
 ### OO Design Documentation
-OO Design (Provides Object Oriented design diagrams(UML or alternative) that clearly identify OO class attributes, methods, relationships.)
+When considering OO design and class attributes, methods and relationships, our main consideration was representing people (users) and locations (organisations, sites and services), and the relationship between them: our document database has three collections, `AdminUser`, `User` and `Organisation`, with arrays of `Sites` and `Services` embedded across three levels in the Organisation collection.
 
-This (the OO Design Documentation) is one of those oddities that results from the admin side of things. Please just give some sense of the structure of your React components. (A family tree perhaps.)
+For the prototype it was preferred that authentication be handled by a third party, for which we implemented Google OAuth using Passport, an npm package. As the admin user, our client can create a new user (service provider) by whitelisting a Google email address and associating them with an organisation, view all users and delete users from the admin dashboard.
+From the service provider portal, whitelisted users can create, read, update and delete locations and update their information and contact details. An update from the current record in our database will trigger a mailer notification to admin (Infoxchange's support team) that an update is required.
 
-![OO Design - React Component Family Tree](/docs/images/data-flow-mern.png)
+The Ask Izzy Plus client uses Axios to query the User/AdminUser and Organisation collections in the MongoDB database and iterative logic to display the nested arrays of Sites and Services embedded within the Organisation collection.
 
-<!-- FIXME: LINDA -->
+![OO Design - React Component Family Tree](/docs/images/oo-design-react-family-tree.png)
+
 ## Project Management & Planning
 ```
 Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
@@ -358,56 +362,65 @@ Client:
 - Record interactions with your client in a diary format
 - Plan information gathering activities to determine project requirements, constraints and risks
 
-Project Management:
-- Develop project charter, including preliminary statement of project scope and obtain sign-off
-- Prepare project work breakdown and schedule
-- Allocate roles and responsibilities to team members, based on project solution requirements
-- Monitor each other’s assigned work
-- Reassess ongoing project scope changes, risks and issues
-
 Handover:
 - Manage system testing and hand over activities. Prepare maintenance or support plans for client
 - Obtain final project sign-off
 - As a team, conduct post project review
 - Create a questionnaire for the client to ascertain the satisfaction with your products and services
 ```
-
-<!-- FIXME: LINDA -->
 ### Project Plan and Timeline
-- Project plan and effort estimation
-1.   Employ and utilise project management methodology
-2.   Employ and utilise task delegation methodology
+
+To manage the project and keep track of tasks and communications within the team and with our client in the day-to-day and for documentation purposes we used Trello, Slack, Google Docs, Google Sheets and email to delegate tasks and have a single source of truth and line of communication, this informed our Git and code review processes.
+
+![Timeline](/docs/images/project-plan-timeline.png)
+
+<!-- TODO: LINDA -->
+### Team Communication
+After collaborating on an initial brief with our client to use as a project charter, with a preliminary statement of project scope to obtain initial sign-off, our planning methodology involved:
+
+* Allocating roles and responsibilities to team members, based on project solution requirements and monitor each other's assigned work using Trello and GitHub Organisations.
+* Preparing a work breakdown and schedule of key milestones in Google Sheets.
+* Monitoring client and team communications via email and Slack, using Google Docs to record minutes, reassess ongoing project scope changes, risks, blockers and issues.
+  
+  ![Slack](/docs/images/Slack.png)
 
 <!-- FIXME: LINDA -->
 ### Client Communications
-When approaching your client, be upfront about this being a project you are doing as part of your Diploma.
-There is to be no expectations on you, the students, to deploy the application for use of the client. Make sure the client is aware of this and that it is agreed upon.
-There is to be no confidentiality agreement to be entered into.
+With product manager Sam coming from a software development background, managing expectations and communications with our client was extremely straightforward and clear. Since the finished app will be used as a prototype, we felt assured by the fact there would
+ultimately be some kind of business use for it while also being able to deliver an MVP in three weeks.
 
-<!-- FIXME: LINDA -->
-### Task Management (Trello)
-- Project plan and effort estimation
-- Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
+We were particularly keen and pleased to work with a non-for-profit organisation, and surprised to discover that Ask Izzy is an open source project on GitHub.
+
+After our initial in person meeting with Sam and Claire from Infoxchange, we had one further follow up and stayed in touch with feedback and questions via email and keeping track of the minutes in Google Sheets
+
+* Client Minutes
+  
+  ![Client Minutes](/docs/images/client-communications-minutes.png)
+
+* Gmail
+  
+  ![Client Emails](/docs/images/client-communications-emails.png)
 
 <!-- TODO: DIEGO -->
 ## Tools & Methodologies
-### Trello
-We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
+### Task Management
+Using Trello as our primary project management tool to enforce Agile and Scrum workflow processes, allocate and categorise tasks and have a single source of truth to monitor what each of us were currently working on, we could evalulate our progress throughout the project by seeing all current tasks and blockers visually, creating lists under the following:
+* `DELIVERABLES`
+* `TO DO`
+* `TODAY`
+* `DOING`
+* `DONE`
+* `MVP`
+* `NICE TO HAVE`
 
-* Deliverables
-* To-do
-* To-do Today
-* Doing
-* Done
-* MVP
-* Nice to have
+In the planning stage, we broke down the MVP functionality and features based on the user stories, adding more as new tasks and bugs opened up, and relocating cards into the relevant columns each day. We also took advantage of the calendar tool in order to keep track of important deadlines and to allocate each new task to a team member right away so it was always clear what each of us were working on.
 
-Then we assigned cards to each of this lists and relocate the cards as the project advanced. We also took advantage of the calendar tool in order to keep track of important deadlines.
+![Trello](docs/images/trello-screenshot.png)
 
-![](docs/images/trello-screenshot.png)
+### Design Tools
+For designing and editing assets, wireframing and diagramming for this project, Figma and Balsamiq were used to quickly ideate a mock up, create assets for the app and README, and create a mood board for Infoxchange's Ask Izzy branding and UI:
 
-<!-- FIXME: LINDA -->
-### Figma/Balsimiq
+![Balsamiq](/docs/images/balsamiq.png)
 
 <!-- TODO: DIEGO -->
 ### Source Control

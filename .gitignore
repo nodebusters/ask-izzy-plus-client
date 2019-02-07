@@ -21,6 +21,7 @@
 .env.development
 .env.production
 
+.handover
 
 npm-debug.log*
 yarn-debug.log*
