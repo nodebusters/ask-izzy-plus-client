@@ -165,8 +165,13 @@ Integrating this functionality into the existing main Ask Izzy platform was beyo
 
 From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
 
-<!-- TODO: Linda -->
+<!-- TODO: Aitzu -->
 ### User Stories
+
+1. As a SERVICE PROVIDER, I need an application where I can log in and easily view, create, update and delete my organisation, sites and services details. 
+
+2. As a ADMINISTRATOR working for Infoxchange, I need an administrator dashboard where I can manage the service providers’ access by creating a new user, linking the user with organisation and deleting a user. 
+
 Following Agile methodologies, user stories were written up in Trello to guide the development of our MVP from the perspective of our core Ask Izzy Plus end users to capture a description of our software features from their perspective: users (service providers) and admin (Infoxchange).
 
 This pushed us to provide a high level definition of a requirement to create a simplified description, and helped to break down the features and functionality of the MVP early on.
@@ -175,13 +180,15 @@ This pushed us to provide a high level definition of a requirement to create a s
 
 <!-- FIXME: AITZU -->
 ### Workflow Diagram: User Journeys
--- INSERT DIAGRAM --
+
 
 User Journey for Service Provider
 ![User Journey for Service Provider](/docs/images/user_journey_service_provider.png)
 
+
 User Journey for administrator
 ![User Journey for administrator](/docs/images/user_journey_admin.png)
+
 
 <!-- FIXME: AITZU -->
 ### Wireframes
