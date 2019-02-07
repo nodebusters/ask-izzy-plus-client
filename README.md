@@ -201,11 +201,8 @@ Continuing with our UX/UI design documentation, we used Figma to create our wire
 * Ask Izzy UI/UX
 ![Ask Izzy UI/UX](docs/images/UI_UX.png)
 
-* Ask Izzy Font
-![Ask Izzy Font](docs/images/font.png)
-
-* Ask Izzy Font Colours
-![Ask Izzy Font Colours](docs/images/font_colours.png)
+* Ask Izzy Font and Font Colours
+![Ask Izzy Font and Font Colours](docs/images/font.png)
 
 * Ask Izzy Banners
 ![Ask Izzy Banners](docs/images/banners.png)
