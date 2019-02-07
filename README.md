@@ -157,7 +157,7 @@ Demonstrate your ability to break down the problem and design a solution.
 - OO design documentation
 ```
 
-<!-- TODO: LINDA -->
+<!-- TODO: AITZU -->
 ### Design Process
 After receiving an initial brief and researching Ask Izzy's existing UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details.
 
@@ -165,7 +165,7 @@ Integrating this functionality into the existing main Ask Izzy platform was beyo
 
 From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
 
-<!-- TODO: Aitzu -->
+<!-- TODO: LINDA -->
 ### User Stories
 
 1. As a SERVICE PROVIDER, I need an application where I can log in and easily view, create, update and delete my organisation, sites and services details. 
@@ -195,9 +195,24 @@ This pushed us to provide a high level definition of a requirement to create a s
 <!-- FIXME: AITZU -->
 ### Wireframes
 Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
+Ask Izzy UI/UX
+![Ask Izzy UI/UX](docs/images/UI_UX.png)
+
+Ask Izzy Font
+![Ask Izzy Font](docs/images/font.png)
+
+Ask Izzy Font Colours
+![Ask Izzy Font Colours](docs/images/font_colours.png)
+
+Ask Izzy Banners
+![Ask Izzy Banners](docs/images/banners.png)
+
+Ask Izzy Branding Assets
+![Ask Izzy Branding Assets](docs/images/branding.png)
 
 Mimicking the general UI layout of the core Ask Izzy platform in our MVP had multiple advantages: along with consistency in UX, the UI itself lends itself well to responsive design, accessability and readability.
 
+* Ask Izzy Plus Wireframs
 ![Figma Wireframes](/docs/images/wireframe.png)
 
 <!-- TODO: Linda -->
