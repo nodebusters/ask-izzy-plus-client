@@ -522,7 +522,15 @@ Testing was performed often during the development of the application. Testing t
 
 <!-- FIXME: ??? -->
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
-* Business Context
+After having a discussion we have come with the following recommendations:
+
+* Business Context: In order to develop software that adds value to your client is extremely important to understand the business structure and processes your client is involved with. Do not underestimate this aspect of software development otherwise your team would end up developing software no one will use. 
+
+* Future Plans: Likewise is important to understand what are the future plans of your client's organisation. This information is helpful to develop software that adds value to your clients organisation not only  for now but for the next few years. 
+  
+* Current Database Structure: If existent, is important to consider your client's current database structure and try to preserve it as much as possible. This will enable your client to easily migrate from one system to other. 
+
+* Expected Traffic: Is important understand expectations regarding web traffic and the amount of users the website will handle. 
 
 <!-- FIXME: ??? -->
 ### Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
