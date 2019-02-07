@@ -43,11 +43,11 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [OO Design Documentation](#oo-design-documentation)
 - [Project Management & Planning](#project-management--planning)
   - [Project Plan and Timeline](#project-plan-and-timeline)
+  - [Team Communication](#team-communication)
   - [Client Communications](#client-communications)
-  - [Task Management (Trello)](#task-management-trello)
 - [Tools & Methodologies](#tools--methodologies)
-  - [Trello](#trello)
-  - [Figma/Balsimiq](#figmabalsimiq)
+  - [Task Management](#task-management)
+  - [Design Tools](#design-tools)
   - [Source Control](#source-control)
     - [Github and Gitflow](#github-and-gitflow)
   - [Agile Methodologies](#agile-methodologies)
@@ -350,56 +350,65 @@ Client:
 - Record interactions with your client in a diary format
 - Plan information gathering activities to determine project requirements, constraints and risks
 
-Project Management:
-- Develop project charter, including preliminary statement of project scope and obtain sign-off
-- Prepare project work breakdown and schedule
-- Allocate roles and responsibilities to team members, based on project solution requirements
-- Monitor each other’s assigned work
-- Reassess ongoing project scope changes, risks and issues
-
 Handover:
 - Manage system testing and hand over activities. Prepare maintenance or support plans for client
 - Obtain final project sign-off
 - As a team, conduct post project review
 - Create a questionnaire for the client to ascertain the satisfaction with your products and services
 ```
+### Project Plan and Timeline
+
+To manage the project and keep track of tasks and communications within the team and with our client in the day-to-day and for documentation purposes we used Trello, Slack, Google Docs, Google Sheets and email to delegate tasks and have a single source of truth and line of communication, this informed our Git and code review processes.
+
+![Timeline](/docs/images/project-plan-timeline.png)
 
 <!-- TODO: LINDA -->
-### Project Plan and Timeline
-- Project plan and effort estimation
-1.   Employ and utilise project management methodology
-2.   Employ and utilise task delegation methodology
+### Team Communication
+After collaborating on an initial brief with our client to use as a project charter, with a preliminary statement of project scope to obtain initial sign-off, our planning methodology involved:
+
+* Allocating roles and responsibilities to team members, based on project solution requirements and monitor each other's assigned work using Trello and GitHub Organisations.
+* Preparing a work breakdown and schedule of key milestones in Google Sheets.
+* Monitoring client and team communications via email and Slack, using Google Docs to record minutes, reassess ongoing project scope changes, risks, blockers and issues.
+  
+  ![Slack](/docs/images/Slack.png)
 
 <!-- FIXME: LINDA -->
 ### Client Communications
-When approaching your client, be upfront about this being a project you are doing as part of your Diploma.
-There is to be no expectations on you, the students, to deploy the application for use of the client. Make sure the client is aware of this and that it is agreed upon.
-There is to be no confidentiality agreement to be entered into.
+With product manager Sam coming from a software development background, managing expectations and communications with our client was extremely straightforward and clear. Since the finished app will be used as a prototype, we felt assured by the fact there would
+ultimately be some kind of business use for it while also being able to deliver an MVP in three weeks.
 
-<!-- FIXME: LINDA -->
-### Task Management (Trello)
-- Project plan and effort estimation
-- Select and follow a commonly used planning methodology, such as Kanban, Trello, Jira, or Asana.
+We were particularly keen and pleased to work with a non-for-profit organisation, and surprised to discover that Ask Izzy is an open source project on GitHub.
+
+After our initial in person meeting with Sam and Claire from Infoxchange, we had one further follow up and stayed in touch with feedback and questions via email and keeping track of the minutes in Google Sheets
+
+* Client Minutes
+  
+  ![Client Minutes](/docs/images/client-communications-minutes.png)
+
+* Gmail
+  
+  ![Client Emails](/docs/images/client-communications-emails.png)
 
 <!-- TODO: DIEGO -->
 ## Tools & Methodologies
-### Trello
-We decided to use Trello as Project Management Tool. The main approach was to create several lists including:
+### Task Management
+Using Trello as our primary project management tool to enforce Agile and Scrum workflow processes, allocate and categorise tasks and have a single source of truth to monitor what each of us were currently working on, we could evalulate our progress throughout the project by seeing all current tasks and blockers visually, creating lists under the following:
+* `DELIVERABLES`
+* `TO DO`
+* `TODAY`
+* `DOING`
+* `DONE`
+* `MVP`
+* `NICE TO HAVE`
 
-* Deliverables
-* To-do
-* To-do Today
-* Doing
-* Done
-* MVP
-* Nice to have
+In the planning stage, we broke down the MVP functionality and features based on the user stories, adding more as new tasks and bugs opened up, and relocating cards into the relevant columns each day. We also took advantage of the calendar tool in order to keep track of important deadlines and to allocate each new task to a team member right away so it was always clear what each of us were working on.
 
-Then we assigned cards to each of this lists and relocate the cards as the project advanced. We also took advantage of the calendar tool in order to keep track of important deadlines.
+![Trello](docs/images/trello-screenshot.png)
 
-![](docs/images/trello-screenshot.png)
+### Design Tools
+For designing and editing assets, wireframing and diagramming for this project, Figma and Balsamiq were used to quickly ideate a mock up, create assets for the app and README, and create a mood board for Infoxchange's Ask Izzy branding and UI:
 
-<!-- FIXME: LINDA -->
-### Figma/Balsimiq
+![Balsamiq](/docs/images/balsamiq.png)
 
 <!-- TODO: DIEGO -->
 ### Source Control
