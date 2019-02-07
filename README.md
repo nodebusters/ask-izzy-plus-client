@@ -182,22 +182,23 @@ This pushed us to provide a high level definition of a requirement to create a s
 ### Workflow Diagram: User Journeys
 
 
-User Journey for Service Provider
+* User Journey for Service Provider
+
 ![User Journey for Service Provider](/docs/images/user_journey_service_provider.png)
 
 
-User Journey for administrator
+* User Journey for administrator
+
 ![User Journey for administrator](/docs/images/user_journey_admin.png)
 
 
 <!-- FIXME: AITZU -->
 ### Wireframes
--- INSERT WIREFRAMES --
 Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
 
 Mimicking the general UI layout of the core Ask Izzy platform in our MVP had multiple advantages: along with consistency in UX, the UI itself lends itself well to responsive design, accessability and readability.
 
-![Figma Wireframes](/docs/images/.png)
+![Figma Wireframes](/docs/images/wireframe.png)
 
 <!-- TODO: Linda -->
 ### Database Schema
