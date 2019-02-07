@@ -552,9 +552,26 @@ After having a discussion we have come with the following recommendations:
 
 <!-- FIXME: ??? -->
 ### Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
-* Knowledge
-* Skills
-* Challenges
+The technical skills required to complete this project include:
+* Vanilla Javascript
+* Node.js 
+* React.js
+* NPM and NPM libraries. 
+* GIT
+* SASS/CSS3
+* HTML5
+* Figma
+* Trello
+* mLab
+* Google API
+
+Nevertheless, as a group we agree that soft skills were essential to complete this project and overcome challenges. The skills we considered the most important are:
+
+* Team collaboration.  
+* Good communication skills. 
+* Project management. 
+* Abstract thinking. 
+* Research and development skills. 
 
 <!-- FIXME: ??? -->
 ### Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
