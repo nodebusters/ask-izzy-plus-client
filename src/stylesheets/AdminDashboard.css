@@ -97,7 +97,7 @@
       border-bottom: 1.5px solid #6EC9CC;
       /* Most modern browsers support this now. */ }
       .add-user-container .add-user-form input::placeholder {
-        color: white; }
+        color: black; }
       .add-user-container .add-user-form input:focus {
         outline: none; }
     .add-user-container .add-user-form select {
