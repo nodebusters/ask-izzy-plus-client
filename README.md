@@ -342,7 +342,6 @@ The Ask Izzy Plus client uses Axios to query the User/AdminUser and Organisation
 
 ![OO Design - React Component Family Tree](/docs/images/oo-design-react-family-tree.png)
 
-<!-- FIXME: LINDA -->
 ## Project Management & Planning
 ```
 Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
@@ -365,7 +364,7 @@ Handover:
 - Create a questionnaire for the client to ascertain the satisfaction with your products and services
 ```
 
-<!-- FIXME: LINDA -->
+<!-- TODO: LINDA -->
 ### Project Plan and Timeline
 - Project plan and effort estimation
 1.   Employ and utilise project management methodology
