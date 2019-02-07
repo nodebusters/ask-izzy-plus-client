@@ -344,12 +344,6 @@ The Ask Izzy Plus client uses Axios to query the User/AdminUser and Organisation
 
 ## Project Management & Planning
 ```
-Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
-
-Client:
-- Record interactions with your client in a diary format
-- Plan information gathering activities to determine project requirements, constraints and risks
-
 Handover:
 - Manage system testing and hand over activities. Prepare maintenance or support plans for client
 - Obtain final project sign-off
