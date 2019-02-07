@@ -579,8 +579,14 @@ Nevertheless, as a group we agree that soft skills were essential to complete th
 * Learnings, Future Lessons
 
 ## Future Development
-<!-- FIXME: JAMES -->
+<!-- FIXME: AITZU -->
 ### Extensions
+
+1. Update housing vacancy details
+2. Notification centre in admin dashboard to display and approve/disapprove all requests from service providers. 
+3. Different levels of access for organisation users. Ex. some users only have access to certain sites or services.
+4. Integration with the main Ask Izzy app. 
+   
 <!-- FIXME: JAMES -->
 ### Handover
 ### Client Survey/Questionnaire
