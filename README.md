@@ -195,20 +195,26 @@ This pushed us to provide a high level definition of a requirement to create a s
 <!-- FIXME: AITZU -->
 ### Wireframes
 Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
-Ask Izzy UI/UX
+
+
+
+* Ask Izzy UI/UX
 ![Ask Izzy UI/UX](docs/images/UI_UX.png)
 
-Ask Izzy Font
+* Ask Izzy Font
 ![Ask Izzy Font](docs/images/font.png)
 
-Ask Izzy Font Colours
+* Ask Izzy Font Colours
 ![Ask Izzy Font Colours](docs/images/font_colours.png)
 
-Ask Izzy Banners
+* Ask Izzy Banners
 ![Ask Izzy Banners](docs/images/banners.png)
 
-Ask Izzy Branding Assets
+* Ask Izzy Branding Assets
 ![Ask Izzy Branding Assets](docs/images/branding.png)
+
+
+
 
 Mimicking the general UI layout of the core Ask Izzy platform in our MVP had multiple advantages: along with consistency in UX, the UI itself lends itself well to responsive design, accessability and readability.
 
