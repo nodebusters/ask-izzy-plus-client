@@ -28,7 +28,6 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
 - [About Ask Izzy Plus](#about-ask-izzy-plus)
   - [Project Background](#project-background)
   - [Functionality and Features](#functionality-and-features)
-- [Screenshots (Live Application)](#screenshots-live-application)
 - [The Brief](#the-brief)
   - [The Client](#the-client)
   - [The Problem (Problem Definition)](#the-problem-problem-definition)
@@ -37,6 +36,8 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Design Process](#design-process)
   - [User Stories](#user-stories)
   - [Workflow Diagram: User Journeys](#workflow-diagram-user-journeys)
+    - [User Journey for Service Provider](#user-journey-for-service-provider)
+    - [User Journey for Administrator](#user-journey-for-administrator)
   - [Wireframes](#wireframes)
   - [Database Schema](#database-schema)
   - [Data Flow Diagram](#data-flow-diagram)
@@ -45,6 +46,8 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Project Plan and Timeline](#project-plan-and-timeline)
   - [Team Communication](#team-communication)
   - [Client Communications](#client-communications)
+    - [Client Minutes](#client-minutes)
+    - [Gmail](#gmail)
 - [Tools & Methodologies](#tools--methodologies)
   - [Task Management](#task-management)
   - [Design Tools](#design-tools)
@@ -53,12 +56,15 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Agile Methodologies](#agile-methodologies)
   - [Code Review](#code-review)
   - [Deployment](#deployment)
+  - [Frontend Client: Netlify](#frontend-client-netlify)
+  - [Backend Server: Now](#backend-server-now)
+    - [Database: mLab](#database-mlab)
   - [Testing](#testing)
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
   - [Q2: What libraries are being used in the app and why?](#q2-what-libraries-are-being-used-in-the-app-and-why)
-    - [Client Side:](#client-side)
-    - [Server Side:](#server-side)
+    - [Frontend Client](#frontend-client)
+    - [Backend Server](#backend-server)
   - [Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?](#q3-a-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-what-knowledge-and-skills-would-they-need-in-order-to-develop-the-project)
   - [Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?](#q4-within-your-own-project-what-knowledge-or-skills-were-required-to-complete-your-project-and-overcome-challenges)
   - [Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?](#q5-evaluate-how-effective-your-knowledge-and-skills-were-this-project-using-examples-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)
@@ -69,7 +75,6 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Running Ask Izzy+ (Developers)](#running-ask-izzy-developers)
 - [Presentation](#presentation)
 
-<!-- TODO: LINDA -->
 ## About Ask Izzy Plus
 ### Project Background
 Tasked with finding a real world customer to design, build, deploy and present a web application for our final Coder Academy project, Ask Izzy Plus is a self-service application built in JavaScript using the MERN stack to our client Infoxchange's requirements. 
@@ -78,7 +83,6 @@ The scope of our project for the MVP was to build a working prototype/proof of c
 
 After finding our client, we met and worked with Ask Izzy's product manager to understand their current challenges and suggest ideas for a custom web application to solve a particular problem or area of this pain point. For the initial MVP, creating a prototype self-service application to allow service providers to update organisation, site and service information was the end goal. Integrating this functionality directly into the core Ask Izzy ecosystem was beyond the scope of this project so we created our own document database aligned as closely as possible to Infoxchange's data structure. From there, we worked to design and deploy a complete MVP over a three-week period written using the JavaScript MERN stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), and other node packages.
 
-<!-- TODO: LINDA -->
 ### Functionality and Features
 [Ask Izzy Plus](https://ask-izzy-plus.netlify.com) is a supplementary self-service application for service providers listed on Infoxchange's flagship [Ask Izzy](https://askizzy.org.au) platform, a mobile website that helps people who are homeless or at risk of becoming homeless to find essential services they need nearby and now.
 * Using Ask Izzy Plus, service providers from Ask Izzy that have been whitelisted to use the platform by admins can login/logout and view contact details structured at multiple levels (organisation, site and services), in line with the data structure of the Infoxchange's Service Seeker database (which supports a number of directory services provided by Infoxchange, including Ask Izzy).
@@ -86,16 +90,10 @@ After finding our client, we met and worked with Ask Izzy's product manager to u
 * In turn, admin users (i.e. Nodebusters or Infoxchange) are responsible for pre-qualifying and onboarding service provider users onto Ask Izzy Plus first by whitelisting authorised email addresses and associating authorised users with a particular organisation. Admins can view all whitelisted users and whitelist a new user to an organisation in the admin dashboard.
 * Our Ask Izzy Plus prototype uses Google OAuth to handle all user logins and manage authentication via a third-party provider.
 
-<!-- TODO: LINDA -->
-## Screenshots (Live Application)
-<!-- FIXME: Add Final Screenshots -->
-|[![](/docs/images/ask-izzy-plus-ui-desktop.png)]() | [![](/docs/images/ask-izzy-plus-ui-desktop.png)]() |
+|[![](/docs/images/ask-izzy-plus-ui-user-desktop.png)]() | [![](/docs/images/ask-izzy-plus-ui-admin-desktop.png)]() |
 |-----------|-----------|
-![](/docs/images/ask-izzy-plus-ui-mobile.png) | ![](/docs/images/ask-izzy-plus-ui-mobile.png)|
+![](/docs/images/ask-izzy-plus-ui-user-mobile.png) | ![](/docs/images/ask-izzy-plus-ui-admin-mobile.png)|
 
---- PLACEHOLDER: TO BE REPLACED WITH FINAL VERSION ---
-
-<!-- TODO: LINDA -->
 ## The Brief
 ### The Client
 
@@ -111,7 +109,6 @@ Designed mobile-first, and free and anonymous to use, Ask Izzy is compatible acr
 
 Infoxchange's Ask Izzy is an open source application and can be located on GitHub: https://github.com/ask-izzy/ask-izzy.
 
-<!-- TODO: LINDA -->
 ### The Problem (Problem Definition)
 With over 360,000 service providers listed across Australia and close to 1,000 people a day connecting to Ask Izzy, accuracy of services available and up-to-date information is hugely important to clients using these services and vital to keeping Ask Izzy relevant. Infoxchange policy requires that direct contact be made with service providers prior to adding or updating records to comply with privacy laws, confirm that changes were submitted by the service provider's office and verify the validity, accuracy and completeness of the information.
 
@@ -119,14 +116,12 @@ Infoxchange employs several updating methods (scheduled bulk auto-emails, self-r
 
 To this end, simplifying the process for service providers to update their information, and enabling service providers to access a self-service functionality served as the basis for our prototype MVP.
 
-<!-- TODO: LINDA -->
 ### The Solution (Purpose)
 > “Everyone wears different hats depending on the day.”
 
 > “The System should be a funnel, instead it’s a colander.”
 
 With the goal of the exploring the needs of staff working in organisations that use Ask Izzy to find out what additional functionality would make it useful to them, the Ask Izzy Plus project team at Infoxchange identified some key insights and challenges through recent user research (one-on-one interviews with service providers working in the not for profit sector and with people who have experienced homelessness) that served the basis for our prototype MVP, namely:
-
 
 * Service providers need to be able to update their service details.
 * The process needs to be simplified for service providers to update their information.
@@ -144,20 +139,6 @@ Possible extensions discussed with our client during this ideation stage for the
 * Ability to get push updates or notifications (such as weather warnings that might impact clients/rough sleepers).
 
 ## Application Design
-```
-Demonstrate your ability to break down the problem and design a solution.
-- Compose a summary of your application including problem definition and solution
-- Review the conceptual design with the client and edit based on their feedback
-- User stories for the whole application
-- A workflow diagram of the user journey/s
-- Wireframes for all main pages of your app
-- Entity Relationship Diagram (ERD)
-- Project plan and effort estimation
-- Data Flow Diagram
-- OO design documentation
-```
-
-<!-- TODO: AITZU -->
 ### Design Process
 After receiving an initial brief and researching Ask Izzy's existing UX/UI we met with our client Sam, Ask Izzy's product manager in person to discuss and confirm business, design and technical requirements. Sam gave us an overview of the scope and intended use of the app (namely, a working prototype to pilot with a sample of Ask Izzy service providers), and the core functionality and design of the MVP: a self-service application to allow Ask Izzy service providers to view and update organisation, site and service details.
 
@@ -165,38 +146,28 @@ Integrating this functionality into the existing main Ask Izzy platform was beyo
 
 From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
 
-<!-- TODO: LINDA -->
-### User Stories
-
-1. As a SERVICE PROVIDER, I need an application where I can log in and easily view, create, update and delete my organisation, sites and services details. 
-
-2. As a ADMINISTRATOR working for Infoxchange, I need an administrator dashboard where I can manage the service providers’ access by creating a new user, linking the user with organisation and deleting a user. 
-
+### User Stories 
 Following Agile methodologies, user stories were written up in Trello to guide the development of our MVP from the perspective of our core Ask Izzy Plus end users to capture a description of our software features from their perspective: users (service providers) and admin (Infoxchange).
 
 This pushed us to provide a high level definition of a requirement to create a simplified description, and helped to break down the features and functionality of the MVP early on.
+* As a `SERVICE PROVIDER`, I need an application where I can log in and easily view, create, update and delete my organisation, sites and services details. 
+* As a `ADMINISTRATOR` working for Infoxchange, I need an administrator dashboard where I can manage the service providers’ access by creating a new user, linking the user with organisation and deleting a user.
 
 ![Trello User Stories](/docs/images/ask-izzy-plus-trello-user-stories.png)
 
-<!-- FIXME: AITZU -->
 ### Workflow Diagram: User Journeys
+In Figma, we created user journeys for our end-users (service providers and admin) to map the user choices and views within our application.
 
 
-* User Journey for Service Provider
-
+#### User Journey for Service Provider
 ![User Journey for Service Provider](/docs/images/user_journey_service_provider.png)
 
-
-* User Journey for administrator
-
+#### User Journey for Administrator
 ![User Journey for administrator](/docs/images/user_journey_admin.png)
-
 
 <!-- FIXME: AITZU -->
 ### Wireframes
 Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
-
-
 
 * Ask Izzy UI/UX
 ![Ask Izzy UI/UX](docs/images/UI_UX.png)
@@ -218,7 +189,6 @@ Mimicking the general UI layout of the core Ask Izzy platform in our MVP had mul
 * Ask Izzy Plus Wireframs
 ![Figma Wireframes](/docs/images/wireframe.png)
 
-<!-- TODO: Linda -->
 ### Database Schema
 Infoxchange's Service Seeker platform uses a relational database with information structured at multiple levels, namely:
 * Organisation (which can contain multiple Sites)
@@ -356,13 +326,11 @@ Based on Infoxchange's information hierarchy, the following MongoDB collections/
     });
     ```
 
-<!-- TODO: LINDA -->
 ### Data Flow Diagram
 Because of the adaptability and flexibility of the MERN software stack(**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), along with other client, server and database npm packages like Axios, Nodemailer and Mongoose, we were able to scaffold a prototype for Ask Izzy Plus, with the overall data flow represented below:
 
 ![MERN Stack Overview](/docs/images/data-flow-mern.png)
 
-<!-- TODO: LINDA -->
 ### OO Design Documentation
 When considering OO design and class attributes, methods and relationships, our main consideration was representing people (users) and locations (organisations, sites and services), and the relationship between them: our document database has three collections, `AdminUser`, `User` and `Organisation`, with arrays of `Sites` and `Services` embedded across three levels in the Organisation collection.
 
@@ -374,26 +342,12 @@ The Ask Izzy Plus client uses Axios to query the User/AdminUser and Organisation
 ![OO Design - React Component Family Tree](/docs/images/oo-design-react-family-tree.png)
 
 ## Project Management & Planning
-```
-Demonstrate your ability to satisfy your client with the quality of your work and high level of service.
-
-Client:
-- Record interactions with your client in a diary format
-- Plan information gathering activities to determine project requirements, constraints and risks
-
-Handover:
-- Manage system testing and hand over activities. Prepare maintenance or support plans for client
-- Obtain final project sign-off
-- As a team, conduct post project review
-- Create a questionnaire for the client to ascertain the satisfaction with your products and services
-```
 ### Project Plan and Timeline
 
 To manage the project and keep track of tasks and communications within the team and with our client in the day-to-day and for documentation purposes we used Trello, Slack, Google Docs, Google Sheets and email to delegate tasks and have a single source of truth and line of communication, this informed our Git and code review processes.
 
 ![Timeline](/docs/images/project-plan-timeline.png)
 
-<!-- TODO: LINDA -->
 ### Team Communication
 After collaborating on an initial brief with our client to use as a project charter, with a preliminary statement of project scope to obtain initial sign-off, our planning methodology involved:
 
@@ -403,22 +357,18 @@ After collaborating on an initial brief with our client to use as a project char
   
   ![Slack](/docs/images/Slack.png)
 
-<!-- FIXME: LINDA -->
 ### Client Communications
-With product manager Sam coming from a software development background, managing expectations and communications with our client was extremely straightforward and clear. Since the finished app will be used as a prototype, we felt assured by the fact there would
-ultimately be some kind of business use for it while also being able to deliver an MVP in three weeks.
+With product manager Sam coming from a software development background, managing expectations and communications with our Infoxchange was extremely straightforward and clear. Since the finished app will be used as a prototype, we felt assured by the fact there would ultimately be some kind of business use for it while also being able to deliver an MVP in three weeks.
 
-We were particularly keen and pleased to work with a non-for-profit organisation, and surprised to discover that Ask Izzy is an open source project on GitHub.
+We were particularly keen and pleased to work with a non-for-profit organisation, and happily surprised to discover that Ask Izzy is an open source project on GitHub.
 
 After our initial in person meeting with Sam and Claire from Infoxchange, we had one further follow up and stayed in touch with feedback and questions via email and keeping track of the minutes in Google Sheets
 
-* Client Minutes
-  
-  ![Client Minutes](/docs/images/client-communications-minutes.png)
+#### Client Minutes
+![Client Minutes](/docs/images/client-communications-minutes.png)
 
-* Gmail
-  
-  ![Client Emails](/docs/images/client-communications-emails.png)
+#### Gmail
+![Client Emails](/docs/images/client-communications-emails.png)
 
 <!-- TODO: DIEGO -->
 ## Tools & Methodologies
@@ -441,77 +391,72 @@ For designing and editing assets, wireframing and diagramming for this project, 
 
 ![Balsamiq](/docs/images/balsamiq.png)
 
-<!-- TODO: DIEGO -->
 ### Source Control
 #### Github and Gitflow
-We decided to create a GitHub Organisation with the objective of having all members as owners of the repository. The main advantage of this approach is that we can optimise production processes as under this setup any team member is able to code review and merge pull requests. Nevertheless, we decided also that if a team member creates a pull request she/he will not merge the pull request herself/himself but instead another team member will be responsible of code review and potentially merging that branch. 
+We decided to create a GitHub Organisation - Nodebusters - with the objective of having all members as owners, with separate repos for frontend and backend, and test repos to practice creating branches, pull requests and deployment. The main advantage of this approach is that we could optimise production processes as under this setup any team member is able to code review and merge pull requests.
 
-As an organisation we also agreed to work in well named branches, and always push the branch instead of master in order to raise well documented pull requests. 
+Nevertheless, we decided also that if a team member creates a pull request she/he will not merge the pull request themselves but instead another team member will be responsible for the code review and potentially merging that branch. 
+
+As an organisation we also agreed to work in well named branches, leave descriptive commit comments and always push the branch instead of master in order to raise well documented pull requests.
 
 <!-- TODO: DIEGO -->
 ### Agile Methodologies
-We implemented several agile methodologies during the planning and execution of the project. As an organisation we decided to distribute the responsibilities of a scrum master among all the team members.
+We implemented several Agile methodologies during the planning and execution of the project. As an organisation we decided to distribute the responsibilities of a scrum master among all the team members, so all of us would be accountable for understanding and approving each other's code before merging to master. We used Trello to breakdown work tasks and responsibilities in Kanban-style cards organised in scrum lists to track our progress.
 
-We also performed daily standups where we discussed in a brief way how all the different parts of the project were developing and how the project as whole was being implemented.
+We also performed daily standups where we briefly discussed how all the different parts of the project were developing and how the project as whole was being implemented, as well participating in regular 10am standups with the Coder Academy instructors.
 
 From the beginning we focused in working software and customer collaboration. We aimed to have a conversation with the customer as the project was developing. For us customer satisfaction was the main priority and we aimed to adapt accordingly to the customer requirements.
 
-Sustainable development and simplicity were also very important for us. During the planning process we agreed in setting realistic goals with a good buffer in case of unexpected issues. Likewise, we agreed on pursuing the satisfaction of our customer requirements in the simplest way possible.
+Sustainable development and simplicity were also very important for us. During the planning process we agreed to set realistic goals with a good buffer in case of unexpected issues. Likewise, we agreed on pursuing the satisfaction of our customer requirements in the simplest way possible and learning as much as we could in the process.
 
-Another important technique we implemented in the initial stages of the project was pair programming. This was very helpful to get all the team members in the same page in terms of database design and application flow. 
+Another important technique we implemented in the initial stages of the project was paired and mob programming. This was very helpful to get all the team members on the same page in terms of database design and application flow, particularly at the start. We agreed to deploy and commit early and often to isolate any issues between development and production to guide our documentation and handover process.
 
-<!-- TODO: DIEGO -->
 ### Code Review
-As mention before we decided that team members were not allowed to merge their own pull request, but instead another team member is responsible for code review and merging if appropriate. 
+In light of our aforementioned GitHub setup, we all agreed to share responsibility as co-owners of Nodebuster's repositories. 
+Team members were not allowed to raised and merge their own pull request; instead another team member was responsible for code review and merging or rejecting if appropriate. Early on we developed a charter to capture our Gitflow process: https://github.com/nodebusters/ask-izzy-plus-client/blob/master/git_workflow.md
 
-This approach worked really well as it allowed us to pick up issues early in the development process. Occasionally we had conflicts but we were able to resolve them relatively quickly. The conflict solving process was as follows:
+This approach worked really well as it allowed us to pick up issues early in the development process. Occasionally we had conflicts but we were able to resolve them relatively quickly.
 
+The conflict solving process was as follows:
 1. Fetch the branch to be merged locally. 
 2. Pull the latest version of master locally.
 3. Merge master to the branch to be merged. 
 4. Code review an solve conflicts as required. 
-5. Push the branch now we the conflicts solved. 
+5. Push the branch now we the conflicts solved.
 
-<!-- TODO: DIEGO -->
 ### Deployment
 We decided to use a distributed deployment approach for this project with the following set up:
 
-**Client Side: Netlify**
+### Frontend Client: Netlify
+The client side of the application was deployed using Netlify continuous deployment. The Netlify GUI was utilised to manage environmental variables and build processes managed through the `.env` file. 
 
-The client side of the application was deployed using Netlify continuous deployment. Netlify GUI was utilized to manage environmental variables and build processes. 
+### Backend Server: Now
+The server side of the application was deployed in now.sh, and a `now.json` file was used to manage environment variables and build processes.
 
-**Server Side: Now**
+### Database: mLab
+The database of the application was stored in a mLab sandbox database as a service.
 
-The server side of the application was deployed in now.sh, and a now.json file was used to manage environment variables and build processes. 
-
-**Database: mLab**
-
-The database of the application was stored in a mLab sandbox database.    
-
-<!-- TODO: DIEGO -->
 ### Testing
 Testing was performed often during the development of the application. Testing techniques included the following:
 
 * Console logging variables both in the back and front end in order to check that the values are as expected. 
-* Test new features in new git branches and check if they perform as expected in localhost before deploying. 
+* Testing new features in new git branches and to check if they perform as expected in localhost before deploying. 
 * Using Postman to confirm the server routes are receiving and sending the right information.
-* Testing the production version of the application by performing a diverse range of processes live. 
+* Testing the production version of the application by performing a diverse range of processes live.
+* Deploying updates to the server, client and database regularly to isolate errors and review error logs.
 
 ## Short Answers: Post-Review
-<!-- FIXME: LINDA -->
 ### Q1: What are the most important aspects of quality software?
-1. For the end-user (customer)
-2. For the developer/business (client)
+Based on our experience creating a small-scale end to end application for a client, clearly an important aspect of designing and developing quality software is focusing fundamentally on the problem you're solving and the service and experience you're delivering for all your end users to solve that problem, rather than a specific feature or functionality. From the perspective of our end-users, our client and service providers, we opted to focus on solving a small but complex problem well, and in the process, we learned to scrap or scale down features that didn't deliver as much value to users, or to de-prioritise them as stretch goals.
 
-* Functional Components
-* Reusability
-* Composition
-* DRY - don't repeat yourself: Demonstrate DRY principles in all code.
-* Separation of concerns: separate your program into modules that each deal with one particular focus, or concern.
+From a dev pespective, a hugely important aspect of quality software is to write code that is logical, lean, but legible for other developers who may work on the codebase with or after you, and adhering to best practices and principles to avoid code smell or horrible Git conflicts:
+* Following functional programming principles and writing code that is declarative, immutable and treats computation and composition as the evaluation of mathematical functions and components.
+* Don't Repeat Yourself: writing functions and components that are reusable and modular.
+* Installing npm packages and dependencies only as required to keep the application as lightweight as possible;
+* Separation of concerns to reduce code complexity by breaking a large application down into smaller units of encapsulated functionality; each module or layer in an application should only be responsible for one thing and should not contain code that deals with other things.
 
-<!-- FIXME: DIEGO -->
 ### Q2: What libraries are being used in the app and why?
-#### Client Side:
+#### Frontend Client
 * axios@0.18.0: To perform promise based HTTP requests
 * history@4.7.2: To redirect pages programmatically in react. 
 * jwt-decode@2.2.0: To decode jwt tokens.
@@ -523,7 +468,7 @@ Testing was performed often during the development of the application. Testing t
 * react-scripts@2.1.3: To configure scripts for create-react-app.
 * react-tabs@3.0.0: To easily create tab components. 
 
-#### Server Side:
+#### Backend Server
 * cookie-parser@1.4.3: To parse cookies with signatures. 
 * cookie-session@2.0.0-beta.3: To configure and manage sessions. 
 * cors@2.8.5: To enable cors in the server. 
