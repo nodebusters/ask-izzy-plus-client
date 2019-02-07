@@ -537,7 +537,7 @@ Looking back as a group we agreed that soft skills were essential to complete th
 ### Client Survey
 As part of our planned retrospective, we've created a client survey using Typeform for Sam and Claire to complete after we've demoed the application in person and provided handover documentation to Infoxchange.
 
-[![Nodebusters Client Survey](docs/images/client-survey.png)](https://ask-izzy-plus.netlify.com/)
+[![Nodebusters Client Survey](docs/images/client-survey.png)](https://lindalai1.typeform.com/to/cnNTDX)
 
 ### Running Ask Izzy+ (Developers)
 Developer instructions for running Ask Izzy Plus can be found on in this [GitHub](https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md) repo.
