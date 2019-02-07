@@ -199,7 +199,7 @@ class AdminDashboard extends Component {
                 <Tab>Administrator Profile</Tab>
                 <Tab>Add New User</Tab>
                 <Tab>View All Users</Tab>
-                <Tab>About</Tab>
+                {/* <Tab>About</Tab> */}
               </TabList>
 
               <TabPanel>
@@ -276,9 +276,9 @@ class AdminDashboard extends Component {
                 </div>
               </TabPanel>
 
-              <TabPanel>
+              {/* <TabPanel>
                 <h2>About</h2>
-              </TabPanel>
+              </TabPanel> */}
             </Tabs>
           </div>
           <Footer />

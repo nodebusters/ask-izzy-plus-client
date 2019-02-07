@@ -472,31 +472,31 @@ Testing was performed often during the development of the application. Testing t
 <!-- FIXME: DIEGO -->
 ### Q2: What libraries are being used in the app and why?
 #### Client Side:
-├── axios@0.18.0: To perform promise based HTTP requests
-├── history@4.7.2: To redirect pages programmatically in react. 
-├── jwt-decode@2.2.0: To decode jwt tokens.
-├── react@16.7.0: To produce view/controller components of our application. 
-├── react-confirm-alert@2.1.0: To handle confirm dialogs. 
-├── react-dom@16.7.0: To interact with the DOM.
-├── react-google-login@5.0.0: To handle google OAuth process. 
-├── react-router-dom@4.3.1: To load components in different routes. 
-├── react-scripts@2.1.3: To configure scripts for create-react-app.
-└── react-tabs@3.0.0: To easily create tab components. 
+* axios@0.18.0: To perform promise based HTTP requests
+* history@4.7.2: To redirect pages programmatically in react. 
+* jwt-decode@2.2.0: To decode jwt tokens.
+* react@16.7.0: To produce view/controller components of our application. 
+* react-confirm-alert@2.1.0: To handle confirm dialogs. 
+* react-dom@16.7.0: To interact with the DOM.
+* react-google-login@5.0.0: To handle google OAuth process. 
+* react-router-dom@4.3.1: To load components in different routes. 
+* react-scripts@2.1.3: To configure scripts for create-react-app.
+* react-tabs@3.0.0: To easily create tab components. 
 
 #### Server Side:
-├── cookie-parser@1.4.3: To parse cookies with signatures. 
-├── cookie-session@2.0.0-beta.3: To configure and manage sessions. 
-├── cors@2.8.5: To enable cors in the server. 
-├── dotenv@6.2.0: To have access to environment variables.
-├── express@4.16.4: To configure and develop the app API. 
-├── jwt-decode@2.2.0: To decode jwt tokens.
-├── mongoose@5.4.6: To interact with MongoDB database. 
-├── nodemailer@5.1.1: To send emails from node. 
-├── nodemon@1.18.9: To To monitor the performance of the API during development.
-├── now@13.1.2: To deploy the server in now.sh
-├── nodemailer@5.1.1: To send emails from node. 
-├── passport@0.4.0: To deal with authentication in node. 
-└── passport-google-oauth@1.0.0: To handle google OAuth strategy. 
+* cookie-parser@1.4.3: To parse cookies with signatures. 
+* cookie-session@2.0.0-beta.3: To configure and manage sessions. 
+* cors@2.8.5: To enable cors in the server. 
+* dotenv@6.2.0: To have access to environment variables.
+* express@4.16.4: To configure and develop the app API. 
+* jwt-decode@2.2.0: To decode jwt tokens.
+* mongoose@5.4.6: To interact with MongoDB database. 
+* nodemailer@5.1.1: To send emails from node. 
+* nodemon@1.18.9: To To monitor the performance of the API during development.
+* now@13.1.2: To deploy the server in now.sh
+* nodemailer@5.1.1: To send emails from node. 
+* passport@0.4.0: To deal with authentication in node. 
+* passport-google-oauth@1.0.0: To handle google OAuth strategy. 
 
 <!-- FIXME: ??? -->
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?

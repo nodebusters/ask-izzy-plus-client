@@ -16,6 +16,10 @@ class AdminLogIn extends Component {
     console.log(response);
   };
 
+  redirect = () => {
+    history.push('/')
+  }
+
   render() {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
@@ -30,7 +34,7 @@ class AdminLogIn extends Component {
           onFailure={this.errorGoogle}
         />
         <div className="toggle-login-container">
-          <a className="toggle-login" href="/home">Are you a Service Provider?</a>
+          <a className="toggle-login" onClick={this.redirect}>Are you a Service Provider?</a>
         </div>
       </div>
     );
