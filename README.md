@@ -79,6 +79,7 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Client Survey](#client-survey)
   - [Running Ask Izzy+ (Developers)](#running-ask-izzy-developers)
 - [Presentation](#presentation)
+- [Conclusion](#conclusion)
 
 ## About Ask Izzy Plus
 ### Project Background
@@ -117,7 +118,7 @@ Infoxchange's Ask Izzy website is an open source application and can be located 
 ### The Problem
 With over 360,000 service providers listed across Australia and close to 1,000 people a day connecting to Ask Izzy, accuracy of services available and up-to-date information is hugely important to clients using these services and vital to keeping Ask Izzy relevant. Infoxchange policy requires that direct contact be made with service providers prior to adding or updating records to comply with privacy laws, confirm that changes were submitted by the service provider's office and verify the validity, accuracy and completeness of the information.
 
-Infoxchange employs several updating methods (scheduled bulk auto-emails, self-responses via online forms, mail-outs, telephone and fax-backs), with a week's turnaround on change requests and phone contact proving itself the most effective updating method. Currently, if service details need to be updated or removed from the Ask Izzy and Infoxchange Service Seeker directly, users must click on the Feedback/Report an Error link on the individual service listing and provide all of the requested information.
+Infoxchange employs several updating methods (scheduled bulk auto-emails, self-responses via online forms, mail-outs, telephone and fax-backs), with a week's turnaround on change requests and phone contact proving itself the most effective updating method. Currently, if service details need to be updated or removed from the Ask Izzy and Infoxchange Service Seeker directory, users must click on the Feedback/Report an Error link on the individual service listing and provide all of the requested information.
 
 To this end, simplifying the process for service providers to update their information, and enabling service providers to access a self-service functionality served as the basis for our prototype MVP.
 
@@ -517,21 +518,21 @@ Looking back as a group we agreed that soft skills were essential to complete th
 * Abstract thinking
 * Research and development skills
 
-<!-- FIXME: AITZU -->
 ### Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
 
-* We as a team had all the required knowledge and skills to complete this project however we had someone focusing on backend, frontend and project management. The allocation of tasks was mainly based on our strengths. For future projects we would like to further optimize our time management and efficiency so everyone gets a chance to work on their weaknesses as well while still being able to finish the project. 
+As a team we had all the required knowledge and skills to complete this project however we had had a specific focus on backend, frontend and project management. The allocation of tasks was mainly based on our strengths. For future projects we would like to further optimise our time management and efficiency so everyone gets a chance to work on their weaknesses as well while still being able to finish the project. 
 
-
-* By the time we started this project not everyone was familiar with the basics of MERN stack. For future projects we would like to make sure everyone at least is comfortable with the basic content from class so we could better use our time while working as a group. 
+By the time we started this project not everyone was familiar with the basics of MERN stack. For future projects we would like to make sure everyone at least is comfortable with the basic content from class so we could better use our time while working as a group. 
 
 ## Future Development
-<!-- FIXME: AITZU -->
 ### Extensions
-1. Update housing vacancy details
-2. Notification centre in admin dashboard to display and approve/disapprove all requests from service providers. 
-3. Different levels of access for organisation users. Ex. some users only have access to certain sites or services.
-4. Integration with the main Ask Izzy app. 
+* Service providers can update their vacancy details if they provide crisis/short term accommodation and for the vacancy status to be updated on their service pages. 
+* Create lists of ‘favourite’ services that they could share easily with their clients by hardcopy, SMS or email.   
+* The ability to view feedback from clients on their services.
+* The ability to get updates or notifications. For example, weather warnings that may impact their clients/rough sleepers.
+* Notification centre in admin dashboard to display and approve/disapprove all requests from service providers. 
+* Different levels of access for organisation users, such as some users only have access to certain sites or services.
+* Integration with the main Ask Izzy app. 
 
 ### Handover/Feedback
 ### Client Survey
@@ -542,14 +543,16 @@ As part of our planned retrospective, we've created a client survey using Typefo
 ### Running Ask Izzy+ (Developers)
 Developer instructions for running Ask Izzy Plus can be found on in this [GitHub](https://github.com/nodebusters/ask-izzy-plus-client/blob/master/README_dev.md) repo.
 
-<!-- FIXME: GROUP -->
 ## Presentation
-You are to deliver a 7 minute presentation to the class.
-
-The presentation should include,
+You are to deliver a 7 minute presentation to the class. The presentation should include:
 
 * A walk-through of your live App website and its features
 * A walk-through of your design process and decisions
 * A review of your development/build process including challenges, ethical issues, favourite parts, etc
 * Answer questions from the audience
 * Use this presentation as an opportunity to pitch your ideas to 'investors'.
+
+The slide deck used to present to the Coder Academy class is available [here](/docs/ppt/AskIzzyPlus.pdf).
+
+## Conclusion
+Despite some early and unexpected setbacks, overall we were pleased with the final MVP delivered and felt that the team worked well together. Overall we were able to achieve the initial design and functionality we envisione from our initial brief and look forward to gettng our client's feedback!
