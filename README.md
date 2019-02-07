@@ -146,7 +146,6 @@ Integrating this functionality into the existing main Ask Izzy platform was beyo
 
 From there, throughout the project we provided Sam with periodic updates regarding the status of the project or followed up with her to query and confirm any follow up questions or open items from our initial meeting.
 
-<!-- TODO: Aitzu -->
 ### User Stories 
 Following Agile methodologies, user stories were written up in Trello to guide the development of our MVP from the perspective of our core Ask Izzy Plus end users to capture a description of our software features from their perspective: users (service providers) and admin (Infoxchange).
 
@@ -159,6 +158,7 @@ This pushed us to provide a high level definition of a requirement to create a s
 ### Workflow Diagram: User Journeys
 In Figma, we created user journeys for our end-users (service providers and admin) to map the user choices and views within our application.
 
+
 #### User Journey for Service Provider
 ![User Journey for Service Provider](/docs/images/user_journey_service_provider.png)
 
@@ -169,9 +169,25 @@ In Figma, we created user journeys for our end-users (service providers and admi
 ### Wireframes
 Continuing with our UX/UI design documentation, we used Figma to create our wireframes for our application, and map out Ask Izzy's brand colours, typography, assets to develop the visual identity for Ask Izzy Plus.
 
+* Ask Izzy UI/UX
+![Ask Izzy UI/UX](docs/images/UI_UX.png)
+
+* Ask Izzy Font and Font Colours
+![Ask Izzy Font and Font Colours](docs/images/font.png)
+
+* Ask Izzy Banners
+![Ask Izzy Banners](docs/images/banners.png)
+
+* Ask Izzy Branding Assets
+![Ask Izzy Branding Assets](docs/images/branding.png)
+
+
+
+
 Mimicking the general UI layout of the core Ask Izzy platform in our MVP had multiple advantages: along with consistency in UX, the UI itself lends itself well to responsive design, accessability and readability.
 
-![Figma Wireframes](/docs/images/.png)
+* Ask Izzy Plus Wireframs
+![Figma Wireframes](/docs/images/wireframe.png)
 
 ### Database Schema
 Infoxchange's Service Seeker platform uses a relational database with information structured at multiple levels, namely:
@@ -417,7 +433,7 @@ The client side of the application was deployed using Netlify continuous deploym
 ### Backend Server: Now
 The server side of the application was deployed in now.sh, and a `now.json` file was used to manage environment variables and build processes.
 
-#### Database: mLab
+### Database: mLab
 The database of the application was stored in a mLab sandbox database as a service.
 
 ### Testing
@@ -469,13 +485,38 @@ From a dev pespective, a hugely important aspect of quality software is to write
 
 <!-- FIXME: ??? -->
 ### Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
-* Business Context
+After having a discussion we have come with the following recommendations:
+
+* Business Context: In order to develop software that adds value to your client is extremely important to understand the business structure and processes your client is involved with. Do not underestimate this aspect of software development otherwise your team would end up developing software no one will use. 
+
+* Future Plans: Likewise is important to understand what are the future plans of your client's organisation. This information is helpful to develop software that adds value to your clients organisation not only  for now but for the next few years. 
+  
+* Current Database Structure: If existent, is important to consider your client's current database structure and try to preserve it as much as possible. This will enable your client to easily migrate from one system to other. 
+
+* Expected Traffic: Is important understand expectations regarding web traffic and the amount of users the website will handle. 
 
 <!-- FIXME: ??? -->
 ### Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
-* Knowledge
-* Skills
-* Challenges
+The technical skills required to complete this project include:
+* Vanilla Javascript
+* Node.js 
+* React.js
+* NPM and NPM libraries. 
+* GIT
+* SASS/CSS3
+* HTML5
+* Figma
+* Trello
+* mLab
+* Google API
+
+Nevertheless, as a group we agree that soft skills were essential to complete this project and overcome challenges. The skills we considered the most important are:
+
+* Team collaboration.  
+* Good communication skills. 
+* Project management. 
+* Abstract thinking. 
+* Research and development skills. 
 
 <!-- FIXME: ??? -->
 ### Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
@@ -483,8 +524,14 @@ From a dev pespective, a hugely important aspect of quality software is to write
 * Learnings, Future Lessons
 
 ## Future Development
-<!-- FIXME: JAMES -->
+<!-- FIXME: AITZU -->
 ### Extensions
+
+1. Update housing vacancy details
+2. Notification centre in admin dashboard to display and approve/disapprove all requests from service providers. 
+3. Different levels of access for organisation users. Ex. some users only have access to certain sites or services.
+4. Integration with the main Ask Izzy app. 
+   
 <!-- FIXME: JAMES -->
 ### Handover
 ### Client Survey/Questionnaire
