@@ -63,8 +63,8 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
   - [Q2: What libraries are being used in the app and why?](#q2-what-libraries-are-being-used-in-the-app-and-why)
-    - [Client Side:](#client-side)
-    - [Server Side:](#server-side)
+    - [Frontend Client](#frontend-client)
+    - [Backend Server](#backend-server)
   - [Q3: A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?](#q3-a-team-is-about-to-engage-in-a-project-developing-a-website-for-a-small-business-what-knowledge-and-skills-would-they-need-in-order-to-develop-the-project)
   - [Q4: Within your own project what knowledge or skills were required to complete your project, and overcome challenges?](#q4-within-your-own-project-what-knowledge-or-skills-were-required-to-complete-your-project-and-overcome-challenges)
   - [Q5: Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?](#q5-evaluate-how-effective-your-knowledge-and-skills-were-this-project-using-examples-and-suggest-changes-or-improvements-for-future-projects-of-a-similar-nature)
@@ -430,20 +430,17 @@ Testing was performed often during the development of the application. Testing t
 * Deploying updates to the server, client and database regularly to isolate errors and review error logs.
 
 ## Short Answers: Post-Review
-<!-- FIXME: LINDA -->
 ### Q1: What are the most important aspects of quality software?
-1. For the end-user (customer)
-2. For the developer/business (client)
+Based on our experience creating a small-scale end to end application for a client, clearly an important aspect of designing and developing quality software is focusing fundamentally on the problem you're solving and the service and experience you're delivering for all your end users to solve that problem, rather than a specific feature or functionality. From the perspective of our end-users, our client and service providers, we opted to focus on solving a small but complex problem well, and in the process, we learned to scrap or scale down features that didn't deliver as much value to users, or to de-prioritise them as stretch goals.
 
-* Functional Components
-* Reusability
-* Composition
-* DRY - don't repeat yourself: Demonstrate DRY principles in all code.
-* Separation of concerns: separate your program into modules that each deal with one particular focus, or concern.
+From a dev pespective, a hugely important aspect of quality software is to write code that is logical, lean, but legible for other developers who may work on the codebase with or after you, and adhering to best practices and principles to avoid code smell or horrible Git conflicts:
+* Following functional programming principles and writing code that is declarative, immutable and treats computation and composition as the evaluation of mathematical functions and components.
+* Don't Repeat Yourself: writing functions and components that are reusable and modular.
+* Installing npm packages and dependencies only as required to keep the application as lightweight as possible;
+* Separation of concerns to reduce code complexity by breaking a large application down into smaller units of encapsulated functionality; each module or layer in an application should only be responsible for one thing and should not contain code that deals with other things.
 
-<!-- FIXME: DIEGO -->
 ### Q2: What libraries are being used in the app and why?
-#### Client Side:
+#### Frontend Client
 * axios@0.18.0: To perform promise based HTTP requests
 * history@4.7.2: To redirect pages programmatically in react. 
 * jwt-decode@2.2.0: To decode jwt tokens.
@@ -455,7 +452,7 @@ Testing was performed often during the development of the application. Testing t
 * react-scripts@2.1.3: To configure scripts for create-react-app.
 * react-tabs@3.0.0: To easily create tab components. 
 
-#### Server Side:
+#### Backend Server
 * cookie-parser@1.4.3: To parse cookies with signatures. 
 * cookie-session@2.0.0-beta.3: To configure and manage sessions. 
 * cors@2.8.5: To enable cors in the server. 
