@@ -60,6 +60,9 @@ class Site extends Component {
           formClass: "readMode",
           editButton: "editButton"
         })
+
+        const editButton =  document.querySelector('#editButton');
+        editButton.innerHTML = "Edit";
       }))
       .catch(err => {
 
@@ -244,7 +247,7 @@ class Site extends Component {
 
     return (
       <React.Fragment>
-        <button onClick={this.edit} className={this.state.editButton}>Edit</button>
+        <button onClick={this.edit} id="editButton" className={this.state.editButton}>Edit</button>
         <button onClick={this.delete} className="cancelButton">Delete</button>
         <button onClick={this.submitForm} id="updateButton" className="updateButton">Update</button>
         <div className="site-form">

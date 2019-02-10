@@ -50,6 +50,8 @@ class Organisation extends Component {
           formClass: "readMode",
           editButton: "editButton"
         });
+        const editButton =  document.querySelector('#editButton');
+        editButton.innerHTML = "Edit";
       })
       .catch(err => { });
   };
@@ -132,7 +134,7 @@ class Organisation extends Component {
           Organisation: <strong>{organisation.name} </strong>
         </p>
 
-        <button onClick={this.edit} className={this.state.editButton}>
+        <button onClick={this.edit} id="editButton" className={this.state.editButton}>
           Edit
         </button>
         <button onClick={this.submitForm} id="updateButton" className="updateButton">
