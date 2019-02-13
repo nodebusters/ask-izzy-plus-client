@@ -3,7 +3,7 @@ import axios from "axios";
 import "../stylesheets/Organisation.css";
 
 class Organisation extends Component {
-  //Declaring state.
+  // Declaring state.
   state = {
     data: {},
     formClass: "readMode",
@@ -40,20 +40,21 @@ class Organisation extends Component {
       }
     };
 
-    axios.put(url, data, config)
+    axios
+      .put(url, data, config)
       .then(resp => {
         console.log("resp.data", ": ", resp.data);
         updateOrganisation(resp.data);
 
-        //Changing to edit mode:
+        // Changing to edit mode:
         this.setState({
           formClass: "readMode",
           editButton: "editButton"
         });
-        const editButton =  document.querySelector('#editButton');
+        const editButton = document.querySelector("#editButton");
         editButton.innerHTML = "Edit";
       })
-      .catch(err => { });
+      .catch(err => {});
   };
 
   createTextInput = (attr, description) => {
@@ -108,7 +109,7 @@ class Organisation extends Component {
         formClass: "editMode",
         editButton: "cancelButton"
       });
-      //Showing the updateButton with vanilla js.
+      // Showing the updateButton with vanilla js.
       const updateButton = document.querySelector("#updateButton");
       updateButton.style.visibility = "visible";
     } else {
@@ -117,7 +118,7 @@ class Organisation extends Component {
         formClass: "readMode",
         editButton: "editButton"
       });
-      //Hiding the updateButton with vanilla js.
+      // Hiding the updateButton with vanilla js.
       const updateButton = document.querySelector("#updateButton");
       updateButton.style.visibility = "hidden";
     }
@@ -134,16 +135,23 @@ class Organisation extends Component {
           Organisation: <strong>{organisation.name} </strong>
         </p>
 
-        <button onClick={this.edit} id="editButton" className={this.state.editButton}>
+        <button
+          onClick={this.edit}
+          id="editButton"
+          className={this.state.editButton}
+        >
           Edit
         </button>
-        <button onClick={this.submitForm} id="updateButton" className="updateButton">
+        <button
+          onClick={this.submitForm}
+          id="updateButton"
+          className="updateButton"
+        >
           Update
         </button>
 
-
         <div className="org-form">
-          <form id="form" className={this.state.formClass} data-org-form >
+          <form id="form" className={this.state.formClass} data-org-form>
             <br />
             {this.createTextInput("description", "Description:")}
             {this.createTextInput("website", "Website:")}

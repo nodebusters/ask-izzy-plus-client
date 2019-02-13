@@ -4,7 +4,7 @@ import axios from "axios";
 import "../stylesheets/NewForm.css";
 
 class NewService extends Component {
-  //Declaring state.
+  // Declaring state.
   state = {
     data: {}
   };
@@ -73,7 +73,6 @@ class NewService extends Component {
   };
 
   render() {
-    // TODO: IMPLEMENT OPENING HOURS.
     return (
       <div className="new-form">
         <form id="form" className="editMode" data-new-form>
@@ -96,7 +95,7 @@ class NewService extends Component {
           {this.createOptionInput(
             "healthcareCardHolders",
             "Healthcare CardHolders:"
-            )}
+          )}
           {this.createTextInput("intakeInfo", "Intake Info:")}
           {this.createTextInput("intakePoint", "Intake Point:")}
           {this.createOptionInput("isBulkBilling", "Is Bulk Billing:")}
@@ -108,28 +107,28 @@ class NewService extends Component {
           {this.createTextInput(
             "ageGroupDescription",
             "Age Group Description:"
-            )}
+          )}
           {this.createTextInput("serviceTypes", "Service Types:")}
           {this.createTextInput(
             "indigenousClassification",
             "Indigenous Classification:"
-            )}
+          )}
           {this.createTextInput("capacityStatus", "Capacity Status:")}
           {this.createTextInput("capacityStatusText", "Capacity Status Text:")}
           {this.createTextInput("capacityFrequency", "Capacity Frequency:")}
           {this.createTextInput(
             "capacityLastNotification",
             "Capacity Last Notification:"
-            )}
+          )}
           {this.createTextInput(
             "capacityLastStatusUpdate",
             "Capacity Last Status Update:"
-            )}
+          )}
           {this.createTextInput("capacityExpireDate", "Capacity Expire Date:")}
           {this.createTextInput("accreditationName", "Accreditation Name:")}
         </form>
       </div>
-      );
-    }
+    );
   }
-  export default NewService;
+}
+export default NewService;

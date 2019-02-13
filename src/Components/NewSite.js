@@ -4,7 +4,7 @@ import axios from "axios";
 import "../stylesheets/NewForm.css";
 
 class NewSite extends Component {
-  //Declaring state.
+  // Declaring state.
   state = {
     data: {
       openingHours: [{}, {}, {}, {}, {}, {}, {}]
@@ -195,8 +195,6 @@ class NewSite extends Component {
   };
 
   render() {
-    //TODO: IMPLEMENT OPENING HOURS.
-
     return (
       <div className="new-form">
         <form id="form" className="editMode" data-new-form>
@@ -209,13 +207,13 @@ class NewSite extends Component {
           {this.createTextInput(
             "publicTransportInfo",
             "Public Transport Info:"
-            )}
+          )}
           {this.createOptionInput("isMobile", "Is mobile:")}
           {this.createTextInput("emailAddress", "Email Address:")}
           {this.createOptionInput(
             "emailIsConfidential",
             "Email Is Confidential:"
-            )}
+          )}
           {this.createTextInput("website", "Website:")}
           {this.createTextInput("postalAddress", "Postal Address:")}
           {this.createTextInput("postalAddressState", "State:")}
@@ -224,13 +222,13 @@ class NewSite extends Component {
           {this.createOptionInput(
             "postalAddressIsConfidential",
             "Postal Address Is Confidential:"
-            )}
+          )}
           {this.createTextInput("phoneNumber", "Phone Number:")}
           {this.createTextInput("phoneKind", "Phone Kind:")}
           {this.createOptionInput(
             "phoneIsConfidential",
             "Phone Is Confidential:"
-            )}
+          )}
           {this.createTextInput("addressBuilding", "Building:")}
           {this.createTextInput("addressLevel", "Level:")}
           {this.createTextInput("addressFlatUnit", "Flat Unit:")}
@@ -244,7 +242,7 @@ class NewSite extends Component {
           {this.createOptionInput(
             "addressIsConfidential",
             "Address Is Confidential:"
-            )}
+          )}
 
           <br />
 

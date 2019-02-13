@@ -3,13 +3,12 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import axios from "axios";
 import avatar from "../Images/app/user-avatar.svg";
 import "../stylesheets/AdminDashboard.css";
-import { confirmAlert } from 'react-confirm-alert'; // Import
-import 'react-confirm-alert/src/react-confirm-alert.css' // Import css
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 // COMPONENTS
 import Navigation from "./Navigation";
 import Footer from "./Footer";
-// import AdminLogOut from "./AdminLogOut";
 
 const jwtDecode = require("jwt-decode");
 
@@ -102,7 +101,7 @@ class AdminDashboard extends Component {
     this.setState({ newUser });
   };
 
- deleteOneUser = (user_id) => {
+  deleteOneUser = user_id => {
     // e.preventDefault();
     console.log("Delete one user request triggered.");
     // console.log(e.currentTarget.id);
@@ -131,7 +130,7 @@ class AdminDashboard extends Component {
     };
 
     axios.post(url, newUser, config).then(res => {
-      this.updateUser(res.data)
+      this.updateUser(res.data);
       this.submitSuccessMsg();
     });
   };
@@ -140,40 +139,43 @@ class AdminDashboard extends Component {
     this.setState({ users: newData });
   };
 
-  confirmDelete = (e) => {
+  confirmDelete = e => {
     const user_id = e.currentTarget.id;
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
-          <div className='confirm-delete'>
+          <div className="confirm-delete">
             <h1>Are you sure?</h1>
             <p>Delete this user?</p>
             <button onClick={onClose}>No</button>
-            <button onClick={() => {
-                this.deleteOneUser(user_id)
-                onClose()
-            }}>Yes, delete it!</button>
+            <button
+              onClick={() => {
+                this.deleteOneUser(user_id);
+                onClose();
+              }}
+            >
+              Yes, delete it!
+            </button>
           </div>
-        )
+        );
       }
-    })
-  }
+    });
+  };
 
   submitSuccessMsg = () => {
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
-          <div className='submit-new-user-msg'>
+          <div className="submit-new-user-msg">
             <h1>A new user has been added</h1>
             <p>You can find all users in the "View All Users" tab</p>
             <button onClick={onClose}>Close</button>
           </div>
-        )
+        );
       }
-    })
-  }
+    });
+  };
 
-  
   render() {
     const { adminUser, users } = this.state;
     if (adminUser && users) {
@@ -182,10 +184,6 @@ class AdminDashboard extends Component {
       // const userData = this.displayAllUsers(users);
       return (
         <div className="page-container">
-          {/* <nav>
-            <AdminLogOut />
-          </nav> */}
-
           <Navigation originPage="dashboard" />
 
           <div className="body-container">
@@ -206,15 +204,23 @@ class AdminDashboard extends Component {
                 <div className="user-container">
                   <h2> Welcome {adminName}</h2>
                   <div className="user-card">
-                      <div className="user-info">
-                        <h3>You are now logged in as: </h3>
-                        <p><strong className="user-field">Email: </strong> {email}</p>
-                        <p><strong className="user-field">First Name: </strong> {adminName}</p>
-                        <p><strong className="user-field">Last Name:</strong> {adminLastName}</p>
-                      </div>
-                      <div className="user-avatar">
-                        <img src={avatar} alt="User avatar"/>
-                      </div>
+                    <div className="user-info">
+                      <h3>You are now logged in as: </h3>
+                      <p>
+                        <strong className="user-field">Email: </strong> {email}
+                      </p>
+                      <p>
+                        <strong className="user-field">First Name: </strong>{" "}
+                        {adminName}
+                      </p>
+                      <p>
+                        <strong className="user-field">Last Name:</strong>{" "}
+                        {adminLastName}
+                      </p>
+                    </div>
+                    <div className="user-avatar">
+                      <img src={avatar} alt="User avatar" />
+                    </div>
                   </div>
                 </div>
               </TabPanel>
@@ -231,7 +237,7 @@ class AdminDashboard extends Component {
                     />
                     <br />
                     <label> Organisation: </label>
-                    <select id="organisation" onChange={this.handleInputChange} >
+                    <select id="organisation" onChange={this.handleInputChange}>
                       <option>Please select</option>
                       {organisations.map(organisation => {
                         return (
@@ -287,14 +293,13 @@ class AdminDashboard extends Component {
     } else {
       return (
         <div className="page-container">
-          
           {/* NAVIGATION: Header Container w/ Logout, Hero & Logo */}
-          <Navigation originPage='dashboard'/>
+          <Navigation originPage="dashboard" />
 
           <div className="body-container">
             <h3> {this.state.message} </h3>
           </div>
-          
+
           <Footer />
         </div>
       );

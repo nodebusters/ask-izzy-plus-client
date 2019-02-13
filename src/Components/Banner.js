@@ -56,10 +56,10 @@ const Banner = () => {
         </a>
       </div>
       <div className="logo-image">
-      <a href="/" className="root-link">
-        <img src={logo} alt="Ask Izzy Plus logo" />
-        <h3 className="subhead">Need to update your details?</h3>
-      </a>
+        <a href="/" className="root-link">
+          <img src={logo} alt="Ask Izzy Plus logo" />
+          <h3 className="subhead">Need to update your details?</h3>
+        </a>
       </div>
     </div>
   );
