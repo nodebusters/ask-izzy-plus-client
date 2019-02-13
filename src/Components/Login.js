@@ -17,18 +17,19 @@ class Login extends Component {
   };
 
   redirect = () => {
-    history.push('/admin')
-  }
+    history.push("/admin");
+  };
 
   render() {
     const googleClient = process.env.REACT_APP_GOOGLE_CLIENT_ID;
     return (
       <div className="login-button-container">
-
         <GoogleLogin
           clientId={googleClient}
           render={renderProps => (
-            <button onClick={renderProps.onClick} className="login-button">Login</button>
+            <button onClick={renderProps.onClick} className="login-button">
+              Login
+            </button>
           )}
           buttonText="Login"
           onSuccess={this.responseGoogle}
@@ -37,11 +38,9 @@ class Login extends Component {
         />
 
         <div className="toggle-login-container">
-        
-          <a className="toggle-login" onClick={this.redirect} >
-          Are you an Admin?
+          <a className="toggle-login" onClick={this.redirect}>
+            Are you an Admin?
           </a>
-        
         </div>
       </div>
     );
