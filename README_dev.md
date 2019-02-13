@@ -13,18 +13,30 @@ After installing requirements, clone the client and server repositories to your 
 
 There is no requirement for the repositories to be installed in the same folder but both the client and the server need to be running at the same time for the application to work. 
 
-To clone the repositories just type the following in the command line:  
-* `$ git clone https://github.com/nodebusters/ask-izzy-plus-client.git` for the client.
-* `$ git clone https://github.com/nodebusters/ask-izzy-plus-server.git` for the server.
+To clone the repositories just type the following in the command line.
+
+For the client:
+```
+$ git clone https://github.com/nodebusters/ask-izzy-plus-client.git
+````
+
+For the server:
+```
+$ git clone https://github.com/nodebusters/ask-izzy-plus-server.git
+```
 
 ### Installing dependencies:
 To install dependencies open the repository directory in the command line and type:
 
-`npm install`
+```
+$ npm install
+```
 
 This will install all the dependencies listed in `package.json` file. This process need to be done in both the server and client repositories. Note this dependencies are going to be installed locally. The only dependency you will need to install globally is `nodemon`, which can be installed with:
 
-`npm install -g nodemon`
+```
+$ npm install -g nodemon
+```
 
 Nodemon will monitor if the server files of the application have changed and if so it will restart the server automatically. 
 
@@ -33,23 +45,35 @@ Nodemon will monitor if the server files of the application have changed and if 
 ### Step 1: Environment Variables
 #### Client
 For the client side you will need to create an `.env.development` file in the root folder of the application, and then declare the following environment variables:
-```.env
+
+```js
 REACT_APP_GOOGLE_CLIENT_ID="[ADD-GOOGLE-API-KEY-HERE]"
 REACT_APP_BASE_URL="[APP-API-URL-HERE]"
 ```
+* `REACT_APP_GOOGLE_CLIENT_ID` are client credentials for the Google API console for developers to implement Google OAuth.
+* `REACT_APP_BASE_URL` is the URL for the development (local) or production (live) link to the MongoDB database.
+
 #### Server:
 For the server side you will need to create an `.env` file in the root folder of the application, and declare the following environment variables:
 
-```.env
+```js
 MONGO_DRIVER="[INSERT-LOCAL-DATABASE-DRIVER]"
 MONGO_DRIVER_PROD="[INSERT-PRODUCTION-DATABASE-DRIVER]"
-SESSION_SECRET_KEY="[INSERT=SECRET-KEY-FOR-COOKIES]"
+SESSION_SECRET_KEY="[INSERT-SECRET-KEY-FOR-COOKIES]"
 GOOGLE_CLIENT_ID="[INSERT-GOOGLE-API-KEY]"
 GOOGLE_CLIENT_SECRET="[INSERT-GOOGLE-API-SECRET-KEY]"
 GOOGLE_CALLBACK_URL="[INSERT-GOOGLE-API-CALLBACK]"
 GMAIL_ACCOUNT="[INSERT-INFOXCHANGE-MAILER-EMAIL-ADDRESS]"
 GMAIL_PASS="[INSERT-INFOXCHANGE-MAILER-EMAIL-PASSWORD]"
 ```
+* `MONGO_DRIVER` is the URL for the development (local) link to the MongoDB database.
+* `MONGO_DRIVER_PROD` is the URL for the production (live) link to the MongoDB database.
+* `SESSION-SECRET-KEY` is the key used by cookie-session to sign and verify cookie values. 
+* `GOOGLE_CLIENT_ID`
+* `GOOGLE_CLIENT_SECRET`
+* `GOOGLE_CALLBACK_URL`
+* `GMAIL_ACCOUNT`
+* `GMAIL_PASS` 
 Note that SESSION_SECRET_KEY can be set to any string value, ideally encoded. On the other hand, Google `.env` variables are set in a Google Developer account, and the Gmail `.env` variables refers to the credentials for the mailer account used in the back end. Is important to note that in the current set up Gmail is the current email provider for nodemailer. This probably is not ideal if the site traffic increases and more emails need to be handled. In that scenario a provider like Mailgun would be more appropriate. 
 
 ### Step 2: Seed MongoDB
