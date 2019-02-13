@@ -61,9 +61,9 @@ Ask Izzy Plus is a self-service application built to our client Infoxchange's sp
   - [Agile Methodologies](#agile-methodologies)
   - [Code Review](#code-review)
   - [Deployment](#deployment)
-  - [Frontend Client: Netlify](#frontend-client-netlify)
-  - [Backend Server: Now](#backend-server-now)
-  - [Database: mLab](#database-mlab)
+    - [Frontend Client: Netlify](#frontend-client-netlify)
+    - [Backend Server: Now](#backend-server-now)
+    - [Database: mLab](#database-mlab)
   - [Testing](#testing)
 - [Short Answers: Post-Review](#short-answers-post-review)
   - [Q1: What are the most important aspects of quality software?](#q1-what-are-the-most-important-aspects-of-quality-software)
@@ -139,7 +139,7 @@ Our brief from Infoxchange entailed creating a working prototype/proof of concep
 Our prototype will be used by Infoxchange to pilot with a sample of Ask Izzy service providers as part of Infoxchange's broader Ask Izzy Plus project.
 
 Possible extensions discussed with our client during this ideation stage for the Ask Izzy Plus self-service app prototype included:
-* Create Favourites lists of services that could easily be shared with clients via hardcopy, SMS or email;
+* Create Favourites lists of services that could easily be shared with clients via hardcopy, SMS or email.
 * Update vacancy details if they provide crisis/short-term accommodation and for vacancy status to be displayed on their service page.
 * View feedback from clients on their services.
 * Ability to get push updates or notifications (such as weather warnings that might impact clients/rough sleepers).
@@ -328,7 +328,7 @@ Based on Infoxchange's information hierarchy, the following MongoDB collections/
     ```
 
 ### Data Flow Diagram
-Because of the adaptability and flexibility of the MERN software stack(**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), along with other client, server and database npm packages like Axios, Nodemailer and Mongoose, we were able to scaffold a prototype for Ask Izzy Plus, with the overall data flow represented below:
+Because of the adaptability and flexibility of the MERN software stack (**M**ongoDB, **E**xpress, **R**eact and **N**ode.js), along with other client, server and database npm packages like Axios, Nodemailer and Mongoose, we were able to scaffold a prototype for Ask Izzy Plus, with the overall data flow represented below:
 
 ![MERN Stack Overview](/docs/images/data-flow-mern.png)
 
@@ -363,7 +363,7 @@ With product manager Sam coming from a software development background, managing
 
 We were particularly keen and pleased to work with a non-for-profit organisation, and happily surprised to discover that Ask Izzy is an open source project on GitHub.
 
-After our initial in person meeting with Sam and Claire from Infoxchange, we had one further follow up and stayed in touch with feedback and questions via email and keeping track of the minutes in Google Sheets
+After our initial in person meeting with Sam and Claire from Infoxchange, we had one further follow up and stayed in touch with feedback and questions via email and keeping track of the minutes in Google Sheets.
 
 #### Client Minutes
 ![Client Minutes](/docs/images/client-communications-minutes.png)
@@ -393,18 +393,18 @@ For designing and editing assets, wireframing and diagramming for this project, 
 
 ### Source Control
 #### GitHub and Gitflow
-We decided to create a GitHub Organisation - Nodebusters - with the objective of having all members as owners, with separate repos for frontend and backend, and test repos to practice creating branches, pull requests and deployment. The main advantage of this approach is that we could optimise production processes as under this setup any team member is able to code review and merge pull requests.
+We decided to create a GitHub Organisation, ![Nodebusters](https://github.com/nodebusters), with the objective of having all members as owners, with separate repos for frontend and backend, and test repos to practice creating branches, pull requests and deployment. The main advantage of this approach is that we could optimise production processes as under this setup any team member is able to code review and merge pull requests.
 
 Nevertheless, we decided also that if a team member creates a pull request she/he will not merge the pull request themselves but instead another team member will be responsible for the code review and potentially merging that branch. 
 
-As an organisation we also agreed to work in well named branches, leave descriptive commit comments and always push the branch instead of master in order to raise well documented pull requests.
+As an organisation we also agreed to work in well named branches, leave descriptive commit comments and always pushing the branch instead of master in order to raise well documented pull requests.
 
 ### Agile Methodologies
 We implemented several Agile methodologies during the planning and execution of the project. As an organisation we decided to distribute the responsibilities of a scrum master among all the team members, so all of us would be accountable for understanding and approving each other's code before merging to master. We used Trello to breakdown work tasks and responsibilities in Kanban-style cards organised in scrum lists to track our progress.
 
 We also performed daily standups where we briefly discussed how all the different parts of the project were developing and how the project as whole was being implemented, as well participating in regular 10am standups with the Coder Academy instructors.
 
-From the beginning we focused in working software and customer collaboration. We aimed to have a conversation with the customer as the project was developing. For us customer satisfaction was the main priority and we aimed to adapt accordingly to the customer requirements.
+From the beginning we focused on working software and customer collaboration. We aimed to have a conversation with the client as the project was developing. For us client satisfaction was the main priority and we aimed to adapt accordingly to Infoxchange's requirements.
 
 Sustainable development and simplicity were also very important for us. During the planning process we agreed to set realistic goals with a good buffer in case of unexpected issues. Likewise, we agreed on pursuing the satisfaction of our customer requirements in the simplest way possible and learning as much as we could in the process.
 
@@ -412,7 +412,7 @@ Another important technique we implemented in the initial stages of the project 
 
 ### Code Review
 In light of our aforementioned GitHub setup, we all agreed to share responsibility as co-owners of Nodebuster's repositories. 
-Team members were not allowed to raised and merge their own pull request; instead another team member was responsible for code review and merging or rejecting if appropriate. Early on we developed a charter to capture our [Gitflow process](https://github.com/nodebusters/ask-izzy-plus-client/blob/master/git_workflow.md).
+Team members were not allowed to raise and merge their own pull request; instead another team member was responsible for code review and merging or rejecting if appropriate. Early on we developed a charter to capture our [Gitflow process](https://github.com/nodebusters/ask-izzy-plus-client/blob/master/git_workflow.md).
 
 This approach worked really well as it allowed us to pick up issues early in the development process. Occasionally we had conflicts but we were able to resolve them relatively quickly.
 
@@ -428,13 +428,13 @@ The conflict solving process was as follows:
 ### Deployment
 We decided to use a distributed deployment approach for this project with the following set up:
 
-### Frontend Client: Netlify
+#### Frontend Client: Netlify
 The client side of the application was deployed using Netlify continuous deployment. The Netlify GUI was utilised to manage environmental variables and build processes managed through the `.env` file. 
 
-### Backend Server: Now
+#### Backend Server: Now
 The server side of the application was deployed in now.sh, and a `now.json` file was used to manage environment variables and build processes.
 
-### Database: mLab
+#### Database: mLab
 The database of the application was stored in a mLab sandbox database as a service.
 
 ### Testing
