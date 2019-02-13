@@ -69,11 +69,12 @@ GMAIL_PASS="[INSERT-INFOXCHANGE-MAILER-EMAIL-PASSWORD]"
 * `MONGO_DRIVER` is the URL for the development (local) link to the MongoDB database.
 * `MONGO_DRIVER_PROD` is the URL for the production (live) link to the MongoDB database.
 * `SESSION-SECRET-KEY` is the key used by cookie-session to sign and verify cookie values. 
-* `GOOGLE_CLIENT_ID`
-* `GOOGLE_CLIENT_SECRET`
-* `GOOGLE_CALLBACK_URL`
-* `GMAIL_ACCOUNT`
-* `GMAIL_PASS` 
+* `GOOGLE_CLIENT_ID` is part of Passport configuration options for implementing Google OAuth. 
+* `GOOGLE_CLIENT_SECRET` is part of Passport configuration options for implementing Google OAuth. 
+* `GOOGLE_CALLBACK_URL` is part of Passport configuration options for implementing Google OAuth. 
+* `GMAIL_ACCOUNT` is the Google email address used for the mailer notification via nodemailer.
+* `GMAIL_PASS` is the Google email password used for the mailer notification via nodemailer.
+
 Note that SESSION_SECRET_KEY can be set to any string value, ideally encoded. On the other hand, Google `.env` variables are set in a Google Developer account, and the Gmail `.env` variables refers to the credentials for the mailer account used in the back end. Is important to note that in the current set up Gmail is the current email provider for nodemailer. This probably is not ideal if the site traffic increases and more emails need to be handled. In that scenario a provider like Mailgun would be more appropriate. 
 
 ### Step 2: Seed MongoDB
@@ -97,13 +98,17 @@ Note that `ds211875.mlab.com:11875` refers to the sandbox mLab database, and thi
 ### Step 3: Running the application on localhost
 #### Server
 To run the server on localhost just open the directory where the repository is installed and run:
-`nodemon`
+```
+$ nodemon
+```
 
 The entry point will be `index.js` file, and the server will be running on port 5000 by default.
 
 #### Client
 To run the server on localhost open the directory where the repository is installed and run:
-`npm start`
+```
+$ npm start
+```
 
 The client will be running by default on port 3000. 
 
