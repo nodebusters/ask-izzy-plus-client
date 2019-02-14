@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "../stylesheets/User.css";
-import avatar from "../Images/app/user-avatar.svg";
+import avatar1 from "../Images/app/user-avatar1.svg";
 
 class User extends Component {
+
   render() {
     // User component inherits props from User model, renders object's key/values as an array to Dashboard
     const { user, organisation, given_name, family_name } = this.props;
@@ -33,7 +34,7 @@ class User extends Component {
             </p>
           </div>
           <div className="user-avatar">
-            <img src={avatar} alt="User avatar" />
+            <img src={avatar1} alt="User avatar" />
           </div>
         </div>
       </div>
